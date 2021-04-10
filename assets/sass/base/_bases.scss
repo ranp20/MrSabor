@@ -1,0 +1,78 @@
+/* IMPORTAR LAS VARIABLES Y MIXINS */
+	@import 'variables';
+	@import 'mixins';
+
+/* RESETEO Y CONFIGURACIÓN GENERAL DE ESTILOS */
+*{
+	padding: 0;
+	margin: 0;
+	font-family: $font-primary;
+}
+
+html{
+	box-sizing: border-box;
+	font-size: 16px;
+	scroll-behavior: smooth;
+}
+
+*,
+*::before,
+*::after{
+	box-sizing: inherit;
+}
+
+body{
+	min-height: 100vh;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	position: relative;
+	overflow-x: hidden;
+}
+
+a{
+	text-decoration: none !important;
+	outline: none !important;
+}
+
+button{
+	outline: none !important;	
+}
+
+img{
+	max-width: 100%;
+	height: auto;
+}
+
+ul{
+	list-style: none;
+	padding-left: 0;
+}
+
+.container{
+	@include max_width($max-width);
+	margin-left: auto;
+	margin-right: auto;
+	width: 90%;
+}
+
+.box{
+	@include max_width($max-width);
+	margin-left: auto;
+	margin-right: auto;
+	width: 90%;
+	height: auto;
+}
+
+.one-hidden > option:first-child{
+	display: none;
+}
+
+/************************** STYLES UTILITIES **************************/
+@media (min-width: 1024px){
+	.lg-full-screen{
+		align-content: center;
+		width: 100%;
+		min-height: 100vh;
+	}
+}

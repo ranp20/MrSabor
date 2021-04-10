@@ -1,0 +1,95 @@
+/* DEFINIR ANCHO MÁXIMO */
+@mixin max_width($max_width){
+	max-width: $max_width;
+}
+
+/* CREAR UN BURGERNAV */
+@mixin burgernav($color, $width, $bold){
+	&{
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		position: relative;	
+		width: $width;
+		margin: 1rem 0 0 1rem;	
+	}
+	&:before{
+		content: "";
+		position: absolute;
+		border-top: $bold solid $color;
+		top: 0;
+		width: $width;
+		padding-bottom: 5px;
+		border-bottom: $bold solid $color;
+		border-radius: 2px;
+	}
+
+	&:after{
+		content: "";
+		position: absolute;
+		border-bottom: $bold solid $color;
+		width: $width;
+		bottom: 0;
+		border-radius: 2px;
+	}
+}
+
+
+/* CREAR UN BURGERNAV CON CONTORNO */
+@mixin burgernav-fill($color, $width, $bold, $top, $bottom, $border-w){
+	&{
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		position: relative;	
+		width: $width;
+		margin: .5rem 0 0 1rem;
+		border: $border-w solid $color;	
+		border-radius: .3rem;
+	}
+	&:before{
+		content: "";
+		position: absolute;
+		border-top: $bold solid $color;
+		top: $top;
+		width: $width;
+		padding-bottom: 5px;
+		border-bottom: $bold solid $color;
+		border-radius: 2px;
+	}
+
+	&:after{
+		content: "";
+		position: absolute;
+		border-bottom: $bold solid $color;
+		width: $width;
+		bottom: $bottom;
+		border-radius: 2px;
+	}
+}
+
+
+/* CREAR UN LOADER DE RULETA */
+@mixin loader($color, $size){
+	
+	&{
+		border: 4px solid rgba(0,0,0,.1);
+		width: $size;
+		height: $size;
+		border-radius: 50%;
+		border-left-color: $color;
+		animation-name: girar;
+		animation-duration: 1s;
+		animation-timing-function: linear;
+		animation-iteration-count: infinite;
+
+		@keyframes girar {
+			0%{
+				transform: rotate(0deg);
+			}
+			100%{
+				transform: rotate(360deg);	
+			}
+		}
+	}
+}

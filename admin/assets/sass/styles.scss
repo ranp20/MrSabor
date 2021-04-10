@@ -1,0 +1,10 @@
+/* IMPORTAR LAS BASES DEL TEMA */
+	@import 'base/bases';
+	@import 'base/variables';
+
+/* IMPORTAR LOS ARCHIVOS DEL TEMA */
+	@import 'theme/dashboard';
+	@import 'theme/login';
+	@import 'theme/sidebar-left';
+	@import 'theme/select-type-user';
+	@import 'theme/register-account';

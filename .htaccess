@@ -1,0 +1,15 @@
+RewriteEngine On
+RewriteCond %{HTTPS} off
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+RewriteBase /MrSabor/
+
+############ RENOMBRANDO ARCHIVOS...
+RewriteRule ^/?$ index.php
+
+############ ALL PAGES ADMIN
+RewriteRule ^dashboard?$ admin/dashboard.php
+RewriteRule ^productos?$ admin/products.php
+RewriteRule ^restaurantes?$ admin/restaurants.php
+#RewriteRule ^seleccionar-usuario?$ admin/select-user-register.php
+
+############ ALL PAGES CLIENTS

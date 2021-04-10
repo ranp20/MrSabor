@@ -1,0 +1,208 @@
+.body-login-adm{
+	display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  height: 100%;
+  background-color: $primary-color;
+}
+
+.login-adm{
+  width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 2rem;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+	position: absolute;
+	position: relative;
+  margin-top: 3rem;
+  margin-bottom: 4rem;
+  background-color: #fff;
+  box-shadow: 8px 6px 3px 1px rgba(0,0,0,0.25);
+  border-radius: 0.4rem;
+  padding: .5rem 1.2rem .5rem 1.2rem;
+
+	/* TAMAÑO - MÓVIL-PEQUEÑO(360px) */
+	@media (min-width: 360px){width: 95%;}
+	/* TAMAÑO - MÓVIL(480px) */
+	@media (min-width: 480px){width: 80%;padding: .5rem 2.2rem .5rem 2.2rem;}
+	/* TAMAÑO - CUSTOMS MÓVIL(600px) */
+	@media (min-width: 600px){width: 65%;}
+	/* TAMAÑO - TABLET(768px) */
+	@media (min-width: 768px){width: 50%;}
+	/* TAMAÑO - CUSTOMS PORTÁTIL(768px) */
+	@media (min-width: 991px){width: 38%;}
+	/* TAMAÑO - DESKTOP HD(1400px) */
+	@media (min-width: 1400px){width: 34%;padding: 1rem 2.6rem 1rem 2.6rem;}
+
+	&__cont{
+
+		margin-bottom: 1.5rem;
+
+		&--icon{
+			width: 120px;
+			height: 120px;
+			margin-left: auto;
+			margin-right: auto;
+			img{
+				width: 100%;
+				height: 100%;
+			}
+		}
+
+		&--title{
+			margin-bottom: 1.4rem;
+			font-size: 1.5rem;
+			font-weight: 700;
+			text-align: center;
+
+			/* TAMAÑO - PREDETERMINADO(300px) */
+	    @media (min-width: 300px){
+	    	font-size: 1.6rem;
+	    }
+
+			/* TAMAÑO - MÓVIL(480px) */
+	    @media (min-width: 480px){
+	    	font-size: 2rem;
+	    }
+		}
+
+		&--content{
+
+			&__form{
+				&--control{
+					margin-bottom: 1.25rem;
+					position: relative;
+					transition: .3s ease;
+
+					&__label{
+						display: flex;
+						font-size: 0.9rem;
+						position: absolute;
+						left: 0;
+						top: 0;
+						transition: .3s ease;
+						color: #757575;
+
+						&.focus{
+							color: red;
+							font-size: 0.7rem;
+							top: -13px;
+						}
+
+						&.complete{
+							font-size: 0.7rem;
+							top: -13px;
+							color: green;
+						}
+					}
+
+					&__input{
+						border-left: none;
+						border-right: none;
+						border-top: none;
+						border-bottom: 1px solid $border-bottom-input;
+						width: 100%;
+						outline: none;
+						padding-bottom: 0.4rem;
+						padding-top: 0.4rem;
+						transition: .3s ease;
+						background-color: transparent;
+						font-size: 0.9rem;
+
+						&.focus{
+							border-bottom: 1px solid red;
+						}
+
+						&.complete{
+							border-bottom: 1px solid green;
+						}
+					}
+				}
+
+				&--actions{
+					display: flex;
+					flex-direction: column;
+					align-items: center;
+					justify-content: center;
+					text-align: center;
+					
+					&__btnlogin{
+						cursor: pointer;
+						width: 100%;
+				    border: none;
+				    background-color: $primary-color;
+				    color: #fff;
+				    outline: none;
+				    padding: .55rem 0;
+				    border-radius: .3rem;
+				    text-transform: uppercase;
+				    font-size: 0.75rem;
+				    text-align: center;
+
+				    /* TAMAÑO - PORTÁTIL(1024px) */
+				    @media (min-width: 1024px){
+					    padding: 0.8rem 0;
+
+					    &:hover{
+					    	opacity: .6;
+					    }
+				    }
+					}
+
+					&__separator{
+						display: flex;
+				    align-items: center;
+				    justify-content: center;
+				    text-align: center;
+				    position: relative;
+				    height: 30px;
+			    	
+			    	&--divisor{
+			    		width: 60px;
+			    		border-top: 1px solid grey;
+			    		
+			    		span{
+			    			width: 25px;
+			    			position: absolute;
+			    			top: 50%;
+			    			left: 50%;
+			    			transform: translate(-50%, -50%);
+			    			background-color: #fff;
+			    			margin: auto;
+			    			color: #757575;
+			    		}
+			    	}
+					}
+
+					&__gotoaccount{
+						cursor: pointer;
+						width: 100%;
+				    border: none;
+				    background-color: rgba(0,0,0,.35);
+				    color: #fff !important;
+				    outline: none;
+				    padding: .55rem 0;
+				    border-radius: .3rem;
+				    text-transform: uppercase;
+				    font-size: 0.75rem;
+				    text-align: center;
+
+				    /* TAMAÑO - PORTÁTIL(1024px) */
+				    @media (min-width: 1024px){
+					    padding: 0.8rem 0;
+
+					    &:hover{
+					    	opacity: .6;
+					    }
+				    }
+					}
+				}
+			}
+		}
+	}
+}
