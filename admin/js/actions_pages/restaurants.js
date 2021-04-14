@@ -76,9 +76,13 @@ inputs_update.forEach( (input_update) => {
 });
 
 
+$(function(){
+	listRestaurant();
+});
+
 /************************** LISTAR RESTAURANTES **************************/
-$(document).ready( function () {
-  
+function listRestaurant(){	  
+	
 	$.ajax({
 		url: "admin/controllers/list_restaurants.php",
 		method: "POST",
@@ -113,45 +117,52 @@ $(document).ready( function () {
               >Editar</a>
           </td>
           <td class="cont-btn-delete" id="cont-btn-delete">
-          	<a class="btn-delete-restaurant" href="#"
+          	<a class="btn-delete-restaurant" data-toggle="modal" data-target="#deleteModal" href="#"
               data-id="${v.id}"
               >Eliminar</a>
           </td>
         </tr>`
       );
-
-			$("#tbl_restaurants").DataTable();
 		});
 	});
+}
 
-  /************************** AGREGAR RESTAURANTE **************************/
-  $(document).on('click', '#btnadd-restaurant', function(e){
-    e.preventDefault();
+/************************** AGREGAR RESTAURANTE **************************/
+$(document).on('click', '#btnadd-restaurant', function(e){
+  e.preventDefault();
 
-    var formdata = new FormData();
-    var filelength = $('.images')[0].files.length;
-    for (var i = 0;i < filelength; i ++) {
-      formdata.append("imagen", $('.images')[0].files[i]);
-    }
 
-    formdata.append("name", $('#name').val());
-    formdata.append("address", $('#address').val());
-    formdata.append("telephone", $('#telephone').val());
+  var formdata = new FormData();
+  var filelength = $('.images')[0].files.length;
+  for (var i = 0;i < filelength; i ++) {
+    formdata.append("imagen", $('.images')[0].files[i]);
+  }
 
-    $.ajax({
-      url: "admin/controllers/add_restaurants.php",
-      method: "POST",
-      data: formdata,
-      contentType: false,
-      cache: false,
-      processData: false,
-    }).done(function(res){
+  formdata.append("name", $('#name').val());
+  formdata.append("address", $('#address').val());
+  formdata.append("telephone", $('#telephone').val());
+
+  $.ajax({
+    url: "admin/controllers/add_restaurants.php",
+    method: "POST",
+    data: formdata,
+    contentType: false,
+    cache: false,
+    processData: false,
+  }).done(function(res){
+
+    if(res.length > 0){
+      console.log('Sí, insertó');
+
       $('#form-add-restaurant')[0].reset();
-    });
+      $('#addrestaurantModal').modal("hide");
+    }else{
+      console.log('Hubo un error al insertar');
+    }
   });
 });
 
-/************************** ACTUALIZAR RESTAURANTE **************************/
+/************************** LISTAR DATOS DEL RESTAURANTE EN EL MODAL**************************/
 $(document).on('click', '.btn-update-restaurant', function(e){
   e.preventDefault();
 
@@ -164,48 +175,66 @@ $(document).on('click', '.btn-update-restaurant', function(e){
       telephone: $(this).attr('data-telephone'),
     };
 
+    $('#idupdate-restaurant').val(item_data['id']);
     $('#name-update').val(item_data['name']);
     $('#address-update').val(item_data['address']);
-    ///$('#photo-update').val(item_data['photo']);
+    $('#photo-update').attr('href', item_data['photo']);
     $('#telephone-update').val(item_data['telephone']);
-
-    var formData = new FormData();
-    var imageslength = $('.images-update')[0].files.length;
-    for(var i = 0; i < imageslength; i++){
-      formData.append("imagen", $('.images-update')[0].files[i]);
-    }
-
-    formData.append("name", $('#name-update').val());
-    formData.append("address", $('#address-update').val());
-    formData.append("telephone", $('#telephone-update').val());
-
-    $.ajax({
-      url: "admin/controllers/update_restaurants.php",
-      method: "POST",
-      data: formData,
-      contentType: false,
-      cache: false,
-      processData: false
-    }).done((res) => {
-      console.log(e);
-    });
 
   });
 });
 
-/************************** ELIMINAR RESTAURANTE **************************/
+/************************** LISTAR ID DEL RESTAURANTE EN EL MODAL **************************/
 $(document).on('click', '.btn-delete-restaurant', function(e){
   e.preventDefault();
 
-  $.each($(this), function(i, v){
-    var id = $(this).attr('data-id');
+  var id = $(this).attr('data-id');
+  $('#iddelete-restaurant').val(id);
+});
 
-    $.ajax({
-      url: "admin/controllers/delete_restaurants.php",
-      method: "POST",
-      data: {id : id},
-    }).done((e) => {
-      $("#item-" + id).remove();
-    });
+/************************** ELIMINAR RESTAURANTE **************************/
+$(document).on('click', '#btndelete-restaurant', function(e){
+  e.preventDefault();
+
+	var id = $('#iddelete-restaurant').val();
+
+  $.ajax({
+    url: "admin/controllers/delete_restaurants.php",
+    method: "POST",
+    data: {id : id},
+  }).done((e) => {
+    
+    $("#item-" + id).remove();
+    $('#deleteModal').modal("hide");
   });
+});
+
+/************************** ACTUALIZAR RESTAURANTE POR ID **************************/
+$(document).on('click', '#btnupdate-restaurant', function(e){
+  e.preventDefault();
+  
+  var formdata = new FormData();
+  var filelength = $('.images-update')[0].files.length;
+  for (var i = 0;i < filelength; i ++) {
+    formdata.append("imagen", $('.images-update')[0].files[i]);
+  }
+
+  formdata.append("name", $('#name-update').val());
+  formdata.append("address", $('#address-update').val());
+  formdata.append("telephone", $('#telephone-update').val());
+  formdata.append("id", $('#idupdate-restaurant').val());
+
+  console.log(formdata);
+
+  $.ajax({
+    url: "admin/controllers/update_restaurants.php",
+    method: "POST",
+    data: formdata,
+    contentType: false,
+    cache: false,
+    processData: false
+  }).done((res) => {
+    console.log(e);
+  });
+
 });

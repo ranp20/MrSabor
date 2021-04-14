@@ -25,7 +25,7 @@
 			<div class="main__cont--content">
 				<div class="main__cont--content__addtitle">
 					<h2 class="main__cont--content__addtitle--title">RESTAURANTES</h2>
-					<button type="button" href="#" id="add-restaurant" class="main__cont--content__addtitle--btn-add" data-toggle="modal" data-target="#exampleModal"><span class="main__cont--content__addtitle--btn-add__hidden">Agregar&nbsp;</span>+</button>
+					<button type="button" href="#" id="add-restaurant" class="main__cont--content__addtitle--btn-add" data-toggle="modal" data-target="#addrestaurantModal"><span class="main__cont--content__addtitle--btn-add__hidden">Agregar&nbsp;</span>+</button>
 				</div>
 				<table id="tbl_restaurants" class="main__cont--content__list-restaurants">
 					<thead>
@@ -44,7 +44,7 @@
 					</tbody>
 				</table>
 				<!-- MODAL - AGREGAR NUEVO RESTAURANTE -->
-				<div class="modal fade bootstrapmodal-custom" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+				<div class="modal fade bootstrapmodal-custom" id="addrestaurantModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
 				  <div class="modal-dialog" role="document">
 				    <div class="modal-content">
 				      <div class="modal-header">
@@ -99,22 +99,23 @@
 				      <div class="modal-body cont-total-update-items">
 				      	<div class="cont-modalbootstrapupdate">
 					        <form action="" id="form-update-restaurant" method="POST" class="cont-modalbootstrapupdate__form" autocomplete="false" enctype="multipart/form-data">
+					        	<input type="hidden" id="idupdate-restaurant">
 					        	<div class="cont-modalbootstrapupdate__form--control">
 					        		<label for="name-update" class="cont-modalbootstrapupdate__form--control__label complete">Nombre del restaurante</label>
-					        		<input id="name-update" class="cont-modalbootstrapupdate__form--control__input" name="name-update" type="text" required>
+					        		<input id="name-update" class="cont-modalbootstrapupdate__form--control__input" name="name-update" type="text">
 					        	</div>
 					        	<div class="cont-modalbootstrapupdate__form--control">
 					        		<label for="address-update" class="cont-modalbootstrapupdate__form--control__label complete">Dirección del restaurante</label>
-					        		<input id="address-update" class="cont-modalbootstrapupdate__form--control__input" name="address-update" type="text" required>
+					        		<input id="address-update" class="cont-modalbootstrapupdate__form--control__input" name="address-update" type="text">
 					        	</div>
 					        	<div class="cont-modalbootstrapupdate__form--control">
 					        		<label for="imagen">Foto del restaurante</label>
-					        		<a href="#" class="cont-modalbootstrapupdate__form--control__linkphoto" target="_blank">(Ver Imagen)</a>
-					        		<input id="images-update" class="images-update" name="imagen[]" type="file" accept="img/*" required>
+					        		<a href="#" id="photo-update" class="cont-modalbootstrapupdate__form--control__linkphoto" target="_blank">(Ver Imagen)</a>
+					        		<input id="images" class="images-update" name="imagen[]" type="file" accept="img/*">
 					        	</div>
 					        	<div class="cont-modalbootstrapupdate__form--control">
 					        		<label for="telephone-update" class="cont-modalbootstrapupdate__form--control__label complete">Teléfono del restaurante</label>
-					        		<input id="telephone-update" class="cont-modalbootstrapupdate__form--control__input" name="telephone-update" type="text" required maxlength="9" minlength="9">
+					        		<input id="telephone-update" class="cont-modalbootstrapupdate__form--control__input" name="telephone-update" type="text" maxlength="9" minlength="9">
 					        	</div>
 					        	<div class="cont-modalbootstrapupdate__form--control">
 					        		<div class="cont-modalbootstrapupdate__form--control__continputs">
@@ -131,7 +132,7 @@
 					        	</div>
 							      <div class="cont-modalbootstrapupdate__footer">
 							        <button type="button" class="cont-modalbootstrapupdate__footer--btncancel" data-dismiss="modal">CANCELAR</button>
-							        <button type="submit" class="cont-modalbootstrapupdate__footer--btnadd" id="btnupdate-restaurant">GUARDAR</button>
+							        <button type="submit" class="cont-modalbootstrapupdate__footer--btnupdate" id="btnupdate-restaurant">GUARDAR</button>
 							      </div>
 					        </form>
 				      	</div>
@@ -140,6 +141,32 @@
 				  </div>
 				</div>
 				<!-- MODAL - EDITAR NUEVO RESTAURANTE -->
+				<!-- MODAL - ELIMINAR RESTAURANTE -->
+				<div class="modal fade bootstrapmodal-custom" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+				  <div class="modal-dialog" role="document">
+				    <div class="modal-content">
+				      <div class="modal-header">
+				        <h5 class="modal-title" id="update-modal-label">ELIMINAR RESTAURANTE</h5>
+				        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+				          <span aria-hidden="true">&times;</span>
+				        </button>
+				      </div>
+				      <div class="modal-body cont-total-update-items">
+					      <h2 class="text-message-modalAlt">¿Seguro que desea eliminar este registro?</h2>
+				      	<div class="cont-modalbootstrapupdate">
+					        <form action="" id="form-update-restaurant" method="POST" class="cont-modalbootstrapupdate__form" autocomplete="false" enctype="multipart/form-data">
+					        	<input type="hidden" id="iddelete-restaurant">
+							      <div class="cont-modalbootstrapupdate__footer">
+							        <button type="button" class="cont-modalbootstrapupdate__footer--btncancel" data-dismiss="modal">CANCELAR</button>
+							        <button type="submit" class="cont-modalbootstrapupdate__footer--btndelete" id="btndelete-restaurant">ELIMINAR</button>
+							      </div>
+					        </form>
+				      	</div>
+				      </div>
+				    </div>
+				  </div>
+				</div>
+				<!-- MODAL - ELIMINAR RESTAURANTE -->
 			</div>
 		</div>
 	</main>

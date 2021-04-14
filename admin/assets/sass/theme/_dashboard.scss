@@ -119,16 +119,37 @@
 		}
 
 		&--content{
-
+			overflow-x: auto;
 			/****************** STYLES INTO TABLES ****************/
 			&__list-restaurants{
 				width: 100%;
+				border-collapse: collapse;
+
+				thead{
+					tr{
+						th{
+							padding: 0 0.5rem;
+						}
+					}
+				}
 				tbody{
 					tr{
+
+						&:nth-child(2n+1){
+							background-color: $bgc-th-table;
+						}
+
 						td{
+
+							&:first-child{
+								padding: 0 .5rem;
+							}
+
 							font-size: 0.9rem;
 							&.cont-img-restaurant{
 								display: flex;
+								align-items: center;
+								justify-content: center;
 								padding: 0;
 								margin-left: auto;
 								margin-right: auto;
@@ -139,8 +160,8 @@
 									display: flex;
 									margin-left: auto;
 									margin-right: auto;
-									width: 120px;
-									height: 85px;
+									width: auto;
+									height: auto;
 
 									img{
 										display: flex;
@@ -169,13 +190,13 @@
 
 							&.cont-btn-update{
 								a{
-									background-color: blue;
+									background-color: $btn-color-blue;
 								}
 							}
 
 							&.cont-btn-delete{
 								a{
-									background-color: red;
+									background-color: $btn-color-red;
 								}
 							}
 						}
@@ -202,7 +223,7 @@
 
 				&--btn-add{
 					border: none;
-			    background-color: green;
+			    background-color: $btn-color-green;
 			    color: #fff;
 			    font-size: 1.2rem;
 			    padding: .8rem 1.32rem;
@@ -347,7 +368,7 @@
 						}
 
 						&--btncancel{
-					    background-color: #444;
+					    background-color: $btn-color-gray;
 						}
 
 						&--btnadd{
@@ -376,6 +397,12 @@
 			}
 
 			.modal-body{
+
+				.text-message-modalAlt{
+					font-size: 1.4rem;
+					margin-bottom: 1rem;
+				}
+
 				.cont-modalbootstrapupdate{
 					&__form{
 						&--control{
@@ -481,7 +508,7 @@
 						flex-wrap: wrap;
 
 						&--btncancel,
-						&--btnadd{
+						&--btnupdate{
 							border: none;
 					    padding: .4rem 1rem;
 					    margin-left: .5rem;
@@ -499,11 +526,77 @@
 						}
 
 						&--btncancel{
-					    background-color: #444;
+					    background-color: $btn-color-gray;
 						}
 
-						&--btnadd{
-					    background-color: royalblue;
+						&--btnupdate{
+					    background-color: $btn-color-blue;
+						}
+					}
+				}	
+			}
+		}
+	}
+}
+
+/* MODAL BOOTSTRAP - CONFIGURATIONS DELETE ITEMS*/
+.bootstrapmodal-custom{
+	.modal-dialog{
+		.modal-content{
+			.modal-header{
+				.modal-title{
+					font-weight: bold;
+					line-height: 1.2 !important;
+				}
+				.close{
+
+				}
+			}
+
+			.modal-body{
+
+				.text-message-modalAlt{
+					font-size: 1.4rem;
+					margin-bottom: 2rem;
+				}
+
+				.cont-modalbootstrapupdate{
+					&__form{
+						&--control{
+
+						}
+					}
+
+					&__footer{
+						display: flex;
+						align-items: center;
+						justify-content: flex-end;
+						flex-wrap: wrap;
+
+						&--btncancel,
+						&--btndelete{
+							border: none;
+					    padding: .4rem 1rem;
+					    margin-left: .5rem;
+					    color: #fff;
+					    border-radius: 1.5rem;
+					    margin-bottom: 0.5rem;
+					    width: 100%;
+					    font-size: 0.9rem;
+					    font-weight: bold;
+
+					    /* TAMAÑO - MÓVIL(480px) */
+					    @media (min-width: 480px){
+					    	width: 38%;
+					    }
+						}
+
+						&--btncancel{
+					    background-color: $btn-color-gray;
+						}
+
+						&--btndelete{
+					    background-color: $btn-color-red;
 						}
 					}
 				}	

@@ -30,6 +30,9 @@
 								<li class="homepage__infotop__header--contmenu__menu--item">
 									<a href="#galeria" class="homepage__infotop__header--contmenu__menu--link">Galería</a>
 								</li>
+								<li class="homepage__infotop__header--contmenu__menu--item">
+									<a href="#contacto" class="homepage__infotop__header--contmenu__menu--link">Contacto</a>
+								</li>
 							</ul>
 						</div>
 					</div>	
@@ -209,7 +212,7 @@
 				</div>
 			</div>
 		</section>
-		<section class="contact-us container lg-full-screen" id="contact-us">
+		<section class="contact-us container lg-full-screen" id="contacto">
 			<div class="contact-us__content">
 				<div class="contact-us__content--title">
 					<h2>Suscríbete y recibe muchos beneficios</h2>
@@ -253,7 +256,7 @@
 				<div class="footer__content--cont">
 					<div class="footer__content--cont__logotype-text">
 						<img src="assets/img/logo/Logo_RESTAURANT_proyect-black.png" alt="">
-						<p>Mr Sabor es más que un restaurante, es el lugar donde nuestros clientes pueden sentir la misma calidez y atención, como si de casa se tratase.</p>
+						<p>Mr Sabor es más que un restaurante, es el lugar donde nuestros clientes pueden sentir la misma calidez y atención, como si estuviesen en casa.</p>
 					</div>
 					<div class="footer__content--cont__list">
 						<a href="#" class="footer__content--cont__list--social-media"><img src="assets/img/icons/icon-facebook.svg" alt=""></a>

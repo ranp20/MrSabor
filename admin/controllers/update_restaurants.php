@@ -3,21 +3,50 @@
 	require_once '../../php/class/connection.php';
 
 	class Update extends Connection{
-
 		function update_restaurant(){
 
-			print_r($_POST);
-			exit();
+			$arr = [
+				"name" => $_POST['name'],
+				"address" => $_POST['address'],
+				"imagen" => strtolower($_FILES['imagen']['name']),
+				"telephone" => $_POST['telephone'],
+				"id" => $_POST['id']
+			];
+
+			$arr_without_image = [
+				"name" => $_POST['name'],
+				"address" => $_POST['address'],
+				"telephone" => $_POST['telephone'],
+				"id" => $_POST['id']
+			];
 
 			try{
-				$sql = "UPDATE tbl_restaurants SET name = :name, address = :address, photo = :photo, telephone = :telephone WHERE id = :id";
-				$stm = $this->con->prepare($sql);
-				foreach ($stm as $key => $value) {
-					$stm->bindValue($key, $value);
-				}
-				$stm->execute();
+				$sql = "";
+				if(!isset($_FILES['imagen']['tmp_name'])){
+					$sql = "UPDATE tbl_restaurants SET name = :name, address = :address, telephone = :telephone WHERE id = :id";
+					
+					$stm = $this->con->prepare($sql);
+					foreach ($arr_without_image as $key => $value) {
+						$stm->bindValue($key, $value);
+					}
+					$stm->execute();
+					$data = $stm->fetchAll(PDO::FETCH_ASSOC);
+					$res = json_decode($data);
 
-				return $stm->fetchAll(PDO::FETCH_ASSOC);
+				}else{
+					$sql = "UPDATE tbl_restaurants SET name = :name, address = :address, photo = :imagen, telephone = :telephone WHERE id = :id";
+					
+					$stm = $this->con->prepare($sql);
+					foreach ($arr as $key => $value) {
+						$stm->bindValue($key, $value);
+					}
+					$stm->execute();
+					$data = $stm->fetchAll(PDO::FETCH_ASSOC);
+					$res = json_decode($data);
+				}
+
+				echo $res;
+
 			}catch(PDOException $e){
 				return $e->getMessage();
 			}

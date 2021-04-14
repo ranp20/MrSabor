@@ -5,4 +5,4 @@
 // $photo = $_POST['imagen[]'];
 // $telephone = $_POST['telephone-update'];
 
-// echo $name . "\n" . $address . "\n" . $photo
+// echo $name . "\n" . $address . "\n" . $photo . "\n" . $telephone;

@@ -388,17 +388,30 @@ img {
   }
 }
 .main__cont--content {
+  overflow-x: auto;
   /****************** STYLES INTO TABLES ****************/
   /********************* STYLES INTO TOP HEADERS ***********************/
 }
 .main__cont--content__list-restaurants {
   width: 100%;
+  border-collapse: collapse;
+}
+.main__cont--content__list-restaurants thead tr th {
+  padding: 0 0.5rem;
+}
+.main__cont--content__list-restaurants tbody tr:nth-child(2n+1) {
+  background-color: #F2F2F2;
 }
 .main__cont--content__list-restaurants tbody tr td {
   font-size: 0.9rem;
 }
+.main__cont--content__list-restaurants tbody tr td:first-child {
+  padding: 0 0.5rem;
+}
 .main__cont--content__list-restaurants tbody tr td.cont-img-restaurant {
   display: flex;
+  align-items: center;
+  justify-content: center;
   padding: 0;
   margin-left: auto;
   margin-right: auto;
@@ -409,8 +422,8 @@ img {
   display: flex;
   margin-left: auto;
   margin-right: auto;
-  width: 120px;
-  height: 85px;
+  width: auto;
+  height: auto;
 }
 .main__cont--content__list-restaurants tbody tr td.cont-img-restaurant a img {
   display: flex;
@@ -433,10 +446,10 @@ img {
   opacity: 0.6;
 }
 .main__cont--content__list-restaurants tbody tr td.cont-btn-update a {
-  background-color: blue;
+  background-color: #0D6EFD;
 }
 .main__cont--content__list-restaurants tbody tr td.cont-btn-delete a {
-  background-color: red;
+  background-color: #DC3545;
 }
 .main__cont--content__addtitle {
   display: flex;
@@ -455,7 +468,7 @@ img {
 }
 .main__cont--content__addtitle--btn-add {
   border: none;
-  background-color: green;
+  background-color: #198754;
   color: #fff;
   font-size: 1.2rem;
   padding: 0.8rem 1.32rem;
@@ -573,7 +586,7 @@ img {
   }
 }
 .bootstrapmodal-custom .modal-dialog .modal-content .modal-body .cont-modalbootstrap__footer--btncancel {
-  background-color: #444;
+  background-color: #6C757D;
 }
 .bootstrapmodal-custom .modal-dialog .modal-content .modal-body .cont-modalbootstrap__footer--btnadd {
   background-color: royalblue;
@@ -583,6 +596,10 @@ img {
 .bootstrapmodal-custom .modal-dialog .modal-content .modal-header .modal-title {
   font-weight: bold;
   line-height: 1.2 !important;
+}
+.bootstrapmodal-custom .modal-dialog .modal-content .modal-body .text-message-modalAlt {
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
 }
 .bootstrapmodal-custom .modal-dialog .modal-content .modal-body .cont-modalbootstrapupdate__form--control {
   display: flex;
@@ -671,7 +688,7 @@ img {
   justify-content: flex-end;
   flex-wrap: wrap;
 }
-.bootstrapmodal-custom .modal-dialog .modal-content .modal-body .cont-modalbootstrapupdate__footer--btncancel, .bootstrapmodal-custom .modal-dialog .modal-content .modal-body .cont-modalbootstrapupdate__footer--btnadd {
+.bootstrapmodal-custom .modal-dialog .modal-content .modal-body .cont-modalbootstrapupdate__footer--btncancel, .bootstrapmodal-custom .modal-dialog .modal-content .modal-body .cont-modalbootstrapupdate__footer--btnupdate {
   border: none;
   padding: 0.4rem 1rem;
   margin-left: 0.5rem;
@@ -684,15 +701,54 @@ img {
   /* TAMAÑO - MÓVIL(480px) */
 }
 @media (min-width: 480px) {
-  .bootstrapmodal-custom .modal-dialog .modal-content .modal-body .cont-modalbootstrapupdate__footer--btncancel, .bootstrapmodal-custom .modal-dialog .modal-content .modal-body .cont-modalbootstrapupdate__footer--btnadd {
+  .bootstrapmodal-custom .modal-dialog .modal-content .modal-body .cont-modalbootstrapupdate__footer--btncancel, .bootstrapmodal-custom .modal-dialog .modal-content .modal-body .cont-modalbootstrapupdate__footer--btnupdate {
     width: 38%;
   }
 }
 .bootstrapmodal-custom .modal-dialog .modal-content .modal-body .cont-modalbootstrapupdate__footer--btncancel {
-  background-color: #444;
+  background-color: #6C757D;
 }
-.bootstrapmodal-custom .modal-dialog .modal-content .modal-body .cont-modalbootstrapupdate__footer--btnadd {
-  background-color: royalblue;
+.bootstrapmodal-custom .modal-dialog .modal-content .modal-body .cont-modalbootstrapupdate__footer--btnupdate {
+  background-color: #0D6EFD;
+}
+
+/* MODAL BOOTSTRAP - CONFIGURATIONS DELETE ITEMS*/
+.bootstrapmodal-custom .modal-dialog .modal-content .modal-header .modal-title {
+  font-weight: bold;
+  line-height: 1.2 !important;
+}
+.bootstrapmodal-custom .modal-dialog .modal-content .modal-body .text-message-modalAlt {
+  font-size: 1.4rem;
+  margin-bottom: 2rem;
+}
+.bootstrapmodal-custom .modal-dialog .modal-content .modal-body .cont-modalbootstrapupdate__footer {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+}
+.bootstrapmodal-custom .modal-dialog .modal-content .modal-body .cont-modalbootstrapupdate__footer--btncancel, .bootstrapmodal-custom .modal-dialog .modal-content .modal-body .cont-modalbootstrapupdate__footer--btndelete {
+  border: none;
+  padding: 0.4rem 1rem;
+  margin-left: 0.5rem;
+  color: #fff;
+  border-radius: 1.5rem;
+  margin-bottom: 0.5rem;
+  width: 100%;
+  font-size: 0.9rem;
+  font-weight: bold;
+  /* TAMAÑO - MÓVIL(480px) */
+}
+@media (min-width: 480px) {
+  .bootstrapmodal-custom .modal-dialog .modal-content .modal-body .cont-modalbootstrapupdate__footer--btncancel, .bootstrapmodal-custom .modal-dialog .modal-content .modal-body .cont-modalbootstrapupdate__footer--btndelete {
+    width: 38%;
+  }
+}
+.bootstrapmodal-custom .modal-dialog .modal-content .modal-body .cont-modalbootstrapupdate__footer--btncancel {
+  background-color: #6C757D;
+}
+.bootstrapmodal-custom .modal-dialog .modal-content .modal-body .cont-modalbootstrapupdate__footer--btndelete {
+  background-color: #DC3545;
 }
 
 .body-login-adm {

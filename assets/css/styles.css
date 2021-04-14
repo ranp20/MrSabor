@@ -778,13 +778,12 @@ ul {
 .contact-number__content--cont__logo {
   width: 115px;
   height: 80px;
-  padding-right: 1rem;
   border-right: thin solid #fff;
 }
 .contact-number__content--cont__logo img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
   object-position: center;
 }
 .contact-number__content--cont__contacts {

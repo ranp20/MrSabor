@@ -6,7 +6,7 @@ class Restaurants extends Connection{
 
 	function list_restaurants(){
 		try{
-			$sql = "SELECT * FROM tbl_restaurants";
+			$sql = "SELECT * FROM tbl_restaurants ORDER BY id DESC";
 			$stm = $this->con->query($sql);
 			$stm->execute();
 			
