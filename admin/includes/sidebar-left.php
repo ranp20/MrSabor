@@ -35,7 +35,7 @@
 					<a href="restaurantes" class="main__sidebar-left--content__cont-items--menu__link">Restaurantes</a>
 				</li>
 				<li class="main__sidebar-left--content__cont-items--menu__item">
-					<a href="#" class="main__sidebar-left--content__cont-items--menu__link">Menús <!--<span>&#9660;</span>--></a>
+					<a href="menus" class="main__sidebar-left--content__cont-items--menu__link">Menús <!--<span>&#9660;</span>--></a>
 				</li>
 				<li class="main__sidebar-left--content__cont-items--menu__item">
 					<a href="#" class="main__sidebar-left--content__cont-items--menu__link">Ordenes o Pedidos</a>

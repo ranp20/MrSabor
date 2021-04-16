@@ -76,56 +76,10 @@ inputs_update.forEach( (input_update) => {
 });
 
 
-$(function(){
-	listRestaurant();
-});
-
 /************************** LISTAR RESTAURANTES **************************/
-function listRestaurant(){	  
-	
-	$.ajax({
-		url: "admin/controllers/list_restaurants.php",
-		method: "POST",
-		datatype: "JSON",
-		contentType: 'application/x-www-form-urlencoded;charset=UTF-8',
-	}).done( function (res) {
-
-		var response = JSON.parse(res);
-
-		$.each(response, function (i, v){
-
-			var img_route = "admin/assets/img/restaurants/"+v.photo;
-
-			$("#tbl_restaurants").append(
-        `<tr id="item-${v.id}">
-          <td>${v.id}</td>
-          <td>${v.name}</td>
-          <td>${v.address}</td>
-          <td class="cont-img-restaurant">
-          	<a href="${img_route}" target="_blank">
-          		<img loading="lazy" src="${img_route}">
-          	</a>
-          </td>
-          <td>${v.telephone}</td>
-          <td class="cont-btn-update">
-          	<a class="btn-update-restaurant" data-toggle="modal" data-target="#updateModal"  href="#" 
-              data-id="${v.id}"
-              data-name="${v.name}"
-              data-address="${v.address}"
-              data-photo="${img_route}"
-              data-telephone="${v.telephone}"
-              >Editar</a>
-          </td>
-          <td class="cont-btn-delete" id="cont-btn-delete">
-          	<a class="btn-delete-restaurant" data-toggle="modal" data-target="#deleteModal" href="#"
-              data-id="${v.id}"
-              >Eliminar</a>
-          </td>
-        </tr>`
-      );
-		});
-	});
-}
+$(function(){
+  listRestaurants();
+});
 
 /************************** AGREGAR RESTAURANTE **************************/
 $(document).on('click', '#btnadd-restaurant', function(e){
@@ -149,18 +103,64 @@ $(document).on('click', '#btnadd-restaurant', function(e){
     contentType: false,
     cache: false,
     processData: false,
-  }).done(function(res){
+  }).done((res) => {
 
-    if(res.length > 0){
-      console.log('Sí, insertó');
+    console.log(res);
+    $('#form-add-restaurant')[0].reset();
+    listRestaurants();
+    $('#addrestaurantModal').modal("hide");
 
-      $('#form-add-restaurant')[0].reset();
-      $('#addrestaurantModal').modal("hide");
-    }else{
-      console.log('Hubo un error al insertar');
-    }
   });
 });
+
+/************************** AGREGAR RESTAURANTES **************************/
+function listRestaurants(){ 
+  $.ajax({
+    url: "admin/controllers/list_restaurants.php",
+    method: "POST",
+    datatype: "JSON",
+    contentType: 'application/x-www-form-urlencoded;charset=UTF-8',
+  }).done( function (res) {
+
+    var response = JSON.parse(res);
+    var template = "";
+    response.forEach(e => {
+      
+      var img_route = "admin/assets/img/restaurants/"+e.photo;
+
+      template += `
+        <tr id="item-${e.id}">
+          <td>${e.id}</td>
+          <td>${e.name}</td>
+          <td>${e.address}</td>
+          <td class="cont-img-restaurant">
+            <a href="${img_route}" target="_blank">
+              <img loading="lazy" src="${img_route}">
+            </a>
+          </td>
+          <td>${e.telephone}</td>
+          <td class="cont-btn-update">
+            <a class="btn-update-restaurant" data-toggle="modal" data-target="#updateModal"  href="#" 
+              data-id="${e.id}"
+              data-name="${e.name}"
+              data-address="${e.address}"
+              data-photo="${img_route}"
+              data-telephone="${e.telephone}"
+              >Editar</a>
+          </td>
+          <td class="cont-btn-delete" id="cont-btn-delete">
+            <a class="btn-delete-restaurant" data-toggle="modal" data-target="#deleteModal" href="#"
+              data-id="${e.id}"
+              >Eliminar</a>
+          </td>
+        </tr>
+      `;
+    });
+
+    $("#tbl_restaurants").html(template);
+  });
+}
+
 
 /************************** LISTAR DATOS DEL RESTAURANTE EN EL MODAL**************************/
 $(document).on('click', '.btn-update-restaurant', function(e){
@@ -224,8 +224,6 @@ $(document).on('click', '#btnupdate-restaurant', function(e){
   formdata.append("telephone", $('#telephone-update').val());
   formdata.append("id", $('#idupdate-restaurant').val());
 
-  console.log(formdata);
-
   $.ajax({
     url: "admin/controllers/update_restaurants.php",
     method: "POST",
@@ -234,7 +232,8 @@ $(document).on('click', '#btnupdate-restaurant', function(e){
     cache: false,
     processData: false
   }).done((res) => {
-    console.log(e);
+    listRestaurants();
+    $('#updateModal').modal("hide");
   });
 
 });

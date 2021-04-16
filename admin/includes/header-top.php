@@ -37,6 +37,7 @@
 
 		const weekdays = ["Domingo","Lunes","Martes","Miércoles","Jueves","viernes","Sábado"];
 		const months = ["Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre"];
+
 		if(minutes < 10){
 			minutes = "0" + minutes;
 		}

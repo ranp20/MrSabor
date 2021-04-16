@@ -10,6 +10,7 @@ RewriteRule ^/?$ index.php
 RewriteRule ^dashboard?$ admin/dashboard.php
 RewriteRule ^productos?$ admin/products.php
 RewriteRule ^restaurantes?$ admin/restaurants.php
+RewriteRule ^menus?$ admin/menus.php
 #RewriteRule ^seleccionar-usuario?$ admin/select-user-register.php
 
 ############ ALL PAGES CLIENTS

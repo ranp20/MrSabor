@@ -123,29 +123,41 @@
 			/****************** STYLES INTO TABLES ****************/
 			&__list-restaurants{
 				width: 100%;
-				border-collapse: collapse;
+				border-collapse: collapse !important;
+				border: 1px solid $border-color-table;
 
 				thead{
 					tr{
+						border: 1px solid $border-color-table;
 						th{
-							padding: 0 0.5rem;
+							border: 1px solid $border-color-table;
+							border-top: 1px solid $border-color-table;
+							border-top-width: 0;
+							border-left-width: 0;
+							border-bottom-width: 0;
+							padding: 8px;
 						}
 					}
 				}
 				tbody{
 					tr{
+						border: 1px solid $border-color-table;
+
+						&:first-child{
+							border-top: 2px solid $border-color-table;							
+						}
 
 						&:nth-child(2n+1){
 							background-color: $bgc-th-table;
 						}
 
 						td{
-
-							&:first-child{
-								padding: 0 .5rem;
-							}
-
 							font-size: 0.9rem;
+							border: 1px solid $border-color-table;
+							border-top: 1px solid $border-color-table;
+							border-bottom-width: 0;
+							padding: 8px;
+
 							&.cont-img-restaurant{
 								display: flex;
 								align-items: center;
@@ -264,9 +276,7 @@
 }
 
 /* DATATABLES - MINIMUM DEVICE WIDTH */
-#tbl_restaurants_wrapper{
-	overflow-x: auto;
-}
+
 
 /* MODAL BOOTSTRAP - CONFIGURATIONS ADD ITEMS*/
 .bootstrapmodal-custom{
@@ -290,6 +300,41 @@
 							flex-direction: column;
 							margin-bottom: 1.2rem;
 							position: relative;
+
+							&__continputs{
+								display: flex;
+								align-items: center;
+								justify-content: space-between;
+								margin-bottom: 0.5rem;
+								
+								&--controls{
+									display: flex;
+									flex-direction: column;
+									justify-content: flex-start;
+									width: 48%;
+
+
+									&__label{
+										margin: 0;
+										padding: 0;
+										font-size: 0.75rem;
+									}
+
+									&__input{
+										width: 100%;
+										border-top: none;
+										border-left: none;
+										border-right: none;
+										border-bottom: thin solid $border-bottom-input;
+										outline: none;
+										padding-bottom: 0.4rem;
+										padding-top: 0.4rem;
+										background-color: transparent;
+										font-size: 0.9rem;
+									}
+
+								}
+							}
 
 							&__maps{
 								width: 100%;
@@ -339,6 +384,10 @@
 								&.complete{
 									border-bottom: 1px solid green;
 								}
+							}
+
+							&__input-photo{
+								border-bottom: thin solid $border-bottom-input; 
 							}
 						}
 					}
@@ -442,6 +491,7 @@
 										background-color: transparent;
 										font-size: 0.9rem;
 									}
+
 								}
 							}
 
@@ -497,6 +547,10 @@
 								&.complete{
 									border-bottom: 1px solid green;
 								}
+							}
+
+							&__input-photo{
+								border-bottom: thin solid $border-bottom-input; 
 							}
 						}
 					}

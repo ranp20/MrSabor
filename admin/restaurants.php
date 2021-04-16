@@ -27,7 +27,7 @@
 					<h2 class="main__cont--content__addtitle--title">RESTAURANTES</h2>
 					<button type="button" href="#" id="add-restaurant" class="main__cont--content__addtitle--btn-add" data-toggle="modal" data-target="#addrestaurantModal"><span class="main__cont--content__addtitle--btn-add__hidden">Agregar&nbsp;</span>+</button>
 				</div>
-				<table id="tbl_restaurants" class="main__cont--content__list-restaurants">
+				<table class="main__cont--content__list-restaurants">
 					<thead>
 						<tr>
 							<th>ID</th>
@@ -39,7 +39,7 @@
 							<th></th>
 						</tr>
 					</thead>
-					<tbody>
+					<tbody id="tbl_restaurants">
 							
 					</tbody>
 				</table>
@@ -66,13 +66,23 @@
 					        	</div>
 					        	<div class="cont-modalbootstrap__form--control">
 					        		<label for="imagen">Foto del restaurante</label>
-					        		<input id="images" class="images" name="imagen[]" type="file" accept="img/*" required>
+					        		<input id="images" class="cont-modalbootstrap__form--control__input-photo images" name="imagen[]" type="file" accept="img/*" required>
 					        	</div>
 					        	<div class="cont-modalbootstrap__form--control">
 					        		<label for="telephone" class="cont-modalbootstrap__form--control__label">Teléfono del restaurante</label>
 					        		<input id="telephone" class="cont-modalbootstrap__form--control__input" name="telephone" type="text" required maxlength="9" minlength="9">
 					        	</div>
 					        	<div class="cont-modalbootstrap__form--control">
+					        		<div class="cont-modalbootstrap__form--control__continputs">
+					        			<div class="cont-modalbootstrap__form--control__continputs--controls">
+					        				<label class="cont-modalbootstrap__form--control__continputs--controls__label" for="LatPoint">Latitud:</label>
+					        				<input id="LatPointadd" type="text" class="cont-modalbootstrap__form--control__continputs--controls__input" readonly>
+					        			</div>
+					        			<div class="cont-modalbootstrap__form--control__continputs--controls">
+					        				<label class="cont-modalbootstrap__form--control__continputs--controls__label" for="LongPoint">Longitud:</label>
+					        				<input id="LongPointadd" type="text" class="cont-modalbootstrap__form--control__continputs--controls__input" readonly>
+					        			</div>
+					        		</div>
 					        		<div class="cont-modalbootstrap__form--control__maps" id="maps-add-restaurant"></div>
 					        	</div>
 							      <div class="cont-modalbootstrap__footer">
@@ -111,7 +121,7 @@
 					        	<div class="cont-modalbootstrapupdate__form--control">
 					        		<label for="imagen">Foto del restaurante</label>
 					        		<a href="#" id="photo-update" class="cont-modalbootstrapupdate__form--control__linkphoto" target="_blank">(Ver Imagen)</a>
-					        		<input id="images" class="images-update" name="imagen[]" type="file" accept="img/*">
+					        		<input id="images" class="cont-modalbootstrap__form--control__input-photo images-update" name="imagen[]" type="file" accept="img/*">
 					        	</div>
 					        	<div class="cont-modalbootstrapupdate__form--control">
 					        		<label for="telephone-update" class="cont-modalbootstrapupdate__form--control__label complete">Teléfono del restaurante</label>

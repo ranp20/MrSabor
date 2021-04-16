@@ -394,19 +394,35 @@ img {
 }
 .main__cont--content__list-restaurants {
   width: 100%;
-  border-collapse: collapse;
+  border-collapse: collapse !important;
+  border: 1px solid #dee2e6;
+}
+.main__cont--content__list-restaurants thead tr {
+  border: 1px solid #dee2e6;
 }
 .main__cont--content__list-restaurants thead tr th {
-  padding: 0 0.5rem;
+  border: 1px solid #dee2e6;
+  border-top: 1px solid #dee2e6;
+  border-top-width: 0;
+  border-left-width: 0;
+  border-bottom-width: 0;
+  padding: 8px;
+}
+.main__cont--content__list-restaurants tbody tr {
+  border: 1px solid #dee2e6;
+}
+.main__cont--content__list-restaurants tbody tr:first-child {
+  border-top: 2px solid #dee2e6;
 }
 .main__cont--content__list-restaurants tbody tr:nth-child(2n+1) {
   background-color: #F2F2F2;
 }
 .main__cont--content__list-restaurants tbody tr td {
   font-size: 0.9rem;
-}
-.main__cont--content__list-restaurants tbody tr td:first-child {
-  padding: 0 0.5rem;
+  border: 1px solid #dee2e6;
+  border-top: 1px solid #dee2e6;
+  border-bottom-width: 0;
+  padding: 8px;
 }
 .main__cont--content__list-restaurants tbody tr td.cont-img-restaurant {
   display: flex;
@@ -504,10 +520,6 @@ img {
 }
 
 /* DATATABLES - MINIMUM DEVICE WIDTH */
-#tbl_restaurants_wrapper {
-  overflow-x: auto;
-}
-
 /* MODAL BOOTSTRAP - CONFIGURATIONS ADD ITEMS*/
 .bootstrapmodal-custom .modal-dialog .modal-content .modal-header .modal-title {
   font-weight: bold;
@@ -518,6 +530,35 @@ img {
   flex-direction: column;
   margin-bottom: 1.2rem;
   position: relative;
+}
+.bootstrapmodal-custom .modal-dialog .modal-content .modal-body .cont-modalbootstrap__form--control__continputs {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+}
+.bootstrapmodal-custom .modal-dialog .modal-content .modal-body .cont-modalbootstrap__form--control__continputs--controls {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  width: 48%;
+}
+.bootstrapmodal-custom .modal-dialog .modal-content .modal-body .cont-modalbootstrap__form--control__continputs--controls__label {
+  margin: 0;
+  padding: 0;
+  font-size: 0.75rem;
+}
+.bootstrapmodal-custom .modal-dialog .modal-content .modal-body .cont-modalbootstrap__form--control__continputs--controls__input {
+  width: 100%;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-bottom: thin solid #767676;
+  outline: none;
+  padding-bottom: 0.4rem;
+  padding-top: 0.4rem;
+  background-color: transparent;
+  font-size: 0.9rem;
 }
 .bootstrapmodal-custom .modal-dialog .modal-content .modal-body .cont-modalbootstrap__form--control__maps {
   width: 100%;
@@ -561,6 +602,9 @@ img {
 }
 .bootstrapmodal-custom .modal-dialog .modal-content .modal-body .cont-modalbootstrap__form--control__input.complete {
   border-bottom: 1px solid green;
+}
+.bootstrapmodal-custom .modal-dialog .modal-content .modal-body .cont-modalbootstrap__form--control__input-photo {
+  border-bottom: thin solid #767676;
 }
 .bootstrapmodal-custom .modal-dialog .modal-content .modal-body .cont-modalbootstrap__footer {
   display: flex;
@@ -681,6 +725,9 @@ img {
 }
 .bootstrapmodal-custom .modal-dialog .modal-content .modal-body .cont-modalbootstrapupdate__form--control__input.complete {
   border-bottom: 1px solid green;
+}
+.bootstrapmodal-custom .modal-dialog .modal-content .modal-body .cont-modalbootstrapupdate__form--control__input-photo {
+  border-bottom: thin solid #767676;
 }
 .bootstrapmodal-custom .modal-dialog .modal-content .modal-body .cont-modalbootstrapupdate__footer {
   display: flex;
