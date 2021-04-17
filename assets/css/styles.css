@@ -7,6 +7,7 @@
 /* VARIABLES SECUNDARIAS */
 /* DEFINIR ANCHO MÁXIMO */
 /* CREAR UN BURGERNAV CON CONTORNO */
+/* BORDER BOTTOM TITLES */
 /* RESETEO Y CONFIGURACIÓN GENERAL DE ESTILOS */
 @import url("https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700;800&display=swap");
 * {
@@ -171,7 +172,7 @@ ul {
 /************************** HOMEPAGE **************************/
 .homepage__background {
   width: 100%;
-  min-height: 100vh;
+  min-height: auto;
   height: 100%;
 }
 .homepage__background img {
@@ -254,14 +255,12 @@ ul {
 /************************** HEROIAMGE **************************/
 .heroimage {
   width: 100%;
-  min-height: 100vh;
-  height: 100%;
+  height: auto;
   position: relative;
 }
 .heroimage__background {
   width: 100%;
-  min-height: 100vh;
-  height: 100%;
+  height: auto;
   position: relative;
   display: flex;
   align-items: center;
@@ -269,8 +268,7 @@ ul {
 }
 .heroimage__background--image {
   width: 100%;
-  min-height: 100vh;
-  height: 10%;
+  height: 650px;
   object-fit: cover;
   object-position: center;
 }
@@ -330,7 +328,7 @@ ul {
 
 /************************** CAEGORIES FOOD **************************/
 .categories-food__content {
-  padding: 1.5rem 0;
+  padding: 2rem 0;
   /************************** TITLE CATEGORIES **************************/
   /************************** CATEGORIES **************************/
 }
@@ -351,7 +349,14 @@ ul {
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: repeat(3, 1fr);
-  grid-row-gap: 1rem;
+  grid-row-gap: 1.5rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+@media (min-width: 300px) {
+  .categories-food__content--menu {
+    width: 90%;
+  }
 }
 .categories-food__content--menu__item {
   border-radius: 1rem;
@@ -843,10 +848,29 @@ ul {
   color: #fff;
 }
 .footer__content--cont__title {
-  margin-bottom: 0.5rem;
+  margin-bottom: 1.5rem;
   font-size: 1.3rem;
 }
+.footer__content--cont__title {
+  position: relative;
+}
+.footer__content--cont__title:after {
+  content: "";
+  position: absolute;
+  background-color: #E4584B;
+  display: block;
+  width: 80px;
+  height: 2px;
+  bottom: -12px;
+}
+.footer__content--cont__menu {
+  padding: 0;
+}
 .footer__content--cont__menu--item {
+  line-height: 2.5;
+  padding: 0 0 0 40px;
+}
+.footer__content--cont__menu--icon-item {
   line-height: 2.5;
 }
 .footer__content--cont__menu--link {
@@ -858,8 +882,12 @@ ul {
 .footer__content--cont__menu--link:hover {
   color: #fff;
 }
+.footer__content--cont__menu--link img {
+  width: 20px;
+  height: 20px;
+}
 .footer__content--cont__menu--link span {
-  margin-left: 0.8rem;
+  margin-left: 1rem;
 }
 .footer__content--cont__list {
   padding-top: 0.5rem;
@@ -870,8 +898,8 @@ ul {
   justify-content: space-around;
 }
 .footer__content--cont__list--social-media, .footer__content--cont__list--social-media img {
-  width: 40px;
-  height: 40px;
+  width: 30px;
+  height: 30px;
 }
 .footer__bottom {
   padding: 1rem 0;

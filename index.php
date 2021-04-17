@@ -282,19 +282,19 @@
 				<div class="footer__content--cont">
 					<h2 class="footer__content--cont__title">NOSOTROS</h2>
 					<ul class="footer__content--cont__menu">
-						<li class="footer__content--cont__menu--item">
+						<li class="footer__content--cont__menu--icon-item">
 							<a href="#" class="footer__content--cont__menu--link">
 								<img src="assets/img/icons/icon-phone.svg" alt="">
 								<span>Contáctanos</span>
 							</a>
 						</li>
-						<li class="footer__content--cont__menu--item">
+						<li class="footer__content--cont__menu--icon-item">
 							<a href="#" class="footer__content--cont__menu--link">
 								<img src="assets/img/icons/icons-gallery-pictures.svg" alt="">
 								<span>Galería</span>
 							</a>
 						</li>
-						<li class="footer__content--cont__menu--item">
+						<li class="footer__content--cont__menu--icon-item">
 							<a href="#" class="footer__content--cont__menu--link">
 								<img src="assets/img/icons/icons-eye.svg" alt="">
 								<span>Política de privacidad</span>

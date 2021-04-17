@@ -71,7 +71,7 @@
 .homepage{
 	&__background{
 		width: 100%;
-		min-height: 100vh;
+		min-height: auto;
 		height: 100%;
 
 		img{
@@ -163,22 +163,19 @@
 /************************** HEROIAMGE **************************/
 .heroimage{
 	width: 100%;
-	min-height: 100vh;
-	height: 100%;
+	height: auto;
 	position: relative;
 
 	&__background{
 		width: 100%;
-		min-height: 100vh;
-		height: 100%;
+		height: auto;
 		position: relative;
 		display: flex;
 		align-items: center;
 		justify-content: center;
 		&--image{
 			width: 100%;
-			min-height: 100vh;
-			height: 10%;
+			height: 650px;
 			object-fit: cover;
 			object-position: center;
 		}
@@ -251,7 +248,7 @@
 /************************** CAEGORIES FOOD **************************/
 .categories-food{
 	&__content{
-		padding: 1.5rem 0;
+		padding: 2rem 0;
 
 		/************************** TITLE CATEGORIES **************************/
 		&--conttitle{
@@ -278,7 +275,15 @@
 			display: grid;
 			grid-template-columns: 1fr;
 			grid-template-rows: repeat(3, 1fr);
-			grid-row-gap: 1rem;
+			grid-row-gap: 1.5rem;
+			margin-left: auto;
+			margin-right: auto;
+
+			@media (min-width: 300px){
+				width: 90%;
+			}
+
+
 			&__item{
 				border-radius: 1rem;
 		    box-shadow: 2px 3px 10px 1px rgb(0 0 0 / 20%);
@@ -840,11 +845,22 @@
 			}
 
 			&__title{
-				margin-bottom: 0.5rem;
+				margin-bottom: 1.5rem;
 				font-size: 1.3rem;
+
+
+				@include border-bottom($border-bottom-color);
 			}
+
 			&__menu{
+				padding: 0;
+
 				&--item{
+					line-height: 2.5;
+					padding: 0 0 0 40px;
+				}
+
+				&--icon-item{
 					line-height: 2.5;
 				}
 
@@ -859,10 +875,12 @@
 					}
 
 					img{
+						width: 20px;
+						height: 20px;
 					}
 
 					span{
-						margin-left: 0.8rem;
+						margin-left: 1rem;
 					}
 				}
 			}
@@ -875,8 +893,8 @@
 				align-items: center;
 				justify-content: space-around;
 				&--social-media{
-					width: 40px;
-					height: 40px;
+					width: 30px;
+					height: 30px;
 					img{
 						@extend .footer__content--cont__list--social-media;
 					}

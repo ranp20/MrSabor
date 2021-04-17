@@ -33,3 +33,20 @@
 		border-radius: 2px;
 	}
 }
+
+/* BORDER BOTTOM TITLES */
+@mixin border-bottom($color){
+	&{
+		position: relative;
+	}
+
+	&:after{
+		content: "";
+		position: absolute;
+		background-color: $color;
+		display: block;
+		width: 80px;
+		height: 2px;
+		bottom: -12px;
+	}
+}
