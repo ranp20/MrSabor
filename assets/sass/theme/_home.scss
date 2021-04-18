@@ -207,7 +207,7 @@
 	&--menu{
 		display: flex;
 		align-items: center;
-		overflow-x: scroll;
+		overflow: hidden;
 		width: 300%;
 		margin-left: -100%;
 		&__item{
