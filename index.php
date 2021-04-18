@@ -105,7 +105,7 @@
 						<button class="user-testimonials__content--testimonials__cont-btns-testimonialsuser--left" id="slidebtnLeft">&#8249;</button>
 						<button class="user-testimonials__content--testimonials__cont-btns-testimonialsuser--right" id="slidebtnRight">&#8250;</button>
 					</div>
-					<ul class="user-testimonials__content--testimonials__menu">
+					<ul class="user-testimonials__content--testimonials__menu" id="sliderTestimonials">
 						<li class="user-testimonials__content--testimonials__menu--item">
 							<img src="assets/img/images/user-1.png" alt="">
 							<h3 class="user-testimonials__content--testimonials__menu--item__ratinguser">!EXCELLENT</h3>
@@ -119,7 +119,7 @@
 							<h4 class="user-testimonials__content--testimonials__menu--item__nameguser">NAME USER</h4>
 						</li>
 						<li class="user-testimonials__content--testimonials__menu--item">
-							<img src="assets/img/images/user-1.png" alt="">
+							<img src="assets/img/images/user-3.jpg" alt="">
 							<h3 class="user-testimonials__content--testimonials__menu--item__ratinguser">!EXCELLENT</h3>
 							<p class="user-testimonials__content--testimonials__menu--item__testimonialuser">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Commodi quam, veniam quasi laudantium, facilis voluptates est quia soluta odit vero, necessitatibus possimus dolorem quo ipsa molestiae et. Animi, vero, reprehenderit.</p>
 							<h4 class="user-testimonials__content--testimonials__menu--item__nameguser">NAME USER</h4>
@@ -139,7 +139,7 @@
 							<h2>~ PLATOS PRINCIPALES ~</h2>
 						</div>
 						<div class="our-menu__content--cont-our-menus__categmenu--meals">
-							<ul class="our-menu__content--cont-our-menus__categmenu--meals__menu container">
+							<ul class="our-menu__content--cont-our-menus__categmenu--meals__menu container" id="sliderMenus">
 								<li class="our-menu__content--cont-our-menus__categmenu--meals__menu--item">
 									<div class="our-menu__content--cont-our-menus__categmenu--meals__menu--item__bgcimage">
 										<img src="assets/img/images/comida_vegetariana.jpg" alt="">
@@ -194,20 +194,44 @@
 							<button class="gallery__content--gallery__slider--btns__left sliderleft_gallery">&#8249;</button>
 							<button class="gallery__content--gallery__slider--btns__right sliderright_gallery">&#8250;</button>
 						</div>
-						<div class="gallery__content--gallery__slider--photos">
-							<img src="assets/img/images/comida_vegetariana.jpg" alt="" class="gallery__content--gallery__slider--photos__image">
-							<img src="assets/img/images/comida_cárnica.jpeg" alt="" class="gallery__content--gallery__slider--photos__image">
-							<img src="assets/img/images/comida_rápida.jpg" alt="" class="gallery__content--gallery__slider--photos__image">
-							<img src="assets/img/images/comida_vegetariana.jpg" alt="" class="gallery__content--gallery__slider--photos__image">
-							<img src="assets/img/images/comida_vegetariana.jpg" alt="" class="gallery__content--gallery__slider--photos__image">
-							<img src="assets/img/images/comida_cárnica.jpeg" alt="" class="gallery__content--gallery__slider--photos__image">
-							<img src="assets/img/images/comida_rápida.jpg" alt="" class="gallery__content--gallery__slider--photos__image">
-							<img src="assets/img/images/comida_vegetariana.jpg" alt="" class="gallery__content--gallery__slider--photos__image">
-							<img src="assets/img/images/comida_vegetariana.jpg" alt="" class="gallery__content--gallery__slider--photos__image">
-							<img src="assets/img/images/comida_cárnica.jpeg" alt="" class="gallery__content--gallery__slider--photos__image">
-							<img src="assets/img/images/comida_rápida.jpg" alt="" class="gallery__content--gallery__slider--photos__image">
-							<img src="assets/img/images/comida_vegetariana.jpg" alt="" class="gallery__content--gallery__slider--photos__image">
-						</div>
+						<ul class="gallery__content--gallery__slider--photos" id="sliderGallery">
+							<li class="gallery__content--gallery__slider--photos__image">
+								<img src="assets/img/images/comida_vegetariana.jpg" alt="">
+							</li>
+							<li class="gallery__content--gallery__slider--photos__image">
+								<img src="assets/img/images/comida_cárnica.jpeg" alt="">
+							</li>
+							<li class="gallery__content--gallery__slider--photos__image">
+								<img src="assets/img/images/comida_rápida.jpg" alt="">
+							</li>
+							<li class="gallery__content--gallery__slider--photos__image">
+								<img src="assets/img/images/comida_vegetariana.jpg" alt="">
+							</li>
+							<li class="gallery__content--gallery__slider--photos__image">
+								<img src="assets/img/images/comida_cárnica.jpeg" alt="">
+							</li>
+							<li class="gallery__content--gallery__slider--photos__image">
+								<img src="assets/img/images/comida_rápida.jpg" alt="">
+							</li>
+							<li class="gallery__content--gallery__slider--photos__image">
+								<img src="assets/img/images/comida_vegetariana.jpg" alt="">
+							</li>
+							<li class="gallery__content--gallery__slider--photos__image">
+								<img src="assets/img/images/comida_cárnica.jpeg" alt="">
+							</li>
+							<li class="gallery__content--gallery__slider--photos__image">
+								<img src="assets/img/images/comida_rápida.jpg" alt="">
+							</li>
+							<li class="gallery__content--gallery__slider--photos__image">
+								<img src="assets/img/images/comida_vegetariana.jpg" alt="">
+							</li>
+							<li class="gallery__content--gallery__slider--photos__image">
+								<img src="assets/img/images/comida_cárnica.jpeg" alt="">
+							</li>
+							<li class="gallery__content--gallery__slider--photos__image">
+								<img src="assets/img/images/comida_rápida.jpg" alt="">
+							</li>
+						</ul>
 					</div>
 				</div>
 			</div>

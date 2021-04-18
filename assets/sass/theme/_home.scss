@@ -383,6 +383,7 @@
 
 		&--testimonials{
 			position: absolute;
+			overflow: hidden;
 
 			&__cont-btns-testimonialsuser{
 				width: 100%;
@@ -398,9 +399,10 @@
 				&--right{
 					font-size: 1.8rem;
 					font-weight: bold;
+					font-family: monospace;
 					border: none;
 					cursor: pointer;
-					background-color: rgba(255,60,0,0.5);
+					background-color: $border-bottom-color;
 					color: #fff;
 					padding: 1rem .8rem;
 					height: 100px;
@@ -417,11 +419,13 @@
 			&__menu{
 				display: flex;
 				align-items: stretch;
-				overflow-x: hidden;
+				overflow: hidden;
 				scroll-behavior: smooth;
+				width: 300%;
+				margin-left: -100%;
 				&--item{
 					background-color: #fff;
-			    min-width: 95%;
+			    width: 100%;
 			    padding: 1rem 1.5rem;
 			    margin-left: .5rem;
 			    margin-right: .5rem;
@@ -496,6 +500,7 @@
 			    position: relative;
 			    min-height: 280px;
 			    height: auto;
+			    overflow: hidden;
 
 					&__btns{
 						display: flex;
@@ -521,6 +526,7 @@
 					    align-items: center;
 					    justify-content: center;
 					    text-align: center;
+					    font-family: monospace;
 						}
 
 						&--left{
@@ -536,16 +542,18 @@
 						display: flex;
 						align-items: stretch;
 						justify-content: space-between;
-						overflow-x: hidden;
+						overflow: hidden;
 						scroll-behavior: smooth;
 						margin-bottom: 2rem;
+						margin-left: -100%;
+						width: 300%;
 						&--item{
-							min-width: 100%;
-							margin-left: 0;
-							margin-right: 0;
+							width: 100%;
+							margin-left: .5rem;
+							margin-right: .5rem;
 							&__bgcimage{
 								position: relative;
-						    width: 90%;
+						    width: 100%;
 						    height: 180px;
 						    margin-left: auto;
 						    margin-right: auto;
@@ -638,6 +646,11 @@
 
 			&__slider{
 				position: relative;
+				width: 100%;
+				margin-left: auto;
+				margin-right: auto;
+				overflow: hidden;
+				box-shadow: 0 0 0 9px #fff, 0 5px 15px 9px rgba(0,0,0,.4);
 				
 				&--btns{
 					position: absolute;
@@ -677,12 +690,21 @@
 
 				&--photos{
 					display: flex;
-					box-shadow: 0 0 0 9px #fff, 0 5px 15px 9px rgba(0,0,0,.4);
-					overflow-x: hidden;
+					overflow: hidden;
 					scroll-behavior: smooth;
+					width: 1200%;
+					height: 200px;
+					margin-left: -100%;
 					
 					&__image{
+						width: 100%;
 
+						img{
+							width: 100%;
+							height: 100%;
+							object-fit: cover;
+							object-position: center;
+						}
 					}
 				}
 			}

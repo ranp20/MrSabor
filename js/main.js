@@ -17,100 +17,118 @@
 
 	});
 
+	/*******************************************************************************************/
 	/************************** SLIDER MANUAL ARTESANAL - TESTIMONIOS **************************/
-	var container_testimonials = d.querySelector('.user-testimonials__content--testimonials__menu');
-	var btnLeft = d.querySelector('#slidebtnLeft');
-	var	btnRight = d.querySelector('#slidebtnRight');
+	/*******************************************************************************************/
+	const sliderTestimonials = d.querySelector('#sliderTestimonials');
+	let sliderTestimonialsItem = d.querySelectorAll('.user-testimonials__content--testimonials__menu--item');
+	let sliderTestimonialsLast = sliderTestimonialsItem[sliderTestimonialsItem.length -1];
+	const btnLeftTestimonials = d.querySelector('#slidebtnLeft');
+	const	btnRightTestimonials = d.querySelector('#slidebtnRight');
+	/************************** COLOCAR ÚLTIMA IMAGEN AL INICIO DEL SLIDER **************************/
+	sliderTestimonials.insertAdjacentElement('afterbegin', sliderTestimonialsLast);
 
-	btnLeft.addEventListener('click', e => {
-		container_testimonials.scrollLeft -= container_testimonials.offsetWidth;
-	})
+	function nextTestimonial(){
+		sliderTestimonialsFirst = d.querySelectorAll('.user-testimonials__content--testimonials__menu--item')[0];
+		sliderTestimonials.style.marginLeft = "-200%";
+		sliderTestimonials.style.transition = "all 0.5s";
+		setTimeout(function(){
+			sliderTestimonials.style.transition = "none";
+			sliderTestimonials.insertAdjacentElement('beforeend', sliderTestimonialsFirst);
+			sliderTestimonials.style.marginLeft = "-100%";
+		}, 500);
+	};
 
-	btnRight.addEventListener('click', e => {
-		container_testimonials.scrollLeft += container_testimonials.offsetWidth;
-	})
+	function beforeTestimonial(){
+		let sliderTestimonialsItem = d.querySelectorAll('.user-testimonials__content--testimonials__menu--item');
+		let sliderTestimonialsLast = sliderTestimonialsItem[sliderTestimonialsItem.length -1];
+		sliderTestimonials.style.marginLeft = "0";
+		sliderTestimonials.style.transition = "all 0.5s";
+		setTimeout(function(){
+			sliderTestimonials.style.transition = "none";
+			sliderTestimonials.insertAdjacentElement('afterbegin', sliderTestimonialsLast);
+			sliderTestimonials.style.marginLeft = "-100%";
+		}, 500);
+	};
 
+	btnRightTestimonials.addEventListener('click', function(){nextTestimonial();});
+	btnLeftTestimonials.addEventListener('click', function(){beforeTestimonial();});
+	/************************** SLIDER AUTOMÁTICO **************************/
+	setInterval(function(){
+		nextTestimonial();
+	}, 4000);
 
+	/**********************************************************************************************/
 	/************************** SLIDER MANUAL ARTESANAL - PLATOS EN MENU **************************/
-	var container_menus = d.querySelector('.our-menu__content--cont-our-menus__categmenu--meals__menu');
-	var btnLeft_menus = d.querySelector('.slidermenus-left');
-	var	btnRight_menus = d.querySelector('.slidermenus-right');
+	/**********************************************************************************************/
+	const sliderMenus = d.querySelector('#sliderMenus');
+	let sliderMenusItem = d.querySelectorAll('.our-menu__content--cont-our-menus__categmenu--meals__menu--item');
+	let sliderMenusLast = sliderMenusItem[sliderMenusItem.length -1];
+	const btnLeftMenus = d.querySelector('.slidermenus-left');
+	const	btnRightMenus = d.querySelector('.slidermenus-right');
+	/************************** COLOCAR ÚLTIMA IMAGEN AL INICIO DEL SLIDER **************************/
+	sliderMenus.insertAdjacentElement('afterbegin', sliderMenusLast);
 
-	btnLeft_menus.addEventListener('click', e => {
-		container_menus.scrollLeft -= container_menus.offsetWidth;
-	})
+	function nextMenus(){
+		sliderMenusFirst = d.querySelectorAll('.our-menu__content--cont-our-menus__categmenu--meals__menu--item')[0];
+		sliderMenus.style.marginLeft = "-200%";
+		sliderMenus.style.transition = "all 0.5s";
+		setTimeout(function(){
+			sliderMenus.style.transition = "none";
+			sliderMenus.insertAdjacentElement('beforeend', sliderMenusFirst);
+			sliderMenus.style.marginLeft = "-100%";
+		}, 500);
+	};
 
-	btnRight_menus.addEventListener('click', e => {
-		container_menus.scrollLeft += container_menus.offsetWidth;
-	})
+	function beforeMenus(){
+		let sliderMenusItem = d.querySelectorAll('.our-menu__content--cont-our-menus__categmenu--meals__menu--item');
+		let sliderMenusLast = sliderMenusItem[sliderMenusItem.length -1];
+		sliderMenus.style.marginLeft = "0";
+		sliderMenus.style.transition = "all 0.5s";
+		setTimeout(function(){
+			sliderMenus.style.transition = "none";
+			sliderMenus.insertAdjacentElement('afterbegin', sliderMenusLast);
+			sliderMenus.style.marginLeft = "-100%";
+		}, 500);
+	};
 
+	btnRightMenus.addEventListener('click', function(){nextMenus();});
+	btnLeftMenus.addEventListener('click', function(){beforeMenus();});
+	/***************************************************************************************/
 	/************************** SLIDER MANUAL ARTESANAL - GALERÍA **************************/
-	var container_gallery = d.querySelector('.gallery__content--gallery__slider--photos');
-	var btnLeft_gallery = d.querySelector('.sliderleft_gallery');
-	var btnRight_gallery = d.querySelector('.sliderright_gallery');
+	/***************************************************************************************/
+	const sliderGallery = d.querySelector('#sliderGallery');
+	let sliderGalleryItem = d.querySelectorAll('.gallery__content--gallery__slider--photos__image');
+	let sliderGalleryLast = sliderGalleryItem[sliderGalleryItem.length -1];
+	const btnLeftGallery = d.querySelector('.sliderleft_gallery');
+	const btnRightGallery = d.querySelector('.sliderright_gallery');
+	/************************** COLOCAR ÚLTIMA IMAGEN AL INICIO DEL SLIDER **************************/
+	sliderGallery.insertAdjacentElement('afterbegin', sliderGalleryLast);
 
-	btnLeft_gallery.addEventListener('click', e => {
-		container_gallery.scrollLeft -= container_gallery.offsetWidth;
-	});
+	function nextGallery(){
+		sliderGalleryFirst = d.querySelectorAll('.gallery__content--gallery__slider--photos__image')[0];
+		sliderGallery.style.marginLeft = "-200%";
+		sliderGallery.style.transition = "all 0.5s";
+		setTimeout(function(){
+			sliderGallery.style.transition = "none";
+			sliderGallery.insertAdjacentElement('beforeend', sliderGalleryFirst);
+			sliderGallery.style.marginLeft = "-100%";
+		}, 500);
+	};
 
-	btnRight_gallery.addEventListener('click', e => {
-		container_gallery.scrollLeft += container_gallery.offsetWidth;
-	});
+	function beforeGallery(){
+		let sliderGalleryItem = d.querySelectorAll('.gallery__content--gallery__slider--photos__image');
+		let sliderGalleryLast = sliderGalleryItem[sliderGalleryItem.length -1];
+		sliderGallery.style.marginLeft = "0";
+		sliderGallery.style.transition = "all 0.5s";
+		setTimeout(function(){
+			sliderGallery.style.transition = "none";
+			sliderGallery.insertAdjacentElement('afterbegin', sliderGalleryLast);
+			sliderGallery.style.marginLeft = "-100%";
+		}, 500);
+	};
 
-	// d.addEventListener("click", e => {
-	// 	if(e.target.matches('.our-menu__content--cont-our-menus button')){
-			
-	// 		var buttonslider = e.target.getAttribute('class');
-			
-	// 		if(buttonslider == "our-menu__content--cont-our-menus__categmenu--meals__btns--left slidermenus-left"){
-				
-	// 			for (var i = 0; i < buttonslider.length; i++) {
-	// 				buttonslider[i].onclick = e => {
-	// 					var container_menus = e.target.parentNode.parentNode;
-	// 					container_menus.scrollLeft -= container_menus.offsetWidth;
-	// 				}
-	// 			}
-	// 		}
-
-	// 		if(buttonslider == "our-menu__content--cont-our-menus__categmenu--meals__btns--right slidermenus-right"){
-	// 			var container_menus = e.target.parentNode.parentNode;
-	// 			for (var i = 0; i < buttonslider.length; i++) {
-	// 				buttonslider[i].onclick = e => {
-	// 					var container_menus = e.target.parentNode.parentNode;
-	// 					container_menus.scrollLeft += container_menus.offsetWidth;
-	// 				}
-	// 			}
-	// 		}
-	// 	}
-	// });
-
+	btnRightGallery.addEventListener('click', function(){nextGallery();});
+	btnLeftGallery.addEventListener('click', function(){beforeGallery();});
 
 })(document);
-
-// $(document).ready(function(){
-// 	$('.our-menu__content--cont-our-menus').each(function(){
-// 		$(this).children().children().children().children().each(function(){
-// 			var buttonLeft = "slidermenus-left";
-// 			var buttonRight = "slidermenus-right";
-
-// 			if($(this).hasClass(buttonLeft)){
-// 				var containerparent = $(this).parent().parent();
-
-// 				$(this).click(function(){
-// 					var LeftScroll = $(this).parent().parent().scrollLeft();
-// 					var WidthOffset = $(this).parent().parent().width();
-// 					LeftScroll -= WidthOffset;
-// 				});
-// 			}
-
-// 			if($(this).hasClass(buttonRight)){
-// 				var containerparent = $(this).parent().parent();
-
-// 				$(this).click(function(){
-// 					console.log($(this).scrollLeft());
-// 					containerparent.scrollLeft += containerparent.offsetWidth;
-// 				});
-// 			}
-// 		});
-// 	});
-// });
