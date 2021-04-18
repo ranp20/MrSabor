@@ -90,8 +90,10 @@
 					</div>
 				</li>
 			</ul>
-			<button class="heroimage--btns heroimage--btns--left" id="heroimageLeft">&#8249;</button>
-			<button class="heroimage--btns heroimage--btns--right" id="heroimageRight">&#8250;</button>
+			<div class="heroimage--content-btns container">
+				<button class="heroimage--content-btns__btn heroimage--content-btns__btn--left" id="heroimageLeft">&#8249;</button>
+				<button class="heroimage--content-btns__btn heroimage--content-btns__btn--right" id="heroimageRight">&#8250;</button>
+			</div>
 		</section>
 		<section class="categories-food lg-full-screen" id="categorias">
 			<div class="categories-food__content container">

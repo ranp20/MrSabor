@@ -166,26 +166,40 @@
 	height: auto;
 	position: relative;
 
-	&--btns{
-		position: absolute;
-		border: none;
-		font-size: 50px;
-		font-weight: bold;
-		font-family: monospace;
-		width: 40px;
-		height: 40px;
-		background-color: transparent;
-		color: rgba(2555,255,255,.5);
-		text-align: center;
-		top: 50%;
-		transform: translateY(-50%);
-		cursor: pointer;
-		&--left{
-			left: 10px;
-		}
+	&--content-btns{
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	position: absolute;
+	z-index: 99;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
 
-		&--right{
-			right: 10px;
+		&__btn{
+			border: none;
+			font-size: 50px;
+			font-weight: bold;
+			font-family: monospace;
+			width: 40px;
+			height: 40px;
+			background-color: transparent;
+			color: rgba(2555,255,255,.5);
+			text-align: center;
+			cursor: pointer;
+
+			&:hover{
+				color: #fff; 
+			}
+
+			&--left{
+				left: 10px;
+			}
+
+			&--right{
+				right: 10px;
+			}
 		}
 	}
 
@@ -208,14 +222,18 @@
 				height: 650px;
 				object-fit: cover;
 				object-position: center;
+			}
 
-				&:before{
-					content: "";
-					position: absolute;
-					width: 100%;
-					height: 100%;
-					background-color: rgba(0,0,0,.4);
-				}
+			&:after{
+				content: "";
+				position: absolute;
+				width: 100%;
+				height: 100%;
+				top: 0;
+				left: 0;
+				right: 0;
+				bottom: 0;
+				background-color: rgba(0,0,0,.55);
 			}
 
 			&--content{
@@ -228,6 +246,7 @@
 				align-items: center;
 				justify-content: center;
 				flex-direction: column;
+				z-index: 99;
 				&__info{
 					color: #fff;
 					font-size: 0.95rem;
