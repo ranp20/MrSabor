@@ -166,83 +166,117 @@
 	height: auto;
 	position: relative;
 
-	&__background{
-		width: 100%;
-		height: auto;
-		position: relative;
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		&--image{
-			width: 100%;
-			height: 650px;
-			object-fit: cover;
-			object-position: center;
+	&--btns{
+		position: absolute;
+		border: none;
+		font-size: 50px;
+		font-weight: bold;
+		font-family: monospace;
+		width: 40px;
+		height: 40px;
+		background-color: transparent;
+		color: rgba(2555,255,255,.5);
+		text-align: center;
+		top: 50%;
+		transform: translateY(-50%);
+		cursor: pointer;
+		&--left{
+			left: 10px;
 		}
 
-		&:before{
-			content: "";
-			position: absolute;
-			width: 100%;
-			height: 100%;
-			background-color: rgba(0,0,0,.4);
+		&--right{
+			right: 10px;
 		}
 	}
 
-	&__content{
-		position: absolute;
-		top: 0;
-		left: 0;
-		right: 0;
-		bottom: 0;
+
+	&--menu{
 		display: flex;
 		align-items: center;
-		justify-content: center;
-		flex-direction: column;
-		&--info{
-			color: #fff;
-			font-size: 0.95rem;
-			&__contimg{
-				width: 200px;
-				height: 200px;
-				margin-left: auto;
-				margin-right: auto;
-				margin-top: 1rem;
-				margin-bottom: 1rem;
-				&--image{
+		overflow-x: scroll;
+		width: 300%;
+		margin-left: -100%;
+		&__item{
+			width: 100%;
+			height: auto;
+			position: relative;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			&--background{
+				width: 100%;
+				height: 650px;
+				object-fit: cover;
+				object-position: center;
+
+				&:before{
+					content: "";
+					position: absolute;
 					width: 100%;
 					height: 100%;
+					background-color: rgba(0,0,0,.4);
 				}
 			}
 
-			&__receiveonline{
-				color: $primary-color;
-				font-weight: bold;
-			}
+			&--content{
+				position: absolute;
+				top: 0;
+				left: 0;
+				right: 0;
+				bottom: 0;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				flex-direction: column;
+				&__info{
+					color: #fff;
+					font-size: 0.95rem;
+					&--contimg{
+						width: 200px;
+						height: 200px;
+						margin-left: auto;
+						margin-right: auto;
+						margin-top: 1rem;
+						margin-bottom: 1rem;
+						&__image{
+							width: 100%;
+							height: 100%;
+						}
+					}
 
-			&__title{
-				font-size: 1.8rem;
-			}
+					&--receiveonline{
+						color: $primary-color;
+						font-weight: bold;
+					}
 
-			&__subtitle{
+					&--title{
+						font-size: 1.8rem;
+					}
 
-			}
+					&--subtitle{
 
-			&__gotoproduct{
-				margin-top: 1rem;
-				display: inline-block;
-				background-color: $primary-color;
-				color: #fff;
-				font-weight: bold;
-				padding: 0.5rem 2rem;
-				border-radius: 1.5rem;
+					}
 
-				span{
-					margin-left: 0.5rem;
+					&--gotoproduct{
+						margin-top: 1rem;
+						display: inline-block;
+						background-color: $primary-color;
+						color: #fff;
+						font-weight: bold;
+						padding: 0.5rem 2rem;
+						border-radius: 1.5rem;
+
+						span{
+							margin-left: 0.5rem;
+						}
+					}
 				}
 			}
+
 		}
 	}
+
+
 }
 
 /************************** CAEGORIES FOOD **************************/

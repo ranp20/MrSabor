@@ -258,7 +258,35 @@ ul {
   height: auto;
   position: relative;
 }
-.heroimage__background {
+.heroimage--btns {
+  position: absolute;
+  border: none;
+  font-size: 50px;
+  font-weight: bold;
+  font-family: monospace;
+  width: 40px;
+  height: 40px;
+  background-color: transparent;
+  color: rgba(255, 255, 255, 0.5);
+  text-align: center;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+}
+.heroimage--btns--left {
+  left: 10px;
+}
+.heroimage--btns--right {
+  right: 10px;
+}
+.heroimage--menu {
+  display: flex;
+  align-items: center;
+  overflow-x: scroll;
+  width: 300%;
+  margin-left: -100%;
+}
+.heroimage--menu__item {
   width: 100%;
   height: auto;
   position: relative;
@@ -266,20 +294,20 @@ ul {
   align-items: center;
   justify-content: center;
 }
-.heroimage__background--image {
+.heroimage--menu__item--background {
   width: 100%;
   height: 650px;
   object-fit: cover;
   object-position: center;
 }
-.heroimage__background:before {
+.heroimage--menu__item--background:before {
   content: "";
   position: absolute;
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.4);
 }
-.heroimage__content {
+.heroimage--menu__item--content {
   position: absolute;
   top: 0;
   left: 0;
@@ -290,11 +318,11 @@ ul {
   justify-content: center;
   flex-direction: column;
 }
-.heroimage__content--info {
+.heroimage--menu__item--content__info {
   color: #fff;
   font-size: 0.95rem;
 }
-.heroimage__content--info__contimg {
+.heroimage--menu__item--content__info--contimg {
   width: 200px;
   height: 200px;
   margin-left: auto;
@@ -302,18 +330,18 @@ ul {
   margin-top: 1rem;
   margin-bottom: 1rem;
 }
-.heroimage__content--info__contimg--image {
+.heroimage--menu__item--content__info--contimg__image {
   width: 100%;
   height: 100%;
 }
-.heroimage__content--info__receiveonline {
+.heroimage--menu__item--content__info--receiveonline {
   color: #FFBD59;
   font-weight: bold;
 }
-.heroimage__content--info__title {
+.heroimage--menu__item--content__info--title {
   font-size: 1.8rem;
 }
-.heroimage__content--info__gotoproduct {
+.heroimage--menu__item--content__info--gotoproduct {
   margin-top: 1rem;
   display: inline-block;
   background-color: #FFBD59;
@@ -322,7 +350,7 @@ ul {
   padding: 0.5rem 2rem;
   border-radius: 1.5rem;
 }
-.heroimage__content--info__gotoproduct span {
+.heroimage--menu__item--content__info--gotoproduct span {
   margin-left: 0.5rem;
 }
 

@@ -18,6 +18,48 @@
 	});
 
 	/*******************************************************************************************/
+	/************************** SLIDER MANUAL ARTESANAL - HEROIMAGES **************************/
+	/*******************************************************************************************/
+	const sliderHeroimages = d.querySelector('#sliderHeroimages');
+	let sliderHeroimagesItem = d.querySelectorAll('.heroimage--menu__item');
+	let sliderHeroimagesLast = sliderHeroimagesItem[sliderHeroimagesItem.length -1];
+	const btnLeftHeroimages = d.querySelector('#heroimageLeft');
+	const	btnRightHeroimages = d.querySelector('#heroimageRight');
+	/************************** COLOCAR ÚLTIMA IMAGEN AL INICIO DEL SLIDER **************************/
+	sliderHeroimages.insertAdjacentElement('afterbegin', sliderHeroimagesLast);
+
+	function nextHeroimages(){
+		sliderHeroimagesFirst = d.querySelectorAll('.heroimage--menu__item')[0];
+		sliderHeroimages.style.marginLeft = "-200%";
+		sliderHeroimages.style.transition = "all 0.5s";
+		setTimeout(function(){
+			sliderHeroimages.style.transition = "none";
+			sliderHeroimages.insertAdjacentElement('beforeend', sliderHeroimagesFirst);
+			sliderHeroimages.style.marginLeft = "-100%";
+		}, 500);
+	};
+
+	function beforeHeroimages(){
+		let sliderHeroimagesItem = d.querySelectorAll('.heroimage--menu__item');
+		let sliderHeroimagesLast = sliderHeroimagesItem[sliderHeroimagesItem.length -1];
+		sliderHeroimages.style.marginLeft = "0";
+		sliderHeroimages.style.transition = "all 0.5s";
+		setTimeout(function(){
+			sliderHeroimages.style.transition = "none";
+			sliderHeroimages.insertAdjacentElement('afterbegin', sliderHeroimagesLast);
+			sliderHeroimages.style.marginLeft = "-100%";
+		}, 500);
+	};
+
+	btnRightHeroimages.addEventListener('click', function(){nextHeroimages();});
+	btnLeftHeroimages.addEventListener('click', function(){beforeHeroimages();});
+	/************************** SLIDER AUTOMÁTICO **************************/
+	setInterval(function(){
+		nextHeroimages();
+	}, 5000);
+
+
+	/*******************************************************************************************/
 	/************************** SLIDER MANUAL ARTESANAL - TESTIMONIOS **************************/
 	/*******************************************************************************************/
 	const sliderTestimonials = d.querySelector('#sliderTestimonials');

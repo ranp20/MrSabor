@@ -40,22 +40,58 @@
 			</div>
 		</div>
 		<section class="heroimage lg-full-screen" id="inicio">
-			<div class="heroimage__background">
-				<img class="heroimage__background--image" src="assets/img/images/comidas.jpg" alt="">
-			</div>
-			<div class="heroimage__content container">
-				<div class="heroimage__content--info">
-					<div class="heroimage__content--info__contimg">
-						<img class="heroimage__content--info__contimg--image" src="assets/img/images/platillo.png" alt="food-references_MrSabor">
+			<ul class="heroimage--menu" id="sliderHeroimages">
+				<li class="heroimage--menu__item">
+					<img class="heroimage--menu__item--background" src="assets/img/images/comidas.jpg" alt="">
+					<div class="heroimage--menu__item--content container">
+						<div class="heroimage--menu__item--content__info">
+							<div class="heroimage--menu__item--content__info--contimg">
+								<img class="heroimage--menu__item--content__info__contimg__image" src="assets/img/images/platillo.png" alt="food-references_MrSabor">
+							</div>
+						</div>	
+						<div class="heroimage--menu__item--content__info">
+							<p class="heroimage--menu__item--content__info--receiveonline">PEDIDOS EN LÍNEA</p>
+							<h2 class="heroimage--menu__item--content__info--title">SECO DE RES A LA NORTEÑA</h2>
+							<p class="heroimage--menu__item--content__info--subtitle">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste, quod! Quos laboriosam ut vero ipsam dignissimos</p>
+							<a class="heroimage--menu__item--content__info--gotoproduct" href="#platos">VER MENÚ<span>&#10132;</span></a>
+						</div>
 					</div>
-				</div>	
-				<div class="heroimage__content--info">
-					<p class="heroimage__content--info__receiveonline">PEDIDOS EN LÍNEA</p>
-					<h2 class="heroimage__content--info__title">SECO DE RES A LA NORTEÑA</h2>
-					<p class="heroimage__content--info__subtitle">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste, quod! Quos laboriosam ut vero ipsam dignissimos</p>
-					<a class="heroimage__content--info__gotoproduct" href="#platos">VER MENÚ<span>&#10132;</span></a>
-				</div>
-			</div>
+				</li>
+				<li class="heroimage--menu__item">
+					<img class="heroimage--menu__item--background" src="assets/img/images/madera.jpg" alt="">
+					<div class="heroimage--menu__item--content container">
+						<div class="heroimage--menu__item--content__info">
+							<div class="heroimage--menu__item--content__info--contimg">
+								<img class="heroimage--menu__item--content__info__contimg__image" src="assets/img/images/platillo.png" alt="food-references_MrSabor">
+							</div>
+						</div>	
+						<div class="heroimage--menu__item--content__info">
+							<p class="heroimage--menu__item--content__info--receiveonline">PEDIDOS EN LÍNEA</p>
+							<h2 class="heroimage--menu__item--content__info--title">SECO DE RES A LA NORTEÑA</h2>
+							<p class="heroimage--menu__item--content__info--subtitle">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste, quod! Quos laboriosam ut vero ipsam dignissimos</p>
+							<a class="heroimage--menu__item--content__info--gotoproduct" href="#platos">VER MENÚ<span>&#10132;</span></a>
+						</div>
+					</div>
+				</li>
+				<li class="heroimage--menu__item">
+					<img class="heroimage--menu__item--background" src="assets/img/images/comida_vegetariana.jpg" alt="">
+					<div class="heroimage--menu__item--content container">
+						<div class="heroimage--menu__item--content__info">
+							<div class="heroimage--menu__item--content__info--contimg">
+								<img class="heroimage--menu__item--content__info__contimg__image" src="assets/img/images/platillo.png" alt="food-references_MrSabor">
+							</div>
+						</div>	
+						<div class="heroimage--menu__item--content__info">
+							<p class="heroimage--menu__item--content__info--receiveonline">PEDIDOS EN LÍNEA</p>
+							<h2 class="heroimage--menu__item--content__info--title">SECO DE RES A LA NORTEÑA</h2>
+							<p class="heroimage--menu__item--content__info--subtitle">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste, quod! Quos laboriosam ut vero ipsam dignissimos</p>
+							<a class="heroimage--menu__item--content__info--gotoproduct" href="#platos">VER MENÚ<span>&#10132;</span></a>
+						</div>
+					</div>
+				</li>
+			</ul>
+			<button class="heroimage--btns heroimage--btns--left" id="heroimageLeft">&#8249;</button>
+			<button class="heroimage--btns heroimage--btns--right" id="heroimageRight">&#8250;</button>
 		</section>
 		<section class="categories-food lg-full-screen" id="categorias">
 			<div class="categories-food__content container">
