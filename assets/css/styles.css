@@ -97,6 +97,7 @@ ul {
   background-color: #fff;
   border-radius: 50%;
   box-shadow: 1px 3px 4px 2px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
 }
 #menu-show-home {
   display: flex;
@@ -141,6 +142,7 @@ ul {
   border: none;
   padding: 0.75rem;
   top: 0.5rem;
+  cursor: pointer;
 }
 #menu-show-home.active:before {
   content: "";
@@ -234,11 +236,6 @@ ul {
     width: 60%;
   }
 }
-@media (min-width: 480px) {
-  .homepage__infotop__header--contmenu.active {
-    width: 45%;
-  }
-}
 .homepage__infotop__header--contmenu__menu {
   list-style: none;
   padding-left: 0;
@@ -264,7 +261,7 @@ ul {
   align-items: center;
   justify-content: space-between;
   position: absolute;
-  z-index: 99;
+  z-index: 9;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -295,6 +292,7 @@ ul {
   align-items: center;
   overflow: hidden;
   width: 300%;
+  height: auto;
   margin-left: -100%;
 }
 .heroimage--menu__item {
@@ -307,9 +305,15 @@ ul {
 }
 .heroimage--menu__item--background {
   width: 100%;
-  height: 650px;
+  height: 630px;
   object-fit: cover;
   object-position: center;
+  /* TAMAÑO - MÓVIL(480px) */
+}
+@media (min-width: 480px) {
+  .heroimage--menu__item--background {
+    height: 615px;
+  }
 }
 .heroimage--menu__item:after {
   content: "";
@@ -332,11 +336,17 @@ ul {
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  z-index: 99;
+  z-index: 9;
 }
 .heroimage--menu__item--content__info {
   color: #fff;
   font-size: 0.95rem;
+  /* TAMAÑO - MÓVIL(480px) */
+}
+@media (min-width: 480px) {
+  .heroimage--menu__item--content__info {
+    font-size: 1.1rem;
+  }
 }
 .heroimage--menu__item--content__info--contimg {
   width: 200px;
@@ -383,11 +393,22 @@ ul {
 .categories-food__content--conttitle__acotacion {
   color: #FFBD59;
   font-weight: bold;
-  font-size: 1.3rem;
   margin-bottom: 0.5rem;
+  /* TAMAÑO - MÓVIL(480px) */
+}
+@media (min-width: 480px) {
+  .categories-food__content--conttitle__acotacion {
+    font-size: 1.6rem;
+  }
 }
 .categories-food__content--conttitle__title {
   margin-bottom: 0.5rem;
+  /* TAMAÑO - MÓVIL(480px) */
+}
+@media (min-width: 480px) {
+  .categories-food__content--conttitle__title {
+    font-size: 1.75rem;
+  }
 }
 .categories-food__content--menu {
   display: grid;
@@ -559,10 +580,17 @@ ul {
 }
 .our-menu__content--cont-title {
   text-align: center;
-  margin-bottom: 1rem;
+  margin-bottom: 0.5rem;
 }
 .our-menu__content--cont-title__title {
+  font-weight: bold;
   color: #FFBD59;
+  /* TAMAÑO - MÓVIL(480px) */
+}
+@media (min-width: 480px) {
+  .our-menu__content--cont-title__title {
+    font-size: 1.6rem;
+  }
 }
 .our-menu__content--cont-our-menus__categmenu {
   display: flex;
@@ -578,8 +606,6 @@ ul {
 .our-menu__content--cont-our-menus__categmenu--meals {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
   position: relative;
   min-height: 280px;
   height: auto;
@@ -675,21 +701,18 @@ ul {
   justify-content: center;
   align-content: center;
   width: 100%;
-  min-height: 400px;
-  height: 100%;
+  height: auto;
   padding: 1.5rem 0;
 }
 .gallery__content {
   width: 100%;
-  min-height: 400px;
-  height: 100%;
+  height: auto;
   display: flex;
   align-items: center;
   justify-content: center;
   position: relative;
 }
 .gallery__content--bgcgallery {
-  min-height: 400px;
   width: 100%;
   height: 100%;
 }
@@ -746,6 +769,7 @@ ul {
   align-items: center;
   justify-content: center;
   text-align: center;
+  font-family: monospace;
 }
 .gallery__content--gallery__slider--btns__left {
   left: 10px;
@@ -862,18 +886,32 @@ ul {
 }
 .contact-number__content--cont__contacts {
   margin-left: 1rem;
-  width: 100%;
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
   align-items: flex-start;
   justify-content: space-between;
+  /* TAMAÑO - MÓVIL(480px) */
+}
+@media (min-width: 480px) {
+  .contact-number__content--cont__contacts {
+    flex-direction: row;
+  }
 }
 .contact-number__content--cont__contacts--media {
   display: flex;
   align-items: center;
   color: #fff;
   margin-bottom: 0.5rem;
+  /* TAMAÑO - MÓVIL(480px) */
+}
+@media (min-width: 480px) {
+  .contact-number__content--cont__contacts--media {
+    margin-bottom: 0;
+  }
+  .contact-number__content--cont__contacts--media:first-child {
+    margin-right: 1rem;
+  }
 }
 .contact-number__content--cont__contacts--media img {
   width: 35px;

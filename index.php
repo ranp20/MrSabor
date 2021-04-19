@@ -98,7 +98,7 @@
 		<section class="categories-food lg-full-screen" id="categorias">
 			<div class="categories-food__content container">
 				<div class="categories-food__content--conttitle">
-					<span class="categories-food__content--conttitle__acotacion">Nuestras</span>
+					<h3 class="categories-food__content--conttitle__acotacion">Nuestras</h3>
 					<h1 class="categories-food__content--conttitle__title">Categorias de Alimentos</h1>
 					<div class="categories-food__content--conttitle__description">Te ofrecemos siempre lo mejor en cada uno de ellas.</div>
 				</div>
@@ -177,7 +177,7 @@
 							<h2>~ PLATOS PRINCIPALES ~</h2>
 						</div>
 						<div class="our-menu__content--cont-our-menus__categmenu--meals">
-							<ul class="our-menu__content--cont-our-menus__categmenu--meals__menu container" id="sliderMenus">
+							<ul class="our-menu__content--cont-our-menus__categmenu--meals__menu" id="sliderMenus">
 								<li class="our-menu__content--cont-our-menus__categmenu--meals__menu--item">
 									<div class="our-menu__content--cont-our-menus__categmenu--meals__menu--item__bgcimage">
 										<img src="assets/img/images/comida_vegetariana.jpg" alt="">

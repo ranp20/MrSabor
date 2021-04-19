@@ -31,24 +31,24 @@
 	function nextHeroimages(){
 		sliderHeroimagesFirst = d.querySelectorAll('.heroimage--menu__item')[0];
 		sliderHeroimages.style.marginLeft = "-200%";
-		sliderHeroimages.style.transition = "all 0.6s";
+		sliderHeroimages.style.transition = "all 0.5s";
 		setTimeout(function(){
 			sliderHeroimages.style.transition = "none";
 			sliderHeroimages.insertAdjacentElement('beforeend', sliderHeroimagesFirst);
 			sliderHeroimages.style.marginLeft = "-100%";
-		}, 600);
+		}, 500);
 	};
 
 	function beforeHeroimages(){
 		let sliderHeroimagesItem = d.querySelectorAll('.heroimage--menu__item');
 		let sliderHeroimagesLast = sliderHeroimagesItem[sliderHeroimagesItem.length -1];
 		sliderHeroimages.style.marginLeft = "0";
-		sliderHeroimages.style.transition = "all 0.6s";
+		sliderHeroimages.style.transition = "all 0.5s";
 		setTimeout(function(){
 			sliderHeroimages.style.transition = "none";
 			sliderHeroimages.insertAdjacentElement('afterbegin', sliderHeroimagesLast);
 			sliderHeroimages.style.marginLeft = "-100%";
-		}, 600);
+		}, 500);
 	};
 
 	btnRightHeroimages.addEventListener('click', function(){nextHeroimages();});
