@@ -48,49 +48,31 @@
 			<ul class="heroimage--menu" id="sliderHeroimages">
 				<li class="heroimage--menu__item">
 					<img class="heroimage--menu__item--background" src="assets/img/images/comidas.jpg" alt="">
-					<div class="heroimage--menu__item--content container">
-						<div class="heroimage--menu__item--content__info">
-							<div class="heroimage--menu__item--content__info--contimg">
-								<img class="heroimage--menu__item--content__info__contimg__image" src="assets/img/images/platillo.png" alt="food-references_MrSabor">
-							</div>
-						</div>	
-						<div class="heroimage--menu__item--content__info">
-							<p class="heroimage--menu__item--content__info--receiveonline">PEDIDOS EN LÍNEA</p>
-							<h2 class="heroimage--menu__item--content__info--title">SECO DE RES A LA NORTEÑA</h2>
-							<p class="heroimage--menu__item--content__info--subtitle">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste, quod! Quos laboriosam ut vero ipsam dignissimos</p>
-							<a class="heroimage--menu__item--content__info--gotoproduct" href="#platos">VER MENÚ<span>&#10132;</span></a>
+					<div class="heroimage--menu__item--content left-align container">
+						<div class="heroimage--menu__item--content__info left-text">
+							<h2 class="heroimage--menu__item--content__info--title">Saludable por dentro, fresco <span>por fuera</span></h2>
+							<p class="heroimage--menu__item--content__info--subtitle">Entregamos alimentos saludables que están listos para comer. Simplemente elija su propio menú que le guste.</p>
+							<a class="heroimage--menu__item--content__info--gotoproduct" href="#platos">CONOCER MÁS<span>&#10132;</span></a>
 						</div>
 					</div>
 				</li>
 				<li class="heroimage--menu__item">
 					<img class="heroimage--menu__item--background" src="assets/img/images/madera.jpg" alt="">
-					<div class="heroimage--menu__item--content container">
-						<div class="heroimage--menu__item--content__info">
-							<div class="heroimage--menu__item--content__info--contimg">
-								<img class="heroimage--menu__item--content__info__contimg__image" src="assets/img/images/platillo.png" alt="food-references_MrSabor">
-							</div>
-						</div>	
-						<div class="heroimage--menu__item--content__info">
-							<p class="heroimage--menu__item--content__info--receiveonline">PEDIDOS EN LÍNEA</p>
-							<h2 class="heroimage--menu__item--content__info--title">SECO DE RES A LA NORTEÑA</h2>
-							<p class="heroimage--menu__item--content__info--subtitle">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste, quod! Quos laboriosam ut vero ipsam dignissimos</p>
-							<a class="heroimage--menu__item--content__info--gotoproduct" href="#platos">VER MENÚ<span>&#10132;</span></a>
+					<div class="heroimage--menu__item--content center-align container">
+						<div class="heroimage--menu__item--content__info center-text">
+							<h2 class="heroimage--menu__item--content__info--title">La comida sana viene de <span class="block">Ingredientes sanos</span></h2>
+							<p class="heroimage--menu__item--content__info--subtitle">Entregamos alimentos saludables que están listos para comer. Simplemente elija su propio menú que le guste.</p>
+							<a class="heroimage--menu__item--content__info--gotoproduct" href="#platos">CONOCER MÁS<span>&#10132;</span></a>
 						</div>
 					</div>
 				</li>
 				<li class="heroimage--menu__item">
 					<img class="heroimage--menu__item--background" src="assets/img/images/comida_vegetariana.jpg" alt="">
-					<div class="heroimage--menu__item--content container">
-						<div class="heroimage--menu__item--content__info">
-							<div class="heroimage--menu__item--content__info--contimg">
-								<img class="heroimage--menu__item--content__info__contimg__image" src="assets/img/images/platillo.png" alt="food-references_MrSabor">
-							</div>
-						</div>	
-						<div class="heroimage--menu__item--content__info">
-							<p class="heroimage--menu__item--content__info--receiveonline">PEDIDOS EN LÍNEA</p>
-							<h2 class="heroimage--menu__item--content__info--title">SECO DE RES A LA NORTEÑA</h2>
-							<p class="heroimage--menu__item--content__info--subtitle">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste, quod! Quos laboriosam ut vero ipsam dignissimos</p>
-							<a class="heroimage--menu__item--content__info--gotoproduct" href="#platos">VER MENÚ<span>&#10132;</span></a>
+					<div class="heroimage--menu__item--content right-align container">
+						<div class="heroimage--menu__item--content__info right-text">
+							<h2 class="heroimage--menu__item--content__info--title">Comida sana <span class="block">Para el desayuno</span></h2>
+							<p class="heroimage--menu__item--content__info--subtitle">Entregamos alimentos saludables que están listos para comer. Simplemente elija su propio menú que le guste.</p>
+							<a class="heroimage--menu__item--content__info--gotoproduct" href="#platos">CONOCER MÁS<span>&#10132;</span></a>
 						</div>
 					</div>
 				</li>
@@ -103,9 +85,7 @@
 		<section class="categories-food" id="categorias">
 			<div class="categories-food__content container">
 				<div class="categories-food__content--conttitle">
-					<h3 class="categories-food__content--conttitle__acotacion">Nuestras</h3>
-					<h2 class="categories-food__content--conttitle__title">CATEGORÍAS</h2>
-					<div class="categories-food__content--conttitle__description">Te ofrecemos siempre lo mejor en cada uno de ellas.</div>
+					<h2 class="categories-food__content--conttitle__acotacion">NUESTRAS CATEGORÍAS</h2>
 				</div>
 				<ul class="categories-food__content--menu">
 					<li class="categories-food__content--menu__item">
@@ -141,15 +121,39 @@
 				</ul>
 			</div>
 		</section>
+		<section class="howitwork" id="como-empezar">
+			<div class="howitwork__content container">
+				<div class="howitwork__content--conttitle">
+					<h2 class="howitwork__content--conttitle__title">¿ Cómo funciona ?</h2>
+				</div>
+				<div class="howitwork__content--continfo">
+					<a href="#" class="howitwork__content--continfo__item">
+						<img src="assets/img/icons/delivery-meal.svg" alt="" class="howitwork__content--continfo__item--icon">
+						<h2 class="howitwork__content--continfo__item--title">Elige tu favorito</h2>
+						<p class="howitwork__content--continfo__item--description">Elija sus comidas favoritas y ordene en línea o por teléfono. Es fácil personalizar su pedido.</p>
+					</a>
+					<a href="#" class="howitwork__content--continfo__item">
+						<img src="assets/img/icons/delivery-delivery-man.svg" alt="" class="howitwork__content--continfo__item--icon">
+						<h2 class="howitwork__content--continfo__item--title">Entregamos tu comida</h2>
+						<p class="howitwork__content--continfo__item--description">Preparamos y entregamos las comidas que llegan a su puerta. Y los deberes o el dolor se sientan en vulputacion.</p>
+					</a>
+					<a href="#" class="howitwork__content--continfo__item">
+						<img src="assets/img/icons/delivery-eat-enjoy.svg" alt="" class="howitwork__content--continfo__item--icon">
+						<h2 class="howitwork__content--continfo__item--title">Come y disfruta</h2>
+						<p class="howitwork__content--continfo__item--description">Sin compras, sin cocinar, sin contar ni limpiar. Disfrute de sus comidas saludables con su familia.</p>
+					</a>
+				</div>
+			</div>
+		</section>
 		<section class="our-menu" id="platos">
 			<div class="our-menu__content container">
 				<div class="our-menu__content--cont-title">
-					<h3 class="our-menu__content--cont-title__title">NUESTRO MENÚ</h3>
+					<h2 class="our-menu__content--cont-title__title">NUESTRO MENÚ</h2>
 				</div>
 				<div class="our-menu__content--cont-our-menus">
 					<div class="our-menu__content--cont-our-menus__categmenu">
 						<div class="our-menu__content--cont-our-menus__categmenu--title">
-							<h2>DESTACADO</h2>
+							<h3 class="our-menu__content--cont-our-menus__categmenu--title--title">DESTACADO</h3>
 						</div>
 						<div class="our-menu__content--cont-our-menus__categmenu--meals">
 							<ul class="our-menu__content--cont-our-menus__categmenu--meals__menu" id="sliderMenus">
