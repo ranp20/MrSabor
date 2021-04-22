@@ -17,8 +17,25 @@
 
 	});
 
+	/******************************************************************************/
+	/************************** TOGGLE SHOW IN HEADERTOP **************************/
+	/******************************************************************************/
+	function showHeader(){
+		let headerTop = d.querySelector('.homepage__infotop');
+		let scrollTop = d.documentElement.scrollTop;
+		let heroImageClass = d.querySelector('.categories-food');
+		let heightHeroImage = heroImageClass.offsetTop;
+		if(heightHeroImage - 130 < scrollTop ){
+			headerTop.classList.add("showBottom");
+		}else{
+			headerTop.classList.remove("showBottom");
+		}
+	}
+
+	d.addEventListener('scroll', showHeader);
+
 	/*******************************************************************************************/
-	/************************** SLIDER MANUAL ARTESANAL - HEROIMAGES **************************/
+	/************************** SLIDER MANUAL ARTESANAL - HEROIMAGES ***************************/
 	/*******************************************************************************************/
 	const sliderHeroimages = d.querySelector('#sliderHeroimages');
 	let sliderHeroimagesItem = d.querySelectorAll('.heroimage--menu__item');
@@ -58,61 +75,19 @@
 		nextHeroimages();
 	}, 6500);
 
-
-	/*******************************************************************************************/
-	/************************** SLIDER MANUAL ARTESANAL - TESTIMONIOS **************************/
-	/*******************************************************************************************/
-	const sliderTestimonials = d.querySelector('#sliderTestimonials');
-	let sliderTestimonialsItem = d.querySelectorAll('.user-testimonials__content--testimonials__menu--item');
-	let sliderTestimonialsLast = sliderTestimonialsItem[sliderTestimonialsItem.length -1];
-	const btnLeftTestimonials = d.querySelector('#slidebtnLeft');
-	const	btnRightTestimonials = d.querySelector('#slidebtnRight');
-	/************************** COLOCAR ÚLTIMA IMAGEN AL INICIO DEL SLIDER **************************/
-	sliderTestimonials.insertAdjacentElement('afterbegin', sliderTestimonialsLast);
-
-	function nextTestimonial(){
-		sliderTestimonialsFirst = d.querySelectorAll('.user-testimonials__content--testimonials__menu--item')[0];
-		sliderTestimonials.style.marginLeft = "-200%";
-		sliderTestimonials.style.transition = "all 0.5s";
-		setTimeout(function(){
-			sliderTestimonials.style.transition = "none";
-			sliderTestimonials.insertAdjacentElement('beforeend', sliderTestimonialsFirst);
-			sliderTestimonials.style.marginLeft = "-100%";
-		}, 500);
-	};
-
-	function beforeTestimonial(){
-		let sliderTestimonialsItem = d.querySelectorAll('.user-testimonials__content--testimonials__menu--item');
-		let sliderTestimonialsLast = sliderTestimonialsItem[sliderTestimonialsItem.length -1];
-		sliderTestimonials.style.marginLeft = "0";
-		sliderTestimonials.style.transition = "all 0.5s";
-		setTimeout(function(){
-			sliderTestimonials.style.transition = "none";
-			sliderTestimonials.insertAdjacentElement('afterbegin', sliderTestimonialsLast);
-			sliderTestimonials.style.marginLeft = "-100%";
-		}, 500);
-	};
-
-	btnRightTestimonials.addEventListener('click', function(){nextTestimonial();});
-	btnLeftTestimonials.addEventListener('click', function(){beforeTestimonial();});
-	/************************** SLIDER AUTOMÁTICO **************************/
-	setInterval(function(){
-		nextTestimonial();
-	}, 4000);
-
 	/**********************************************************************************************/
 	/************************** SLIDER MANUAL ARTESANAL - PLATOS EN MENU **************************/
 	/**********************************************************************************************/
 	const sliderMenus = d.querySelector('#sliderMenus');
-	let sliderMenusItem = d.querySelectorAll('.our-menu__content--cont-our-menus__categmenu--meals__menu--item');
+	let sliderMenusItem = d.querySelectorAll('.our-menu__content--cont-our-menus__categmenu--meals__menu__item');
 	let sliderMenusLast = sliderMenusItem[sliderMenusItem.length -1];
 	const btnLeftMenus = d.querySelector('.slidermenus-left');
 	const	btnRightMenus = d.querySelector('.slidermenus-right');
 	/************************** COLOCAR ÚLTIMA IMAGEN AL INICIO DEL SLIDER **************************/
 	sliderMenus.insertAdjacentElement('afterbegin', sliderMenusLast);
 
-	function nextMenus(){
-		sliderMenusFirst = d.querySelectorAll('.our-menu__content--cont-our-menus__categmenu--meals__menu--item')[0];
+	function nextMenus(e){
+		sliderMenusFirst = d.querySelectorAll('.our-menu__content--cont-our-menus__categmenu--meals__menu__item')[0];
 		sliderMenus.style.marginLeft = "-200%";
 		sliderMenus.style.transition = "all 0.5s";
 		setTimeout(function(){
@@ -120,10 +95,38 @@
 			sliderMenus.insertAdjacentElement('beforeend', sliderMenusFirst);
 			sliderMenus.style.marginLeft = "-100%";
 		}, 500);
+
+
+		/************************** AGREGAR MEDIA QUERIES **************************/
+		var movilMediaQuerie = window.matchMedia( "(min-width: 480px)" );
+		var tabletMediaQuerie = window.matchMedia( "(min-width: 768px)" );
+		var desktopMediaQuerie = window.matchMedia( "(min-width: 1024px)" );
+
+		if (movilMediaQuerie.matches) {
+	    sliderMenus.style.marginLeft = "-100%";
+	    setTimeout(function(){
+				sliderMenus.style.marginLeft = "-50%";
+			}, 500);
+
+		}
+
+		if(tabletMediaQuerie.matches){
+			sliderMenus.style.marginLeft = "-67%";
+			setTimeout(function(){
+				sliderMenus.style.marginLeft = "-33.3%";
+			}, 500);
+		}
+
+		if(desktopMediaQuerie.matches){
+			sliderMenus.style.marginLeft = "-50%";
+			setTimeout(function(){
+				sliderMenus.style.marginLeft = "-25%";
+			}, 500);
+		}
 	};
 
 	function beforeMenus(){
-		let sliderMenusItem = d.querySelectorAll('.our-menu__content--cont-our-menus__categmenu--meals__menu--item');
+		let sliderMenusItem = d.querySelectorAll('.our-menu__content--cont-our-menus__categmenu--meals__menu__item');
 		let sliderMenusLast = sliderMenusItem[sliderMenusItem.length -1];
 		sliderMenus.style.marginLeft = "0";
 		sliderMenus.style.transition = "all 0.5s";
@@ -132,45 +135,39 @@
 			sliderMenus.insertAdjacentElement('afterbegin', sliderMenusLast);
 			sliderMenus.style.marginLeft = "-100%";
 		}, 500);
+
+		/************************** AGREGAR MEDIA QUERIES **************************/
+		var movilMediaQuerie = window.matchMedia( "(min-width: 480px)" );
+		var tabletMediaQuerie = window.matchMedia( "(min-width: 768px)" );
+		var desktopMediaQuerie = window.matchMedia( "(min-width: 1024px)" );
+		
+		if (movilMediaQuerie.matches) {
+	    sliderMenus.style.marginLeft = "0";
+	    setTimeout(function(){
+				sliderMenus.style.marginLeft = "-50%";
+			}, 500);
+		}
+
+		if(tabletMediaQuerie.matches){
+			sliderMenus.style.marginLeft = "0";
+			setTimeout(function(){
+				sliderMenus.style.marginLeft = "-33.3%";
+			}, 500);
+		}
+
+		if(desktopMediaQuerie.matches){
+			sliderMenus.style.marginLeft = "0";
+			setTimeout(function(){
+				sliderMenus.style.marginLeft = "-25%";
+			}, 500);
+		}
 	};
 
 	btnRightMenus.addEventListener('click', function(){nextMenus();});
 	btnLeftMenus.addEventListener('click', function(){beforeMenus();});
-	/***************************************************************************************/
-	/************************** SLIDER MANUAL ARTESANAL - GALERÍA **************************/
-	/***************************************************************************************/
-	const sliderGallery = d.querySelector('#sliderGallery');
-	let sliderGalleryItem = d.querySelectorAll('.gallery__content--gallery__slider--photos__image');
-	let sliderGalleryLast = sliderGalleryItem[sliderGalleryItem.length -1];
-	const btnLeftGallery = d.querySelector('.sliderleft_gallery');
-	const btnRightGallery = d.querySelector('.sliderright_gallery');
-	/************************** COLOCAR ÚLTIMA IMAGEN AL INICIO DEL SLIDER **************************/
-	sliderGallery.insertAdjacentElement('afterbegin', sliderGalleryLast);
 
-	function nextGallery(){
-		sliderGalleryFirst = d.querySelectorAll('.gallery__content--gallery__slider--photos__image')[0];
-		sliderGallery.style.marginLeft = "-200%";
-		sliderGallery.style.transition = "all 0.5s";
-		setTimeout(function(){
-			sliderGallery.style.transition = "none";
-			sliderGallery.insertAdjacentElement('beforeend', sliderGalleryFirst);
-			sliderGallery.style.marginLeft = "-100%";
-		}, 500);
-	};
-
-	function beforeGallery(){
-		let sliderGalleryItem = d.querySelectorAll('.gallery__content--gallery__slider--photos__image');
-		let sliderGalleryLast = sliderGalleryItem[sliderGalleryItem.length -1];
-		sliderGallery.style.marginLeft = "0";
-		sliderGallery.style.transition = "all 0.5s";
-		setTimeout(function(){
-			sliderGallery.style.transition = "none";
-			sliderGallery.insertAdjacentElement('afterbegin', sliderGalleryLast);
-			sliderGallery.style.marginLeft = "-100%";
-		}, 500);
-	};
-
-	btnRightGallery.addEventListener('click', function(){nextGallery();});
-	btnLeftGallery.addEventListener('click', function(){beforeGallery();});
+	setInterval(function(){
+		nextMenus();
+	}, 4000);
 
 })(document);

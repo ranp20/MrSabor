@@ -7,11 +7,17 @@
 	$color-paragraph-light						:	#3F3F3F;
 	$color-paragraph-bold							: #000000;
 	$font-primary											: 'Raleway', sans-serif;
-	$max-width                        : 1200px; 
+	//$max-width                        : 1200px;
+	$max-width                        : 1134px;
 
 /* VARIABLES SECUNDARIAS */
 	$placeholder-input								:	#C1C2C5;
 	$border-bottom-input							:	rgb(118, 118, 118);
 	$color-publicity									: #F02328;
 	$bgc-footer												: #1F2329;
-	$border-bottom-color              : #E4584B; 
+	$border-bottom-color              : #E4584B;
+
+/* CUSTOMS VARIABLES */
+	$vegetarian-food									: #75AD0A;
+	$meat-food												: #E02033;
+	$fast-food												: #FAA40F;
