@@ -71,9 +71,7 @@
 	btnRightHeroimages.addEventListener('click', function(){nextHeroimages();});
 	btnLeftHeroimages.addEventListener('click', function(){beforeHeroimages();});
 	/************************** SLIDER AUTOMÁTICO **************************/
-	setInterval(function(){
-		nextHeroimages();
-	}, 6500);
+	
 
 	/**********************************************************************************************/
 	/************************** SLIDER MANUAL ARTESANAL - PLATOS EN MENU **************************/

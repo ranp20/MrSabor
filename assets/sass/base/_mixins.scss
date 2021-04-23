@@ -56,5 +56,9 @@
 		width: 80px;
 		height: 2px;
 		bottom: -12px;
+
+		@media(min-width: 320px){
+			width: 105px;
+		}
 	}
 }

@@ -63,19 +63,44 @@ ul{
 		align-items: flex-start !important;
 		.left-text{
 			text-align: left !important;
+			width: 450px;
 		}
 	}
 	.center-align{
 		align-items: center !important;
 		.center-text{
 			text-align: center !important;
+			width: 85%;
 		}
 	}
 	.right-align{
 		align-items: flex-end !important;
 		.right-text{
 			text-align: right !important;
+			width: 450px;
 		}
+	}
+}
+@media (min-width: 1200px){
+	.left-align{
+		padding: 0 4.5rem !important;
+	}
+	.right-align{
+		padding: 0 4.5rem !important;
+	}
+}
+@media (min-width: 1400px){
+	.left-text{
+		text-align: left !important;
+		width: 480px;
+	}
+	.center-text{
+		text-align: center !important;
+		width: 85%;
+	}
+	.right-text{
+		text-align: right !important;
+		width: 480px;
 	}
 }
 
