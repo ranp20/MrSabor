@@ -23,9 +23,6 @@
 									<a href="#platos" class="homepage__infotop__header--contmenu__menu--link">Menús</a>
 								</li>
 								<li class="homepage__infotop__header--contmenu__menu--item">
-									<a href="#galeria" class="homepage__infotop__header--contmenu__menu--link">Galería</a>
-								</li>
-								<li class="homepage__infotop__header--contmenu__menu--item">
 									<a href="#contacto" class="homepage__infotop__header--contmenu__menu--link">Contacto</a>
 								</li>
 							</ul>

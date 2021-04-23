@@ -170,7 +170,7 @@ ul {
   border-radius: 2px;
   left: 1rem;
 }
-@media (min-width: 1134px) {
+@media (min-width: 691px) {
   #menu-show-home:before {
     left: auto;
   }
@@ -184,9 +184,14 @@ ul {
   border-radius: 2px;
   left: 1rem;
 }
-@media (min-width: 1134px) {
+@media (min-width: 691px) {
   #menu-show-home:after {
     left: auto;
+  }
+}
+@media (min-width: 691px) {
+  #menu-show-home {
+    display: none;
   }
 }
 #menu-show-home.active {
@@ -287,9 +292,23 @@ ul {
   align-items: center;
   justify-content: space-between;
 }
+@media (min-width: 691px) {
+  .homepage__infotop__header {
+    display: grid;
+    grid-template-columns: 60px auto 60px;
+    grid-template-areas: "logo links account";
+    justify-content: unset;
+    grid-column-gap: 1rem;
+  }
+}
 .homepage__infotop__header--contlogo {
   width: 60px;
   height: 60px;
+}
+@media (min-width: 691px) {
+  .homepage__infotop__header--contlogo {
+    grid-area: logo;
+  }
 }
 .homepage__infotop__header--contlogo__link {
   width: 60px;
@@ -302,6 +321,11 @@ ul {
 .homepage__infotop__header--contlogin {
   width: 35px;
   height: 35px;
+}
+@media (min-width: 691px) {
+  .homepage__infotop__header--contlogin {
+    grid-area: account;
+  }
 }
 .homepage__infotop__header--contlogin__profile {
   width: 35px;
@@ -323,6 +347,20 @@ ul {
   transition: ease 0.3s;
   padding: 3rem 2rem 2rem 2rem;
 }
+@media (min-width: 691px) {
+  .homepage__infotop__header--contmenu {
+    grid-area: links;
+    position: relative;
+    top: auto;
+    left: auto;
+    bottom: auto;
+    background-color: transparent;
+    min-height: unset;
+    width: auto;
+    height: auto;
+    padding: 0;
+  }
+}
 .homepage__infotop__header--contmenu.active {
   left: 0;
   width: 244px;
@@ -343,8 +381,25 @@ ul {
   list-style: none;
   padding-left: 0;
 }
+@media (min-width: 691px) {
+  .homepage__infotop__header--contmenu__menu {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+  }
+}
 .homepage__infotop__header--contmenu__menu--item {
   line-height: 3;
+}
+@media (min-width: 691px) {
+  .homepage__infotop__header--contmenu__menu--item {
+    margin: 0 0.5rem;
+  }
+}
+@media (min-width: 768px) {
+  .homepage__infotop__header--contmenu__menu--item {
+    margin: 0 1rem;
+  }
 }
 .homepage__infotop__header--contmenu__menu--link {
   display: block;
@@ -354,6 +409,11 @@ ul {
 @media (min-width: 480px) {
   .homepage__infotop__header--contmenu__menu--link {
     font-size: 1.2rem;
+  }
+}
+@media (min-width: 1024px) {
+  .homepage__infotop__header--contmenu__menu--link {
+    font-size: 1.4rem;
   }
 }
 
@@ -496,6 +556,9 @@ ul {
 }
 
 /************************** CAEGORIES FOOD **************************/
+.categories-food {
+  scroll-margin-top: 4ex;
+}
 .categories-food__content {
   padding: 3rem 0;
   /************************** TITLE CATEGORIES **************************/
@@ -729,6 +792,7 @@ ul {
 
 /************************** OUR MENU **************************/
 .our-menu {
+  scroll-margin-top: 4ex;
   display: flex;
   flex-direction: column;
   height: auto;
@@ -919,6 +983,7 @@ ul {
 
 /************************** CONTACT US **************************/
 .contact-us {
+  scroll-margin-top: 2ex;
   position: relative;
 }
 .contact-us__cont--content {
