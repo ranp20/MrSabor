@@ -266,40 +266,28 @@
 				</div>
 			</div>
 		</section>
-		<section class="contact-us container" id="contacto">
-			<div class="contact-us__content">
-				<div class="contact-us__content--title">
-					<h2>Suscríbete y recibe muchos beneficios</h2>
-				</div>
-				<div class="contact-us__content--register">
-					<form action="" method="POST" class="contact-us__content--register__form">
-						<div class="contact-us__content--register__form--control">
-							<label class="contact-us__content--register__form--control__label" for="email_new"><img src="assets/img/icons/mail.svg" class="contact-us__content--register__form--control__label--icon" alt=""></label>
-							<input id="email_new" type="email" class="contact-us__content--register__form--control__input" required placeholder="Email">
-						</div>
-						<div class="contact-us__content--register__form--control">
-							<label class="contact-us__content--register__form--control__label" for="user_new"><img src="assets/img/icons/user.svg" class="contact-us__content--register__form--control__label--icon" alt=""></label>
-							<input id="user_new" type="text" class="contact-us__content--register__form--control__input" required placeholder="Nombres">
-						</div>
-						<button type="submit" class="contact-us__content--register__form--btnsend">Suscribirse</button>
-					</form>
-				</div>
-			</div>
-		</section>
-		<section class="contact-number">
-			<div class="contact-number__content container">
-				<div class="contact-number__content--cont">
-					<div class="contact-number__content--cont__logo">
-						<img src="assets/img/logo/Logo_RESTAURANT_proyect.png" alt="">
+		<section class="contact-us" id="contacto" style="background-image: url(admin/assets/img/banners/select-program-background.jpg);background-attachment: fixed;">
+			<div class="contact-us__cont">
+				<div class="contact-us__cont--content container">
+					<div class="contact-us__cont--content--banner">
+						<img src="admin/assets/img/banners/select-program-image.png" alt="">
 					</div>
-					<div class="contact-number__content--cont__contacts">
-						<div class="contact-number__content--cont__contacts--media">
-							<img src="assets/img/icons/icon-whatsapp.svg" alt="">
-							<span>444 3 5555</span>
+					<div class="contact-us__cont--content--contact">
+						<div class="contact-us__cont--content--contact--title">
+							<h2>Suscríbete y recibe muchos beneficios</h2>
 						</div>
-						<div class="contact-number__content--cont__contacts--media">
-							<img src="assets/img/icons/icon-home.svg" alt="">
-							<span>01 998 233 675</span>
+						<div class="contact-us__cont--content--contact--register">
+							<form action="" method="POST" class="contact-us__cont--content--contact--register__form">
+								<div class="contact-us__cont--content--contact--register__form--control">
+									<label class="contact-us__cont--content--contact--register__form--control__label" for="email_new"><img src="assets/img/icons/mail.svg" class="contact-us__cont--content--contact--register__form--control__label--icon" alt=""></label>
+									<input id="email_new" type="email" class="contact-us__cont--content--contact--register__form--control__input" required placeholder="Email">
+								</div>
+								<div class="contact-us__cont--content--contact--register__form--control">
+									<label class="contact-us__cont--content--contact--register__form--control__label" for="user_new"><img src="assets/img/icons/user.svg" class="contact-us__cont--content--contact--register__form--control__label--icon" alt=""></label>
+									<input id="user_new" type="text" class="contact-us__cont--content--contact--register__form--control__input" required placeholder="Nombres">
+								</div>
+								<button type="submit" class="contact-us__cont--content--contact--register__form--btnsend">Suscribirse</button>
+							</form>
 						</div>
 					</div>
 				</div>
