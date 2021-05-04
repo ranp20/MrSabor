@@ -12,10 +12,10 @@
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
 	<?php require_once 'includes/header_links.php'; ?>
-	<title>Dashboard - </title>
+	<title>Dashboard - Productos</title>
 </head>
 <body>
 	<main id="main" class="main">

@@ -7,7 +7,7 @@
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
 	<?php require_once 'includes/header_links.php'; ?>
 	<title>Crear Usuario</title>

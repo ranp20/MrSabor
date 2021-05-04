@@ -5,12 +5,15 @@ RewriteBase /MrSabor/
 
 ############ RENOMBRANDO ARCHIVOS...
 RewriteRule ^/?$ index.php
+RewriteRule ^login?$ views/login.php
 
 ############ ALL PAGES ADMIN
 RewriteRule ^dashboard?$ admin/dashboard.php
 RewriteRule ^productos?$ admin/products.php
 RewriteRule ^restaurantes?$ admin/restaurants.php
 RewriteRule ^menus?$ admin/menus.php
+RewriteRule ^categorias?$ admin/categories.php
 #RewriteRule ^seleccionar-usuario?$ admin/select-user-register.php
 
 ############ ALL PAGES CLIENTS
+RewriteRule ^detalle-producto?$ views/detail-products.php

@@ -43,7 +43,8 @@
 				<li class="main__sidebar-left--content__cont-items--menu__item">
 					<a href="#" class="main__sidebar-left--content__cont-items--menu__link">Clientes</a>
 				</li>
-				<li class="main__sidebar-left--content__cont-items--menu__item"><a href="#" class="main__sidebar-left--content__cont-items--menu__link">Personal</a>
+				<li class="main__sidebar-left--content__cont-items--menu__item">
+					<a href="categorias" class="main__sidebar-left--content__cont-items--menu__link">Categorías</a>
 				</li>
 				<li class="main__sidebar-left--content__cont-items--menu__item">
 					<a href="productos" class="main__sidebar-left--content__cont-items--menu__link">Productos</a>

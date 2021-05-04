@@ -11,10 +11,10 @@
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
 	<?php require_once 'includes/header_links.php'; ?>
-	<title>Dashboard - </title>
+	<title>Dashboard - Restaurantes</title>
 </head>
 <body>
 	<main id="main" class="main">
@@ -27,22 +27,27 @@
 					<h2 class="main__cont--content__addtitle--title">RESTAURANTES</h2>
 					<button type="button" href="#" id="add-restaurant" class="main__cont--content__addtitle--btn-add" data-toggle="modal" data-target="#addrestaurantModal"><span class="main__cont--content__addtitle--btn-add__hidden">Agregar&nbsp;</span>+</button>
 				</div>
-				<table class="main__cont--content__list-restaurants">
-					<thead>
-						<tr>
-							<th>ID</th>
-							<th>Nombre</th>
-							<th>Dirección</th>
-							<th>Imagen</th>
-							<th>Teléfono</th>
-							<th></th>
-							<th></th>
-						</tr>
-					</thead>
-					<tbody id="tbl_restaurants">
-							
-					</tbody>
-				</table>
+				<div class="main__cont--content__inputsearch-table">
+					<input type="text" class="main__cont--content__inputsearch-table--input" name="searchrestaurants" id="searchrestaurants" maxlength="100" placeholder="Buscar...">
+				</div>
+				<div class="contain-table-responsive">
+					<table class="main__cont--content__list-restaurants">
+						<thead>
+							<tr>
+								<th>ID</th>
+								<th>Nombre</th>
+								<th>Dirección</th>
+								<th>Imagen</th>
+								<th>Teléfono</th>
+								<th></th>
+								<th></th>
+							</tr>
+						</thead>
+						<tbody id="tbl_restaurants">
+								
+						</tbody>
+					</table>
+				</div>
 				<!-- MODAL - AGREGAR NUEVO RESTAURANTE -->
 				<div class="modal fade bootstrapmodal-custom" id="addrestaurantModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
 				  <div class="modal-dialog" role="document">
@@ -64,13 +69,15 @@
 					        		<label for="address" class="cont-modalbootstrap__form--control__label">Dirección del restaurante</label>
 					        		<input id="address" class="cont-modalbootstrap__form--control__input" name="address" type="text" required>
 					        	</div>
-					        	<div class="cont-modalbootstrap__form--control">
-					        		<label for="imagen">Foto del restaurante</label>
-					        		<input id="images" class="cont-modalbootstrap__form--control__input-photo images" name="imagen[]" type="file" accept="img/*" required>
-					        	</div>
-					        	<div class="cont-modalbootstrap__form--control">
-					        		<label for="telephone" class="cont-modalbootstrap__form--control__label">Teléfono del restaurante</label>
-					        		<input id="telephone" class="cont-modalbootstrap__form--control__input" name="telephone" type="text" required maxlength="9" minlength="9">
+					        	<div class="cont-group-form-controls">
+						        	<div class="cont-modalbootstrap__form--control cont-group-form-controls__control">
+						        		<label for="imagen">Foto del restaurante</label>
+						        		<input id="images" class="cont-modalbootstrap__form--control__input-photo images" name="imagen[]" type="file" accept="img/*" required>
+						        	</div>
+						        	<div class="cont-modalbootstrap__form--control cont-group-form-controls__control">
+						        		<label for="telephone" class="cont-modalbootstrap__form--control__label">Teléfono del restaurante</label>
+						        		<input id="telephone" class="cont-modalbootstrap__form--control__input" name="telephone" type="text" required maxlength="9" minlength="9">
+						        	</div>
 					        	</div>
 					        	<div class="cont-modalbootstrap__form--control">
 					        		<div class="cont-modalbootstrap__form--control__continputs">
@@ -95,7 +102,6 @@
 				    </div>
 				  </div>
 				</div>
-				<!-- MODAL - AGREGAR NUEVO RESTAURANTE -->
 				<!-- MODAL - EDITAR NUEVO RESTAURANTE -->
 				<div class="modal fade bootstrapmodal-custom" id="updateModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
 				  <div class="modal-dialog" role="document">
@@ -118,14 +124,16 @@
 					        		<label for="address-update" class="cont-modalbootstrapupdate__form--control__label complete">Dirección del restaurante</label>
 					        		<input id="address-update" class="cont-modalbootstrapupdate__form--control__input" name="address-update" type="text">
 					        	</div>
-					        	<div class="cont-modalbootstrapupdate__form--control">
-					        		<label for="imagen">Foto del restaurante</label>
-					        		<a href="#" id="photo-update" class="cont-modalbootstrapupdate__form--control__linkphoto" target="_blank">(Ver Imagen)</a>
-					        		<input id="images" class="cont-modalbootstrap__form--control__input-photo images-update" name="imagen[]" type="file" accept="img/*">
-					        	</div>
-					        	<div class="cont-modalbootstrapupdate__form--control">
-					        		<label for="telephone-update" class="cont-modalbootstrapupdate__form--control__label complete">Teléfono del restaurante</label>
-					        		<input id="telephone-update" class="cont-modalbootstrapupdate__form--control__input" name="telephone-update" type="text" maxlength="9" minlength="9">
+					        	<div class="cont-group-form-controls">
+						        	<div class="cont-modalbootstrapupdate__form--control cont-group-form-controls__control">
+						        		<label for="imagen">Foto del restaurante</label>
+						        		<a href="#" id="photo-update" class="cont-modalbootstrapupdate__form--control__linkphoto" target="_blank">(Ver Imagen)</a>
+						        		<input id="images" class="cont-modalbootstrap__form--control__input-photo images-update" name="imagen[]" type="file" accept="img/*">
+						        	</div>
+						        	<div class="cont-modalbootstrapupdate__form--control cont-group-form-controls__control">
+						        		<label for="telephone-update" class="cont-modalbootstrapupdate__form--control__label complete">Teléfono del restaurante</label>
+						        		<input id="telephone-update" class="cont-modalbootstrapupdate__form--control__input" name="telephone-update" type="text" maxlength="9" minlength="9">
+						        	</div>
 					        	</div>
 					        	<div class="cont-modalbootstrapupdate__form--control">
 					        		<div class="cont-modalbootstrapupdate__form--control__continputs">
@@ -150,7 +158,6 @@
 				    </div>
 				  </div>
 				</div>
-				<!-- MODAL - EDITAR NUEVO RESTAURANTE -->
 				<!-- MODAL - ELIMINAR RESTAURANTE -->
 				<div class="modal fade bootstrapmodal-custom" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
 				  <div class="modal-dialog" role="document">
@@ -176,7 +183,6 @@
 				    </div>
 				  </div>
 				</div>
-				<!-- MODAL - ELIMINAR RESTAURANTE -->
 			</div>
 		</div>
 	</main>

@@ -40,6 +40,14 @@ button{
 	outline: none !important;	
 }
 
+body, button, input, select, textarea{
+	color: $color-all-titles;
+}
+
+h1, h2, h3, h4, h5, h6{
+	color: $color-all-titles;
+}
+
 img{
 	max-width: 100%;
 	height: auto;
@@ -48,6 +56,16 @@ img{
 ul{
 	list-style: none;
 	padding-left: 0;
+}
+
+/*=======================================
+=            CLASS UTILITIES            =
+=======================================*/
+.marg-57{
+	margin-top: 60px !important;	
+	@media (min-width: 1024px){
+		margin-top: 66.67px !important;
+	}
 }
 
 .container{
@@ -68,6 +86,8 @@ ul{
 	}
 	.center-align{
 		align-items: center !important;
+		justify-content: flex-start !important;
+		margin-top: 4.5rem;
 		.center-text{
 			text-align: center !important;
 			width: 85%;

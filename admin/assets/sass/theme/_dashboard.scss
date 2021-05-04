@@ -1,3 +1,20 @@
+.contain-table-responsive{
+	overflow-x: auto !important;
+	height: auto;
+}
+.cont-group-form-controls{
+	display: flex;
+	flex-wrap: wrap;
+	align-items: flex-end;
+	justify-content: space-between;
+}
+.cont-group-form-controls__control{
+	width: 100%;
+
+	@media (min-width: 1024px){
+		width: 48%;		
+	}
+}
 .main{
 	display: flex;
 	width: 100%;
@@ -216,6 +233,18 @@
 				}
 			}
 
+			/************************** STYLES INTO INPUT SEARCH **************************/
+			&__inputsearch-table{
+				margin-bottom: 0.5rem;
+				&--input{
+					outline: none;
+					padding: 0.4rem 0.5rem;
+					border: thin solid $border-bottom-input;
+					border-radius: .3rem;
+					line-height: 0.3;
+				}
+			}
+
 			/********************* STYLES INTO TOP HEADERS ***********************/
 			&__addtitle{
 				display: flex;
@@ -274,10 +303,7 @@
 		}
 	}
 }
-
 /* DATATABLES - MINIMUM DEVICE WIDTH */
-
-
 /* MODAL BOOTSTRAP - CONFIGURATIONS ADD ITEMS*/
 .bootstrapmodal-custom{
 	.modal-dialog{
@@ -312,25 +338,30 @@
 									flex-direction: column;
 									justify-content: flex-start;
 									width: 48%;
-
+									position: relative;
 
 									&__label{
 										margin: 0;
-										padding: 0;
 										font-size: 0.75rem;
+										position: absolute;
+										left: 3px;
+										top: -8px;
+										background-color: #fff;
+										padding: 0 .3rem;
+										color: #777;
 									}
 
 									&__input{
 										width: 100%;
-										border-top: none;
-										border-left: none;
-										border-right: none;
-										border-bottom: thin solid $border-bottom-input;
+										border: thin solid $border-bottom-input;
 										outline: none;
 										padding-bottom: 0.4rem;
 										padding-top: 0.4rem;
 										background-color: transparent;
 										font-size: 0.9rem;
+										padding-left: 0.3rem;
+										padding-right: 0.3rem;
+										border-radius: .3rem;
 									}
 
 								}
@@ -347,42 +378,47 @@
 								font-size: 0.9rem;
 								position: absolute;
 								left: 0;
-								top: 0;
+								top: 50%;
 								transition: .3s ease;
 								color: #757575;
+								transform: translateY(-50%);
+								margin: 0 0 0 0.5rem;
 
 								&.focus{
 									color: red;
 									font-size: 0.7rem;
-									top: -13px;
+									top: -2px;
+									left: 0;
+									background-color: #fff;
+									padding: 0 0.3rem;
 								}
 
 								&.complete{
-									font-size: 0.7rem;
-									top: -13px;
 									color: green;
+									font-size: 0.7rem;
+									top: -2px;
+									left: 0;
+									background-color: #fff;
+									padding: 0 0.3rem;
 								}
 							}
 
 							&__input{
-								border-left: none;
-								border-right: none;
-								border-top: none;
-								border-bottom: 1px solid $border-bottom-input;
+								border: thin solid $border-bottom-input;
 								width: 100%;
 								outline: none;
-								padding-bottom: 0.4rem;
-								padding-top: 0.4rem;
 								transition: .3s ease;
 								background-color: transparent;
 								font-size: 0.9rem;
+								padding: 0.4rem 0.5rem;
+								border-radius: .3rem;
 
 								&.focus{
-									border-bottom: 1px solid red;
+									border: 1px solid red;
 								}
 
 								&.complete{
-									border-bottom: 1px solid green;
+									border: 1px solid green;
 								}
 							}
 
@@ -429,8 +465,6 @@
 		}
 	}
 }
-
-
 /* MODAL BOOTSTRAP - CONFIGURATIONS UPDATE ITEMS*/
 .bootstrapmodal-custom{
 	.modal-dialog{
@@ -471,27 +505,32 @@
 									flex-direction: column;
 									justify-content: flex-start;
 									width: 48%;
-
+									position: relative;
 
 									&__label{
 										margin: 0;
-										padding: 0;
-										font-size: 0.75rem;
+								    padding: 0;
+								    font-size: 0.75rem;
+								    position: absolute;
+								    top: -10px;
+								    background-color: #fff;
+								    left: 6px;
+								    padding: 0 .3rem;
+								    color: #777;
 									}
 
 									&__input{
 										width: 100%;
-										border-top: none;
-										border-left: none;
-										border-right: none;
-										border-bottom: thin solid $border-bottom-input;
-										outline: none;
-										padding-bottom: 0.4rem;
-										padding-top: 0.4rem;
-										background-color: transparent;
-										font-size: 0.9rem;
+								    border: thin solid #767676;
+								    outline: none;
+								    padding-bottom: 0.4rem;
+								    padding-top: 0.4rem;
+								    background-color: transparent;
+								    font-size: 0.9rem;
+								    border-radius: .3rem;
+								    padding-left: .3rem;
+								    padding-right: .3rem;
 									}
-
 								}
 							}
 
@@ -507,38 +546,44 @@
 							
 							&__label{
 								display: flex;
-								font-size: 0.9rem;
-								position: absolute;
-								left: 0;
-								top: 0;
-								transition: .3s ease;
-								color: #757575;
+						    font-size: 0.9rem;
+						    position: absolute;
+						    left: 0;
+						    top: 50%;
+						    transition: 0.3s ease;
+						    color: #757575;
+						    margin: 0 0 0 0.5rem;
+						    transform: translateY(-50%);
 
 								&.focus{
 									color: red;
 									font-size: 0.7rem;
-									top: -13px;
+							    top: -1px;
+							    color: green;
+							    background-color: #fff;
+							    left: 2px;
+							    padding: 0 .3rem;
 								}
 
 								&.complete{
 									font-size: 0.7rem;
-									top: -13px;
-									color: green;
+							    top: -1px;
+							    color: green;
+							    background-color: #fff;
+							    left: 2px;
+							    padding: 0 .3rem;
 								}
 							}
 
 							&__input{
-								border-left: none;
-								border-right: none;
-								border-top: none;
-								border-bottom: 1px solid $border-bottom-input;
+								border: thin solid $border-bottom-input;
 								width: 100%;
 								outline: none;
-								padding-bottom: 0.4rem;
-								padding-top: 0.4rem;
+								padding: 0.4rem 0.5rem;
 								transition: .3s ease;
 								background-color: transparent;
 								font-size: 0.9rem;
+								border-radius: .3rem;
 
 								&.focus{
 									border-bottom: 1px solid red;
@@ -592,7 +637,6 @@
 		}
 	}
 }
-
 /* MODAL BOOTSTRAP - CONFIGURATIONS DELETE ITEMS*/
 .bootstrapmodal-custom{
 	.modal-dialog{
@@ -657,4 +701,8 @@
 			}
 		}
 	}
+}
+/* STYLES INTO TABLE NON RESULT */
+.msg-non-results-res{
+	text-align: center;
 }

@@ -114,17 +114,32 @@ $(document).on('click', '#btnadd-restaurant', function(e){
 });
 
 /************************** AGREGAR RESTAURANTES **************************/
-function listRestaurants(){ 
+function listRestaurants(searchVal){ 
   $.ajax({
     url: "admin/controllers/list_restaurants.php",
     method: "POST",
     datatype: "JSON",
     contentType: 'application/x-www-form-urlencoded;charset=UTF-8',
+    data: {searchList : searchVal},
   }).done( function (res) {
 
     var response = JSON.parse(res);
     var template = "";
-    response.forEach(e => {
+
+    if(response.length == 0){
+      template = `
+        <tr>
+          <td colspan="7">
+            <div class="msg-non-results-res">
+              <h3>No se encontraron resultados...</h3>
+            </div>
+          </td>
+        </tr>
+      `;
+
+      $("#tbl_restaurants").html(template);
+    }else{
+      response.forEach(e => {
       
       var img_route = "admin/assets/img/restaurants/"+e.photo;
 
@@ -154,13 +169,25 @@ function listRestaurants(){
               >Eliminar</a>
           </td>
         </tr>
-      `;
-    });
+        `;
+      });
+      
+      $("#tbl_restaurants").html(template);
+    }
 
-    $("#tbl_restaurants").html(template);
   });
 }
 
+/************************** BUSCADOR DE RESTAURANTES **************************/
+$(document).on('keyup', '#searchrestaurants', function() {
+  var searchVal = $(this).val();
+
+  if(searchVal != ""){
+    listRestaurants(searchVal);
+  }else{
+    listRestaurants();
+  }
+});
 
 /************************** LISTAR DATOS DEL RESTAURANTE EN EL MODAL**************************/
 $(document).on('click', '.btn-update-restaurant', function(e){
@@ -235,5 +262,4 @@ $(document).on('click', '#btnupdate-restaurant', function(e){
     listRestaurants();
     $('#updateModal').modal("hide");
   });
-
 });

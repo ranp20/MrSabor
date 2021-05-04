@@ -21,14 +21,25 @@
 	/************************** TOGGLE SHOW IN HEADERTOP **************************/
 	/******************************************************************************/
 	function showHeader(){
-		let headerTop = d.querySelector('.homepage__infotop');
+		let headerTop = d.querySelector('#homepage-infotop');
 		let scrollTop = d.documentElement.scrollTop;
 		let heroImageClass = d.querySelector('.categories-food');
 		let heightHeroImage = heroImageClass.offsetTop;
-		if(heightHeroImage - 130 < scrollTop ){
+		let itemLinks = d.querySelectorAll('.homepage__infotop__header--contmenu__menu--link');
+		let itemprofile = d.querySelector('.homepage__infotop__header--contlogin__profile');
+
+		if(heightHeroImage - 160 < scrollTop ){
 			headerTop.classList.add("showBottom");
+			itemprofile.classList.add("disablehover");
+			for(var i = 0; i < itemLinks.length; i ++){
+				itemLinks[i].classList.add("disablehover");
+			}
 		}else{
 			headerTop.classList.remove("showBottom");
+			itemprofile.classList.remove("disablehover");
+			for(var i = 0; i < itemLinks.length; i ++){
+				itemLinks[i].classList.remove("disablehover");
+			}
 		}
 	}
 

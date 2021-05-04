@@ -24,7 +24,7 @@
 			<?php require_once 'includes/header-top.php'; ?>
 			<div class="main__cont--content">
 				<div class="main__cont--content__addtitle">
-					<h2 class="main__cont--content__addtitle--title">MENÚS</h2>
+					<h2 class="main__cont--content__addtitle--title">CATEGORÍAS</h2>
 					<button type="button" href="#" id="add-restaurant" class="main__cont--content__addtitle--btn-add" data-toggle="modal" data-target="#addrestaurantModal"><span class="main__cont--content__addtitle--btn-add__hidden">Agregar&nbsp;</span>+</button>
 				</div>
 			</div>

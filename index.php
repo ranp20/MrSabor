@@ -1,13 +1,13 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
 	<?php require_once 'views/includes/header_links.php'; ?>
-	<title>Mr Sabor - Deliveries y Reservas</title>
+	<title>Mr Sabor - Deliveries</title>
 </head>
 <body>
 	<div class="home">
 		<div class="homepage">
-			<div class="homepage__infotop">
+			<div class="homepage__infotop" id="homepage-infotop">
 				<div class="box">
 					<div class="homepage__infotop__header">
 						<div id="menu-show-home"></div>
@@ -33,8 +33,8 @@
 							</a>
 						</div>
 						<div class="homepage__infotop__header--contlogin">
-							<a href="#" class="homepage__infotop__header--contlogin__profile">
-								<img src="assets/img/icons/icon-userprofile.svg" alt="" class="homepage__infotop__header--contlogin__profile--image">
+							<a href="login" class="homepage__infotop__header--contlogin__profile">
+								<svg xmlns="http://www.w3.org/2000/svg" fill="#FFFFFF"  class="homepage__infotop__header--contlogin__profile--icon" width="24" height="24" viewBox="0 0 24 24"><path d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm0 22c-3.123 0-5.914-1.441-7.749-3.69.259-.588.783-.995 1.867-1.246 2.244-.518 4.459-.981 3.393-2.945-3.155-5.82-.899-9.119 2.489-9.119 3.322 0 5.634 3.177 2.489 9.119-1.035 1.952 1.1 2.416 3.393 2.945 1.082.25 1.61.655 1.871 1.241-1.836 2.253-4.628 3.695-7.753 3.695z"/></svg>
 							</a>
 						</div>
 					</div>	
@@ -44,7 +44,7 @@
 		<section class="heroimage" id="inicio">
 			<ul class="heroimage--menu" id="sliderHeroimages">
 				<li class="heroimage--menu__item">
-					<img class="heroimage--menu__item--background" src="assets/img/images/comidas.jpg" alt="">
+					<img class="heroimage--menu__item--background" src="admin/assets/img/banners/home-banner1.jpg" alt="">
 					<div class="heroimage--menu__item--content left-align container">
 						<div class="heroimage--menu__item--content__info left-text">
 							<h2 class="heroimage--menu__item--content__info--title">Saludable por dentro, fresco <span>por fuera</span></h2>
@@ -54,7 +54,7 @@
 					</div>
 				</li>
 				<li class="heroimage--menu__item">
-					<img class="heroimage--menu__item--background" src="assets/img/images/madera.jpg" alt="">
+					<img class="heroimage--menu__item--background" src="admin/assets/img/banners/home-banner3.jpg" alt="">
 					<div class="heroimage--menu__item--content center-align container">
 						<div class="heroimage--menu__item--content__info center-text">
 							<h2 class="heroimage--menu__item--content__info--title">La comida sana viene de <span class="block">Ingredientes sanos</span></h2>
@@ -64,7 +64,7 @@
 					</div>
 				</li>
 				<li class="heroimage--menu__item">
-					<img class="heroimage--menu__item--background" src="assets/img/images/comida_vegetariana.jpg" alt="">
+					<img class="heroimage--menu__item--background" src="admin/assets/img/banners/home-banner2.jpg" alt="">
 					<div class="heroimage--menu__item--content right-align container">
 						<div class="heroimage--menu__item--content__info right-text">
 							<h2 class="heroimage--menu__item--content__info--title">Comida sana <span class="block">Para el desayuno</span></h2>
@@ -155,10 +155,9 @@
 						<div class="our-menu__content--cont-our-menus__categmenu--meals">
 							<ul class="our-menu__content--cont-our-menus__categmenu--meals__menu" id="sliderMenus">
 								<li class="our-menu__content--cont-our-menus__categmenu--meals__menu__item">
-									<a href="#" class="our-menu__content--cont-our-menus__categmenu--meals__menu__item__link">
+									<a href="detalle-producto" class="our-menu__content--cont-our-menus__categmenu--meals__menu__item__link">
 										<div class="our-menu__content--cont-our-menus__categmenu--meals__menu__item__link--bgcimage">
 											<img src="admin/assets/img/menus/Ensalada_de_pollo.jpeg" alt="">
-											<span>S/. 12.00</span>
 										</div>
 										<div class="our-menu__content--cont-our-menus__categmenu--meals__menu__item__link--continfo">
 											<h4 class="our-menu__content--cont-our-menus__categmenu--meals__menu__item__link--continfo__title">Ensalada con Pollo</h4>
@@ -166,10 +165,9 @@
 									</a>
 								</li>
 								<li class="our-menu__content--cont-our-menus__categmenu--meals__menu__item">
-									<a href="#" class="our-menu__content--cont-our-menus__categmenu--meals__menu__item__link">
+									<a href="detalle-producto" class="our-menu__content--cont-our-menus__categmenu--meals__menu__item__link">
 										<div class="our-menu__content--cont-our-menus__categmenu--meals__menu__item__link--bgcimage">
 											<img src="admin/assets/img/menus/Huevo_de_desayuno_saludable.jpeg" alt="">
-											<span>S/. 12.00</span>
 										</div>
 										<div class="our-menu__content--cont-our-menus__categmenu--meals__menu__item__link--continfo">
 											<h4 class="our-menu__content--cont-our-menus__categmenu--meals__menu__item__link--continfo__title">Desayuno de Huevo saludable</h4>
@@ -177,10 +175,9 @@
 									</a>
 								</li>
 								<li class="our-menu__content--cont-our-menus__categmenu--meals__menu__item">
-									<a href="#" class="our-menu__content--cont-our-menus__categmenu--meals__menu__item__link">
+									<a href="detalle-producto" class="our-menu__content--cont-our-menus__categmenu--meals__menu__item__link">
 										<div class="our-menu__content--cont-our-menus__categmenu--meals__menu__item__link--bgcimage">
 											<img src="admin/assets/img/menus/Salmón_a_la_plancha.jpeg" alt="">
-											<span>S/. 12.00</span>
 										</div>
 										<div class="our-menu__content--cont-our-menus__categmenu--meals__menu__item__link--continfo">
 											<h4 class="our-menu__content--cont-our-menus__categmenu--meals__menu__item__link--continfo__title">Salmón a la plancha</h4>
@@ -188,10 +185,9 @@
 									</a>
 								</li>
 								<li class="our-menu__content--cont-our-menus__categmenu--meals__menu__item">
-									<a href="#" class="our-menu__content--cont-our-menus__categmenu--meals__menu__item__link">
+									<a href="detalle-producto" class="our-menu__content--cont-our-menus__categmenu--meals__menu__item__link">
 										<div class="our-menu__content--cont-our-menus__categmenu--meals__menu__item__link--bgcimage">
 											<img src="admin/assets/img/menus/Sándwiches_de_tomates.jpeg" alt="">
-											<span>S/. 12.00</span>
 										</div>
 										<div class="our-menu__content--cont-our-menus__categmenu--meals__menu__item__link--continfo">
 											<h4 class="our-menu__content--cont-our-menus__categmenu--meals__menu__item__link--continfo__title">Ensalada con Pollo</h4>
@@ -199,10 +195,9 @@
 									</a>
 								</li>
 								<li class="our-menu__content--cont-our-menus__categmenu--meals__menu__item">
-									<a href="#" class="our-menu__content--cont-our-menus__categmenu--meals__menu__item__link">
+									<a href="detalle-producto" class="our-menu__content--cont-our-menus__categmenu--meals__menu__item__link">
 										<div class="our-menu__content--cont-our-menus__categmenu--meals__menu__item__link--bgcimage">
 											<img src="admin/assets/img/menus/Verduras_asadas_a_la_parrilla.jpeg" alt="">
-											<span>S/. 12.00</span>
 										</div>
 										<div class="our-menu__content--cont-our-menus__categmenu--meals__menu__item__link--continfo">
 											<h4 class="our-menu__content--cont-our-menus__categmenu--meals__menu__item__link--continfo__title">Desayuno de Huevo saludable</h4>
@@ -210,10 +205,9 @@
 									</a>
 								</li>
 								<li class="our-menu__content--cont-our-menus__categmenu--meals__menu__item">
-									<a href="#" class="our-menu__content--cont-our-menus__categmenu--meals__menu__item__link">
+									<a href="detalle-producto" class="our-menu__content--cont-our-menus__categmenu--meals__menu__item__link">
 										<div class="our-menu__content--cont-our-menus__categmenu--meals__menu__item__link--bgcimage">
 											<img src="admin/assets/img/menus/Salmón_a_la_plancha_1.jpeg" alt="">
-											<span>S/. 12.00</span>
 										</div>
 										<div class="our-menu__content--cont-our-menus__categmenu--meals__menu__item__link--continfo">
 											<h4 class="our-menu__content--cont-our-menus__categmenu--meals__menu__item__link--continfo__title">Salmón a la plancha</h4>
@@ -221,10 +215,9 @@
 									</a>
 								</li>
 								<li class="our-menu__content--cont-our-menus__categmenu--meals__menu__item">
-									<a href="#" class="our-menu__content--cont-our-menus__categmenu--meals__menu__item__link">
+									<a href="detalle-producto" class="our-menu__content--cont-our-menus__categmenu--meals__menu__item__link">
 										<div class="our-menu__content--cont-our-menus__categmenu--meals__menu__item__link--bgcimage">
 											<img src="admin/assets/img/menus/Verdura_asada_a_la_parrilla.jpeg" alt="">
-											<span>S/. 12.00</span>
 										</div>
 										<div class="our-menu__content--cont-our-menus__categmenu--meals__menu__item__link--continfo">
 											<h4 class="our-menu__content--cont-our-menus__categmenu--meals__menu__item__link--continfo__title">Salmón a la plancha</h4>
@@ -232,10 +225,9 @@
 									</a>
 								</li>
 								<li class="our-menu__content--cont-our-menus__categmenu--meals__menu__item">
-									<a href="#" class="our-menu__content--cont-our-menus__categmenu--meals__menu__item__link">
+									<a href="detalle-producto" class="our-menu__content--cont-our-menus__categmenu--meals__menu__item__link">
 										<div class="our-menu__content--cont-our-menus__categmenu--meals__menu__item__link--bgcimage">
 											<img src="admin/assets/img/menus/Salmón_a_la_plancha_1.jpeg" alt="">
-											<span>S/. 12.00</span>
 										</div>
 										<div class="our-menu__content--cont-our-menus__categmenu--meals__menu__item__link--continfo">
 											<h4 class="our-menu__content--cont-our-menus__categmenu--meals__menu__item__link--continfo__title">Salmón a la plancha</h4>
@@ -243,10 +235,9 @@
 									</a>
 								</li>
 								<li class="our-menu__content--cont-our-menus__categmenu--meals__menu__item">
-									<a href="#" class="our-menu__content--cont-our-menus__categmenu--meals__menu__item__link">
+									<a href="detalle-producto" class="our-menu__content--cont-our-menus__categmenu--meals__menu__item__link">
 										<div class="our-menu__content--cont-our-menus__categmenu--meals__menu__item__link--bgcimage">
 											<img src="admin/assets/img/menus/Ensalada_de_pollo.jpeg" alt="">
-											<span>S/. 12.00</span>
 										</div>
 										<div class="our-menu__content--cont-our-menus__categmenu--meals__menu__item__link--continfo">
 											<h4 class="our-menu__content--cont-our-menus__categmenu--meals__menu__item__link--continfo__title">Ensalada con Pollo</h4>
@@ -319,24 +310,24 @@
 					</ul>
 				</div>
 				<div class="footer__content--cont">
-					<h2 class="footer__content--cont__title">NOSOTROS</h2>
+					<h2 class="footer__content--cont__title">CONTACTOS</h2>
 					<ul class="footer__content--cont__menu">
 						<li class="footer__content--cont__menu--icon-item">
 							<a href="#" class="footer__content--cont__menu--link">
+								<img src="assets/img/icons/icon-home.svg" alt="">
+								<span>Av. Las manzanas 252 - Sucre - Lima, Perú</span>
+							</a>
+						</li>
+						<li class="footer__content--cont__menu--icon-item">
+							<a href="#" class="footer__content--cont__menu--link">
 								<img src="assets/img/icons/icon-phone.svg" alt="">
-								<span>Contáctanos</span>
+								<span>+51 918 283 634</span>
 							</a>
 						</li>
 						<li class="footer__content--cont__menu--icon-item">
 							<a href="#" class="footer__content--cont__menu--link">
-								<img src="assets/img/icons/icons-gallery-pictures.svg" alt="">
-								<span>Galería</span>
-							</a>
-						</li>
-						<li class="footer__content--cont__menu--icon-item">
-							<a href="#" class="footer__content--cont__menu--link">
-								<img src="assets/img/icons/icons-eye.svg" alt="">
-								<span>Política de privacidad</span>
+								<img src="assets/img/icons/icon-mail.svg" alt="">
+								<span>info@gmail.com</span>
 							</a>
 						</li>
 					</ul>
