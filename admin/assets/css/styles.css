@@ -857,6 +857,16 @@ img {
 /* STYLES INTO TABLE NON RESULT */
 .msg-non-results-res {
   text-align: center;
+  padding: 1.2rem;
+}
+.msg-non-results-res__icon {
+  width: 50px;
+  height: 50px;
+  margin-bottom: 0.6rem;
+}
+.msg-non-results-res__title {
+  font-size: 1.1rem;
+  color: #3F3F3F;
 }
 
 .body-login-adm {

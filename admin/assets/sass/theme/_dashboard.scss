@@ -705,4 +705,16 @@
 /* STYLES INTO TABLE NON RESULT */
 .msg-non-results-res{
 	text-align: center;
+	padding: 1.2rem;
+	
+	&__icon{
+		width: 50px;
+		height: 50px;
+		margin-bottom: 0.6rem;
+	}
+
+	&__title{
+		font-size: 1.1rem;
+		color: $color-paragraph-light;
+	}
 }

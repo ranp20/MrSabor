@@ -86,7 +86,7 @@
 				</div>
 				<ul class="categories-food__content--menu">
 					<li class="categories-food__content--menu__item">
-						<a href="#" class="categories-food__content--menu__item__link">
+						<a href="listado-categoria" class="categories-food__content--menu__item__link">
 							<div class="categories-food__content--menu__item__link--categ-imagen">
 								<img src="assets/img/images/comida_vegetariana.jpg" alt="">
 							</div>
@@ -96,7 +96,7 @@
 						</a>
 					</li>
 					<li class="categories-food__content--menu__item">
-						<a href="#" class="categories-food__content--menu__item__link">
+						<a href="listado-categoria" class="categories-food__content--menu__item__link">
 							<div class="categories-food__content--menu__item__link--categ-imagen">
 								<img src="assets/img/images/comida_cárnica.jpeg" alt="">
 							</div>
@@ -106,7 +106,7 @@
 						</a>
 					</li>
 					<li class="categories-food__content--menu__item">
-						<a href="#" class="categories-food__content--menu__item__link">
+						<a href="listado-categoria" class="categories-food__content--menu__item__link">
 							<div class="categories-food__content--menu__item__link--categ-imagen">
 								<img src="assets/img/images/comida_rápida.jpg" alt="">
 							</div>

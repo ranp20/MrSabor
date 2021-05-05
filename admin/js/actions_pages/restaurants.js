@@ -131,7 +131,8 @@ function listRestaurants(searchVal){
         <tr>
           <td colspan="7">
             <div class="msg-non-results-res">
-              <h3>No se encontraron resultados...</h3>
+              <img src="admin/assets/img/icons/icon-sad-face.svg" alt="" class="msg-non-results-res__icon">
+              <h3 class="msg-non-results-res__title">No se encontraron resultados...</h3>
             </div>
           </td>
         </tr>
