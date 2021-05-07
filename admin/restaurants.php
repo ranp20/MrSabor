@@ -31,7 +31,7 @@
 					<input type="text" class="main__cont--content__inputsearch-table--input" name="searchrestaurants" id="searchrestaurants" maxlength="100" placeholder="Buscar...">
 				</div>
 				<div class="contain-table-responsive">
-					<table class="main__cont--content__list-restaurants">
+					<table class="main__cont--content__list-results">
 						<thead>
 							<tr>
 								<th>ID</th>
@@ -163,7 +163,7 @@
 				  <div class="modal-dialog" role="document">
 				    <div class="modal-content">
 				      <div class="modal-header">
-				        <h5 class="modal-title" id="update-modal-label">ELIMINAR RESTAURANTE</h5>
+				        <h5 class="modal-title" id="delete-modal-label">ELIMINAR RESTAURANTE</h5>
 				        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
 				          <span aria-hidden="true">&times;</span>
 				        </button>
@@ -171,7 +171,7 @@
 				      <div class="modal-body cont-total-update-items">
 					      <h2 class="text-message-modalAlt">¿Seguro que desea eliminar este registro?</h2>
 				      	<div class="cont-modalbootstrapupdate">
-					        <form action="" id="form-update-restaurant" method="POST" class="cont-modalbootstrapupdate__form" autocomplete="false" enctype="multipart/form-data">
+					        <form action="" id="form-delete-restaurant" method="POST" class="cont-modalbootstrapupdate__form" autocomplete="false" enctype="multipart/form-data">
 					        	<input type="hidden" id="iddelete-restaurant">
 							      <div class="cont-modalbootstrapupdate__footer">
 							        <button type="button" class="cont-modalbootstrapupdate__footer--btncancel" data-dismiss="modal">CANCELAR</button>

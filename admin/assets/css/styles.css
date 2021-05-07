@@ -414,15 +414,15 @@ img {
   /************************** STYLES INTO INPUT SEARCH **************************/
   /********************* STYLES INTO TOP HEADERS ***********************/
 }
-.main__cont--content__list-restaurants {
+.main__cont--content__list-results {
   width: 100%;
   border-collapse: collapse !important;
   border: 1px solid #dee2e6;
 }
-.main__cont--content__list-restaurants thead tr {
+.main__cont--content__list-results thead tr {
   border: 1px solid #dee2e6;
 }
-.main__cont--content__list-restaurants thead tr th {
+.main__cont--content__list-results thead tr th {
   border: 1px solid #dee2e6;
   border-top: 1px solid #dee2e6;
   border-top-width: 0;
@@ -430,23 +430,23 @@ img {
   border-bottom-width: 0;
   padding: 8px;
 }
-.main__cont--content__list-restaurants tbody tr {
+.main__cont--content__list-results tbody tr {
   border: 1px solid #dee2e6;
 }
-.main__cont--content__list-restaurants tbody tr:first-child {
+.main__cont--content__list-results tbody tr:first-child {
   border-top: 2px solid #dee2e6;
 }
-.main__cont--content__list-restaurants tbody tr:nth-child(2n+1) {
+.main__cont--content__list-results tbody tr:nth-child(2n+1) {
   background-color: #F2F2F2;
 }
-.main__cont--content__list-restaurants tbody tr td {
+.main__cont--content__list-results tbody tr td {
   font-size: 0.9rem;
   border: 1px solid #dee2e6;
   border-top: 1px solid #dee2e6;
   border-bottom-width: 0;
   padding: 8px;
 }
-.main__cont--content__list-restaurants tbody tr td.cont-img-restaurant {
+.main__cont--content__list-results tbody tr td.cont-img-table {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -456,37 +456,37 @@ img {
   width: 120px;
   height: 85px;
 }
-.main__cont--content__list-restaurants tbody tr td.cont-img-restaurant a {
+.main__cont--content__list-results tbody tr td.cont-img-table a {
   display: flex;
   margin-left: auto;
   margin-right: auto;
   width: auto;
   height: auto;
 }
-.main__cont--content__list-restaurants tbody tr td.cont-img-restaurant a img {
+.main__cont--content__list-results tbody tr td.cont-img-table a img {
   display: flex;
   margin-left: auto;
   margin-right: auto;
   width: auto;
   height: auto;
 }
-.main__cont--content__list-restaurants tbody tr td.cont-btn-update, .main__cont--content__list-restaurants tbody tr td.cont-btn-delete {
+.main__cont--content__list-results tbody tr td.cont-btn-update, .main__cont--content__list-results tbody tr td.cont-btn-delete {
   padding: 0;
   margin: auto;
   text-align: center;
 }
-.main__cont--content__list-restaurants tbody tr td.cont-btn-update a, .main__cont--content__list-restaurants tbody tr td.cont-btn-delete a {
+.main__cont--content__list-results tbody tr td.cont-btn-update a, .main__cont--content__list-results tbody tr td.cont-btn-delete a {
   color: #fff;
   padding: 0.5rem 2rem;
   border-radius: 1.5rem;
 }
-.main__cont--content__list-restaurants tbody tr td.cont-btn-update a:hover, .main__cont--content__list-restaurants tbody tr td.cont-btn-delete a:hover {
+.main__cont--content__list-results tbody tr td.cont-btn-update a:hover, .main__cont--content__list-results tbody tr td.cont-btn-delete a:hover {
   opacity: 0.6;
 }
-.main__cont--content__list-restaurants tbody tr td.cont-btn-update a {
+.main__cont--content__list-results tbody tr td.cont-btn-update a {
   background-color: #0D6EFD;
 }
-.main__cont--content__list-restaurants tbody tr td.cont-btn-delete a {
+.main__cont--content__list-results tbody tr td.cont-btn-delete a {
   background-color: #DC3545;
 }
 .main__cont--content__inputsearch-table {
