@@ -49,6 +49,22 @@
 				height: 37px;
 
 				&--item{
+
+					&__liveWeb{
+						background-color: #007bff;
+				    padding: .35rem 2rem;
+				    border-radius: .3rem;
+				    display: flex;
+				    align-items: center;
+				    justify-content: center;
+				    text-align: center;
+				    margin-right: 1rem;
+
+				    svg{
+				    	fill: #fff;
+				    }
+					}
+
 					&__date-time-top{
 						display: none;
 						p{
@@ -160,9 +176,6 @@
 					tr{
 						border: 1px solid $border-color-table;
 
-						&:hover{
-							background-color: rgba(0,0,0,.12);
-						}
 
 						&:first-child{
 							border-top: 2px solid $border-color-table;							
@@ -172,6 +185,10 @@
 							background-color: $bgc-th-table;
 						}
 
+						&:hover{
+							background-color: rgba(0,0,0,.12);
+						}
+						
 						td{
 							font-size: 0.9rem;
 							border: 1px solid $border-color-table;
@@ -207,7 +224,7 @@
 							}
 							&.cont-btn-update, 
 							&.cont-btn-delete{
-								padding: 0;
+								padding: 8px;
 								margin: auto;
 								text-align: center;
 								a{
@@ -682,7 +699,7 @@
 					    margin-left: .5rem;
 					    color: #fff;
 					    border-radius: 1.5rem;
-					    margin-bottom: 0.5rem;
+					    margin-bottom: 1rem;
 					    width: 100%;
 					    font-size: 0.9rem;
 					    font-weight: bold;

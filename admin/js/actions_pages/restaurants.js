@@ -25,55 +25,7 @@ function iniciarMap(){
   });
 }
 
-/************************** ANIMACIÓN DE LAS CAJAS DE TEXTO - AGREGAR RESTAURANTE **************************/
-let inputs = document.querySelectorAll('.cont-modalbootstrap__form--control__input');
 
-inputs.forEach( (input) => {
-  input.onfocus = () => {
-    input.previousElementSibling.classList.add('focus');
-    input.classList.add('focus');
-  }
-
-  input.onblur = () => {
-
-    input.value = input.value.trim();
-
-    if(input.value.trim().length == 0){
-      input.previousElementSibling.classList.remove('focus');
-      input.classList.remove('focus');
-      input.previousElementSibling.classList.remove('complete');
-    }else{
-      input.previousElementSibling.classList.add('complete');
-      input.classList.remove('focus');
-    }
-  }
-});
-
-
-/************************** ANIMACIÓN DE LAS CAJAS DE TEXTO - ACTUALIZAR RESTAURANTE **************************/
-let inputs_update = document.querySelectorAll('.cont-modalbootstrapupdate__form--control__input');
-
-inputs_update.forEach( (input_update) => {
-  
-  input_update.onfocus = () => {
-    input_update.previousElementSibling.classList.add('focus');
-    input_update.classList.add('focus');
-  }
-
-  input_update.onblur = () => {
-
-    input_update.value = input_update.value.trim();
-
-    if(input_update.value.trim().length == 0){
-      input_update.previousElementSibling.classList.remove('focus');
-      input_update.classList.remove('focus');
-      input_update.previousElementSibling.classList.remove('complete');
-    }else{
-      input_update.previousElementSibling.classList.add('complete');
-      input_update.classList.remove('focus');
-    }
-  }
-});
 
 
 /************************** LISTAR RESTAURANTES **************************/

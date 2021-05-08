@@ -1,3 +1,9 @@
+<?php 
+	
+	require_once 'controllers/list-all-categories.php';
+	$category = new ListCategories();
+	$listcat = $category->get_categories();
+?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -85,36 +91,24 @@
 					<h2 class="categories-food__content--conttitle__acotacion">NUESTRAS CATEGORÍAS</h2>
 				</div>
 				<ul class="categories-food__content--menu">
-					<li class="categories-food__content--menu__item">
-						<a href="listado-categoria" class="categories-food__content--menu__item__link">
-							<div class="categories-food__content--menu__item__link--categ-imagen">
-								<img src="assets/img/images/comida_vegetariana.jpg" alt="">
-							</div>
-							<div class="categories-food__content--menu__item__link--categ-description">
-								<h2 class="categories-food__content--menu__item__link--categ-description--name">VEGETARIANA</h2>
-							</div>
-						</a>
-					</li>
-					<li class="categories-food__content--menu__item">
-						<a href="listado-categoria" class="categories-food__content--menu__item__link">
-							<div class="categories-food__content--menu__item__link--categ-imagen">
-								<img src="assets/img/images/comida_cárnica.jpeg" alt="">
-							</div>
-							<div class="categories-food__content--menu__item__link--categ-description">
-								<h2 class="categories-food__content--menu__item__link--categ-description--name">CÁRNICA</h2>
-							</div>
-						</a>
-					</li>
-					<li class="categories-food__content--menu__item">
-						<a href="listado-categoria" class="categories-food__content--menu__item__link">
-							<div class="categories-food__content--menu__item__link--categ-imagen">
-								<img src="assets/img/images/comida_rápida.jpg" alt="">
-							</div>
-							<div class="categories-food__content--menu__item__link--categ-description">
-								<h2 class="categories-food__content--menu__item__link--categ-description--name">COMIDA RÁPIDA</h2>
-							</div>
-						</a>
-					</li>
+					<?php 
+						foreach($listcat as $key => $value){
+							$path_categ = "admin/assets/img/categories/".$value['photo'];
+
+							echo "
+								<li class='categories-food__content--menu__item'>
+									<a href='listado-categoria' class='categories-food__content--menu__item__link'>
+										<div class='categories-food__content--menu__item__link--categ-imagen'>
+											<img src='{$path_categ}' alt=''>
+										</div>
+										<div class='categories-food__content--menu__item__link--categ-description'>
+											<h2 class='categories-food__content--menu__item__link--categ-description--name'>{$value['name']}</h2>
+										</div>
+									</a>
+								</li>
+							";
+						}
+					?>
 				</ul>
 			</div>
 		</section>

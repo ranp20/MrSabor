@@ -23,10 +23,204 @@
 		<div class="main__cont">
 			<?php require_once 'includes/header-top.php'; ?>
 			<div class="main__cont--content">
-				<p>Lorem ipsum, dolor sit amet, consectetur adipisicing elit. Dolorum quisquam molestias sed consectetur voluptas officia accusantium ipsa error non neque vitae, in dolor amet at porro dolore ea nobis impedit?</p>
+				<div class="main__cont--content__addtitle">
+					<h2 class="main__cont--content__addtitle--title">PRODUCTOS</h2>
+					<button type="button" href="#" id="add-product" class="main__cont--content__addtitle--btn-add" data-toggle="modal" data-target="#addproductModal"><span class="main__cont--content__addtitle--btn-add__hidden">Agregar&nbsp;</span>+</button>
+				</div>
+				<div class="main__cont--content__inputsearch-table">
+					<input type="text" class="main__cont--content__inputsearch-table--input" name="searchproduct" id="searchproduct" maxlength="100" placeholder="Buscar...">
+				</div>
+				<div class="contain-table-responsive">
+					<table class="main__cont--content__list-results">
+						<thead>
+							<tr>
+								<th>ID</th>
+								<th>Nombre</th>
+								<th>Descripción</th>
+								<th>Precio</th>
+								<th>Stock</th>
+								<th>Imagen</th>
+								<th>Oferta</th>
+								<th>Categoría</th>
+								<th>Restaurant</th>
+								<th></th>
+								<th></th>
+							</tr>
+						</thead>
+						<tbody id="tbl_products">
+								
+						</tbody>
+					</table>
+				</div>
+				<!-- MODAL - AGREGAR NUEVO RESTAURANTE -->
+				<div class="modal fade bootstrapmodal-custom" id="addproductModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+				  <div class="modal-dialog" role="document">
+				    <div class="modal-content">
+				      <div class="modal-header">
+				        <h5 class="modal-title" id="exampleModalLabel">AGREGAR PRODUCTO</h5>
+				        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+				          <span aria-hidden="true">&times;</span>
+				        </button>
+				      </div>
+				      <div class="modal-body">
+				      	<div class="cont-modalbootstrap">
+					        <form action="" id="form-add-product" method="POST" class="cont-modalbootstrap__form" autocomplete="false" enctype="multipart/form-data">
+					        	<div class="cont-modalbootstrap__form--control">
+					        		<label for="name" class="cont-modalbootstrap__form--control__label">Nombre del Producto</label>
+					        		<input id="name" class="cont-modalbootstrap__form--control__input" name="name" type="text" required>
+					        	</div>
+					        	<div class="cont-modalbootstrap__form--control">
+					        		<label for="address" class="cont-modalbootstrap__form--control__label">Descripción del producto</label>
+					        		<input id="address" class="cont-modalbootstrap__form--control__input" name="address" type="text" required>
+					        	</div>
+					        	<div class="cont-group-form-controls">
+						        	<div class="cont-modalbootstrap__form--control cont-group-form-controls__control">
+						        		<label for="price" class="cont-modalbootstrap__form--control__label">Precio del Producto</label>
+						        		<input id="price" class="cont-modalbootstrap__form--control__input" name="price" type="text" required maxlength="9" minlength="9">
+						        	</div>
+						        	<div class="cont-modalbootstrap__form--control cont-group-form-controls__control">
+						        		<label for="stock" class="cont-modalbootstrap__form--control__label">Stock del Producto</label>
+						        		<input id="stock" class="cont-modalbootstrap__form--control__input" name="stock" type="text" required maxlength="9" minlength="9">
+						        	</div>
+					        	</div>
+					        	<div class="cont-group-form-controls">
+						        	<div class="cont-modalbootstrap__form--control cont-group-form-controls__control">
+						        		<label for="images">Foto del Producto</label>
+						        		<input id="images" class="cont-modalbootstrap__form--control__input-photo images" name="imagen[]" type="file" accept="img/*" required>						        		
+						        	</div>
+						        	<div class="cont-modalbootstrap__form--control cont-group-form-controls__control">
+						        		<label for="offer" class="cont-modalbootstrap__form--control__label">Oferta del Producto</label>
+						        		<input id="offer" class="cont-modalbootstrap__form--control__input" name="offer" type="text" required maxlength="9" minlength="9">
+						        	</div>
+					        	</div>
+					        	<div class="cont-modalbootstrap__form--control">
+					        		<label for="selcategory">Categoría del Producto</label>
+					        		<select name="selcategory" id="selcategory">
+					        			<option value="">Categoría 1</option>
+					        			<option value="">Categoría 2</option>
+					        			<option value="">Categoría 3</option>
+					        			<option value="">Categoría 4</option>
+					        		</select>
+					        	</div>
+					        	<div class="cont-modalbootstrap__form--control">
+					        		<label for="selrestaurant">Restaurante del Producto</label>
+					        		<select name="selrestaurant" id="selrestaurant">
+					        			<option value="">Restaurante 1</option>
+					        			<option value="">Restaurante 2</option>
+					        			<option value="">Restaurante 3</option>
+					        			<option value="">Restaurante 4</option>
+					        		</select>
+					        	</div>
+							      <div class="cont-modalbootstrap__footer">
+							        <button type="button" class="cont-modalbootstrap__footer--btncancel" data-dismiss="modal">CANCELAR</button>
+							        <button type="button" class="cont-modalbootstrap__footer--btnadd" id="btnadd-product" type="submit">GUARDAR</button>
+							      </div>
+					        </form>
+				      	</div>
+				      </div>
+				    </div>
+				  </div>
+				</div>
+				<!-- MODAL - EDITAR NUEVO RESTAURANTE -->
+				<div class="modal fade bootstrapmodal-custom" id="updateModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+				  <div class="modal-dialog" role="document">
+				    <div class="modal-content">
+				      <div class="modal-header">
+				        <h5 class="modal-title" id="update-modal-label">ACTUALIZAR PRODUCTO</h5>
+				        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+				          <span aria-hidden="true">&times;</span>
+				        </button>
+				      </div>
+				      <div class="modal-body cont-total-update-items">
+				      	<div class="cont-modalbootstrapupdate">
+					        <form action="" id="form-update-product" method="POST" class="cont-modalbootstrapupdate__form" autocomplete="false" enctype="multipart/form-data">
+					        	<input type="hidden" id="idupdate-product">
+					        	<div class="cont-modalbootstrap__form--control">
+					        		<label for="name-update" class="cont-modalbootstrap__form--control__label">Nombre del Producto</label>
+					        		<input id="name-update" class="cont-modalbootstrap__form--control__input" name="name-update" type="text" required>
+					        	</div>
+					        	<div class="cont-modalbootstrap__form--control">
+					        		<label for="address-update" class="cont-modalbootstrap__form--control__label">Descripción del producto</label>
+					        		<input id="address-update" class="cont-modalbootstrap__form--control__input" name="address-update" type="text" required>
+					        	</div>
+					        	<div class="cont-group-form-controls">
+						        	<div class="cont-modalbootstrap__form--control cont-group-form-controls__control">
+						        		<label for="price-update" class="cont-modalbootstrap__form--control__label">Precio del Producto</label>
+						        		<input id="price-update" class="cont-modalbootstrap__form--control__input" name="price-update" type="text" required maxlength="9" minlength="9">
+						        	</div>
+						        	<div class="cont-modalbootstrap__form--control cont-group-form-controls__control">
+						        		<label for="stock-update" class="cont-modalbootstrap__form--control__label">Stock del Producto</label>
+						        		<input id="stock-update" class="cont-modalbootstrap__form--control__input" name="stock-update" type="text" required maxlength="9" minlength="9">
+						        	</div>
+					        	</div>
+					        	<div class="cont-group-form-controls">
+						        	<div class="cont-modalbootstrap__form--control cont-group-form-controls__control">
+						        		<label for="images-update">Foto del Producto</label>
+						        		<a href="#" id="photo-update" class="cont-modalbootstrapupdate__form--control__linkphoto" target="_blank">(Ver Imagen)</a>
+						        		<input id="images-update" class="cont-modalbootstrap__form--control__input-photo images" name="imagen[]" type="file" accept="img/*" required>
+						        	</div>
+						        	<div class="cont-modalbootstrap__form--control cont-group-form-controls__control">
+						        		<label for="offer-update" class="cont-modalbootstrap__form--control__label">Oferta del Producto</label>
+						        		<input id="offer-update" class="cont-modalbootstrap__form--control__input" name="offer-update" type="text" required maxlength="9" minlength="9">
+						        	</div>
+					        	</div>
+					        	<div class="cont-modalbootstrap__form--control">
+					        		<label for="selcategory-update">Categoría del Producto</label>
+					        		<select name="selcategory-update" id="selcategory-update">
+					        			<option value="">Categoría 1</option>
+					        			<option value="">Categoría 2</option>
+					        			<option value="">Categoría 3</option>
+					        			<option value="">Categoría 4</option>
+					        		</select>
+					        	</div>
+					        	<div class="cont-modalbootstrap__form--control">
+					        		<label for="selrestaurant-update">Restaurante del Producto</label>
+					        		<select name="selrestaurant-update" id="selrestaurant-update">
+					        			<option value="">Restaurante 1</option>
+					        			<option value="">Restaurante 2</option>
+					        			<option value="">Restaurante 3</option>
+					        			<option value="">Restaurante 4</option>
+					        		</select>
+					        	</div>
+							      <div class="cont-modalbootstrapupdate__footer">
+							        <button type="button" class="cont-modalbootstrapupdate__footer--btncancel" data-dismiss="modal">CANCELAR</button>
+							        <button type="submit" class="cont-modalbootstrapupdate__footer--btnupdate" id="btnupdate-product">GUARDAR</button>
+							      </div>
+					        </form>
+				      	</div>
+				      </div>
+				    </div>
+				  </div>
+				</div>
+				<!-- MODAL - ELIMINAR RESTAURANTE -->
+				<div class="modal fade bootstrapmodal-custom" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+				  <div class="modal-dialog" role="document">
+				    <div class="modal-content">
+				      <div class="modal-header">
+				        <h5 class="modal-title" id="delete-modal-label">ELIMINAR RESTAURANTE</h5>
+				        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+				          <span aria-hidden="true">&times;</span>
+				        </button>
+				      </div>
+				      <div class="modal-body cont-total-update-items">
+					      <h2 class="text-message-modalAlt">¿Seguro que desea eliminar este registro?</h2>
+				      	<div class="cont-modalbootstrapupdate">
+					        <form action="" id="form-delete-product" method="POST" class="cont-modalbootstrapupdate__form" autocomplete="false" enctype="multipart/form-data">
+					        	<input type="hidden" id="iddelete-product">
+							      <div class="cont-modalbootstrapupdate__footer">
+							        <button type="button" class="cont-modalbootstrapupdate__footer--btncancel" data-dismiss="modal">CANCELAR</button>
+							        <button type="submit" class="cont-modalbootstrapupdate__footer--btndelete" id="btndelete-product">ELIMINAR</button>
+							      </div>
+					        </form>
+				      	</div>
+				      </div>
+				    </div>
+				  </div>
+				</div>
 			</div>
 		</div>
 	</main>
 	<script type="text/javascript" src="<?php echo $url ?>js/main.js"></script>
+	<script type="text/javascript" src="<?php echo $url ?>js/actions_pages/product.js"></script>
 </body>
 </html>
