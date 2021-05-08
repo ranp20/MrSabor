@@ -1,11 +1,11 @@
-.login{
+.account{
 	display: flex;
 	flex-direction: column;
 
 	@media (min-width: 960px){
 		display: grid;
-		grid-template-columns: 35% auto;
-		grid-template-areas: 'login backgroundimg';
+		grid-template-columns: auto 50%;
+		grid-template-areas: 'backgroundimg login';
 	}
 	
 	&--background{
@@ -41,7 +41,7 @@
 		display: flex;
 		align-items: center;
 		justify-content: center;
-
+		
 		&--returnhome{
 			position: absolute;
 			width: 55px;
@@ -55,7 +55,7 @@
 				}
 			}
 		}
-		
+
 		&--info{
 			max-width: 325px;
 			width: 90%;
@@ -160,7 +160,6 @@
 					}
 
 					&--btnregister{
-						display: block;
 						cursor: pointer;
 						width: 100%;
 				    border: none;

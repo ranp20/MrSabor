@@ -160,6 +160,10 @@
 					tr{
 						border: 1px solid $border-color-table;
 
+						&:hover{
+							background-color: rgba(0,0,0,.12);
+						}
+
 						&:first-child{
 							border-top: 2px solid $border-color-table;							
 						}
@@ -176,14 +180,14 @@
 							padding: 8px;
 
 							&.cont-img-table{
-								display: flex;
+								display: table-cell;
 								align-items: center;
 								justify-content: center;
 								padding: 0;
 								margin-left: auto;
 								margin-right: auto;
-								width: 120px;
-								height: 85px;
+								width: 100px;
+								height: 80px;
 
 								a{
 									display: flex;

@@ -81,7 +81,7 @@ img {
   border-radius: 50%;
   border-left-color: #09f;
   animation-name: girar;
-  animation-duration: 1s;
+  animation-duration: 0.5s;
   animation-timing-function: linear;
   animation-iteration-count: infinite;
 }
@@ -433,6 +433,9 @@ img {
 .main__cont--content__list-results tbody tr {
   border: 1px solid #dee2e6;
 }
+.main__cont--content__list-results tbody tr:hover {
+  background-color: rgba(0, 0, 0, 0.12);
+}
 .main__cont--content__list-results tbody tr:first-child {
   border-top: 2px solid #dee2e6;
 }
@@ -447,14 +450,14 @@ img {
   padding: 8px;
 }
 .main__cont--content__list-results tbody tr td.cont-img-table {
-  display: flex;
+  display: table-cell;
   align-items: center;
   justify-content: center;
   padding: 0;
   margin-left: auto;
   margin-right: auto;
-  width: 120px;
-  height: 85px;
+  width: 100px;
+  height: 80px;
 }
 .main__cont--content__list-results tbody tr td.cont-img-table a {
   display: flex;

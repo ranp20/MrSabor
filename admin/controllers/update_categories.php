@@ -30,15 +30,26 @@
 					$res = json_decode($data);
 
 				}else{
-					$sql = "UPDATE tbl_categories SET name = :name, photo = :imagen WHERE id = :id";
-					
-					$stm = $this->con->prepare($sql);
-					foreach ($arr as $key => $value) {
-						$stm->bindValue($key, $value);
+
+					$file_origin = $_FILES['imagen']['name'];
+					$file_lowercase = strtolower($file_origin);
+					$file_temp = $_FILES['imagen']['tmp_name'];
+					$file_folder = "../assets/img/categories/";
+
+					if(move_uploaded_file($file_temp, $file_folder . $file_lowercase)){					
+						$sql = "UPDATE tbl_categories SET name = :name, photo = :imagen WHERE id = :id";
+						
+						$stm = $this->con->prepare($sql);
+						foreach ($arr as $key => $value) {
+							$stm->bindValue($key, $value);
+						}
+						$stm->execute();
+						$data = $stm->fetchAll(PDO::FETCH_ASSOC);
+						$res = json_decode($data);
+						
+					}else{
+						echo "Error fatal";
 					}
-					$stm->execute();
-					$data = $stm->fetchAll(PDO::FETCH_ASSOC);
-					$res = json_decode($data);
 				}
 
 				echo $res;

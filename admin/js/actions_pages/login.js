@@ -22,7 +22,7 @@ form.addEventListener('submit', function(e){
 																											</div>`;
 				setTimeout(function(){
 					window.location.replace("../dashboard");
-				}, 2000);
+				}, 1000);
 			}else{
 				document.querySelector('#result-adm').innerHTML = `<div class='message-error'>
 																												<div class='message-error__content'>

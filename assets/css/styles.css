@@ -1415,46 +1415,56 @@ ul {
   align-items: center;
   justify-content: center;
 }
-.login--content__info {
+.login--content--returnhome {
+  position: absolute;
+  width: 55px;
+  height: 55px;
+  top: 10px;
+  left: inherit;
+}
+.login--content--returnhome__link {
+  display: table;
+}
+.login--content--info {
   max-width: 325px;
   width: 90%;
   margin-left: auto;
   margin-right: auto;
 }
-.login--content__info--contlogo {
+.login--content--info--contlogo {
   width: 60%;
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 2rem;
 }
-.login--content__info--contlogo__logo {
+.login--content--info--contlogo__logo {
   height: 155px;
   width: 100%;
 }
-.login--content__info--form--controls {
+.login--content--info--form--controls {
   display: flex;
   flex-direction: column;
   margin-bottom: 1rem;
   position: relative;
   justify-content: center;
 }
-.login--content__info--form--controls--label {
+.login--content--info--form--controls--label {
   color: #C1C2C5;
   position: absolute;
   left: 10px;
   transition: 0.3s ease;
 }
-.login--content__info--form--controls--label.focus {
+.login--content--info--form--controls--label.focus {
   top: -7px;
   font-size: 13px;
   background-color: #fff;
   padding: 0 5px;
   left: 8px;
 }
-.login--content__info--form--controls--label.complete {
+.login--content--info--form--controls--label.complete {
   color: green;
 }
-.login--content__info--form--controls--input {
+.login--content--info--form--controls--input {
   outline: none;
   font-size: 16px;
   padding: 10px;
@@ -1462,13 +1472,13 @@ ul {
   border: thin solid #767676;
   transition: 0.3s ease;
 }
-.login--content__info--form--controls--input.focus {
+.login--content--info--form--controls--input.focus {
   border: thin solid #767676;
 }
-.login--content__info--form--controls--input.complete {
+.login--content--info--form--controls--input.complete {
   border: thin solid green;
 }
-.login--content__info--form--btnactions--btnlogin {
+.login--content--info--form--btnactions--btnlogin {
   cursor: pointer;
   display: block;
   width: 100%;
@@ -1478,10 +1488,10 @@ ul {
   border-radius: 0.3rem;
   padding: 12px 0;
 }
-.login--content__info--form--btnactions--btnlogin:hover {
+.login--content--info--form--btnactions--btnlogin:hover {
   opacity: 0.6;
 }
-.login--content__info--form--btnactions--separator {
+.login--content--info--form--btnactions--separator {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1489,11 +1499,11 @@ ul {
   position: relative;
   height: 30px;
 }
-.login--content__info--form--btnactions--separator__divisor {
+.login--content--info--form--btnactions--separator__divisor {
   width: 60px;
   border-top: 1px solid grey;
 }
-.login--content__info--form--btnactions--separator__divisor span {
+.login--content--info--form--btnactions--separator__divisor span {
   width: 25px;
   position: absolute;
   top: 50%;
@@ -1503,7 +1513,8 @@ ul {
   margin: auto;
   color: #757575;
 }
-.login--content__info--form--btnactions--btnregister {
+.login--content--info--form--btnactions--btnregister {
+  display: block;
   cursor: pointer;
   width: 100%;
   border: none;
@@ -1514,7 +1525,164 @@ ul {
   border-radius: 0.3rem;
   text-align: center;
 }
-.login--content__info--form--btnactions--btnregister:hover {
+.login--content--info--form--btnactions--btnregister:hover {
+  opacity: 0.6;
+}
+
+.account {
+  display: flex;
+  flex-direction: column;
+}
+@media (min-width: 960px) {
+  .account {
+    display: grid;
+    grid-template-columns: auto 50%;
+    grid-template-areas: "backgroundimg login";
+  }
+}
+.account--background {
+  grid-area: backgroundimg;
+  width: 100%;
+  min-height: 100vh;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+  display: none;
+  position: relative;
+}
+@media (min-width: 960px) {
+  .account--background {
+    display: flex;
+  }
+}
+.account--background:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.25);
+}
+.account--content {
+  grid-area: login;
+  width: 100%;
+  min-height: 100vh;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.account--content--returnhome {
+  position: absolute;
+  width: 55px;
+  height: 55px;
+  top: 10px;
+  left: inherit;
+}
+.account--content--returnhome__link {
+  display: table;
+}
+.account--content--info {
+  max-width: 325px;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+}
+.account--content--info--contlogo {
+  width: 60%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 2rem;
+}
+.account--content--info--contlogo__logo {
+  height: 155px;
+  width: 100%;
+}
+.account--content--info--form--controls {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
+  position: relative;
+  justify-content: center;
+}
+.account--content--info--form--controls--label {
+  color: #C1C2C5;
+  position: absolute;
+  left: 10px;
+  transition: 0.3s ease;
+}
+.account--content--info--form--controls--label.focus {
+  top: -7px;
+  font-size: 13px;
+  background-color: #fff;
+  padding: 0 5px;
+  left: 8px;
+}
+.account--content--info--form--controls--label.complete {
+  color: green;
+}
+.account--content--info--form--controls--input {
+  outline: none;
+  font-size: 16px;
+  padding: 10px;
+  border-radius: 0.3rem;
+  border: thin solid #767676;
+  transition: 0.3s ease;
+}
+.account--content--info--form--controls--input.focus {
+  border: thin solid #767676;
+}
+.account--content--info--form--controls--input.complete {
+  border: thin solid green;
+}
+.account--content--info--form--btnactions--btnlogin {
+  cursor: pointer;
+  display: block;
+  width: 100%;
+  border: none;
+  background-color: #FFBD59;
+  color: #fff;
+  border-radius: 0.3rem;
+  padding: 12px 0;
+}
+.account--content--info--form--btnactions--btnlogin:hover {
+  opacity: 0.6;
+}
+.account--content--info--form--btnactions--separator {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+  height: 30px;
+}
+.account--content--info--form--btnactions--separator__divisor {
+  width: 60px;
+  border-top: 1px solid grey;
+}
+.account--content--info--form--btnactions--separator__divisor span {
+  width: 25px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  margin: auto;
+  color: #757575;
+}
+.account--content--info--form--btnactions--btnregister {
+  cursor: pointer;
+  width: 100%;
+  border: none;
+  background-color: rgba(0, 0, 0, 0.35);
+  color: #fff !important;
+  outline: none;
+  padding: 12px 0;
+  border-radius: 0.3rem;
+  text-align: center;
+}
+.account--content--info--form--btnactions--btnregister:hover {
   opacity: 0.6;
 }
 

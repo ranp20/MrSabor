@@ -11,7 +11,7 @@ class Categories extends Connection{
 
 			if(isset($_POST['searchList'])){
 				//$search = $this->con->real_escape_string($_POST['searchList']);
-				$search = addslashes($_POST['searchList']);
+				$search = $_POST['searchList'];
 				$sql = "SELECT * FROM tbl_categories 
 								WHERE id LIKE '%".$search."%' OR
 											name LIKE '%".$search."%' OR
