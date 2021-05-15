@@ -159,9 +159,54 @@
 				
 			&--item{
 				width: 48%;
+				margin-bottom: 1rem;
 
 				@media (min-width: 692px){
 					width: 22.5%;					
+				}
+
+				&--addthisprod{
+					position: relative;
+					padding: 1rem 0 .5rem 0;
+					text-align: center;
+					display: flex;
+					align-items: center;
+					justify-content: center;
+					display: block;
+
+					&--item{
+					}
+
+					&--link{
+						color: $primary-color;
+						border: thin solid $primary-color;
+				    display: block;
+				    font-size: .8rem;
+				    font-weight: 400;
+				    padding: .6rem 0;
+				    text-transform: uppercase;
+
+				    @media(min-width: 1024px){
+				    	padding: 0.95rem .8rem;
+				    }
+
+				    &:hover{
+				    	color: #fff;
+				    	background-color: $primary-color;
+				    }
+
+				    span:first-child{
+				    	display: inline-block;
+				    }
+				    
+				    span:nth-child(2){
+				    	display: none;
+
+				    	@media(min-width: 1024px){
+				    		display: inline-block;
+				    	}
+				    }
+					}
 				}
 			}
 
@@ -172,6 +217,7 @@
 				display: grid;
 				grid-template-columns: 1fr;
 				grid-template-rows: auto;
+				position: relative;
 				
 				&:hover &--contimg img{
 					transform: scale(1.1);
@@ -191,7 +237,7 @@
 						object-fit: cover;
 						object-position: center;
 						transition: all ease-out .3s;
-					}
+					}					
 				}
 
 				&--nameprod{
@@ -206,6 +252,7 @@
 					font-weight: 600;
 					font-family: monospace;
 				}
+
 			}
 		}
 	}
