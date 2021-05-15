@@ -95,7 +95,8 @@
 					        	</div>
 					        	<div class="cont-modalbootstrap__form--control">
 					        		<label for="selcategory">Categoría del Producto</label>
-					        		<select name="selcategory" id="selcategory">
+					        		<select class="cont-modalbootstrap__form--control__select one-hidden" name="selcategory" id="selcategory">
+					        			<option value="0">Selecciona una opción</option>
 					        			<option value="">Categoría 1</option>
 					        			<option value="">Categoría 2</option>
 					        			<option value="">Categoría 3</option>
@@ -104,7 +105,8 @@
 					        	</div>
 					        	<div class="cont-modalbootstrap__form--control">
 					        		<label for="selrestaurant">Restaurante del Producto</label>
-					        		<select name="selrestaurant" id="selrestaurant">
+					        		<select class="cont-modalbootstrap__form--control__select one-hidden" name="selrestaurant" id="selrestaurant">
+					        			<option value="0">Selecciona una opción</option>
 					        			<option value="">Restaurante 1</option>
 					        			<option value="">Restaurante 2</option>
 					        			<option value="">Restaurante 3</option>
@@ -166,7 +168,8 @@
 					        	</div>
 					        	<div class="cont-modalbootstrap__form--control">
 					        		<label for="selcategory-update">Categoría del Producto</label>
-					        		<select name="selcategory-update" id="selcategory-update">
+					        		<select class="cont-modalbootstrap__form--control__select one-hidden" name="selcategory-update" id="selcategory-update">
+					        			<option value="0">Selecciona una opción</option>
 					        			<option value="">Categoría 1</option>
 					        			<option value="">Categoría 2</option>
 					        			<option value="">Categoría 3</option>
@@ -175,7 +178,8 @@
 					        	</div>
 					        	<div class="cont-modalbootstrap__form--control">
 					        		<label for="selrestaurant-update">Restaurante del Producto</label>
-					        		<select name="selrestaurant-update" id="selrestaurant-update">
+					        		<select class="cont-modalbootstrap__form--control__select one-hidden" name="selrestaurant-update" id="selrestaurant-update">
+					        			<option value="0">Selecciona una opción</option>
 					        			<option value="">Restaurante 1</option>
 					        			<option value="">Restaurante 2</option>
 					        			<option value="">Restaurante 3</option>

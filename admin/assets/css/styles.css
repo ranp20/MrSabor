@@ -665,6 +665,16 @@ img {
 .bootstrapmodal-custom .modal-dialog .modal-content .modal-body .cont-modalbootstrap__form--control__input-photo {
   border-bottom: thin solid #767676;
 }
+.bootstrapmodal-custom .modal-dialog .modal-content .modal-body .cont-modalbootstrap__form--control__select {
+  border: thin solid #767676;
+  width: 100%;
+  outline: none;
+  transition: 0.3s ease;
+  background-color: transparent;
+  font-size: 0.9rem;
+  padding: 0.4rem 0.5rem;
+  border-radius: 0.3rem;
+}
 .bootstrapmodal-custom .modal-dialog .modal-content .modal-body .cont-modalbootstrap__footer {
   display: flex;
   align-items: center;

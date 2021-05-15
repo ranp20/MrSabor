@@ -4,6 +4,10 @@
   $url =  $actual_link . "/" ."MrSabor/admin/";
 
 	require_once 'php/process_session-admin.php';
+	require_once '../php/class/restaurants.php';
+
+	$list = new Restaurants();
+	$restaurants = $list->get_restaurants();
 
 	if(!isset($_SESSION['user'])){
 		header("location: /");
@@ -37,6 +41,7 @@
 								<th>ID</th>
 								<th>Nombre</th>
 								<th>Imagen</th>
+								<th>Restaurante</th>
 								<th></th>
 								<th></th>
 							</tr>
@@ -66,6 +71,21 @@
 					        	<div class="cont-modalbootstrap__form--control">
 					        		<label for="imagen">Foto de la categoría</label>
 					        		<input id="images" class="cont-modalbootstrap__form--control__input-photo images" name="imagen[]" type="file" accept="img/*" required>
+					        	</div>
+					        	<div class="cont-modalbootstrap__form--control">
+					        		<label for="selrestaurant">Restaurante</label>
+						        	<select class="cont-modalbootstrap__form--control__select one-hidden" name="selrestaurant" id="selrestaurant" required>
+						        		<option value="0">Elija una opción</option>
+						        		<?php 
+
+						        			foreach ($restaurants as $key => $value) {
+						        				echo "
+						        					<option value='{$value['id']}'>{$value['name']}</option>
+						        				";
+						        			}
+
+						        		?>
+						        	</select>
 					        	</div>
 							      <div class="cont-modalbootstrap__footer">
 							        <button type="button" class="cont-modalbootstrap__footer--btncancel" data-dismiss="modal">CANCELAR</button>
@@ -99,6 +119,21 @@
 					        		<label for="imagen">Foto de la categoría</label>
 					        		<a href="#" id="photo-update" class="cont-modalbootstrapupdate__form--control__linkphoto" target="_blank">(Ver Imagen)</a>
 					        		<input id="images" class="cont-modalbootstrap__form--control__input-photo images-update" name="imagen[]" type="file" accept="img/*">
+					        	</div>
+					        	<div class="cont-modalbootstrap__form--control">
+					        		<label for="selrestaurant">Restaurante</label>
+						        	<select class="cont-modalbootstrap__form--control__select one-hidden" name="selrestaurant-update" id="selrestaurant-update" required>
+						        		<option value="0">Elija una opción</option>
+						        		<?php 
+
+						        			foreach ($restaurants as $key => $value) {
+						        				echo "
+						        					<option value='{$value['id']}'>{$value['name']}</option>
+						        				";
+						        			}
+
+						        		?>
+						        	</select>
 					        	</div>
 							      <div class="cont-modalbootstrapupdate__footer">
 							        <button type="button" class="cont-modalbootstrapupdate__footer--btncancel" data-dismiss="modal">CANCELAR</button>

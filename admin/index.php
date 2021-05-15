@@ -1,3 +1,12 @@
+<?php 
+
+require_once 'php/process_session-admin.php';
+
+if(isset($_SESSION['user'])){
+	header("location: dashboard.php");
+}
+
+?>
 <!DOCTYPE html>
 <html lang="es">
 <head>

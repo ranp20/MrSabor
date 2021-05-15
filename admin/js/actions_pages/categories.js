@@ -15,6 +15,7 @@ $(document).on('click', '#btnadd-category', function(e){
   }
 
   formdata.append("name", $('#name').val());
+  formdata.append("selrestaurant", $('#selrestaurant').val());
 
   $.ajax({
     url: "admin/controllers/add_categories.php",
@@ -73,11 +74,13 @@ function listCategories(searchVal){
               <img loading="lazy" src="${img_route}">
             </a>
           </td>
+          <td>${e.name_restaurant}</td>
           <td class="cont-btn-update">
             <a class="btn-update-category" data-toggle="modal" data-target="#updateModal"  href="#" 
               data-id="${e.id}"
               data-name="${e.name}"
               data-photo="${img_route}"
+              data-idrest="${e.id_restaurant}"
               >Editar</a>
           </td>
           <td class="cont-btn-delete" id="cont-btn-delete">
@@ -115,6 +118,7 @@ $(document).on('click', '.btn-update-category', function(e){
       id: $(this).attr('data-id'),
       name: $(this).attr('data-name'),
       photo: $(this).attr('data-photo'),
+      idrestaurant: $(this).attr('data-idrest'),
     };
 
     $('#idupdate-category').val(item_data['id']);

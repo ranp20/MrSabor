@@ -1,5 +1,6 @@
 <?php 
 	
+	require_once 'php/process_session-client.php';
 	require_once 'controllers/list-all-categories.php';
 	$category = new ListCategories();
 	$listcat = $category->get_categories();
@@ -39,9 +40,31 @@
 							</a>
 						</div>
 						<div class="homepage__infotop__header--contlogin">
-							<a href="login" class="homepage__infotop__header--contlogin__profile">
-								<svg xmlns="http://www.w3.org/2000/svg" fill="#FFFFFF"  class="homepage__infotop__header--contlogin__profile--icon" width="24" height="24" viewBox="0 0 24 24"><path d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm0 22c-3.123 0-5.914-1.441-7.749-3.69.259-.588.783-.995 1.867-1.246 2.244-.518 4.459-.981 3.393-2.945-3.155-5.82-.899-9.119 2.489-9.119 3.322 0 5.634 3.177 2.489 9.119-1.035 1.952 1.1 2.416 3.393 2.945 1.082.25 1.61.655 1.871 1.241-1.836 2.253-4.628 3.695-7.753 3.695z"/></svg>
-							</a>
+							
+							<?php 
+								if(isset($_SESSION['client'])){
+									echo "
+										<button type='button' class='homepage__infotop__header--contlogin__profile-yessession'>
+											<svg xmlns='http://www.w3.org/2000/svg' fill='#FFFFFF' class='homepage__infotop__header--contlogin__profile-yessession--icon' width='24' height='24' viewBox='0 0 24 24'><path d='M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm0 22c-3.123 0-5.914-1.441-7.749-3.69.259-.588.783-.995 1.867-1.246 2.244-.518 4.459-.981 3.393-2.945-3.155-5.82-.899-9.119 2.489-9.119 3.322 0 5.634 3.177 2.489 9.119-1.035 1.952 1.1 2.416 3.393 2.945 1.082.25 1.61.655 1.871 1.241-1.836 2.253-4.628 3.695-7.753 3.695z'/></svg>
+											<div class='profile-opts'>
+												<ul class='profile-opts__menu'>
+													<li class='profile-opts__menu--item'>
+														<a href='#' class='profile-opts__menu--link'>Ayuda</a>
+														<a href='#' class='profile-opts__menu--link'>Nosotros</a>
+														<a href='php/process_logout.php' class='profile-opts__menu--link'>Cerrar sesión</a>
+													</li>
+												</ul>
+											</div>
+										</button>
+									";
+								}else{
+									echo "
+										<a href='login' class='homepage__infotop__header--contlogin__profile-notsession'>
+											<svg xmlns='http://www.w3.org/2000/svg' fill='#FFFFFF'  class='homepage__infotop__header--contlogin__profile-notsession--icon' width='24' height='24' viewBox='0 0 24 24'><path d='M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm0 22c-3.123 0-5.914-1.441-7.749-3.69.259-.588.783-.995 1.867-1.246 2.244-.518 4.459-.981 3.393-2.945-3.155-5.82-.899-9.119 2.489-9.119 3.322 0 5.634 3.177 2.489 9.119-1.035 1.952 1.1 2.416 3.393 2.945 1.082.25 1.61.655 1.871 1.241-1.836 2.253-4.628 3.695-7.753 3.695z'/></svg>
+										</a>
+									";
+								}
+							?>
 						</div>
 					</div>	
 				</div>
@@ -90,12 +113,27 @@
 				<div class="categories-food__content--conttitle">
 					<h2 class="categories-food__content--conttitle__acotacion">NUESTRAS CATEGORÍAS</h2>
 				</div>
-				<ul class="categories-food__content--menu">
-					<?php 
+
+				<?php 
+
+					//print_r($listcat[0]['name']);
+
+					if($listcat == []){
+						echo "
+							<div class='any-results-home'>
+								<h2 class='any-results-home--title'>No se encontraron resultados</h2>
+							</div>
+						";
+					}else{
+						
+						?>
+						<ul class='categories-food__content--menu'>
+						<?php  
+						
 						foreach($listcat as $key => $value){
 							$path_categ = "admin/assets/img/categories/".$value['photo'];
 
-							echo "
+						echo "
 								<li class='categories-food__content--menu__item'>
 									<a href='listado-categoria' class='categories-food__content--menu__item__link'>
 										<div class='categories-food__content--menu__item__link--categ-imagen'>
@@ -108,8 +146,9 @@
 								</li>
 							";
 						}
-					?>
-				</ul>
+					}
+				?>
+					</ul>
 			</div>
 		</section>
 		<section class="howitwork" id="como-empezar">

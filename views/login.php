@@ -1,3 +1,10 @@
+<?php 
+	require_once '../php/process_session-client.php';
+	if(isset($_SESSION['client'])){
+		header('Location: ./');
+	}
+
+?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -6,26 +13,27 @@
 </head>
 <body>
 	<div class="login">
+		<div id="result-cli"></div>
 		<div class="login--background" style="background-image: url(assets/img/banners/wallpaper-burguer.jpg);background-size: cover;background-position: center;background-repeat: no-repeat;"></div>
 		<div class="login--content">
 			<div class="container">
-				<div class="account--content--returnhome">
-					<a href="./" class="account--content--returnhome__link">
-						<img src="assets/img/logo/Logo_RESTAURANT_proyect.png" alt="" class="account--content--returnhome__link__logo">
+				<div class="login--content--returnhome">
+					<a href="./" class="login--content--returnhome__link">
+						<img src="assets/img/logo/Logo_RESTAURANT_proyect.png" alt="" class="login--content--returnhome__link__logo">
 					</a>
 				</div>
 				<div class="login--content--info">
 					<div class="login--content--info--contlogo">
 						<img src="assets/img/logo/Logo_RESTAURANT_proyect.png" alt="" class="login--content--info__contlogo__logo">
 					</div>
-					<form action="" class="login--content--info--form">
+					<form action="../php/process_login.php" class="login--content--info--form" id="form-login-user">
 						<div class="login--content--info--form--controls">
-							<label for="" class="login--content--info--form--controls--label">Email</label>
-							<input type="email" class="login--content--info--form--controls--input" required>
+							<label for="mail" class="login--content--info--form--controls--label">Email</label>
+							<input type="email" name="mail" id="mail" class="login--content--info--form--controls--input" required>
 						</div>
 						<div class="login--content--info--form--controls">
-							<label for="" class="login--content--info--form--controls--label">Password</label>
-							<input type="password" class="login--content--info--form--controls--input" required>
+							<label for="pass" class="login--content--info--form--controls--label">Password</label>
+							<input type="password" name="pass" id="pass" class="login--content--info--form--controls--input" required>
 						</div>
 						<div class="login--content--info--form--btnactions">
 							<button class="login--content--info--form--btnactions--btnlogin" type="submit">INGRESAR</button>

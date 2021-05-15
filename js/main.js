@@ -15,8 +15,9 @@
 		menuburger.classList.remove('active');
 		menuburger.nextElementSibling.classList.remove('active');
 
-	});
 
+	});
+	
 	/******************************************************************************/
 	/************************** TOGGLE SHOW IN HEADERTOP **************************/
 	/******************************************************************************/
@@ -26,17 +27,17 @@
 		let heroImageClass = d.querySelector('.categories-food');
 		let heightHeroImage = heroImageClass.offsetTop;
 		let itemLinks = d.querySelectorAll('.homepage__infotop__header--contmenu__menu--link');
-		let itemprofile = d.querySelector('.homepage__infotop__header--contlogin__profile');
+		let itemprofilenotsession = d.querySelector('.homepage__infotop__header--contlogin__profile-notsession');
 
 		if(heightHeroImage - 160 < scrollTop ){
 			headerTop.classList.add("showBottom");
-			itemprofile.classList.add("disablehover");
+			itemprofilenotsession.classList.add("disablehover");
 			for(var i = 0; i < itemLinks.length; i ++){
 				itemLinks[i].classList.add("disablehover");
 			}
 		}else{
 			headerTop.classList.remove("showBottom");
-			itemprofile.classList.remove("disablehover");
+			itemprofilenotsession.classList.remove("disablehover");
 			for(var i = 0; i < itemLinks.length; i ++){
 				itemLinks[i].classList.remove("disablehover");
 			}
@@ -182,3 +183,34 @@
 	}, 4000);
 
 })(document);
+
+/************************* TOGGLE SHOW INTO PROFILE ICON ***************************/
+let menuprofile = document.querySelector('.homepage__infotop__header--contlogin__profile-yessession');
+menuprofile.addEventListener('click', () => {
+	document.querySelector('.profile-opts').classList.toggle('active');
+});
+
+function showHeadersession(){
+	let headerTopsession = document.querySelector('#homepage-infotop');
+	let scrollTopsession = document.documentElement.scrollTop;
+	let heroImageClasssession = document.querySelector('.categories-food');
+	let heightHeroImagesession = heroImageClasssession.offsetTop;
+	let itemLinkssession = document.querySelectorAll('.homepage__infotop__header--contmenu__menu--link');
+	let itemprofileyessession = document.querySelector('.homepage__infotop__header--contlogin__profile-yessession');
+
+	if(heightHeroImagesession - 160 < scrollTopsession ){
+		headerTopsession.classList.add("showBottom");
+		itemprofileyessession.classList.add("disablehover");
+		for(var i = 0; i < itemLinkssession.length; i ++){
+			itemLinkssession[i].classList.add("disablehover");
+		}
+	}else{
+		headerTopsession.classList.remove("showBottom");
+		itemprofileyessession.classList.remove("disablehover");
+		for(var i = 0; i < itemLinkssession.length; i ++){
+			itemLinkssession[i].classList.remove("disablehover");
+		}
+	}	
+}
+
+document.addEventListener('scroll', showHeadersession);

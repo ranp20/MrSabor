@@ -35,13 +35,16 @@
 					<a href="restaurantes" class="main__sidebar-left--content__cont-items--menu__link">Restaurantes</a>
 				</li>
 				<li class="main__sidebar-left--content__cont-items--menu__item">
-					<a href="menus" class="main__sidebar-left--content__cont-items--menu__link">Menús <!--<span>&#9660;</span>--></a>
+					<a href="pedidos" class="main__sidebar-left--content__cont-items--menu__link">Pedidos</a>
+				</li>
+				<li class="main__sidebar-left--content__cont-items--menu__item">
+					<a href="reportes" class="main__sidebar-left--content__cont-items--menu__link">Reportes</a>
 				</li>
 				<li class="main__sidebar-left--content__cont-items--menu__item">
 					<a href="#" class="main__sidebar-left--content__cont-items--menu__link">Ordenes o Pedidos</a>
 				</li>
-				<li class="main__sidebar-left--content__cont-items--menu__item">
-					<a href="#" class="main__sidebar-left--content__cont-items--menu__link">Clientes</a>
+				<li class="main__sid	ebar-left--content__cont-items--menu__item">
+					<a href="usuarios" class="main__sidebar-left--content__cont-items--menu__link">Usuarios</a>
 				</li>
 				<li class="main__sidebar-left--content__cont-items--menu__item">
 					<a href="categorias" class="main__sidebar-left--content__cont-items--menu__link">Categorías</a>

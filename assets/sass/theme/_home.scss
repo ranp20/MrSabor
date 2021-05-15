@@ -179,7 +179,85 @@
 					grid-area: account;
 				}
 
-				&__profile{
+				&__profile-yessession{
+					background-color: unset;
+					border: none;
+					outline: none;
+					width: 35px;
+					height: 35px;
+					position: relative;
+					cursor: pointer;
+
+					&--icon{
+						width: 100%;
+						height: 100%;
+						fill: $color-all-titles;
+					}
+
+					@media (min-width: 1024px){
+						&:hover &--icon{
+							fill: $primary-color;
+						}
+
+						&.disablehover:hover &--icon{
+							fill: #fff;
+						}
+					}
+
+					.profile-opts{
+						position: absolute;
+						right: 0;
+						top: 50px;
+						width: auto;
+						display: none;
+						animation-name: slide-up-down;
+						animation-duration: .4s;
+						animation-fill-mode: forwards;
+						opacity: 0;
+
+						@keyframes slide-up-down{
+							0%{
+								transform: translateY(-10px);								
+								opacity: 0;
+							}
+							100%{
+								transform: translateY(0);
+								opacity: 1;
+							}
+						}
+
+						@media (min-width: 1024px){
+							top: 45px;
+						}
+						
+						&.active{
+							display: block;
+						}
+
+						&__menu{
+							background-color: $primary-color;
+							min-width: 190px;
+							border-radius: .3rem;
+							&--item{
+								
+							}
+							&--link{
+								color: #fff;
+								display: block;
+								padding: 0.7rem 0.5rem;
+								font-size: 0.95rem;
+								font-weight: 400;
+
+								&:hover{
+									color: #000;
+								}
+							}
+						}
+					}
+				}
+
+				&__profile-notsession{
+					cursor: pointer;
 					width: 35px;
 					height: 35px;					
 					&--icon{
