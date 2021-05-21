@@ -7,10 +7,12 @@
   padding: 0;
   border-radius: 50%;
   cursor: pointer;
+  margin-right: 1.6rem;
   @include burgernav-index($color-all-titles, 27px, 4px, 18px, 15px, 1px);
 
   @media (min-width: 691px){
 		display: none;
+		margin: 0;
 	}
 
   $close_sidebarleft: 0;
@@ -147,8 +149,8 @@
 
 			@media (min-width: 691px){
 				display: grid;
-				grid-template-columns: 60px auto 60px;
-				grid-template-areas: 'logo links account';
+				grid-template-columns: 60px auto 45px 45px;
+				grid-template-areas: 'logo links account cart';
 				justify-content: unset;
 				grid-column-gap: 1rem;
 			}
@@ -156,9 +158,11 @@
 			&--contlogo{
 				width: 60px;
 				height: 60px;
+				margin-left: auto;
 
 				@media (min-width: 691px){
 					grid-area: logo;
+					margin: 0;
 				}
 
 				&__link{
@@ -174,9 +178,11 @@
 			&--contlogin{
 				width: 35px;
 				height: 35px;
+				margin-left: auto;
 
 				@media (min-width: 691px){
 					grid-area: account;
+					margin: 0;
 				}
 
 				&__profile-yessession{
@@ -279,6 +285,27 @@
 				}
 			}
 
+			&--contcart{
+				width: 35px;
+				height: 35px;
+				margin-left: 0.5rem;
+
+				@media (min-width: 691px){
+					grid-area: cart;
+					margin: 0;
+				}
+
+				&__shoppingcart{
+					width: 35px;
+					height: 35px;
+					&--icon{
+						fill: $color-all-titles;
+						width: 35px;
+						height: 35px;
+					}
+				}
+			}
+
 			&--contmenu{
 				position: fixed;
 				top: 0;
@@ -368,6 +395,59 @@
 					}
 				}
 
+			}
+
+			&--contmenucart{
+				position: fixed;
+		    top: 0;
+		    bottom: 0;
+		    left: 0;
+		    right: 0;
+		    background-color: rgba(0,0,0,.4);
+		    min-height: 100vh;
+		    height: 100%;
+		    display: none;
+
+		   	&.show{
+		   		display: block;
+		   	}
+
+				&__cont{
+					background-color: #fff;
+					height: 100vh;
+					width: 0;
+					right: 0;
+					margin-left: auto;
+					overflow-y: auto;
+					display: none;
+					animation-name: show-cart-list;
+					animation-duration: .5s;
+					animation-timing-function: ease-in-out;
+					animation-fill-mode: forwards;
+
+					@keyframes show-cart-list{
+						0%{
+							width: 0;
+						}
+						100%{
+							width: 80%;
+						}
+					}
+
+					&.show{
+						display: block;
+					}
+
+					&__menu{
+						display: flex;
+						flex-direction: column;
+						flex-wrap: wrap;
+						overflow-y: auto;
+						&__item{
+							display: block;
+						}
+					}
+				}
 			}
 		}
 	}

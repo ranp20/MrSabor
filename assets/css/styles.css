@@ -408,6 +408,7 @@ ul {
   padding: 0;
   border-radius: 50%;
   cursor: pointer;
+  margin-right: 1.6rem;
 }
 #menu-show-home {
   display: flex;
@@ -447,6 +448,7 @@ ul {
 @media (min-width: 691px) {
   #menu-show-home {
     display: none;
+    margin: 0;
   }
 }
 #menu-show-home.active {
@@ -557,8 +559,8 @@ ul {
 @media (min-width: 691px) {
   .homepage__infotop__header {
     display: grid;
-    grid-template-columns: 60px auto 60px;
-    grid-template-areas: "logo links account";
+    grid-template-columns: 60px auto 45px 45px;
+    grid-template-areas: "logo links account cart";
     justify-content: unset;
     grid-column-gap: 1rem;
   }
@@ -566,10 +568,12 @@ ul {
 .homepage__infotop__header--contlogo {
   width: 60px;
   height: 60px;
+  margin-left: auto;
 }
 @media (min-width: 691px) {
   .homepage__infotop__header--contlogo {
     grid-area: logo;
+    margin: 0;
   }
 }
 .homepage__infotop__header--contlogo__link {
@@ -583,10 +587,12 @@ ul {
 .homepage__infotop__header--contlogin {
   width: 35px;
   height: 35px;
+  margin-left: auto;
 }
 @media (min-width: 691px) {
   .homepage__infotop__header--contlogin {
     grid-area: account;
+    margin: 0;
   }
 }
 .homepage__infotop__header--contlogin__profile-yessession {
@@ -672,6 +678,26 @@ ul {
   .homepage__infotop__header--contlogin__profile-notsession.disablehover:hover .homepage__infotop__header--contlogin__profile-notsession--icon {
     fill: #fff;
   }
+}
+.homepage__infotop__header--contcart {
+  width: 35px;
+  height: 35px;
+  margin-left: 0.5rem;
+}
+@media (min-width: 691px) {
+  .homepage__infotop__header--contcart {
+    grid-area: cart;
+    margin: 0;
+  }
+}
+.homepage__infotop__header--contcart__shoppingcart {
+  width: 35px;
+  height: 35px;
+}
+.homepage__infotop__header--contcart__shoppingcart--icon {
+  fill: #484848;
+  width: 35px;
+  height: 35px;
 }
 .homepage__infotop__header--contmenu {
   position: fixed;
@@ -761,6 +787,53 @@ ul {
   .homepage__infotop__header--contmenu__menu--link.disablehover:hover {
     color: #fff;
   }
+}
+.homepage__infotop__header--contmenucart {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+  min-height: 100vh;
+  height: 100%;
+  display: none;
+}
+.homepage__infotop__header--contmenucart.show {
+  display: block;
+}
+.homepage__infotop__header--contmenucart__cont {
+  background-color: #fff;
+  height: 100vh;
+  width: 0;
+  right: 0;
+  margin-left: auto;
+  overflow-y: auto;
+  display: none;
+  animation-name: show-cart-list;
+  animation-duration: 0.5s;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
+}
+@keyframes show-cart-list {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 80%;
+  }
+}
+.homepage__infotop__header--contmenucart__cont.show {
+  display: block;
+}
+.homepage__infotop__header--contmenucart__cont__menu {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  overflow-y: auto;
+}
+.homepage__infotop__header--contmenucart__cont__menu__item {
+  display: block;
 }
 
 /************************** HEROIAMGE **************************/

@@ -182,6 +182,20 @@
 		nextMenus();
 	}, 4000);
 
+
+	/*************************** BUTTON SHOW LIST SHOPPING CART **********************************/
+	let containerlistcart = d.querySelector('.homepage__infotop__header--contmenucart');
+
+	d.querySelector("#shopping-cart-list").addEventListener("click", function(){
+		containerlistcart.classList.add('show');
+		d.querySelector(".homepage__infotop__header--contmenucart__cont").classList.add('show');
+		/*************************** HIDDEN CONTAINER LIST CART **********************************/
+		containerlistcart.addEventListener('click', e => {
+			if(e.target === containerlistcart)	containerlistcart.classList.remove('show');
+		});
+	});
+
+
 })(document);
 
 /************************* TOGGLE SHOW INTO PROFILE ICON ***************************/
