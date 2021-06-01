@@ -164,6 +164,7 @@ $(document).on('click', '#btnupdate-category', function(e){
   }
 
   formdata.append("name", $('#name-update').val());
+  //formdata.append("id_restaurant", $('#selrestaurant-update').val());
   formdata.append("id", $('#idupdate-category').val());
 
   $.ajax({

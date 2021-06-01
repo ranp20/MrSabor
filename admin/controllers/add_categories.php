@@ -19,7 +19,7 @@
 				$file_folder = "../assets/img/categories/";
 
 				if(move_uploaded_file($file_temp, $file_folder . $file_lowercase)){
-					$sql = "INSERT INTO tbl_categories (name, photo, id_restaurant) VALUES (:name, :imagen, :id_restaurant)";
+					$sql = "CALL sp_add_categories(:name, :imagen, :id_restaurant)";
 					$stm = $this->con->prepare($sql);
 					foreach ($arr as $key => $value) {
 						$stm->bindValue($key, $value);

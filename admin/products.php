@@ -69,10 +69,6 @@
 					        		<label for="name" class="cont-modalbootstrap__form--control__label">Nombre del Producto</label>
 					        		<input id="name" class="cont-modalbootstrap__form--control__input" name="name" type="text" required>
 					        	</div>
-					        	<div class="cont-modalbootstrap__form--control">
-					        		<label for="address" class="cont-modalbootstrap__form--control__label">Descripción del producto</label>
-					        		<input id="address" class="cont-modalbootstrap__form--control__input" name="address" type="text" required>
-					        	</div>
 					        	<div class="cont-group-form-controls">
 						        	<div class="cont-modalbootstrap__form--control cont-group-form-controls__control">
 						        		<label for="price" class="cont-modalbootstrap__form--control__label">Precio del Producto</label>
@@ -80,17 +76,21 @@
 						        	</div>
 						        	<div class="cont-modalbootstrap__form--control cont-group-form-controls__control">
 						        		<label for="stock" class="cont-modalbootstrap__form--control__label">Stock del Producto</label>
-						        		<input id="stock" class="cont-modalbootstrap__form--control__input" name="stock" type="text" required maxlength="9" minlength="9">
+						        		<input id="stock" class="cont-modalbootstrap__form--control__input" name="stock" type="number" required maxlength="9" minlength="9">
 						        	</div>
 					        	</div>
 					        	<div class="cont-group-form-controls">
 						        	<div class="cont-modalbootstrap__form--control cont-group-form-controls__control">
-						        		<label for="images">Foto del Producto</label>
-						        		<input id="images" class="cont-modalbootstrap__form--control__input-photo images" name="imagen[]" type="file" accept="img/*" required>						        		
+						        		<label for="seloffert">Oferta del Producto</label>
+						        		<select class="cont-modalbootstrap__form--control__select one-hidden" name="seloffert" id="seloffert">
+						        				<option value="0">Seleccione una opción</option>
+						        				<option value="1">NO</option>
+						        				<option value="2">SÍ</option>
+						        			</select>	
 						        	</div>
 						        	<div class="cont-modalbootstrap__form--control cont-group-form-controls__control">
-						        		<label for="offer" class="cont-modalbootstrap__form--control__label">Oferta del Producto</label>
-						        		<input id="offer" class="cont-modalbootstrap__form--control__input" name="offer" type="text" required maxlength="9" minlength="9">
+						        		<label for="newprice" class="cont-modalbootstrap__form--control__label">Nuevo Precio</label>
+						        		<input id="newprice" class="cont-modalbootstrap__form--control__input" name="newprice" type="number" maxlength="9" minlength="9">
 						        	</div>
 					        	</div>
 					        	<div class="cont-modalbootstrap__form--control">
@@ -112,6 +112,14 @@
 					        			<option value="">Restaurante 3</option>
 					        			<option value="">Restaurante 4</option>
 					        		</select>
+					        	</div>
+					        	<div class="cont-modalbootstrap__form--control">
+					        		<label for="address" class="cont-modalbootstrap__form--control__label">Descripción del producto</label>
+					        		<input id="address" class="cont-modalbootstrap__form--control__input" name="address" type="text" required>
+					        	</div>
+					        	<div class="cont-modalbootstrap__form--control">
+					        		<label for="images">Foto del Producto</label>
+					        		<input id="images" class="cont-modalbootstrap__form--control__input-photo images" name="imagen[]" type="file" accept="img/*" required>						        		
 					        	</div>
 							      <div class="cont-modalbootstrap__footer">
 							        <button type="button" class="cont-modalbootstrap__footer--btncancel" data-dismiss="modal">CANCELAR</button>
@@ -141,10 +149,6 @@
 					        		<label for="name-update" class="cont-modalbootstrap__form--control__label">Nombre del Producto</label>
 					        		<input id="name-update" class="cont-modalbootstrap__form--control__input" name="name-update" type="text" required>
 					        	</div>
-					        	<div class="cont-modalbootstrap__form--control">
-					        		<label for="address-update" class="cont-modalbootstrap__form--control__label">Descripción del producto</label>
-					        		<input id="address-update" class="cont-modalbootstrap__form--control__input" name="address-update" type="text" required>
-					        	</div>
 					        	<div class="cont-group-form-controls">
 						        	<div class="cont-modalbootstrap__form--control cont-group-form-controls__control">
 						        		<label for="price-update" class="cont-modalbootstrap__form--control__label">Precio del Producto</label>
@@ -155,15 +159,23 @@
 						        		<input id="stock-update" class="cont-modalbootstrap__form--control__input" name="stock-update" type="text" required maxlength="9" minlength="9">
 						        	</div>
 					        	</div>
+					        	<div class="cont-modalbootstrap__form--control cont-group-form-controls__control">
+					        		<label for="images-update">Foto del Producto</label>
+					        		<a href="#" id="photo-update" class="cont-modalbootstrapupdate__form--control__linkphoto" target="_blank">(Ver Imagen)</a>
+					        		<input id="images-update" class="cont-modalbootstrap__form--control__input-photo images" name="imagen[]" type="file" accept="img/*" required>
+					        	</div>
 					        	<div class="cont-group-form-controls">
 						        	<div class="cont-modalbootstrap__form--control cont-group-form-controls__control">
-						        		<label for="images-update">Foto del Producto</label>
-						        		<a href="#" id="photo-update" class="cont-modalbootstrapupdate__form--control__linkphoto" target="_blank">(Ver Imagen)</a>
-						        		<input id="images-update" class="cont-modalbootstrap__form--control__input-photo images" name="imagen[]" type="file" accept="img/*" required>
+						        		<label for="seloffert-update">Oferta del Producto</label>
+						        		<select class="cont-modalbootstrap__form--control__select one-hidden" name="seloffert-update" id="seloffert-update">
+						        				<option value="0">Seleccione una opción</option>
+						        				<option value="1">NO</option>
+						        				<option value="2">SÍ</option>
+						        			</select>	
 						        	</div>
 						        	<div class="cont-modalbootstrap__form--control cont-group-form-controls__control">
-						        		<label for="offer-update" class="cont-modalbootstrap__form--control__label">Oferta del Producto</label>
-						        		<input id="offer-update" class="cont-modalbootstrap__form--control__input" name="offer-update" type="text" required maxlength="9" minlength="9">
+						        		<label for="newprice-update" class="cont-modalbootstrap__form--control__label">Nuevo Precio</label>
+						        		<input id="newprice-update" class="cont-modalbootstrap__form--control__input" name="newprice-update" type="number" maxlength="9" minlength="9">
 						        	</div>
 					        	</div>
 					        	<div class="cont-modalbootstrap__form--control">
@@ -185,6 +197,10 @@
 					        			<option value="">Restaurante 3</option>
 					        			<option value="">Restaurante 4</option>
 					        		</select>
+					        	</div>
+					        	<div class="cont-modalbootstrap__form--control">
+					        		<label for="address-update" class="cont-modalbootstrap__form--control__label">Descripción del producto</label>
+					        		<input id="address-update" class="cont-modalbootstrap__form--control__input" name="address-update" type="text" required>
 					        	</div>
 							      <div class="cont-modalbootstrapupdate__footer">
 							        <button type="button" class="cont-modalbootstrapupdate__footer--btncancel" data-dismiss="modal">CANCELAR</button>
@@ -225,6 +241,6 @@
 		</div>
 	</main>
 	<script type="text/javascript" src="<?php echo $url ?>js/main.js"></script>
-	<script type="text/javascript" src="<?php echo $url ?>js/actions_pages/product.js"></script>
+	<script type="text/javascript" src="<?php echo $url ?>js/actions_pages/products.js"></script>
 </body>
 </html>

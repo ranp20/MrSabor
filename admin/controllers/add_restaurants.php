@@ -20,7 +20,7 @@
 				$file_folder = "../assets/img/restaurants/";
 
 				if(move_uploaded_file($file_temp, $file_folder . $file_lowercase)){
-					$sql = "INSERT INTO tbl_restaurants (name, address, photo, telephone) VALUES (:name, :address, :imagen, :telephone)";
+					$sql = "CALL sp_add_restaurants(:name, :address, :imagen, :telephone)";
 					$stm = $this->con->prepare($sql);
 					foreach ($arr as $key => $value) {
 						$stm->bindValue($key, $value);
