@@ -646,6 +646,41 @@ img {
   background-color: #fff;
   padding: 0 0.3rem;
 }
+.bootstrapmodal-custom .modal-dialog .modal-content .modal-body .cont-modalbootstrap__form--control__label.disabled {
+  cursor: not-allowed;
+  color: #ccc;
+}
+.bootstrapmodal-custom .modal-dialog .modal-content .modal-body .cont-modalbootstrap__form--control__labeltextarea {
+  display: flex;
+  font-size: 0.9rem;
+  position: absolute;
+  left: 0;
+  top: 17px;
+  transition: 0.3s ease;
+  color: #757575;
+  transform: translateY(-50%);
+  margin: 0 0 0 0.5rem;
+}
+.bootstrapmodal-custom .modal-dialog .modal-content .modal-body .cont-modalbootstrap__form--control__labeltextarea.focus {
+  color: red;
+  font-size: 0.7rem;
+  top: -2px;
+  left: 0;
+  background-color: #fff;
+  padding: 0 0.3rem;
+}
+.bootstrapmodal-custom .modal-dialog .modal-content .modal-body .cont-modalbootstrap__form--control__labeltextarea.complete {
+  color: green;
+  font-size: 0.7rem;
+  top: -2px;
+  left: 0;
+  background-color: #fff;
+  padding: 0 0.3rem;
+}
+.bootstrapmodal-custom .modal-dialog .modal-content .modal-body .cont-modalbootstrap__form--control__labeltextarea.disabled {
+  cursor: not-allowed;
+  color: #ccc;
+}
 .bootstrapmodal-custom .modal-dialog .modal-content .modal-body .cont-modalbootstrap__form--control__input {
   border: thin solid #767676;
   width: 100%;
@@ -662,6 +697,10 @@ img {
 .bootstrapmodal-custom .modal-dialog .modal-content .modal-body .cont-modalbootstrap__form--control__input.complete {
   border: 1px solid green;
 }
+.bootstrapmodal-custom .modal-dialog .modal-content .modal-body .cont-modalbootstrap__form--control__input.disabled {
+  cursor: not-allowed;
+  background-color: #ccc;
+}
 .bootstrapmodal-custom .modal-dialog .modal-content .modal-body .cont-modalbootstrap__form--control__input-photo {
   border-bottom: thin solid #767676;
 }
@@ -674,6 +713,18 @@ img {
   font-size: 0.9rem;
   padding: 0.4rem 0.5rem;
   border-radius: 0.3rem;
+}
+.bootstrapmodal-custom .modal-dialog .modal-content .modal-body .cont-modalbootstrap__form--control__textarea {
+  border: thin solid #767676;
+  width: 100%;
+  outline: none;
+  transition: 0.3s ease;
+  background-color: transparent;
+  font-size: 0.9rem;
+  padding: 0.4rem 0.5rem;
+  border-radius: 0.3rem;
+  min-height: 100px;
+  max-height: 130px;
 }
 .bootstrapmodal-custom .modal-dialog .modal-content .modal-body .cont-modalbootstrap__footer {
   display: flex;

@@ -2,17 +2,16 @@
 
 	require_once 'connection.php';
 
-	class Restaurants extends Connection{
+	class Categories extends Connection{
 
-
-		private $table = "tbl_restaurants";
+		private $table = "tbl_categories";
 
 		public function __construct(){
 			parent::__construct();
 		}
 
 		/* GET RESTAURANTS*/
-		public function get_restaurants(){
+		public function get_categories(){
 			try{
 				$sql = "SELECT * FROM {$this->table}";
 				$stm = $this->con->query($sql);

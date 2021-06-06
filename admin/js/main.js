@@ -37,7 +37,9 @@
 
   /************************** ANIMACIÓN DE LAS CAJAS DE TEXTO - AGREGAR RESTAURANTE **************************/
   let inputs = d.querySelectorAll('.cont-modalbootstrap__form--control__input');
+  let textareas = d.querySelectorAll('.cont-modalbootstrap__form--control__textarea');
 
+  /************************ INPUTS ******************************/
   inputs.forEach( (input) => {
     input.onfocus = () => {
       input.previousElementSibling.classList.add('focus');
@@ -59,9 +61,32 @@
     }
   });
 
+  /************************ TEXTAREAS ******************************/
+  textareas.forEach( (textarea) => {
+    textarea.onfocus = () => {
+      textarea.previousElementSibling.classList.add('focus');
+      textarea.classList.add('focus');
+    }
+
+    textarea.onblur = () => {
+
+      textarea.value = textarea.value.trim();
+
+      if(textarea.value.trim().length == 0){
+        textarea.previousElementSibling.classList.remove('focus');
+        textarea.classList.remove('focus');
+        textarea.previousElementSibling.classList.remove('complete');
+      }else{
+        textarea.previousElementSibling.classList.add('complete');
+        textarea.classList.remove('focus');
+      }
+    }
+  });
+
 
   /************************** ANIMACIÓN DE LAS CAJAS DE TEXTO - ACTUALIZAR RESTAURANTE **************************/
   let inputs_update = d.querySelectorAll('.cont-modalbootstrapupdate__form--control__input');
+  let textareas_update = d.querySelectorAll('.cont-modalbootstrapupdate__form--control__textarea');
 
   inputs_update.forEach( (input_update) => {
     
@@ -81,6 +106,28 @@
       }else{
         input_update.previousElementSibling.classList.add('complete');
         input_update.classList.remove('focus');
+      }
+    }
+  });
+
+  /************************ TEXTAREAS ******************************/
+  textareas_update.forEach( (textarea_update) => {
+    textarea_update.onfocus = () => {
+      textarea_update.previousElementSibling.classList.add('focus');
+      textarea_update.classList.add('focus');
+    }
+
+    textarea_update.onblur = () => {
+
+      textarea_update.value = textarea_update.value.trim();
+
+      if(textarea_update.value.trim().length == 0){
+        textarea_update.previousElementSibling.classList.remove('focus');
+        textarea_update.classList.remove('focus');
+        textarea_update.previousElementSibling.classList.remove('complete');
+      }else{
+        textarea_update.previousElementSibling.classList.add('complete');
+        textarea_update.classList.remove('focus');
       }
     }
   });

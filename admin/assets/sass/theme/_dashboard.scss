@@ -422,6 +422,46 @@
 									background-color: #fff;
 									padding: 0 0.3rem;
 								}
+
+								&.disabled{
+									cursor: not-allowed;
+									color: #ccc;
+								}
+							}
+
+							&__labeltextarea{
+								display: flex;
+								font-size: 0.9rem;
+								position: absolute;
+								left: 0;
+								top: 17px;
+								transition: .3s ease;
+								color: #757575;
+								transform: translateY(-50%);
+								margin: 0 0 0 0.5rem;
+
+								&.focus{
+									color: red;
+									font-size: 0.7rem;
+									top: -2px;
+									left: 0;
+									background-color: #fff;
+									padding: 0 0.3rem;
+								}
+
+								&.complete{
+									color: green;
+									font-size: 0.7rem;
+									top: -2px;
+									left: 0;
+									background-color: #fff;
+									padding: 0 0.3rem;
+								}
+
+								&.disabled{
+									cursor: not-allowed;
+									color: #ccc;
+								}
 							}
 
 							&__input{
@@ -441,6 +481,11 @@
 								&.complete{
 									border: 1px solid green;
 								}
+
+								&.disabled{
+									cursor: not-allowed;
+									background-color: #ccc;
+								}
 							}
 
 							&__input-photo{
@@ -456,6 +501,19 @@
 								font-size: 0.9rem;
 								padding: 0.4rem 0.5rem;
 								border-radius: .3rem;								
+							}
+
+							&__textarea{
+								border: thin solid $border-bottom-input;
+								width: 100%;
+								outline: none;
+								transition: .3s ease;
+								background-color: transparent;
+								font-size: 0.9rem;
+								padding: 0.4rem 0.5rem;
+								border-radius: .3rem;								
+								min-height: 100px;
+								max-height: 130px;
 							}
 						}
 					}

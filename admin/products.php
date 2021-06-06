@@ -4,6 +4,13 @@
   $url =  $actual_link . "/" ."MrSabor/admin/";
 
 	require_once 'php/process_session-admin.php';
+	require_once '../php/class/categories.php';
+	require_once '../php/class/restaurants.php';
+
+	$list = new Categories();
+	$allcategories = $list->get_categories();
+	$list = new Restaurants();
+	$allrestaurants = $list->get_restaurants();
 
 	if(!isset($_SESSION['user'])){
 		header("location: /");
@@ -72,7 +79,7 @@
 					        	<div class="cont-group-form-controls">
 						        	<div class="cont-modalbootstrap__form--control cont-group-form-controls__control">
 						        		<label for="price" class="cont-modalbootstrap__form--control__label">Precio del Producto</label>
-						        		<input id="price" class="cont-modalbootstrap__form--control__input" name="price" type="text" required maxlength="9" minlength="9">
+						        		<input id="price" class="cont-modalbootstrap__form--control__input" name="price" type="number" required maxlength="9" minlength="9">
 						        	</div>
 						        	<div class="cont-modalbootstrap__form--control cont-group-form-controls__control">
 						        		<label for="stock" class="cont-modalbootstrap__form--control__label">Stock del Producto</label>
@@ -83,7 +90,6 @@
 						        	<div class="cont-modalbootstrap__form--control cont-group-form-controls__control">
 						        		<label for="seloffert">Oferta del Producto</label>
 						        		<select class="cont-modalbootstrap__form--control__select one-hidden" name="seloffert" id="seloffert">
-						        				<option value="0">Seleccione una opción</option>
 						        				<option value="1">NO</option>
 						        				<option value="2">SÍ</option>
 						        			</select>	
@@ -97,25 +103,32 @@
 					        		<label for="selcategory">Categoría del Producto</label>
 					        		<select class="cont-modalbootstrap__form--control__select one-hidden" name="selcategory" id="selcategory">
 					        			<option value="0">Selecciona una opción</option>
-					        			<option value="">Categoría 1</option>
-					        			<option value="">Categoría 2</option>
-					        			<option value="">Categoría 3</option>
-					        			<option value="">Categoría 4</option>
+					        			<?php 
+
+					        			foreach ($allcategories as $key => $value) {
+					        				echo "
+					        					<option value='{$value['id']}'>{$value['name']}</option>
+					        				";
+					        			}
+					        			?>
 					        		</select>
 					        	</div>
 					        	<div class="cont-modalbootstrap__form--control">
 					        		<label for="selrestaurant">Restaurante del Producto</label>
 					        		<select class="cont-modalbootstrap__form--control__select one-hidden" name="selrestaurant" id="selrestaurant">
 					        			<option value="0">Selecciona una opción</option>
-					        			<option value="">Restaurante 1</option>
-					        			<option value="">Restaurante 2</option>
-					        			<option value="">Restaurante 3</option>
-					        			<option value="">Restaurante 4</option>
+					        			<?php 
+					        			foreach ($allrestaurants as $key => $value) {
+					        				echo "
+					        					<option value='{$value['id']}'>{$value['name']}</option>
+					        				";
+					        			}
+					        			?>
 					        		</select>
 					        	</div>
 					        	<div class="cont-modalbootstrap__form--control">
-					        		<label for="address" class="cont-modalbootstrap__form--control__label">Descripción del producto</label>
-					        		<input id="address" class="cont-modalbootstrap__form--control__input" name="address" type="text" required>
+					        		<label for="description" class="cont-modalbootstrap__form--control__labeltextarea">Descripción del producto</label>
+					        		<textarea name="description" id="description" class="cont-modalbootstrap__form--control__textarea" required></textarea>
 					        	</div>
 					        	<div class="cont-modalbootstrap__form--control">
 					        		<label for="images">Foto del Producto</label>
@@ -152,11 +165,11 @@
 					        	<div class="cont-group-form-controls">
 						        	<div class="cont-modalbootstrap__form--control cont-group-form-controls__control">
 						        		<label for="price-update" class="cont-modalbootstrap__form--control__label">Precio del Producto</label>
-						        		<input id="price-update" class="cont-modalbootstrap__form--control__input" name="price-update" type="text" required maxlength="9" minlength="9">
+						        		<input id="price-update" class="cont-modalbootstrap__form--control__input" name="price-update" type="number" required maxlength="9" minlength="9">
 						        	</div>
 						        	<div class="cont-modalbootstrap__form--control cont-group-form-controls__control">
 						        		<label for="stock-update" class="cont-modalbootstrap__form--control__label">Stock del Producto</label>
-						        		<input id="stock-update" class="cont-modalbootstrap__form--control__input" name="stock-update" type="text" required maxlength="9" minlength="9">
+						        		<input id="stock-update" class="cont-modalbootstrap__form--control__input" name="stock-update" type="number" required maxlength="9" minlength="9">
 						        	</div>
 					        	</div>
 					        	<div class="cont-modalbootstrap__form--control cont-group-form-controls__control">
