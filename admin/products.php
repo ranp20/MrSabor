@@ -13,7 +13,7 @@
 	$allrestaurants = $list->get_restaurants();
 
 	if(!isset($_SESSION['user'])){
-		header("location: /");
+		header("location: ./");
 	}
 
 ?>
@@ -48,8 +48,8 @@
 								<th>Stock</th>
 								<th>Imagen</th>
 								<th>Oferta</th>
-								<th>Categoría</th>
 								<th>Restaurant</th>
+								<th>Categoría</th>
 								<th></th>
 								<th></th>
 							</tr>
@@ -59,7 +59,7 @@
 						</tbody>
 					</table>
 				</div>
-				<!-- MODAL - AGREGAR NUEVO RESTAURANTE -->
+				<!-- MODAL - AGREGAR NUEVO PRODUCTO -->
 				<div class="modal fade bootstrapmodal-custom" id="addproductModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
 				  <div class="modal-dialog" role="document">
 				    <div class="modal-content">
@@ -89,7 +89,7 @@
 					        	<div class="cont-group-form-controls">
 						        	<div class="cont-modalbootstrap__form--control cont-group-form-controls__control">
 						        		<label for="seloffert">Oferta del Producto</label>
-						        		<select class="cont-modalbootstrap__form--control__select one-hidden" name="seloffert" id="seloffert">
+						        		<select class="cont-modalbootstrap__form--control__select" name="seloffert" id="seloffert">
 						        				<option value="1">NO</option>
 						        				<option value="2">SÍ</option>
 						        			</select>	
@@ -144,7 +144,7 @@
 				    </div>
 				  </div>
 				</div>
-				<!-- MODAL - EDITAR NUEVO RESTAURANTE -->
+				<!-- MODAL - EDITAR NUEVO PRODUCTO -->
 				<div class="modal fade bootstrapmodal-custom" id="updateModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
 				  <div class="modal-dialog" role="document">
 				    <div class="modal-content">
@@ -172,16 +172,10 @@
 						        		<input id="stock-update" class="cont-modalbootstrap__form--control__input" name="stock-update" type="number" required maxlength="9" minlength="9">
 						        	</div>
 					        	</div>
-					        	<div class="cont-modalbootstrap__form--control cont-group-form-controls__control">
-					        		<label for="images-update">Foto del Producto</label>
-					        		<a href="#" id="photo-update" class="cont-modalbootstrapupdate__form--control__linkphoto" target="_blank">(Ver Imagen)</a>
-					        		<input id="images-update" class="cont-modalbootstrap__form--control__input-photo images" name="imagen[]" type="file" accept="img/*" required>
-					        	</div>
 					        	<div class="cont-group-form-controls">
 						        	<div class="cont-modalbootstrap__form--control cont-group-form-controls__control">
 						        		<label for="seloffert-update">Oferta del Producto</label>
-						        		<select class="cont-modalbootstrap__form--control__select one-hidden" name="seloffert-update" id="seloffert-update">
-						        				<option value="0">Seleccione una opción</option>
+						        		<select class="cont-modalbootstrap__form--control__select" name="seloffert-update" id="seloffert-update">
 						        				<option value="1">NO</option>
 						        				<option value="2">SÍ</option>
 						        			</select>	
@@ -212,8 +206,13 @@
 					        		</select>
 					        	</div>
 					        	<div class="cont-modalbootstrap__form--control">
-					        		<label for="address-update" class="cont-modalbootstrap__form--control__label">Descripción del producto</label>
-					        		<input id="address-update" class="cont-modalbootstrap__form--control__input" name="address-update" type="text" required>
+					        		<label for="description-update" class="cont-modalbootstrap__form--control__labeltextarea">Descripción del producto</label>
+					        		<textarea name="description-update" id="description-update" class="cont-modalbootstrap__form--control__textarea" required></textarea>
+					        	</div>
+					        	<div class="cont-modalbootstrap__form--control">
+					        		<label for="images-update">Foto del Producto</label>
+					        		<a href="#" id="photo-update" class="cont-modalbootstrapupdate__form--control__linkphoto" target="_blank">(Ver Imagen)</a>
+					        		<input id="images-update" class="cont-modalbootstrap__form--control__input-photo images" name="imagen[]" type="file" accept="img/*" required>
 					        	</div>
 							      <div class="cont-modalbootstrapupdate__footer">
 							        <button type="button" class="cont-modalbootstrapupdate__footer--btncancel" data-dismiss="modal">CANCELAR</button>

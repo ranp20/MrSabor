@@ -1,12 +1,15 @@
 /************************** LISTAR RESTAURANTES **************************/
-// $(function(){
+$(function(){
   $("#newprice").attr("disabled", "disabled");
   $("#newprice").prev('label').addClass("disabled");
   $("#newprice").addClass("disabled");
-//   listCategories();
-// });
+  $("#newprice-update").attr("disabled", "disabled");
+  $("#newprice-update").prev('label').addClass("disabled");
+  $("#newprice-update").addClass("disabled");
+  listProducts();
+});
 
-
+/* INSERTAR PRODUCTO - SELECT OFERTA*/
 $("#seloffert").change(function(){
   let optionoffer = $(this).val();
   if(optionoffer == 1){
@@ -19,8 +22,21 @@ $("#seloffert").change(function(){
     $("#newprice").removeClass("disabled");
   }
 });
+/* ACTUALIZAR PRODUCTO - SELECT OFERTA*/
+$("#seloffert-update").change(function(){
+  let optionoffer = $(this).val();
+  if(optionoffer == 1){
+    $("#newprice-update").attr("disabled", "disabled");
+    $("#newprice-update").prev('label').addClass("disabled");
+    $("#newprice-update").addClass("disabled");
+  }else{
+    $("#newprice-update").removeAttr("disabled");
+    $("#newprice-update").prev('label').removeClass("disabled");
+    $("#newprice-update").removeClass("disabled");
+  }
+});
 
-/************************** AGREGAR RESTAURANTE **************************/
+/************************** AGREGAR PRODUCTO **************************/
 $(document).on('click', '#btnadd-product', function(e){
   e.preventDefault();
 
@@ -50,86 +66,96 @@ $(document).on('click', '#btnadd-product', function(e){
 
     console.log(res);
     $('#form-add-product')[0].reset();
-    //listCategories();
+    listProducts();
     $('#addproductModal').modal("hide");
 
   });
 });
 
-/************************** AGREGAR RESTAURANTES **************************/
-// function listCategories(searchVal){ 
-//   $.ajax({
-//     url: "admin/controllers/list_categories.php",
-//     method: "POST",
-//     datatype: "JSON",
-//     contentType: 'application/x-www-form-urlencoded;charset=UTF-8',
-//     data: {searchList : searchVal},
-//   }).done( function (res) {
+/************************** LISTAR PRODUCTOS **************************/
+function listProducts(searchVal){ 
+  $.ajax({
+    url: "admin/controllers/list_products.php",
+    method: "POST",
+    datatype: "JSON",
+    contentType: 'application/x-www-form-urlencoded;charset=UTF-8',
+    data: {searchList : searchVal},
+  }).done( function (res) {
 
-//     var response = JSON.parse(res);
-//     var template = "";
+    var response = JSON.parse(res);
+    var template = "";
 
-//     if(response.length == 0){
-//       template = `
-//         <tr>
-//           <td colspan="7">
-//             <div class="msg-non-results-res">
-//               <img src="admin/assets/img/icons/icon-sad-face.svg" alt="" class="msg-non-results-res__icon">
-//               <h3 class="msg-non-results-res__title">No se encontraron resultados...</h3>
-//             </div>
-//           </td>
-//         </tr>
-//       `;
+    if(response.length == 0){
+      template = `
+        <tr>
+          <td colspan="11">
+            <div class="msg-non-results-res">
+              <img src="admin/assets/img/icons/icon-sad-face.svg" alt="" class="msg-non-results-res__icon">
+              <h3 class="msg-non-results-res__title">No se encontraron resultados...</h3>
+            </div>
+          </td>
+        </tr>
+      `;
 
-//       $("#tbl_categories").html(template);
-//     }else{
-//       response.forEach(e => {
+      $("#tbl_products").html(template);
+    }else{
+      response.forEach(e => {
       
-//       var img_route = "admin/assets/img/categories/"+e.photo;
+      var img_route = "admin/assets/img/products/"+e.photo;
 
-//       template += `
-//         <tr id="item-${e.id}">
-//           <td>${e.id}</td>
-//           <td>${e.name}</td>
-//           <td class="cont-img-table">
-//             <a href="${img_route}" target="_blank">
-//               <img loading="lazy" src="${img_route}">
-//             </a>
-//           </td>
-//           <td>${e.name_restaurant}</td>
-//           <td class="cont-btn-update">
-//             <a class="btn-update-category" data-toggle="modal" data-target="#updateModal"  href="#" 
-//               data-id="${e.id}"
-//               data-name="${e.name}"
-//               data-photo="${img_route}"
-//               data-idrest="${e.id_restaurant}"
-//               >Editar</a>
-//           </td>
-//           <td class="cont-btn-delete" id="cont-btn-delete">
-//             <a class="btn-delete-category" data-toggle="modal" data-target="#deleteModal" href="#"
-//               data-id="${e.id}"
-//               >Eliminar</a>
-//           </td>
-//         </tr>
-//         `;
-//       });
+      template += `
+        <tr id="item-${e.id}">
+          <td>${e.id}</td>
+          <td>${e.name}</td>
+          <td>${e.description}</td>
+          <td>${e.price}</td>
+          <td>${e.stock}</td>
+          <td class="cont-img-table">
+            <a href="${img_route}" target="_blank">
+              <img loading="lazy" src="${img_route}">
+            </a>
+          </td>
+          <td>${e.offer}</td>
+          <td>${e.name_restaurant}</td>
+          <td>${e.name_category}</td>
+          <td class="cont-btn-update">
+            <a class="btn-update-category" data-toggle="modal" data-target="#updateModal"  href="#" 
+              data-id="${e.id}"
+              data-name="${e.name}"
+              data-description="${e.description}"
+              data-price="${e.price}"
+              data-stock="${e.stock}"
+              data-photo="${img_route}"
+              data-offer="${e.offer}"
+              data-idrest="${e.id_restaurant}"
+              data-idcateg="${e.id_category}"
+              >Editar</a>
+          </td>
+          <td class="cont-btn-delete" id="cont-btn-delete">
+            <a class="btn-delete-category" data-toggle="modal" data-target="#deleteModal" href="#"
+              data-id="${e.id}"
+              >Eliminar</a>
+          </td>
+        </tr>
+        `;
+      });
       
-//       $("#tbl_categories").html(template);
-//     }
+      $("#tbl_products").html(template);
+    }
 
-//   });
-// }
+  });
+}
 
-// /************************** BUSCADOR DE RESTAURANTES **************************/
-// $(document).on('keyup', '#searchcategories', function() {
-//   var searchVal = $(this).val();
+/************************** BUSCADOR DE PRODUCTOS **************************/
+$(document).on('keyup', '#searchproduct', function() {
+  var searchVal = $(this).val();
 
-//   if(searchVal != ""){
-//     listCategories(searchVal);
-//   }else{
-//     listCategories();
-//   }
-// });
+  if(searchVal != ""){
+    listProducts(searchVal);
+  }else{
+    listProducts();
+  }
+});
 
 // /************************** LISTAR DATOS DEL RESTAURANTE EN EL MODAL**************************/
 // $(document).on('click', '.btn-update-category', function(e){

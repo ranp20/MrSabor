@@ -22,7 +22,7 @@ form.addEventListener('submit', function(e){
 																											</div>`;
 				setTimeout(function(){
 					window.location.replace("../dashboard");
-				}, 1000);
+				}, 500);
 			}else{
 				document.querySelector('#result-adm').innerHTML = `<div class='message-error'>
 																												<div class='message-error__content'>
@@ -35,6 +35,12 @@ form.addEventListener('submit', function(e){
 				setTimeout(function(){
 					document.querySelector('.message-error').classList.add('disabled');
 				}, 3500);
+
+				/* CERRAR EL MENSAJE DE ERROR */
+					let containermodal = document.querySelector('.message-error');
+					containermodal.addEventListener('click', e => {
+						if(e.target === containermodal)	containermodal.classList.add('disabled');
+					});
 				
 				/* CERRAR EL MENSAJE DE ERROR */
 				document.querySelector('#btnclosed').addEventListener('click', function(){

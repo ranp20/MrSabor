@@ -8,7 +8,6 @@
 	if(!isset($_SESSION['user'])){
 		header("location: ./");
 	}
-
 ?>
 
 <!DOCTYPE html>

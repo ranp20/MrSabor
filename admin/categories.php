@@ -10,7 +10,7 @@
 	$restaurants = $list->get_restaurants();
 
 	if(!isset($_SESSION['user'])){
-		header("location: /");
+		header("location: ./");
 	}
 ?>
 

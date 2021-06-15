@@ -1,3 +1,61 @@
+/************************** SHOW MESSAGE INSERT INTO CART **************************/
+.messageAddIntoCart{
+	transition: .3s ease-in-out;
+	&__cont{
+	  box-shadow: 0 3px 6px 0px rgba(0,0,0, .22), 0 -2px 0 0px #0bb82c inset;
+	  border-radius: 6px;
+	  position: absolute;
+	  width: auto;
+	  top: 4rem;
+	  right: -100%;
+	  background-color: #fff;
+	  padding: .8rem 1.5rem;
+	  text-align: center;
+	  visibility: hidden;
+	  opacity: 0;
+	  transition: .3s ease-in-out;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+	  animation-name: movetoScreenUser;
+	  animation-duration: .3s;
+	  animation-timing-function: ease-in-out;
+	  animation-fill-mode: forwards;
+		
+		@keyframes movetoScreenUser {
+			0%{
+				right: -100%;
+			}
+			100%{
+				right: 10.5rem;
+				visibility: visible;
+				opacity: 1;
+			}
+		}
+
+		&.active{
+			display: none;
+			opacity: 0;
+			visibility: hidden;
+		}
+
+		&--cIcon{
+			display: block;
+	    overflow: hidden;
+	    text-align: center;
+	    width: 56px;
+	    height: 56px;
+
+			&--icon{
+				fill: #0BB82C;
+				fill-rule :nonzero;
+			}
+		}
+		&--message{
+			margin-left: 0.5rem;
+		}
+	}
+}
 /************************** SHOW MENU BURGER **************************/
 #menu-show-home{
   pointer-events: auto;
@@ -300,8 +358,6 @@
 					height: 35px;
 					&--icon{
 						fill: $color-all-titles;
-						width: 35px;
-						height: 35px;
 					}
 				}
 			}
@@ -438,13 +494,96 @@
 						display: block;
 					}
 
-					&__menu{
+					&--cTitle{
+				    display: flex;
+				    align-items: center;
+				    justify-content: flex-start;
+				    background-color: #ccc;
+				    padding: 1rem;
+
+						h2{
+
+						}
+					}
+
+					&--menu{
 						display: flex;
 						flex-direction: column;
 						flex-wrap: wrap;
 						overflow-y: auto;
-						&__item{
-							display: block;
+						padding: 1rem;
+						&--item{
+							width: 100%;
+							display: flex;
+							align-items: center;
+							justify-content: space-between;
+							flex-wrap: wrap;
+							border-bottom: thin solid #ccc;
+							padding: 0.5rem;
+
+							&--l{
+								display: flex;
+								align-items: center;
+								&__cProd{
+									display: flex;
+									align-items: center;
+									&--photo{
+										width: 56px;
+										height: 56px;
+										display: flex;
+										align-items: center;
+										justify-content: center;
+										text-align: center;
+										margin-right: 0.6rem;
+										img{
+											width: 100%;
+											height: 100%;
+											object-fit: contain;
+											object-position: center;
+										}
+									}
+									&--info{
+										color: $color-paragraph-light;
+										&--name{
+											font-size: 1.05rem;
+										}
+										&--namecategory{
+											color: #999;
+											font-size: 0.9rem;
+										}
+										&--price{
+											color: $color-paragraph-bold; 
+											font-weight: bold;
+											font-size: 1.1rem;
+										}
+									}
+								}
+							}
+
+							&--cBtns{
+								display: flex;
+								align-items: center;
+
+								&--btn{
+									cursor: pointer;
+									outline: none;
+									background-color: #fff;
+									border: thin solid #ccc;
+									border-radius: 5px;
+									padding: .5rem .8rem;
+							    font-size: 1.2rem;
+							    line-height: 1;
+								}
+
+								&--countP{
+									background-color: transparent;
+							    border: thin solid transparent;
+							    border-radius: 5px;
+							    padding: 0.5rem 0.8rem;
+							    font-size: 1.2rem;
+							    line-height: 1;
+								}
+							}
 						}
 					}
 				}

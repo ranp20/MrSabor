@@ -87,3 +87,28 @@
 		}
 	}
 }
+
+/* LOADER - MENSAJE DE RESPUESTA DEL SERVIDOR */
+@mixin loaderServerMessage($color, $size){
+	
+	&{
+		border: 3px solid rgba(0,0,0,.1);
+		width: $size;
+		height: $size;
+		border-radius: 50%;
+		border-left-color: $color;
+		animation-name: girar;
+		animation-duration: .3s;
+		animation-timing-function: linear;
+		animation-iteration-count: infinite;
+
+		@keyframes girar {
+			0%{
+				transform: rotate(0deg);
+			}
+			100%{
+				transform: rotate(360deg);	
+			}
+		}
+	}
+}

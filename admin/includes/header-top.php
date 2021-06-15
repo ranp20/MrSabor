@@ -34,7 +34,7 @@
 		let currentDate = new Date(),
 				year = currentDate.getFullYear(),
 				month = currentDate.getMonth(),
-				day = currentDate.getDay(),
+				day = parseInt(currentDate.toDateString().slice(8, -5)),
 				weekday = currentDate.getDay(),
 				hours = currentDate.getHours(),
 				minutes = currentDate.getMinutes(),
@@ -42,6 +42,10 @@
 
 		const weekdays = ["Domingo","Lunes","Martes","Miércoles","Jueves","viernes","Sábado"];
 		const months = ["Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre"];
+
+		if(day < 10){
+			day = "0" + day;
+		}
 
 		if(minutes < 10){
 			minutes = "0" + minutes;
