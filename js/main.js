@@ -183,6 +183,14 @@
 	}, 4000);
 
 
+	d.querySelector("#shopping-cart-list").addEventListener('click', function(e){
+		e.preventDefault();
+		let sessUser = d.querySelector("#idUSESScurrent").value;
+		if(sessUser == "" || sessUser == 0){
+			window.location.replace("login");
+		}
+	});
+
 	/*************************** BUTTON SHOW LIST SHOPPING CART **********************************/
 	let containerlistcart = d.querySelector('.homepage__infotop__header--contmenucart');
 
@@ -194,6 +202,7 @@
 			if(e.target === containerlistcart)	containerlistcart.classList.remove('show');
 		});
 	});
+
 
 
 })(document);

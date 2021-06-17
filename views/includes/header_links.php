@@ -3,9 +3,13 @@
 	$actual_link = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://$_SERVER[HTTP_HOST]";
   $url =  $actual_link . "/" ."MrSabor/";
 
+  error_reporting(0);
+  $userSESS = $_SESSION['client'][0]['id'];
+
 ?>
 
 <!-- LINKS DE ESTILOS Y CDNs PARA TODO EL DOCUMENTO O TEMA -->
+<input type="hidden" id="idUSESScurrent" value="<?= $userSESS; ?>">
 <meta charset="UTF-8">
 <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 <!-- -- ESTILOS GENERALES PARA EL SITIO WEB -- -->
