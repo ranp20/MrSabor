@@ -63,30 +63,96 @@ function list_intoCart(){
 
 		var resultlist = JSON.parse(res);
 		$.each(resultlist, function(i, v){
-			
+
+			var total = (v.price_real * v.quantity).toFixed(2);
 			var pathimgProd = "admin/assets/img/products/"+v.photo;
 
 			$("#listProds_ByClienteAdd").append(`
-				<li class="homepage__infotop__header--contmenucart__cont--menu--item">
+				<li class="homepage__infotop__header--contmenucart__cont--menu--item" id="prod-${i}">
 					<a href="#" class="homepage__infotop__header--contmenucart__cont--menu--item--l">
 						<div class="homepage__infotop__header--contmenucart__cont--menu--item--l__cProd">
 							<div class="homepage__infotop__header--contmenucart__cont--menu--item--l__cProd--photo">
 								<img src="${pathimgProd}" alt="">
 							</div>
 							<div class="homepage__infotop__header--contmenucart__cont--menu--item--l__cProd--info">
-								<p class="homepage__infotop__header--contmenucart__cont--menu--item--l__cProd--info--name">${v.name}</p>
+								<p class="homepage__infotop__header--contmenucart__cont--menu--item--l__cProd--info--name"><span><b>${v.quantity}x</b></span>&nbsp;${v.name}</p>
 								<p class="homepage__infotop__header--contmenucart__cont--menu--item--l__cProd--info--namecategory">${v.name_cat}</p>
-								<span class="homepage__infotop__header--contmenucart__cont--menu--item--l__cProd--info--price">s/. ${v.price}</span>
+								<span class="homepage__infotop__header--contmenucart__cont--menu--item--l__cProd--info--price">s/. ${total}</span>
 							</div>
 						</div>
 					</a>
-					<div class="homepage__infotop__header--contmenucart__cont--menu--item--cBtns">
-						<button class="homepage__infotop__header--contmenucart__cont--menu--item--cBtns--btn">-</button>
-						<div class="homepage__infotop__header--contmenucart__cont--menu--item--cBtns--countP">0</div>
-						<button class="homepage__infotop__header--contmenucart__cont--menu--item--cBtns--btn">+</button>
-					</div>
+					
+					<!--<div class="homepage__infotop__header--contmenucart__cont--menu--item--cBtns">
+						<button class="homepage__infotop__header--contmenucart__cont--menu--item--cBtns--btn btn-indec-${i}"
+							data-prodid='${v.id}'
+							data-prodstock='${v.stock}'
+							data-idclient='${idClient}'
+						>-</button>
+						<div class="homepage__infotop__header--contmenucart__cont--menu--item--cBtns--countP">1</div>
+						<button class="homepage__infotop__header--contmenucart__cont--menu--item--cBtns--btn btn-indec-${i}"
+							data-prodid='${v.id}'
+							data-prodstock='${v.stock}'
+							data-idclient='${idClient}'
+						>+</button>
+					</div>-->
 				</li>
 			`);
+
+			/************************** CAMBIAR LA CANTIDAD DE PRODUCTOS A COMPRAR **************************/
+			$(document).on("click", `.btn-indec-${i}`, function(){
+				let valCant = $(this).parent().find("div").text();
+				let button = $(this);
+				let newvalCant = $(this).parent().find("div").text();
+
+				if(button.text() == "+"){
+					newvalCant = parseFloat(valCant) + 1;
+					$(this).parent().find("div").text(newvalCant);
+					
+					var objProd = {
+						prodid: button.data("prodid"),
+						prodcant: $(this).parent().find("div").text(),
+						prodstock: button.data("prodstock"),
+						clientid: button.data("idclient"),
+						button: button.text(),
+					};
+					
+					$.ajax({
+						url: "controllers/validate-CantProdsIntoCart.php",
+						method: "POST",
+				    datatype: "JSON",
+				    data: objProd,
+					}).done(function(res){
+						console.log(res);
+					});
+
+				}else{
+					if(valCant > 1){
+						newvalCant = parseFloat(valCant) - 1;
+						$(this).parent().find("div").text(newvalCant);
+
+						var objProd = {
+							prodid: button.data("prodid"),
+							prodcant: $(this).parent().find("div").text(),
+							prodstock: button.data("prodstock"),
+							clientid: button.data("idclient"),
+							button: button.text(),
+						};
+
+						$.ajax({
+							url: "controllers/validate-CantProdsIntoCart.php",
+							method: "POST",
+					    datatype: "JSON",
+					    data: objProd,
+						}).done(function(res){
+							console.log(res);
+						});
+
+					}else{
+						newvalCant = 1;
+						$(this).parent().find("div").text(newvalCant);
+					}
+				}
+			});
 		});
 	});
 }

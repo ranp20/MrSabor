@@ -197,9 +197,13 @@
 	d.querySelector("#shopping-cart-list").addEventListener("click", function(){
 		containerlistcart.classList.add('show');
 		d.querySelector(".homepage__infotop__header--contmenucart__cont").classList.add('show');
+		d.querySelector("#chat_wstp-icon").classList.add('hidden');
 		/*************************** HIDDEN CONTAINER LIST CART **********************************/
 		containerlistcart.addEventListener('click', e => {
-			if(e.target === containerlistcart)	containerlistcart.classList.remove('show');
+			if(e.target === containerlistcart){
+				containerlistcart.classList.remove('show');
+				d.querySelector("#chat_wstp-icon").classList.remove('hidden');
+			};
 		});
 	});
 

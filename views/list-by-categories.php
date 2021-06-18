@@ -49,7 +49,7 @@
 		</div>
 	</div>
 	<?php require_once 'includes/homepage-footer.php'; ?>
-	<script src="js/main.js" type="text/javascript"></script>
-	<script src="js/add-cart-product.js" type="text/javascript"></script>
+	<script src="js/main.js"></script>
+	<script src="js/actions_pages/add-cart-product.js"></script>
 </body>
 </html>

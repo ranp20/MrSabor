@@ -693,6 +693,17 @@
 					margin: 0;
 				}
 
+				&__profile{
+					display: table;
+					width: 100%;
+					height: 100%;
+
+					svg{
+						width: 100%;
+						height: 100%;
+					}
+				}
+
 				&__profile-yessession{
 					background-color: unset;
 					border: none;
@@ -920,6 +931,7 @@
 
 				&__cont{
 					background-color: #fff;
+					position: relative;
 					height: 100vh;
 					width: 0;
 					right: 0;
@@ -1034,6 +1046,38 @@
 							    line-height: 1;
 								}
 							}
+						}
+					}
+
+					&--linkgoCart{
+						position: absolute;
+				    display: flex;
+				    align-items: center;
+				    justify-content: center;
+				    width: 100%;
+				    bottom: 0;
+				    padding: 1rem;
+				    background-color: $primary-color;
+				    color: #fff;
+				    font-weight: bold;
+
+				    &:hover{
+				    	opacity: .7;
+				    }
+
+						&--cImg{
+							width: 34px;
+							height: 34px;
+							display: inline-block;
+							text-align: center;
+							margin-right: 0.65rem;
+							svg{
+								fill: #fff;
+							}
+						}
+
+						span{
+
 						}
 					}
 				}
@@ -1947,6 +1991,12 @@
 	}
 }
 /************************** API WHATSAPP **************************/
+#chat_wstp-icon{
+	display: block;
+	&.hidden{
+		display: none;
+	}
+}
 .float{
 	position:fixed;
 	width:60px;

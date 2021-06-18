@@ -1051,6 +1051,15 @@ ul {
     margin: 0;
   }
 }
+.homepageTwo__infotop__header--contlogin__profile {
+  display: table;
+  width: 100%;
+  height: 100%;
+}
+.homepageTwo__infotop__header--contlogin__profile svg {
+  width: 100%;
+  height: 100%;
+}
 .homepageTwo__infotop__header--contlogin__profile-yessession {
   background-color: unset;
   border: none;
@@ -1258,6 +1267,7 @@ ul {
 }
 .homepageTwo__infotop__header--contmenucart__cont {
   background-color: #fff;
+  position: relative;
   height: 100vh;
   width: 0;
   right: 0;
@@ -1363,7 +1373,31 @@ ul {
   font-size: 1.2rem;
   line-height: 1;
 }
-
+.homepageTwo__infotop__header--contmenucart__cont--linkgoCart {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  bottom: 0;
+  padding: 1rem;
+  background-color: #FFBD59;
+  color: #fff;
+  font-weight: bold;
+}
+.homepageTwo__infotop__header--contmenucart__cont--linkgoCart:hover {
+  opacity: 0.7;
+}
+.homepageTwo__infotop__header--contmenucart__cont--linkgoCart--cImg {
+  width: 34px;
+  height: 34px;
+  display: inline-block;
+  text-align: center;
+  margin-right: 0.65rem;
+}
+.homepageTwo__infotop__header--contmenucart__cont--linkgoCart--cImg svg {
+  fill: #fff;
+}
 /************************** HEROIAMGE **************************/
 .heroimage {
   width: 100%;
@@ -2254,6 +2288,13 @@ ul {
 }
 
 /************************** API WHATSAPP **************************/
+#chat_wstp-icon {
+  display: block;
+}
+#chat_wstp-icon.hidden {
+  display: none;
+}
+
 .float {
   position: fixed;
   width: 60px;
@@ -2966,6 +3007,102 @@ ul {
   font-size: 1.15rem;
   font-weight: 600;
   font-family: monospace;
+}
+
+.c-cart {
+  padding: 4rem 1rem;
+}
+.c-cart__cont--cT {
+  margin-bottom: 1.5rem;
+}
+.c-cart__cont--cT--title {
+  font-size: 2rem;
+}
+.c-cart__cont--cTable {
+  width: 100%;
+}
+.c-cart__cont--cTable--table {
+  width: 100%;
+  border-collapse: collapse;
+  /* RESET A LOS COMPONENTES DE LA TABLA */
+}
+.c-cart__cont--cTable--table thead tr {
+  border-bottom: thin solid #ccc;
+}
+.c-cart__cont--cTable--table thead tr th {
+  padding: 8px;
+  text-align: left;
+}
+.c-cart__cont--cTable--table thead tr th:nth-child(2), .c-cart__cont--cTable--table thead tr th:nth-child(3), .c-cart__cont--cTable--table thead tr th:nth-child(4) {
+  text-align: center;
+}
+.c-cart__cont--cTable--table tbody tr {
+  border-bottom: thin solid #ccc;
+}
+.c-cart__cont--cTable--table tbody tr td {
+  padding: 10px;
+  text-align: left;
+}
+.c-cart__cont--cTable--table tbody tr td:nth-child(2), .c-cart__cont--cTable--table tbody tr td:nth-child(3), .c-cart__cont--cTable--table tbody tr td:nth-child(4) {
+  text-align: center;
+}
+.c-cart__cont--cTable--table--cInfoProd {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.c-cart__cont--cTable--table--cInfoProd--cImg {
+  width: 77px;
+  height: 74px;
+  margin-right: 1rem;
+  border-radius: 10px;
+  overflow: hidden;
+}
+.c-cart__cont--cTable--table--cInfoProd--cImg img {
+  width: 100%;
+  height: 100%;
+}
+.c-cart__cont--cTable--table--cBtnsar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.c-cart__cont--cTable--table--cBtnsar button {
+  cursor: pointer;
+  border: none;
+  background-color: #FFBD59;
+  padding: 0.5rem 0.8rem;
+  line-height: 1.4;
+  font-size: 1.1rem;
+}
+.c-cart__cont--cTable--table--cBtnsar--btnl {
+  border-radius: 10px 0 0 10px;
+}
+.c-cart__cont--cTable--table--cBtnsar--btnr {
+  border-radius: 0 10px 10px 0;
+}
+.c-cart__cont--cTable--table--cBtnsar input {
+  outline: none;
+  text-align: center;
+  padding: 0.5rem;
+  line-height: 1.14;
+  font-size: 1.1rem;
+  min-width: 40px;
+  max-width: 70px;
+}
+.c-cart__cont--cTable--table--cBtnsar input[type=number]::-webkit-inner-spin-button, .c-cart__cont--cTable--table--cBtnsar input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.c-cart__cont--cTable--table--cBtnsar input[type=number] {
+  -moz-appearance: textfield;
+}
+.c-cart__cont--cTable--subT {
+  padding-top: 2rem;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
 }
 
 /*# sourceMappingURL=styles.css.map */
