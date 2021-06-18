@@ -69,7 +69,7 @@ function list_intoCart(){
 
 			$("#listProds_ByClienteAdd").append(`
 				<li class="homepage__infotop__header--contmenucart__cont--menu--item" id="prod-${i}">
-					<a href="#" class="homepage__infotop__header--contmenucart__cont--menu--item--l">
+					<a href="detalle-producto?idprodm=${v.id}" class="homepage__infotop__header--contmenucart__cont--menu--item--l">
 						<div class="homepage__infotop__header--contmenucart__cont--menu--item--l__cProd">
 							<div class="homepage__infotop__header--contmenucart__cont--menu--item--l__cProd--photo">
 								<img src="${pathimgProd}" alt="">

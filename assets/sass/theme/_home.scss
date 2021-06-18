@@ -469,6 +469,7 @@
 		   	}
 
 				&__cont{
+					position: relative;
 					background-color: #fff;
 					height: 100vh;
 					width: 0;
@@ -481,17 +482,28 @@
 					animation-timing-function: ease-in-out;
 					animation-fill-mode: forwards;
 
-					@keyframes show-cart-list{
-						0%{
-							width: 0;
-						}
-						100%{
-							width: 80%;
-						}
-					}
-
 					&.show{
 						display: block;
+						width: 80%;
+						
+						@keyframes show-cart-list{
+							0%{width: 0;}
+							100%{width: 80%;}
+						}
+						@media (min-width: 768px){
+							width: 60%;
+							@keyframes show-cart-list{
+								0%{width: 0;}
+								100%{width: 60%;}
+							}
+						}
+						@media (min-width: 991px){
+							width: 34rem;	
+							@keyframes show-cart-list{
+								0%{width: 0;}
+								100%{width: 34rem;}
+							}
+						}
 					}
 
 					&--cTitle{
@@ -500,9 +512,13 @@
 				    justify-content: flex-start;
 				    background-color: #ccc;
 				    padding: 1rem;
+				    font-size: 0.7rem;
 
+						@media (min-width: 768px){
+							font-size: 1.2rem;
+						}
+						
 						h2{
-
 						}
 					}
 
@@ -512,6 +528,8 @@
 						flex-wrap: wrap;
 						overflow-y: auto;
 						padding: 1rem;
+
+
 						&--item{
 							width: 100%;
 							display: flex;
@@ -545,11 +563,19 @@
 									&--info{
 										color: $color-paragraph-light;
 										&--name{
-											font-size: 1.05rem;
+											font-size: .9rem;
+
+											@media (min-width: 480px){
+												font-size: 1.05rem;												
+											}
 										}
 										&--namecategory{
 											color: #999;
-											font-size: 0.9rem;
+											font-size: 0.8rem;
+
+											@media (min-width: 480px){
+												font-size: .9rem;												
+											}
 										}
 										&--price{
 											color: $color-paragraph-bold; 
@@ -900,13 +926,7 @@
 							color: $color-all-titles;
 							
 							&:hover{
-								color: $primary-color;
-							}
-
-							&.disablehover{
-								&:hover{
-									color: #fff;
-								}
+								color: #fff;
 							}
 						}
 					}
@@ -943,17 +963,28 @@
 					animation-timing-function: ease-in-out;
 					animation-fill-mode: forwards;
 
-					@keyframes show-cart-list{
-						0%{
-							width: 0;
-						}
-						100%{
-							width: 80%;
-						}
-					}
-
 					&.show{
 						display: block;
+						width: 80%;
+
+						@keyframes show-cart-list{
+							0%{width: 0;}
+							100%{width: 80%;}
+						}
+						@media (min-width: 768px){
+							width: 60%;	
+							@keyframes show-cart-list{
+								0%{width: 0;}
+								100%{width: 60%;}
+							}
+						}
+						@media (min-width: 991px){
+							width: 34rem;
+							@keyframes show-cart-list{
+								0%{width: 0;}
+								100%{width: 34rem;}
+							}
+						}
 					}
 
 					&--cTitle{
@@ -962,6 +993,11 @@
 				    justify-content: flex-start;
 				    background-color: #ccc;
 				    padding: 1rem;
+				    font-size: 0.75rem;
+
+				    @media (min-width: 768px){
+				    	font-size: 1rem;
+				    }
 
 						h2{
 
@@ -973,7 +1009,12 @@
 						flex-direction: column;
 						flex-wrap: wrap;
 						overflow-y: auto;
-						padding: 1rem;
+						padding: 0;
+
+						@media (min-width: 768px){
+							padding: 1rem;
+						}
+
 						&--item{
 							width: 100%;
 							display: flex;
