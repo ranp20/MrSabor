@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
 	<?php require_once 'includes/header_links.php'; ?>
-	<title>Mr Sabor - Buscar restaurantes</title>
+	<title>Mr Sabor | Buscar restaurantes</title>
 </head>
 <body>
 	<?php require_once 'includes/homepage-headertop.php'; ?>
@@ -17,7 +17,7 @@
 						<div class="search-rest__cont--cListRest--cL--c">
 							<div class="search-rest__cont--cListRest--cL--c--contSearch">
 								<h3 class="search-rest__cont--cListRest--cL--c--contSearch--title">Buscar Restaurante</h3>
-								<input type="text" class="search-rest__cont--cListRest--cL--c--contSearch--input" id="searchIptRestaurant" placeholder="Buscar restaurantes: nombre, dirección, categorías, etc...">
+								<input type="text" class="search-rest__cont--cListRest--cL--c--contSearch--input" id="searchIptRestaurant" placeholder="Nombre, dirección, categoría, etc...">
 							</div>
 							<div class="search-rest__cont--cListRest--cL--c--contList">
 								<ul class="search-rest__cont--cListRest--cL--c--contList--m" id="listsearchRest"></ul>

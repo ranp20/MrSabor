@@ -15,7 +15,7 @@
 <html lang="es">
 <head>
 	<?php require_once 'views/includes/header_links.php'; ?>
-	<title>Mr Sabor - Deliveries</title>
+	<title>Mr Sabor | Deliveries y reservaciones</title>
 </head>
 <body>
 	<div class="home">

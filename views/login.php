@@ -9,7 +9,7 @@
 <html lang="es">
 <head>
 	<?php require_once 'includes/header_links.php'; ?>
-	<title>Mr Sabor - Deliveries y Reservas</title>
+	<title>Mr Sabor | Iniciar sesión</title>
 </head>
 <body>
 	<div class="login">

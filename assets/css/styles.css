@@ -2703,6 +2703,19 @@ ul {
 .account--content--info--conttitle {
   margin-bottom: 1.2rem;
 }
+@media (min-width: 768px) {
+  .account--content--info--conttitle {
+    margin-bottom: 1.35rem;
+  }
+}
+@media (min-width: 768px) {
+  .account--content--info--conttitle--title {
+    font-size: 2rem;
+  }
+}
+.account--content--info--conttitle--yesuser a {
+  text-decoration: underline !important;
+}
 .account--content--info--form--controls {
   display: flex;
   flex-direction: column;

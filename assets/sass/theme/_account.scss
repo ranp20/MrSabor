@@ -89,12 +89,20 @@
 			&--conttitle{
 				margin-bottom: 1.2rem;
 
-				&--title{
+				@media (min-width: 768px){
+					margin-bottom: 1.35rem;
+				}
 
+				&--title{
+					@media (min-width: 768px){
+						font-size: 2rem;
+					}
 				}
 
 				&--yesuser{
-
+					a{
+						text-decoration: underline !important;
+					}
 				}
 			}
 

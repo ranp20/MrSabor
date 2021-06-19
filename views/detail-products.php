@@ -9,7 +9,7 @@
 <html lang="es">
 <head>
 	<?php require_once 'includes/header_links.php'; ?>
-	<title>Mr Sabor - Productos</title>
+	<title>Mr Sabor | Productos</title>
 </head>
 <body>
 	<?php require_once 'includes/homepage-headertop.php'; ?>

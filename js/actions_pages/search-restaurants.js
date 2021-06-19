@@ -43,7 +43,18 @@ function lisSearchRestaurants(restsearch){
     var resultsearch = JSON.parse(res);
     var template = "";
 
-    if(resultsearch.length == 0){
+    if($("#searchIptRestaurant").val() == ""){
+      template = `
+          <li class='search-rest__cont--cListRest--cL--c--contList--m--iAny'>
+            <div class='search-rest__cont--cListRest--cL--c--contList--m--iAny--cAnyresult'>
+              <img class='search-rest__cont--cListRest--cL--c--contList--m--iAny--cAnyresult--icon' src='./assets/img/icons/icon-keyboard.svg' alt='img_anymsgsearch'>
+              <p class='search-rest__cont--cListRest--cL--c--contList--m--iAny--cAnyresult--msg'>Escribe algo...</p>
+            </div>
+          </li>
+        `;
+
+      $("#listsearchRest").html(template);
+    }else if(resultsearch.length == 0){
       template = `
           <li class='search-rest__cont--cListRest--cL--c--contList--m--iAny'>
             <div class='search-rest__cont--cListRest--cL--c--contList--m--iAny--cAnyresult'>

@@ -9,7 +9,7 @@
 <html lang="es">
 <head>
 	<?php require_once 'includes/header_links.php'; ?>
-	<title>Mr Sabor - Registrarme</title>
+	<title>Mr Sabor | Registrarme</title>
 </head>
 <body>
 	<div class="account">
