@@ -14,8 +14,12 @@
 
 		menuburger.classList.remove('active');
 		menuburger.nextElementSibling.classList.remove('active');
+	});
 
-
+	/************************** ABRIR  Y CERRA EL MENU SECUNDARIO DE LINKS **************************/
+	d.querySelector(".btn-moreopts").addEventListener('click', function(){
+		d.querySelector('.homepage__infotop__header--contmenu__menu--link--m').classList.toggle('slideToggle');
+		d.querySelector('.homepage__infotop__header--contmenu__menu--link--icon').classList.toggle('slideToggle');
 	});
 	
 	/******************************************************************************/

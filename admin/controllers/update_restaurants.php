@@ -10,6 +10,8 @@
 				"address" => $_POST['address'],
 				"imagen" => strtolower($_FILES['imagen']['name']),
 				"telephone" => $_POST['telephone'],
+				"latitud" => $_POST['latitud'],
+				"longitud" => $_POST['longitud'],
 				"id" => $_POST['id']
 			];
 
@@ -17,13 +19,15 @@
 				"name" => $_POST['name'],
 				"address" => $_POST['address'],
 				"telephone" => $_POST['telephone'],
+				"latitud" => $_POST['latitud'],
+				"longitud" => $_POST['longitud'],
 				"id" => $_POST['id']
 			];
 
 			try{
 				$sql = "";
 				if(!isset($_FILES['imagen']['tmp_name'])){
-					$sql = "UPDATE tbl_restaurants SET name = :name, address = :address, telephone = :telephone WHERE id = :id";
+					$sql = "UPDATE tbl_restaurants SET name = :name, address = :address, telephone = :telephone, latitud = :latitud, longitud = :longitud WHERE id = :id";
 					
 					$stm = $this->con->prepare($sql);
 					foreach ($arr_without_image as $key => $value) {
@@ -41,7 +45,7 @@
 					$file_folder = "../assets/img/restaurants/";
 
 					if(move_uploaded_file($file_temp, $file_folder . $file_lowercase)){					
-						$sql = "UPDATE tbl_restaurants SET name = :name, address = :address, photo = :imagen, telephone = :telephone WHERE id = :id";
+						$sql = "UPDATE tbl_restaurants SET name = :name, address = :address, photo = :imagen, telephone = :telephone, latitud = :latitud, longitud = :longitud WHERE id = :id";
 						
 						$stm = $this->con->prepare($sql);
 						foreach ($arr as $key => $value) {

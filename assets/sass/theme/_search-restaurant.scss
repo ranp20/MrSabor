@@ -1,0 +1,143 @@
+.search-rest{
+	padding: 2.5rem 0;
+	margin-bottom: 2rem;
+	@media (min-width: 768px){
+		padding: 3rem 1rem;
+		margin-bottom: 3rem;
+	}
+	&__cont{
+		/* CONTENIDO DEL TÍTULO */
+		&--cT{
+			margin-bottom: 1.5rem;
+			&--title{
+				font-size: 1.7rem;
+
+				@media (min-width: 768px){
+					font-size: 2rem;
+				}
+			}
+		}
+
+		/* CONTENIDO DE LA BUSQUEDA */
+		&--cListRest{
+			display: grid;
+			grid-template-columns: 40% 1fr;
+			grid-column-gap: 2rem;
+			&--cL{
+				margin-right: 0.45rem;
+				&--c{
+					&--contSearch{
+						border-bottom: thin solid #ccc;
+						padding: 0rem 0 1rem 0;
+						&--title{
+							margin-bottom: 0.3rem;
+							font-size: 1.3rem;
+							font-weight: 500;
+						}
+						&--input{
+							outline: none;
+							display: inline-block;
+							line-height: 1.2;
+							padding: 0.7rem 0.6rem;
+							font-size: 1.05rem;
+							width: 100%;
+							border-radius: .4rem;
+							border: thin solid #ccc;
+						}
+					}
+					&--contList{
+						&--m{
+							
+							&--i{
+						    &--link{
+									display: grid;
+							    grid-template-columns: 30% 1fr;
+							    grid-column-gap: .7rem;
+							    align-items: flex-start;
+							    justify-content: flex-start;
+							    margin: .6rem 0 1rem 0;
+							    padding: 0.65rem 0.65rem 0.65rem 0.65rem;
+							    border-radius: 12px;
+							    box-shadow: 0 5px 15px 1px rgba(0,0,0,.12);
+							    color: $color-all-titles;
+							    transition: .1s ease-in-out;
+
+							    &:hover{
+							    	background-color: #eee;
+							    }
+
+									&--cImg{
+										img{
+
+										}
+									}
+									&--cInfo{
+										line-height: 1.3;
+										&--title{
+
+										}
+										&--address{
+											font-size: 0.9rem;
+										}
+										&--telephone{
+											font-size: 0.9rem;
+										}
+										&--listcategs{
+											font-size: 0.9rem;
+										}
+									}						    	
+						    }
+
+
+							}
+							&--iAny{
+								display: flex;
+								flex-direction: column;
+								align-items: center;
+								justify-content: center;
+								padding-top: 3rem;
+								&--cAnyresult{
+									flex-direction: column;
+									align-items: center;
+									justify-content: center;
+									text-align: center;
+									&--icon{
+										width: 75%;
+									}
+									&--msg{
+
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+			/* CONTENEDOR DEL MAPA */
+			&--cMap{
+				&--cCoords{
+					display: flex;
+					align-items: center;
+					justify-content: space-between;
+					margin-bottom: 0.5rem;
+					&--text{
+						span{
+							display: flex;
+							align-items: center;
+							b{
+								margin-right: 0.45rem;
+							}
+						}
+					}
+				}
+				&--map{
+					border: thin solid #ccc;
+					width: 100%;
+					min-height: 450px;
+					max-height: 450px;
+					height: 100%;
+				}
+			}
+		}
+	}
+}

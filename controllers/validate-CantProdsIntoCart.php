@@ -6,13 +6,12 @@ class CantProdsIntoCart extends Connection{
 		$arr_validate = [
 			"prodid" => $_POST['prodid'],
 			"prodcant" => $_POST['prodcant'],
-			"prodstock" => $_POST['prodstock'],
 			"clientid" => $_POST['clientid'],
 			"button" => $_POST['button'],
 		];
 
 		try{
-			$sql = "CALL sp_validate_cart_item(:prodid, :prodcant, :prodstock, :clientid, :button)";
+			$sql = "CALL sp_validate_ProdsIntoCart(:prodid, :prodcant, :clientid, :button)";
 			$stm = $this->con->prepare($sql);
 			foreach ($arr_validate as $key => $value) {
 				$stm->bindValue($key, $value);

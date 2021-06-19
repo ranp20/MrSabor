@@ -1,4 +1,4 @@
-$(function(){
+$(function (){
 	list_intoCart();
 });
 
@@ -81,78 +81,21 @@ function list_intoCart(){
 							</div>
 						</div>
 					</a>
-					
 					<!--<div class="homepage__infotop__header--contmenucart__cont--menu--item--cBtns">
-						<button class="homepage__infotop__header--contmenucart__cont--menu--item--cBtns--btn btn-indec-${i}"
+						<button class="homepage__infotop__header--contmenucart__cont--menu--item--cBtns--btn btn-listindec-${i}"
 							data-prodid='${v.id}'
 							data-prodstock='${v.stock}'
-							data-idclient='${idClient}'
+							data-clientid='${idClient}'
 						>-</button>
-						<div class="homepage__infotop__header--contmenucart__cont--menu--item--cBtns--countP">1</div>
-						<button class="homepage__infotop__header--contmenucart__cont--menu--item--cBtns--btn btn-indec-${i}"
+						<input type="number" value="${v.quantity}" data-prodcant='${v.quantity}' class="homepage__infotop__header--contmenucart__cont--menu--item--cBtns--countP" id="inputcartside-${i}">
+						<button class="homepage__infotop__header--contmenucart__cont--menu--item--cBtns--btn btn-listindec-${i}"
 							data-prodid='${v.id}'
 							data-prodstock='${v.stock}'
-							data-idclient='${idClient}'
+							data-clientid='${idClient}'
 						>+</button>
 					</div>-->
 				</li>
 			`);
-
-			/************************** CAMBIAR LA CANTIDAD DE PRODUCTOS A COMPRAR **************************/
-			$(document).on("click", `.btn-indec-${i}`, function(){
-				let valCant = $(this).parent().find("div").text();
-				let button = $(this);
-				let newvalCant = $(this).parent().find("div").text();
-
-				if(button.text() == "+"){
-					newvalCant = parseFloat(valCant) + 1;
-					$(this).parent().find("div").text(newvalCant);
-					
-					var objProd = {
-						prodid: button.data("prodid"),
-						prodcant: $(this).parent().find("div").text(),
-						prodstock: button.data("prodstock"),
-						clientid: button.data("idclient"),
-						button: button.text(),
-					};
-					
-					$.ajax({
-						url: "controllers/validate-CantProdsIntoCart.php",
-						method: "POST",
-				    datatype: "JSON",
-				    data: objProd,
-					}).done(function(res){
-						console.log(res);
-					});
-
-				}else{
-					if(valCant > 1){
-						newvalCant = parseFloat(valCant) - 1;
-						$(this).parent().find("div").text(newvalCant);
-
-						var objProd = {
-							prodid: button.data("prodid"),
-							prodcant: $(this).parent().find("div").text(),
-							prodstock: button.data("prodstock"),
-							clientid: button.data("idclient"),
-							button: button.text(),
-						};
-
-						$.ajax({
-							url: "controllers/validate-CantProdsIntoCart.php",
-							method: "POST",
-					    datatype: "JSON",
-					    data: objProd,
-						}).done(function(res){
-							console.log(res);
-						});
-
-					}else{
-						newvalCant = 1;
-						$(this).parent().find("div").text(newvalCant);
-					}
-				}
-			});
 		});
 	});
 }

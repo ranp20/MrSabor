@@ -1,3 +1,9 @@
+$(function (){
+	list_intoCart();
+});
+
+var idClient = $("#validCliSession").val();
+
 $(document).ready(function(){	
 	var idprod = $("#id_filterCategory").val();
 	$.ajax({
@@ -154,3 +160,53 @@ $(document).on('click', '.d-product__content--product-info--form--btnaddcart', f
 		}
 	});
 });
+
+function list_intoCart(){
+	$.ajax({
+		url: "controllers/list-ProdsIntoCart.php",
+		method: "POST",
+    datatype: "JSON",
+    contentType: 'application/x-www-form-urlencoded;charset=UTF-8',
+    data: {idcli : idClient},
+	}).done(function(res){
+			
+		$("#listProds_ByClienteAdd").html("");
+
+		var resultlist = JSON.parse(res);
+		$.each(resultlist, function(i, v){
+
+			var total = (v.price_real * v.quantity).toFixed(2);
+			var pathimgProd = "admin/assets/img/products/"+v.photo;
+
+			$("#listProds_ByClienteAdd").append(`
+				<li class="homepage__infotop__header--contmenucart__cont--menu--item" id="prod-${i}">
+					<a href="detalle-producto?idprodm=${v.id}" class="homepage__infotop__header--contmenucart__cont--menu--item--l">
+						<div class="homepage__infotop__header--contmenucart__cont--menu--item--l__cProd">
+							<div class="homepage__infotop__header--contmenucart__cont--menu--item--l__cProd--photo">
+								<img src="${pathimgProd}" alt="">
+							</div>
+							<div class="homepage__infotop__header--contmenucart__cont--menu--item--l__cProd--info">
+								<p class="homepage__infotop__header--contmenucart__cont--menu--item--l__cProd--info--name"><span><b>${v.quantity}x</b></span>&nbsp;${v.name}</p>
+								<p class="homepage__infotop__header--contmenucart__cont--menu--item--l__cProd--info--namecategory">${v.name_cat}</p>
+								<span class="homepage__infotop__header--contmenucart__cont--menu--item--l__cProd--info--price">s/. ${total}</span>
+							</div>
+						</div>
+					</a>
+					<!--<div class="homepage__infotop__header--contmenucart__cont--menu--item--cBtns">
+						<button class="homepage__infotop__header--contmenucart__cont--menu--item--cBtns--btn btn-listindec-${i}"
+							data-prodid='${v.id}'
+							data-prodstock='${v.stock}'
+							data-clientid='${idClient}'
+						>-</button>
+						<input type="number" value="${v.quantity}" data-prodcant='${v.quantity}' class="homepage__infotop__header--contmenucart__cont--menu--item--cBtns--countP" id="inputcartside-${i}">
+						<button class="homepage__infotop__header--contmenucart__cont--menu--item--cBtns--btn btn-listindec-${i}"
+							data-prodid='${v.id}'
+							data-prodstock='${v.stock}'
+							data-clientid='${idClient}'
+						>+</button>
+					</div>-->
+				</li>
+			`);
+		});
+	});
+}

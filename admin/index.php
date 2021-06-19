@@ -11,7 +11,7 @@ if(isset($_SESSION['user'])){
 <html lang="es">
 <head>
 	<?php require_once 'includes/header_links.php'; ?>
-	<title>Login</title>
+	<title>Login | Admin</title>
 </head>
 <body class="body-login-adm">
 	<div class="box">

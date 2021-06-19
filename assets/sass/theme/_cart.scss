@@ -1,3 +1,71 @@
+/* MESSAGE INTO TABLE TO LIS CART */
+#list_CartMrSabor{
+	tr{
+		td{
+			.tableSetMessage__content{
+				display: flex;
+				flex-direction: column;
+				align-items: flex-start;
+				justify-content: space-between;
+				margin-bottom: 2rem;
+
+				@media (min-width: 692px){
+					flex-direction: row;
+				}
+
+				/* MENSAJE DE RESPUESTA DEL SERVIDOR */
+				&__cont{
+					width: 100%;
+
+					&--cloader{
+						display: flex;
+						flex-direction: column;
+						align-items: center;
+						justify-content: center;
+						text-align: center;
+						width: 100%;
+				    height: 200px;
+				    background-color: transparent;
+					
+				    &--loader{
+							@include loaderServerMessage($primary-color, 52px);
+				    }
+				    &--textinfo{
+				    	padding-top: 1rem;
+			    	}
+					}
+				}
+			}
+		}
+	}
+}
+#list_CartMrSabor{
+	tr{
+
+		td{
+
+			.tableSetMessage__notcontent{
+				text-align: center;
+				padding: 5.5rem 1.2rem;
+				background-color: #ccc;
+				position: relative;
+    		top: -37px;
+
+				&--icon{
+					width: 50px;
+					height: 50px;
+					margin-bottom: 0.6rem;
+				}
+				&--title{
+					font-size: 1.1rem;
+					font-weight: 400;
+					color: $color-paragraph-light;
+				}
+			}
+		}
+	}
+}
+
 .c-cart{
 	padding: 2.5rem 0;
 	@media (min-width: 768px){
@@ -11,7 +79,7 @@
 				font-size: 1.7rem;
 
 				@media (min-width: 768px){
-					padding: 2rem;
+					font-size: 2rem;
 				}
 			}
 		}

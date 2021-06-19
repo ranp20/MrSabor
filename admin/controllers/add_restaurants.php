@@ -10,6 +10,8 @@
 				"address" => $_POST['address'],
 				"imagen" => strtolower($_FILES['imagen']['name']),
 				"telephone" => $_POST['telephone'],
+				"latitud" => $_POST['latitud'],
+				"longitud" => $_POST['longitud'],
 			];
 
 			try{
@@ -20,7 +22,7 @@
 				$file_folder = "../assets/img/restaurants/";
 
 				if(move_uploaded_file($file_temp, $file_folder . $file_lowercase)){
-					$sql = "CALL sp_add_restaurants(:name, :address, :imagen, :telephone)";
+					$sql = "CALL sp_add_restaurants(:name, :address, :imagen, :telephone, :latitud, :longitud)";
 					$stm = $this->con->prepare($sql);
 					foreach ($arr as $key => $value) {
 						$stm->bindValue($key, $value);

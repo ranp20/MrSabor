@@ -3,10 +3,10 @@
 	$actual_link = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://$_SERVER[HTTP_HOST]";
   $url =  $actual_link . "/" ."MrSabor/admin/";
 
-
 	require_once '../php/class/user.php';
 
 	$user_rol = $_SESSION['user'][0]['id_rol'];
+
 	$user = new User();
 	$data_user = $user->get_user_by_id($_SESSION['user'][0]['id']);
 	$description = $user->get_description_by_idrol($user_rol);

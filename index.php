@@ -33,7 +33,11 @@
 									<a href="#categorias" class="homepage__infotop__header--contmenu__menu--link">Categorías</a>
 								</li>
 								<li class="homepage__infotop__header--contmenu__menu--item">
-									<a href="#platos" class="homepage__infotop__header--contmenu__menu--link">Menús</a>
+									<a href="#" class="homepage__infotop__header--contmenu__menu--link btn-moreopts">Menú<svg class="homepage__infotop__header--contmenu__menu--link--icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M0 7.33l2.829-2.83 9.175 9.339 9.167-9.339 2.829 2.83-11.996 12.17z"/></svg></a>
+									<ul class="homepage__infotop__header--contmenu__menu--link--m">
+										<li class="homepage__infotop__header--contmenu__menu--link--m--i"><a href="#platos">Nuestros Menús</a></li>
+										<li class="homepage__infotop__header--contmenu__menu--link--m--i"><a href="search-restaurant">Nuestros Locales</a></li>
+									</ul>
 								</li>
 								<li class="homepage__infotop__header--contmenu__menu--item">
 									<a href="#contacto" class="homepage__infotop__header--contmenu__menu--link">Contacto</a>

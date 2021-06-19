@@ -138,12 +138,12 @@
 					        	<div class="cont-modalbootstrapupdate__form--control">
 					        		<div class="cont-modalbootstrapupdate__form--control__continputs">
 					        			<div class="cont-modalbootstrapupdate__form--control__continputs--controls">
-					        				<label class="cont-modalbootstrapupdate__form--control__continputs--controls__label" for="LatPoint">Latitud:</label>
-					        				<input id="LatPoint" type="text" class="cont-modalbootstrapupdate__form--control__continputs--controls__input">
+					        				<label class="cont-modalbootstrapupdate__form--control__continputs--controls__label" for="LatPointupdate">Latitud:</label>
+					        				<input id="LatPointupdate" type="text" class="cont-modalbootstrapupdate__form--control__continputs--controls__input" readonly>
 					        			</div>
 					        			<div class="cont-modalbootstrapupdate__form--control__continputs--controls">
-					        				<label class="cont-modalbootstrapupdate__form--control__continputs--controls__label" for="LongPoint">Longitud:</label>
-					        				<input id="LongPoint" type="text" class="cont-modalbootstrapupdate__form--control__continputs--controls__input">
+					        				<label class="cont-modalbootstrapupdate__form--control__continputs--controls__label" for="LongPointupdate">Longitud:</label>
+					        				<input id="LongPointupdate" type="text" class="cont-modalbootstrapupdate__form--control__continputs--controls__input" readonly>
 					        			</div>
 					        		</div>
 					        		<div class="cont-modalbootstrapupdate__form--control__maps" id="maps-update-restaurant"></div>
@@ -188,6 +188,6 @@
 	</main>
 	<script type="text/javascript" src="<?php echo $url ?>js/main.js"></script>
 	<script type="text/javascript" src="<?php echo $url ?>js/actions_pages/restaurants.js"></script>
-	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBDaeWicvigtP9xPv919E-RNoxfvC-Hqik&callback=iniciarMap"></script>
+	<script src="https://maps.googleapis.com/maps/api/js?key=&callback=iniciarMap"></script>
 </body>
 </html>
