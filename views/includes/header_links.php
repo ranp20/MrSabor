@@ -21,6 +21,6 @@
 <meta property="og:type" content="website"/>
 <meta property="og:locale" content="es_ES"/>
 <meta property="og:site_name" content="Mr Sabor"/>
-<link rel="stylesheet" href="<?php echo $url ?>assets/css/styles.css">
+<link rel="stylesheet" href="<?php echo $url ?>assets/css/styles.min.css">
 <script src="<?php echo $url ?>js/jquery/jquery-3.6.0.min.js"></script>
 <input type="hidden" id="idUSESScurrent" value="<?= $userSESS; ?>">

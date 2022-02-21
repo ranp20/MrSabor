@@ -18,6 +18,6 @@ RewriteRule ^categorias?$ admin/categories.php
 
 ############ ALL PAGES CLIENTS
 RewriteRule ^detalle-producto?$ views/detail-products.php
-RewriteRule ^listado-categoria?$ views/list-by-categories.php
+RewriteRule ^bcategoria?$ views/list-by-categories.php
 RewriteRule ^cart?$ views/shopping-cart.php
 RewriteRule ^search-restaurant?$ views/search-restaurant.php

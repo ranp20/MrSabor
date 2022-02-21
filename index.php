@@ -109,7 +109,7 @@
 		<section class="heroimage" id="inicio">
 			<ul class="heroimage--menu" id="sliderHeroimages">
 				<li class="heroimage--menu__item">
-					<img class="heroimage--menu__item--background" src="admin/assets/img/banners/home-banner1.jpg" alt="">
+					<img class="heroimage--menu__item--background img-fluid" src="admin/assets/img/banners/home-banner1.jpg" alt="" width="100" height="100" loading="lazy">
 					<div class="heroimage--menu__item--content left-align container">
 						<div class="heroimage--menu__item--content__info left-text">
 							<h2 class="heroimage--menu__item--content__info--title">Saludable por dentro, fresco <span>por fuera</span></h2>
@@ -119,7 +119,7 @@
 					</div>
 				</li>
 				<li class="heroimage--menu__item">
-					<img class="heroimage--menu__item--background" src="admin/assets/img/banners/home-banner3.jpg" alt="">
+					<img class="heroimage--menu__item--background img-fluid" src="admin/assets/img/banners/home-banner3.jpg" alt="" width="100" height="100" loading="lazy">
 					<div class="heroimage--menu__item--content center-align container">
 						<div class="heroimage--menu__item--content__info center-text">
 							<h2 class="heroimage--menu__item--content__info--title">La comida sana viene de <span class="block">Ingredientes sanos</span></h2>
@@ -129,7 +129,7 @@
 					</div>
 				</li>
 				<li class="heroimage--menu__item">
-					<img class="heroimage--menu__item--background" src="admin/assets/img/banners/home-banner2.jpg" alt="">
+					<img class="heroimage--menu__item--background img-fluid" src="admin/assets/img/banners/home-banner2.jpg" alt="" width="100" height="100" loading="lazy">
 					<div class="heroimage--menu__item--content right-align container">
 						<div class="heroimage--menu__item--content__info right-text">
 							<h2 class="heroimage--menu__item--content__info--title">Comida sana <span class="block">Para el desayuno</span></h2>
@@ -149,11 +149,8 @@
 				<div class="categories-food__content--conttitle">
 					<h2 class="categories-food__content--conttitle__acotacion">NUESTRAS CATEGORÍAS</h2>
 				</div>
-
 				<?php 
-
 					//print_r($listcat[0]['name']);
-
 					if($listcat == []){
 						echo "
 							<div class='any-results-home'>
@@ -161,19 +158,16 @@
 							</div>
 						";
 					}else{
-						
-						?>
-						<ul class='categories-food__content--menu'>
-						<?php  
-						
+				?>
+					<ul class='categories-food__content--menu'>
+				<?php
 						foreach($listcat as $key => $value){
 							$path_categ = "admin/assets/img/categories/".$value['photo'];
-
-						echo "
+							echo "
 								<li class='categories-food__content--menu__item'>
-									<a href='listado-categoria' class='categories-food__content--menu__item__link'>
+									<a href='bcategoria' class='categories-food__content--menu__item__link'>
 										<div class='categories-food__content--menu__item__link--categ-imagen'>
-											<img src='{$path_categ}' alt=''>
+											<img class='img-fluid' src='{$path_categ}' alt='' width='100' height='100' loading='lazy'>
 										</div>
 										<div class='categories-food__content--menu__item__link--categ-description'>
 											<h2 class='categories-food__content--menu__item__link--categ-description--name'>{$value['name']}</h2>
@@ -182,9 +176,11 @@
 								</li>
 							";
 						}
-					}
 				?>
 					</ul>
+				<?php
+					}
+				?>
 			</div>
 		</section>
 		<section class="howitwork" id="como-empezar">
@@ -194,17 +190,17 @@
 				</div>
 				<div class="howitwork__content--continfo">
 					<a href="#" class="howitwork__content--continfo__item">
-						<img src="assets/img/icons/delivery-meal.svg" alt="" class="howitwork__content--continfo__item--icon">
+						<img src="assets/img/icons/delivery-meal.svg" alt="" class="howitwork__content--continfo__item--icon img-fluid" width="100" height="100">
 						<h2 class="howitwork__content--continfo__item--title">Elige tu favorito</h2>
 						<p class="howitwork__content--continfo__item--description">Elija sus comidas favoritas y ordene en línea o por teléfono. Es fácil personalizar su pedido.</p>
 					</a>
 					<a href="#" class="howitwork__content--continfo__item">
-						<img src="assets/img/icons/delivery-delivery-man.svg" alt="" class="howitwork__content--continfo__item--icon">
+						<img src="assets/img/icons/delivery-delivery-man.svg" alt="" class="howitwork__content--continfo__item--icon img-fluid" width="100" height="100">
 						<h2 class="howitwork__content--continfo__item--title">Entregamos tu comida</h2>
 						<p class="howitwork__content--continfo__item--description">Preparamos y entregamos las comidas que llegan a su puerta. Y los deberes o el dolor se sientan en vulputacion.</p>
 					</a>
 					<a href="#" class="howitwork__content--continfo__item">
-						<img src="assets/img/icons/delivery-eat-enjoy.svg" alt="" class="howitwork__content--continfo__item--icon">
+						<img src="assets/img/icons/delivery-eat-enjoy.svg" alt="" class="howitwork__content--continfo__item--icon img-fluid" width="100" height="100">
 						<h2 class="howitwork__content--continfo__item--title">Come y disfruta</h2>
 						<p class="howitwork__content--continfo__item--description">Sin compras, sin cocinar, sin contar ni limpiar. Disfrute de sus comidas saludables con su familia.</p>
 					</a>

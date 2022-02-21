@@ -1,27 +1,21 @@
 /************************** FUNCIÓN ANÓNIMA AUTOEJECUTABLE **************************/
 ((d) => {
-	
 	const menuburger = d.querySelector('#menu-show-home');
-
 	menuburger.addEventListener('click', function(){
 		menuburger.classList.toggle('active');
 		menuburger.nextElementSibling.classList.toggle('active');
 	});
-
 	/************************** CERRAR EL SIDEBAR CUANDO SE SELECCIONA UN ELEMENTO **************************/
 	d.addEventListener("click", e => {
 		if(!e.target.matches('.homepage__infotop__header--contmenu__menu .homepage__infotop__header--contmenu__menu--item a')) return false;
-
 		menuburger.classList.remove('active');
 		menuburger.nextElementSibling.classList.remove('active');
 	});
-
 	/************************** ABRIR  Y CERRA EL MENU SECUNDARIO DE LINKS **************************/
 	d.querySelector(".btn-moreopts").addEventListener('click', function(){
 		d.querySelector('.homepage__infotop__header--contmenu__menu--link--m').classList.toggle('slideToggle');
 		d.querySelector('.homepage__infotop__header--contmenu__menu--link--icon').classList.toggle('slideToggle');
 	});
-	
 	/******************************************************************************/
 	/************************** TOGGLE SHOW IN HEADERTOP **************************/
 	/******************************************************************************/
@@ -47,9 +41,7 @@
 			}
 		}
 	}
-
 	d.addEventListener('scroll', showHeader);
-
 	/*******************************************************************************************/
 	/************************** SLIDER MANUAL ARTESANAL - HEROIMAGES ***************************/
 	/*******************************************************************************************/
@@ -86,10 +78,11 @@
 
 	btnRightHeroimages.addEventListener('click', function(){nextHeroimages();});
 	btnLeftHeroimages.addEventListener('click', function(){beforeHeroimages();});
-	/************************** SLIDER AUTOMÁTICO **************************/
+	// ========== SLIDER AUTOMÁTICO ========== //
 	setInterval(function(){
 		nextHeroimages();
 	}, 6500);
+	
 
 	/**********************************************************************************************/
 	/************************** SLIDER MANUAL ARTESANAL - PLATOS EN MENU **************************/
