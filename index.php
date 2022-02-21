@@ -218,6 +218,7 @@
 				</div>
 				<?php 
 
+				//print_r($listProds);
 
 				?>
 				<div class="our-menu__content--cont-our-menus">

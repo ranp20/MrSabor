@@ -1,13 +1,9 @@
 <?php 
-
 require_once '../../php/class/connection.php';
 
 class Delete extends Connection{
-
 	function delete_restaurant(){
-		
 		$id = $_POST['id'];
-
 		try{
 			$sql = "DELETE FROM tbl_restaurants WHERE id = :id";
 			$stm = $this->con->prepare($sql);
@@ -15,7 +11,7 @@ class Delete extends Connection{
 			$stm->execute();
 
 			$data = $stm->fetchAll(PDO::FETCH_ASSOC);
-			$response = json_decode($data);
+			$response = json_encode($data);
 			echo $response;
 
 		}catch(PDOException $e){
@@ -23,6 +19,5 @@ class Delete extends Connection{
 		}
 	}
 }
-
 $delete = new Delete();
 echo $delete->delete_restaurant();

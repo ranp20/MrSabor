@@ -1,3 +1,6 @@
+$(() => {
+  listRestaurants();
+});
 /* IMPRIMIR EL MAPA DE GOOGLE MAPS AL MOMENTO DE AGREGAR UN RESTAURANTE */
 function iniciarMap(){
   /************************** MAPA GOOGLE - AGREGAR UBICACIÓN **************************/
@@ -19,13 +22,7 @@ function iniciarMap(){
     document.querySelector("#LongPointadd").value = this.getPosition().lng();
   });
 }
-
-/************************** LISTAR RESTAURANTES **************************/
-$(function(){
-  listRestaurants();
-});
-
-/************************** AGREGAR RESTAURANTE **************************/
+// ========= AGREGAR RESTAURANTE
 $(document).on('click', '#btnadd-restaurant', function(e){
   e.preventDefault();
 
@@ -49,16 +46,14 @@ $(document).on('click', '#btnadd-restaurant', function(e){
     cache: false,
     processData: false,
   }).done((res) => {
-
-    console.log(res);
+    //console.log(res);
     $('#form-add-restaurant')[0].reset();
     listRestaurants();
     $('#addrestaurantModal').modal("hide");
 
   });
 });
-
-/************************** AGREGAR RESTAURANTES **************************/
+// ========= LISTAR RESTAURANTES
 function listRestaurants(searchVal){ 
   $.ajax({
     url: "admin/controllers/list_restaurants.php",
@@ -66,8 +61,7 @@ function listRestaurants(searchVal){
     datatype: "JSON",
     contentType: 'application/x-www-form-urlencoded;charset=UTF-8',
     data: {searchList : searchVal},
-  }).done( function (res) {
-
+  }).done(function (res){
     var response = JSON.parse(res);
     var template = "";
 
@@ -82,13 +76,10 @@ function listRestaurants(searchVal){
           </td>
         </tr>
       `;
-
       $("#tbl_restaurants").html(template);
     }else{
       response.forEach(e => {
-      
       var img_route = "admin/assets/img/restaurants/"+e.photo;
-
       template += `
         <tr id="item-${e.id}">
           <td>${e.id}</td>
@@ -96,10 +87,10 @@ function listRestaurants(searchVal){
           <td>${e.address}</td>
           <td class="cont-img-table">
             <a href="${img_route}" target="_blank">
-              <img loading="lazy" src="${img_route}">
+              <img class="img-fluid" loading="lazy" src="${img_route}" width="100" height="100">
             </a>
           </td>
-          <td>${e.telephone}</td>
+          <td class="text-center">${e.telephone}</td>
           <td class="cont-btn-update">
             <a class="btn-update-restaurant" data-toggle="modal" data-target="#updateModal"  href="#" 
               data-id="${e.id}"
@@ -118,29 +109,23 @@ function listRestaurants(searchVal){
           </td>
         </tr>
         `;
-      });
-      
+      }); 
       $("#tbl_restaurants").html(template);
     }
-
   });
 }
-
-/************************** BUSCADOR DE RESTAURANTES **************************/
+// ========= BUSCADOR DE RESTAURANTES
 $(document).on('keyup', '#searchrestaurants', function() {
   var searchVal = $(this).val();
-
   if(searchVal != ""){
     listRestaurants(searchVal);
   }else{
     listRestaurants();
   }
 });
-
-/************************** LISTAR DATOS DEL RESTAURANTE EN EL MODAL**************************/
+// ========= LISTAR DATOS DEL RESTAURANTE EN EL MODAL
 $(document).on('click', '.btn-update-restaurant', function(e){
   e.preventDefault();
-
   $.each($(this), function(i, v){
     var item_data = {
       id: $(this).attr('data-id'),
@@ -160,7 +145,6 @@ $(document).on('click', '.btn-update-restaurant', function(e){
     $('#LatPointupdate').val(item_data['latitud']);
     $('#LongPointupdate').val(item_data['longitud']);
 
-
     /************************** CARGAR LOS VALORES DE COORDENADAS EN EL MAPA **************************/
     var coordupdate = {lat: parseFloat(item_data['latitud']) , lng: parseFloat(item_data['longitud'])};
     var mapupdate = new google.maps.Map(document.getElementById('maps-update-restaurant'), {
@@ -177,44 +161,35 @@ $(document).on('click', '.btn-update-restaurant', function(e){
       document.querySelector("#LatPointupdate").value = this.getPosition().lat();
       document.querySelector("#LongPointupdate").value = this.getPosition().lng();
     });
-
   });
 });
-
+// ========= DESHABILITAR LOS CAMPOS DE COORDENADAS
 $(document).ready(function(){
-  /*DESHABILITAR LOS CAMPOS DE COORDENADAS*/
   $('#LatPointadd').css({"cursor":"not-allowed"});
   $('#LongPointadd').css({"cursor":"not-allowed"});
   $('#LatPointupdate').css({"cursor":"not-allowed"});
   $('#LongPointupdate').css({"cursor":"not-allowed"});
 });
-
-/************************** LISTAR ID DEL RESTAURANTE EN EL MODAL **************************/
+// ========= LISTAR ID DEL RESTAURANTE EN EL MODAL
 $(document).on('click', '.btn-delete-restaurant', function(e){
   e.preventDefault();
-
   var id = $(this).attr('data-id');
   $('#iddelete-restaurant').val(id);
 });
-
-/************************** ELIMINAR RESTAURANTE **************************/
+// ========= ELIMINAR RESTAURANTE
 $(document).on('click', '#btndelete-restaurant', function(e){
   e.preventDefault();
-
 	var id = $('#iddelete-restaurant').val();
-
   $.ajax({
     url: "admin/controllers/delete_restaurants.php",
     method: "POST",
     data: {id : id},
   }).done((e) => {
-    
     $("#item-" + id).remove();
     $('#deleteModal').modal("hide");
   });
 });
-
-/************************** ACTUALIZAR RESTAURANTE POR ID **************************/
+// ========= ACTUALIZAR RESTAURANTE POR ID
 $(document).on('click', '#btnupdate-restaurant', function(e){
   e.preventDefault();
   

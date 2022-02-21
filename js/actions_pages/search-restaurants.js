@@ -1,8 +1,8 @@
-$(function(){
+$(() => {
 	iniciarMap();		
   listRestaurants();
 });
-
+// ========= INICIALIZAR MAPA DE GOOGLEMAPS
 function iniciarMap(){
 	var coord = {lat: - 12.0453 , lng: - 77.0311};
   var map = new google.maps.Map(document.getElementById('showMapRestaurants'), {
@@ -20,7 +20,7 @@ function iniciarMap(){
     document.querySelector("#lngdragendRest").innerHTML = this.getPosition().lng();
   });
 }
-
+// ========= BUSQUEDA Y LISTADO EN TIEMPOR REAL
 $(document).on("keyup", "#searchIptRestaurant", function(e){
   e.preventDefault();
   var restsearch = $(this).val();
@@ -30,7 +30,7 @@ $(document).on("keyup", "#searchIptRestaurant", function(e){
     lisSearchRestaurants(restsearch);
   }
 });
-
+// ========= LISTAR RESTAURANTES
 function lisSearchRestaurants(restsearch){
   $.ajax({
     url: "./controllers/search-Restaurants.php",
@@ -39,10 +39,8 @@ function lisSearchRestaurants(restsearch){
     contentType: 'application/x-www-form-urlencoded;charset=UTF-8',
     data: {searchRest : restsearch},
   }).done((res) => {
-
     var resultsearch = JSON.parse(res);
     var template = "";
-
     if($("#searchIptRestaurant").val() == ""){
       template = `
           <li class='search-rest__cont--cListRest--cL--c--contList--m--iAny'>
@@ -52,7 +50,6 @@ function lisSearchRestaurants(restsearch){
             </div>
           </li>
         `;
-
       $("#listsearchRest").html(template);
     }else if(resultsearch.length == 0){
       template = `
@@ -63,9 +60,7 @@ function lisSearchRestaurants(restsearch){
             </div>
           </li>
         `;
-
       $("#listsearchRest").html(template);
-
     }else{
       resultsearch.forEach( e =>{
         var pathstrphoto = "./admin/assets/img/restaurants/"+e.imgrest;
@@ -84,8 +79,7 @@ function lisSearchRestaurants(restsearch){
             </a>
           </li>
         `;
-      });     
-
+      });
       $("#listsearchRest").html(template);
     }
   });

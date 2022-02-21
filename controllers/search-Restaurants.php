@@ -1,9 +1,6 @@
 <?php 
-
 require_once '../php/class/connection.php';
-
 class SearchRestaurants extends Connection{
-
 	function list_restaurants(){
 
 		try{
@@ -35,6 +32,5 @@ class SearchRestaurants extends Connection{
 		}
 	}
 }
-
 $restaurants = new SearchRestaurants();
 echo $restaurants->list_restaurants();
