@@ -1,6 +1,5 @@
-<?php 
-
-if(isset($_POST)){
+<?php
+if(isset($_POST) && count($_POST) > 0){
 	$arr_data_client = [
 		"name" => $_POST["name"],
 		"lastname" => $_POST["lastname"],
@@ -8,29 +7,32 @@ if(isset($_POST)){
 		"password" => $_POST["pass"],
 		"telephone" => $_POST["telephone"],
 		"address" => $_POST["address"],
-		"postal_code" => $_POST["postal_code"],
+		"postal_code" => $_POST["postal_code"]
 	];
 
-	require_once '../controllers/add-client.php';
+	require_once '../php/class/client.php';
+	$client = new Client();
+	$verifymail = $client->verify_account_cli($arr_data_client['email']);
 
-	$add = new Add_Client();
-	$add_user = $add->insert($arr_data_client);
-
-	if(!empty($add_user)){
-		
-
-		$response = array(
-			'response' => 'true'
+	if($verifymail == "true"){
+		$res = array(
+			'response' => 'equals'
 		);
-
 	}else{
-		$response = array(
-			'response' => 'false'
-		);
+		$validate = $client->add_cli($arr_data_client);
+		if($validate == "true"){
+			$res = array(
+				'response' => 'true'
+			);
+		}else{
+			$res = array(
+				'response' => 'errinsert'
+			);
+		}
 	}
-
 }else{
-	echo "Error! Por favor rellene los campos del formulario para registrase.";
+	$res = array(
+		'response' => 'false'
+	);
 }
-
-die(json_encode($response));
+die(json_encode($res));

@@ -1,20 +1,18 @@
-<?php 
-	
+<?php
 	require_once 'php/process_session-client.php';
 	require_once 'controllers/list-all-categories.php';
 	require_once 'controllers/list-all-prodsByCalification.php';
-	/*LISTAR CATEGORÍAS*/
+	// LISTAR CATEGORÍAS
 	$category = new ListCategories();
 	$listcat = $category->get_categories();
-	/*LISTAR PRODUCTOS POR CALIFICACIÓN*/
+	// LISTAR PRODUCTOS POR CALIFICACIÓN
 	$products = new ListByCalification();
 	$listProds = $products->list();
-
 ?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
-	<?php require_once 'views/includes/header_links.php'; ?>
+	<?php require_once 'views/includes/header_links.php';?>
 	<title>Mr Sabor | Deliveries y reservaciones</title>
 </head>
 <body>
@@ -212,47 +210,50 @@
 				<div class="our-menu__content--cont-title">
 					<h2 class="our-menu__content--cont-title__title">NUESTRO MENÚ</h2>
 				</div>
-				<?php 
-
-				//print_r($listProds);
-
-				?>
 				<div class="our-menu__content--cont-our-menus">
-					<div class="our-menu__content--cont-our-menus__categmenu">
-						<div class="our-menu__content--cont-our-menus__categmenu--title">
-							<h3 class="our-menu__content--cont-our-menus__categmenu--title--title">DESTACADO</h3>
-						</div>
-						<div class="our-menu__content--cont-our-menus__categmenu--meals">
-							<ul class="our-menu__content--cont-our-menus__categmenu--meals__menu" id="sliderMenus">								
-								<?php 
+					<?php
+						if(isset($listProds) && !empty($listProds)){
+							$tmp_bestseller = "
+								<div class='our-menu__content--cont-our-menus__categmenu'>
+									<div class='our-menu__content--cont-our-menus__categmenu--title'>
+										<h3 class='our-menu__content--cont-our-menus__categmenu--title--title'>DESTACADO</h3>
+									</div>
+									<div class='our-menu__content--cont-our-menus__categmenu--meals'>
+										<ul class='our-menu__content--cont-our-menus__categmenu--meals__menu' id='sliderMenus'>
 
-									$allProdsCalification = array_slice($listProds, 0 , 9);									
-
-									for($i = 0; $i < count($allProdsCalification); $i++){
-
-										$patheat = "admin/assets/img/products/".$listProds[$i]['photo'];
-
-										echo "
-											<li class='our-menu__content--cont-our-menus__categmenu--meals__menu__item'>
-							 					<a href='detalle-producto?idprodm={$listProds[$i]['id']}' class='our-menu__content--cont-our-menus__categmenu--meals__menu__item__link'>
-							 						<div class='our-menu__content--cont-our-menus__categmenu--meals__menu__item__link--bgcimage'>
-							 							<img src='{$patheat}' alt=''>
-							 						</div>
-							 						<div class='our-menu__content--cont-our-menus__categmenu--meals__menu__item__link--continfo'>
-							 							<h4 class='our-menu__content--cont-our-menus__categmenu--meals__menu__item__link--continfo__title'>{$listProds[$i]['name']}</h4>
-							 						</div>
-							 					</a>
-							 				</li>
-										";
-									}
-								?>
-							</ul>
-							<div class="our-menu__content--cont-our-menus__categmenu--meals__btns">
-								<button class="our-menu__content--cont-our-menus__categmenu--meals__btns--left slidermenus-left">&#8249;</button>
-								<button class="our-menu__content--cont-our-menus__categmenu--meals__btns--right slidermenus-right">&#8250;</button>
-							</div>
-						</div>
-					</div>
+							";
+							$allProdsCalification = array_slice($listProds, 0 , 9);
+							for($i = 0; $i < count($allProdsCalification); $i++){
+								$patheat = "admin/assets/img/products/".$listProds[$i]['photo'];
+								$tmp_bestseller.= "
+									<li class='our-menu__content--cont-our-menus__categmenu--meals__menu__item'>
+					 					<a href='detalle-producto?idprodm={$listProds[$i]['id']}' class='our-menu__content--cont-our-menus__categmenu--meals__menu__item__link'>
+					 						<div class='our-menu__content--cont-our-menus__categmenu--meals__menu__item__link--bgcimage'>
+					 							<img src='{$patheat}' alt=''>
+					 						</div>
+					 						<div class='our-menu__content--cont-our-menus__categmenu--meals__menu__item__link--continfo'>
+					 							<h4 class='our-menu__content--cont-our-menus__categmenu--meals__menu__item__link--continfo__title'>{$listProds[$i]['name']}</h4>
+					 						</div>
+					 					</a>
+					 				</li>
+								";
+							}
+							$tmp_bestseller.= "
+									</ul>
+									<div class='our-menu__content--cont-our-menus__categmenu--meals__btns'>
+										<button class='our-menu__content--cont-our-menus__categmenu--meals__btns--left slidermenus-left'>&#8249;</button>
+										<button class='our-menu__content--cont-our-menus__categmenu--meals__btns--right slidermenus-right'>&#8250;</button>
+									</div>
+									</div>
+								</div>
+							";
+							echo $tmp_bestseller;
+						}else{
+							echo "<div class='any-results-home'>
+										<h2 class='any-results-home--title'>No se encontraron resultados</h2>
+									</div>";
+						}
+					?>
 				</div>
 			</div>
 		</section>

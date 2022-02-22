@@ -108,14 +108,14 @@ function listProducts(searchVal){
           <td>${e.id}</td>
           <td>${e.name}</td>
           <td>${e.description}</td>
-          <td>${e.price}</td>
-          <td>${e.stock}</td>
+          <td class="text-center">${e.price}</td>
+          <td class="text-center">${e.stock}</td>
           <td class="cont-img-table">
             <a href="${img_route}" target="_blank">
               <img loading="lazy" src="${img_route}">
             </a>
           </td>
-          <td>${e.offer}</td>
+          <td class="text-center">${e.offer}</td>
           <td>${e.name_restaurant}</td>
           <td>${e.name_category}</td>
           <td class="cont-btn-update">

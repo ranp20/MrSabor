@@ -53,11 +53,11 @@
 						<div class="form--group-controls-two">
 							<div class="account--content--info--form--controls">
 								<label for="telephone" class="account--content--info--form--controls--label">Teléfono</label>
-								<input type="number" id="telephone" name="telephone" class="account--content--info--form--controls--input" required>
+								<input type="text" id="telephone" name="telephone" class="account--content--info--form--controls--input" minlength="9" maxlength="9" required>
 							</div>
 							<div class="account--content--info--form--controls">
 								<label for="postal-code" class="account--content--info--form--controls--label">Código postal</label>
-								<input type="number" id="postal-code" name="postal_code" class="account--content--info--form--controls--input" required>
+								<input type="text" id="postal-code" name="postal_code" class="account--content--info--form--controls--input" minlength="5" maxlength="5" required>
 							</div>
 						</div>
 						<div class="account--content--info--form--btnregister">
@@ -68,6 +68,7 @@
 			</div>
 		</div>
 	</div>
+	<div class="dl-mssgCli" id="dl-mssgCli"></div>
 	<script type="text/javascript" src="js/actions_pages/add_client.js"></script>
 </body>
 </html>

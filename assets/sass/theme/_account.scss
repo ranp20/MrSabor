@@ -69,6 +69,11 @@
 			right: 10px;
 			&__link{
 				display: table;
+
+				&:hover{
+					opacity: .5;
+				}
+
 				&__logo{
 
 				}

@@ -1,9 +1,8 @@
-$(function (){
+$(() => {
 	list_intoCart();
 });
-
 var idClient = $("#validCliSession").val();
-
+// ==================== LISTAR EL DETALLE DEL PROOUCTO ==================== //
 $(document).ready(function(){	
 	var idprod = $("#id_filterCategory").val();
 	$.ajax({
@@ -114,13 +113,11 @@ $(document).ready(function(){
 		});
 	});
 });
-
+// ==================== AGREGAR PRODUCTOS AL CARRITO ==================== //
 $(document).on('click', '.d-product__content--product-info--form--btnaddcart', function(e){
 	e.preventDefault();
-
 	var precioreal = $(this).attr('attr_price');
 	var cantidad = $(this).attr('attr_quantity');
-
 	var arrproductinfo = {
 		user: parseInt(idClient),
 		id: parseInt($(this).attr('attr_id')),
@@ -129,7 +126,6 @@ $(document).on('click', '.d-product__content--product-info--form--btnaddcart', f
 		quantity: parseInt($(this).attr('attr_quantity')),
 		subtotal: parseFloat(precioreal) * parseFloat(cantidad)
 	};
-
 	$.ajax({
 		url: "controllers/add-ProdsIntoCart.php",
 		method: "POST",
@@ -137,10 +133,8 @@ $(document).on('click', '.d-product__content--product-info--form--btnaddcart', f
     contentType: 'application/x-www-form-urlencoded;charset=UTF-8',
     data: arrproductinfo,
 	}).done(function(res){
-
 		if(res == "insertado"){
 			list_intoCart();
-			
 			$("#messageAddIntoCart").append(`
 				<div class="messageAddIntoCart__cont">
 					<div class="messageAddIntoCart__cont--cIcon">
@@ -149,18 +143,16 @@ $(document).on('click', '.d-product__content--product-info--form--btnaddcart', f
 					<span class="messageAddIntoCart__cont--message">Producto agregado</span>
 				</div>
 			`);
-
 			setTimeout(function(){
 				$("#messageAddIntoCart .messageAddIntoCart__cont").addClass("active");
 			}, 2500);
-
 		}else{
 			$("#messageAddIntoCart").html("");
-			console.log("No se ha insertado el producto");
+			console.log("Error, hubo un eror al agregar el producto al carrito.");
 		}
 	});
 });
-
+// ==================== LISTAR PRODUCTOS EN EL CARRITO ==================== //
 function list_intoCart(){
 	$.ajax({
 		url: "controllers/list-ProdsIntoCart.php",
@@ -169,15 +161,11 @@ function list_intoCart(){
     contentType: 'application/x-www-form-urlencoded;charset=UTF-8',
     data: {idcli : idClient},
 	}).done(function(res){
-			
 		$("#listProds_ByClienteAdd").html("");
-
 		var resultlist = JSON.parse(res);
 		$.each(resultlist, function(i, v){
-
 			var total = (v.price_real * v.quantity).toFixed(2);
 			var pathimgProd = "admin/assets/img/products/"+v.photo;
-
 			$("#listProds_ByClienteAdd").append(`
 				<li class="homepage__infotop__header--contmenucart__cont--menu--item" id="prod-${i}">
 					<a href="detalle-producto?idprodm=${v.id}" class="homepage__infotop__header--contmenucart__cont--menu--item--l">

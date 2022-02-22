@@ -22,6 +22,6 @@
 <meta property="og:locale" content="es_ES"/>
 <meta property="og:site_name" content="Mr Sabor"/>
 <script src="<?php echo $url ?>js/jquery/jquery-3.6.0.min.js"></script>
-<link rel="stylesheet" href="<?php echo $url ?>assets/css/styles.css">
+<link rel="stylesheet" href="<?php echo $url ?>assets/css/styles.min.css">
 <link rel="stylesheet" href="<?php echo $url ?>js/bootstrap/css/bootstrap.min.css">
 <script src="<?php echo $url ?>js/bootstrap/js/bootstrap.min.js"></script>

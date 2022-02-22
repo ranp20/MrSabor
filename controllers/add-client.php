@@ -9,8 +9,8 @@ class Add_Client extends Connection{
 			foreach ($arr_data_client as $key => $value) {
 				$stm->bindValue($key, $value);
 			}
-			$stm->execute();
-			return $stm->fetchAll(PDO::FETCH_ASSOC);
+			$data = $stm->execute();
+			return $stm->rowCount() > 0 ? "true" : "false";
 		}catch(PDOException $err){
 			return $err->getMessage();
 		}

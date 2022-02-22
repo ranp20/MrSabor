@@ -1,9 +1,7 @@
 <?php
-
 	if(!isset($_GET["idprodm"]) || !is_numeric($_GET["idprodm"])){
 		header('Location: ./');
 	}
-
 ?>
 <!DOCTYPE html>
 <html lang="es">

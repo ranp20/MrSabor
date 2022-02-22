@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
 	<?php require_once 'includes/header_links.php'; ?>
-	<title>Mr Sabor | Categorías</title>
+	<title>Mr Sabor | Listado por categoría</title>
 </head>
 <body>
 	<?php require_once 'includes/homepage-headertop.php'; ?>

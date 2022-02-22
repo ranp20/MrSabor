@@ -136,6 +136,11 @@ ul{
 	}
 }
 
+button[type="submit"].not-touch{
+	opacity: .4;
+	cursor: not-allowed;
+	pointer-events: none;
+}
 
 .block{
 	display: block;
@@ -374,6 +379,58 @@ ul{
 			/* TAMAÑO - TABLET(768px) */
 			@media (min-width: 768px){
 				width: 450px;
+			}
+		}
+	}
+}
+/* LOADER PARA CUALQUIER PARTE DEL SITIO WEB */
+.dl-mssgCli{
+  &__backdrop{
+		padding: 2rem 0 0 0;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		text-align: center;
+		vertical-align: middle;
+		top: 0;
+		left: 0;
+		width: 100%;
+	  height: 100%;
+	  position: fixed;
+	  background-color: rgba(255,255,255,.75);
+	  z-index: 99999;
+  }
+	&__content{
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		justify-content: space-between;
+		margin-bottom: 2rem;
+
+		@media (min-width: 692px){
+			flex-direction: row;
+		}
+
+		/* MENSAJE DE RESPUESTA DEL SERVIDOR */
+		.contCli-message__cont{
+			width: 100%;
+
+			&--cloader{
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				justify-content: center;
+				text-align: center;
+				width: 100%;
+		    height: 200px;
+		    background-color: transparent;
+				
+		    &--loader{
+					@include loaderServerMessage($primary-color, 52px);
+		    }
+		    &--textinfo{
+		    	padding-top: 1rem;
+		    }
 			}
 		}
 	}
