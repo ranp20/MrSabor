@@ -41,8 +41,8 @@
 							</ul>
 						</div>
 						<div class="homepage__infotop__header--contlogo">
-							<a href="#" class="homepage__infotop__header--contlogo__link">
-								<img src="admin/assets/img/logo/Logo_RESTAURANT_proyect.png" alt="" class="homepage__infotop__header--contlogo__link--image">
+							<a href="./" class="homepage__infotop__header--contlogo__link">
+								<img src="admin/assets/img/logo/Logo_RESTAURANT_proyect.png" alt="" class="homepage__infotop__header--contlogo__link--image" width="100" height="100" loading="lazy">
 							</a>
 						</div>
 						<div class="homepage__infotop__header--contlogin">
