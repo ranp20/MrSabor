@@ -2,11 +2,9 @@
 	require_once 'php/process_session-client.php';
 	require_once 'controllers/list-all-categories.php';
 	require_once 'controllers/list-all-prodsByCalification.php';
-	// LISTAR CATEGORÍAS
-	$category = new ListCategories();
+	$category = new ListCategories(); // LISTAR CATEGORÍAS
 	$listcat = $category->get_categories();
-	// LISTAR PRODUCTOS POR CALIFICACIÓN
-	$products = new ListByCalification();
+	$products = new ListByCalification(); // LISTAR PRODUCTOS POR CALIFICACIÓN
 	$listProds = $products->list();
 ?>
 <!DOCTYPE html>
