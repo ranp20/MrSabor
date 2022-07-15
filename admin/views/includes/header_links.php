@@ -1,14 +1,12 @@
-<?php 
-	/* URL WHEN CONNECTION IS AVAILABLE(JQUERY + BOOTSTRAP) */
+<?php
 	$actual_link = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://$_SERVER[HTTP_HOST]";
-  $url =  $actual_link . "/" ."MrSabor/admin/";
+  $url =  $actual_link . "/" ."MrSabor/admin/views/";
 ?>
-<!-- METAETIQUETAS PARA EL PANEL DE ADMINISTRACIÓN -->
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
 <meta name="description" content="La auténtica comida. Excelentes ingredientes, mejores platillos siempre."/>
-<link rel="icon" type="image/x-icon" href="./assets/img/favicon/Logo_RESTAURANT_proyect.ico">
-<link rel="apple-touch-icon" href="./assets/img/favicon/Logo_RESTAURANT_proyect.ico">
+<link rel="icon" type="image/x-icon" href="<?= $url;?>assets/img/favicon/Logo_RESTAURANT_proyect.ico">
+<link rel="apple-touch-icon" href="<?= $url;?>assets/img/favicon/Logo_RESTAURANT_proyect.ico">
 <link rel="canonical" href="https://localhost/MrSabor/admin">
 <meta name="theme-color" content="#FFBD59">
 <meta name="author" content="R@np-2021"/>
@@ -21,7 +19,10 @@
 <meta property="og:type" content="website"/>
 <meta property="og:locale" content="es_ES"/>
 <meta property="og:site_name" content="Mr Sabor"/>
-<script src="<?php echo $url ?>js/jquery/jquery-3.6.0.min.js"></script>
-<link rel="stylesheet" href="<?php echo $url ?>assets/css/styles.min.css">
-<link rel="stylesheet" href="<?php echo $url ?>js/bootstrap/css/bootstrap.min.css">
-<script src="<?php echo $url ?>js/bootstrap/js/bootstrap.min.js"></script>
+<!-- JQUERY COMPRESSED -->
+<script src="<?= $url; ?>js/plugins/jquery/jquery-3.6.0.min.js"></script>
+<!-- BOOTSTRAP UNCOMPRESSED -->
+<link rel="stylesheet" href="<?= $url; ?>js/plugins/bootstrap/css/bootstrap.min.css">
+<script src="<?= $url; ?>js/plugins/bootstrap/js/bootstrap.min.js"></script>
+<!-- STYLESSHEET -->
+<link rel="stylesheet" href="<?= $url; ?>assets/css/styles.min.css">

@@ -1,9 +1,9 @@
 $(() => {
   listRestaurants();
 });
-/* IMPRIMIR EL MAPA DE GOOGLE MAPS AL MOMENTO DE AGREGAR UN RESTAURANTE */
+// ------------ IMPRIMIR EL MAPA DE GOOGLE MAPS AL MOMENTO DE AGREGAR UN RESTAURANTE
 function iniciarMap(){
-  /************************** MAPA GOOGLE - AGREGAR UBICACIÓN **************************/
+  // ------------ MAPA GOOGLE - AGREGAR UBICACIÓN
   document.querySelector("#LatPointadd").value = - 12.0453;
   document.querySelector("#LongPointadd").value = - 77.0311;
   var coord = {lat: - 12.0453 , lng: - 77.0311};
@@ -16,28 +16,24 @@ function iniciarMap(){
     draggable: true,
     position: coord
   });
-
   marker.addListener("dragend", function(e){
     document.querySelector("#LatPointadd").value = this.getPosition().lat();
     document.querySelector("#LongPointadd").value = this.getPosition().lng();
   });
 }
-// ========= AGREGAR RESTAURANTE
+// ------------ AGREGAR RESTAURANTE
 $(document).on('click', '#btnadd-restaurant', function(e){
   e.preventDefault();
-
   var formdata = new FormData();
   var filelength = $('.images')[0].files.length;
   for (var i = 0;i < filelength; i ++) {
     formdata.append("imagen", $('.images')[0].files[i]);
   }
-
   formdata.append("name", $('#name').val());
   formdata.append("address", $('#address').val());
   formdata.append("telephone", $('#telephone').val());
   formdata.append("latitud", $('#LatPointadd').val());
   formdata.append("longitud", $('#LongPointadd').val());
-
   $.ajax({
     url: "admin/controllers/add_restaurants.php",
     method: "POST",
@@ -50,10 +46,9 @@ $(document).on('click', '#btnadd-restaurant', function(e){
     $('#form-add-restaurant')[0].reset();
     listRestaurants();
     $('#addrestaurantModal').modal("hide");
-
   });
 });
-// ========= LISTAR RESTAURANTES
+// ------------ LISTAR RESTAURANTES
 function listRestaurants(searchVal){ 
   $.ajax({
     url: "admin/controllers/list_restaurants.php",
@@ -61,26 +56,25 @@ function listRestaurants(searchVal){
     datatype: "JSON",
     contentType: 'application/x-www-form-urlencoded;charset=UTF-8',
     data: {searchList : searchVal},
-  }).done(function (res){
-    var response = JSON.parse(res);
-    var template = "";
-
-    if(response.length == 0){
-      template = `
+  }).done((e) => {
+    let r = JSON.parse(e);
+    let tmp = "";
+    if(r.length == 0){
+      tmp = `
         <tr>
           <td colspan="7">
             <div class="msg-non-results-res">
-              <img src="admin/assets/img/icons/icon-sad-face.svg" alt="" class="msg-non-results-res__icon">
+              <img src="admin/views/assets/img/icons/icon-sad-face.svg" alt="" class="msg-non-results-res__icon">
               <h3 class="msg-non-results-res__title">No se encontraron resultados...</h3>
             </div>
           </td>
         </tr>
       `;
-      $("#tbl_restaurants").html(template);
+      $("#tbl_restaurants").html(tmp);
     }else{
-      response.forEach(e => {
-      var img_route = "admin/assets/img/restaurants/"+e.photo;
-      template += `
+      r.forEach(e => {
+      let img_route = "admin/views/assets/img/restaurants/"+e.photo;
+      tmp += `
         <tr id="item-${e.id}">
           <td>${e.id}</td>
           <td>${e.name}</td>
@@ -110,20 +104,20 @@ function listRestaurants(searchVal){
         </tr>
         `;
       }); 
-      $("#tbl_restaurants").html(template);
+      $("#tbl_restaurants").html(tmp);
     }
   });
 }
-// ========= BUSCADOR DE RESTAURANTES
-$(document).on('keyup', '#searchrestaurants', function() {
-  var searchVal = $(this).val();
+// ------------ BUSCADOR DE RESTAURANTES
+$(document).on('keyup', '#searchrestaurants', (e) => {
+  var searchVal = e.target.value;
   if(searchVal != ""){
     listRestaurants(searchVal);
   }else{
     listRestaurants();
   }
 });
-// ========= LISTAR DATOS DEL RESTAURANTE EN EL MODAL
+// ------------ LISTAR DATOS DEL RESTAURANTE EN EL MODAL
 $(document).on('click', '.btn-update-restaurant', function(e){
   e.preventDefault();
   $.each($(this), function(i, v){
@@ -136,7 +130,6 @@ $(document).on('click', '.btn-update-restaurant', function(e){
       latitud: $(this).attr('data-latitud'),
       longitud: $(this).attr('data-longitud'),
     };
-
     $('#idupdate-restaurant').val(item_data['id']);
     $('#name-update').val(item_data['name']);
     $('#address-update').val(item_data['address']);
@@ -144,8 +137,7 @@ $(document).on('click', '.btn-update-restaurant', function(e){
     $('#telephone-update').val(item_data['telephone']);
     $('#LatPointupdate').val(item_data['latitud']);
     $('#LongPointupdate').val(item_data['longitud']);
-
-    /************************** CARGAR LOS VALORES DE COORDENADAS EN EL MAPA **************************/
+    // ------------ CARGAR LOS VALORES DE COORDENADAS EN EL MAPA
     var coordupdate = {lat: parseFloat(item_data['latitud']) , lng: parseFloat(item_data['longitud'])};
     var mapupdate = new google.maps.Map(document.getElementById('maps-update-restaurant'), {
       zoom: 11,
@@ -156,27 +148,26 @@ $(document).on('click', '.btn-update-restaurant', function(e){
       draggable: true,
       position: coordupdate
     });
-
     markerupdate.addListener("dragend", function(e){
       document.querySelector("#LatPointupdate").value = this.getPosition().lat();
       document.querySelector("#LongPointupdate").value = this.getPosition().lng();
     });
   });
 });
-// ========= DESHABILITAR LOS CAMPOS DE COORDENADAS
+// ------------ DESHABILITAR LOS CAMPOS DE COORDENADAS
 $(document).ready(function(){
   $('#LatPointadd').css({"cursor":"not-allowed"});
   $('#LongPointadd').css({"cursor":"not-allowed"});
   $('#LatPointupdate').css({"cursor":"not-allowed"});
   $('#LongPointupdate').css({"cursor":"not-allowed"});
 });
-// ========= LISTAR ID DEL RESTAURANTE EN EL MODAL
+// ------------ LISTAR ID DEL RESTAURANTE EN EL MODAL
 $(document).on('click', '.btn-delete-restaurant', function(e){
   e.preventDefault();
   var id = $(this).attr('data-id');
   $('#iddelete-restaurant').val(id);
 });
-// ========= ELIMINAR RESTAURANTE
+// ------------ ELIMINAR RESTAURANTE
 $(document).on('click', '#btndelete-restaurant', function(e){
   e.preventDefault();
 	var id = $('#iddelete-restaurant').val();
@@ -188,24 +179,20 @@ $(document).on('click', '#btndelete-restaurant', function(e){
     $("#item-" + id).remove();
     $('#deleteModal').modal("hide");
   });
-});
-// ========= ACTUALIZAR RESTAURANTE POR ID
+});// ------------ACTUALIZAR RESTAURANTE POR ID
 $(document).on('click', '#btnupdate-restaurant', function(e){
   e.preventDefault();
-  
   var formdata = new FormData();
   var filelength = $('.images-update')[0].files.length;
   for (var i = 0;i < filelength; i ++) {
     formdata.append("imagen", $('.images-update')[0].files[i]);
   }
-
   formdata.append("name", $('#name-update').val());
   formdata.append("address", $('#address-update').val());
   formdata.append("telephone", $('#telephone-update').val());
   formdata.append("latitud", $('#LatPointupdate').val());
   formdata.append("longitud", $('#LongPointupdate').val());
   formdata.append("id", $('#idupdate-restaurant').val());
-
   $.ajax({
     url: "admin/controllers/update_restaurants.php",
     method: "POST",

@@ -1,19 +1,15 @@
 <?php
-	
-	$actual_link = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://$_SERVER[HTTP_HOST]";
-  $url =  $actual_link . "/" ."MrSabor/admin/";
-
-	require_once 'php/process_session-admin.php';
-
-	if(!isset($_SESSION['user'])){
-		header("location: ./");
-	}
+//COMPRIMIR ARCHIVOS DE TEXTO...
+(substr_count($_SERVER["HTTP_ACCEPT_ENCODING"], "gzip")) ? ob_start("ob_gzhandler") : ob_start();
+session_start();
+if(!isset($_SESSION['admin_mrsabor'])){
+	header("location: ./");
+}
 ?>
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
-	<?php require_once 'includes/header_links.php'; ?>
+	<?php require_once 'includes/header_links.php';?>
 	<title>Dashboard - </title>
 </head>
 <body>
@@ -26,6 +22,6 @@
 			</div>
 		</div>
 	</main>
-	<script type="text/javascript" src="<?php echo $url ?>js/main.js"></script>
+	<script type="text/javascript" src="<?= $url;?>js/main.js"></script>
 </body>
 </html>

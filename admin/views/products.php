@@ -12,7 +12,7 @@
 	$list = new Restaurants();
 	$allrestaurants = $list->get_restaurants();
 
-	if(!isset($_SESSION['user'])){
+	if(!isset($_SESSION['admin_mrsabor'])){
 		header("location: ./");
 	}
 
