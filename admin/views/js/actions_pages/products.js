@@ -1,5 +1,5 @@
-/************************** LISTAR RESTAURANTES **************************/
-$(function(){
+// ------------ LISTAR RESTAURANTES
+$(() => {
   $("#newprice").attr("disabled", "disabled");
   $("#newprice").prev('label').addClass("disabled");
   $("#newprice").addClass("disabled");
@@ -8,8 +8,7 @@ $(function(){
   $("#newprice-update").addClass("disabled");
   listProducts();
 });
-
-/* INSERTAR PRODUCTO - SELECT OFERTA*/
+// ------------ INSERTAR PRODUCTO - SELECT OFERTA
 $("#seloffert").change(function(){
   let optionoffer = $(this).val();
   if(optionoffer == 1){
@@ -22,7 +21,7 @@ $("#seloffert").change(function(){
     $("#newprice").removeClass("disabled");
   }
 });
-/* ACTUALIZAR PRODUCTO - SELECT OFERTA*/
+// ------------ ACTUALIZAR PRODUCTO - SELECT OFERTA
 $("#seloffert-update").change(function(){
   let optionoffer = $(this).val();
   if(optionoffer == 1){
@@ -35,17 +34,14 @@ $("#seloffert-update").change(function(){
     $("#newprice-update").removeClass("disabled");
   }
 });
-
-/************************** AGREGAR PRODUCTO **************************/
+// ------------ AGREGAR PRODUCTO
 $(document).on('click', '#btnadd-product', function(e){
   e.preventDefault();
-
   var formdata = new FormData();
   var filelength = $('.images')[0].files.length;
   for (var i = 0;i < filelength; i ++) {
     formdata.append("imagen", $('.images')[0].files[i]);
   }
-
   formdata.append("name", $('#name').val());
   formdata.append("price", $('#price').val());
   formdata.append("stock", $('#stock').val());
@@ -54,55 +50,61 @@ $(document).on('click', '#btnadd-product', function(e){
   formdata.append("idcategory", $('#selcategory').val());
   formdata.append("idrestaurant", $('#selrestaurant').val());
   formdata.append("description", $('#description').val());
-
   $.ajax({
-    url: "admin/controllers/add_products.php",
+    url: "../admin/controllers/add_products.php",
     method: "POST",
     data: formdata,
     contentType: false,
     cache: false,
     processData: false,
-  }).done((res) => {
-
-    console.log(res);
-    $('#form-add-product')[0].reset();
-    listProducts();
-    $('#addproductModal').modal("hide");
-
+  }).done((e) => {
+    if(e != "" && e != "[]"){
+      if(e == "true"){
+        $('#form-add-product')[0].reset();
+        listProducts();
+        $('#addproductModal').modal("hide");
+        Swal.fire({
+          title: 'Èxito!',
+          html: `<span class='font-w-300'>Se ha creado un producto.</span>`,
+          icon: 'success',
+          confirmButtonText: 'Aceptar'
+        });
+      }else{
+        console.log('Lo sentimos, ocurriò un ror al procesar la solicitud');
+      }
+    }else{
+      console.log('Lo sentimos, ocurriò un ror al procesar la solicitud');
+    }
   });
 });
-
-/************************** LISTAR PRODUCTOS **************************/
+// ------------ LISTAR PRODUCTOS
 function listProducts(searchVal){ 
   $.ajax({
-    url: "admin/controllers/list_products.php",
+    url: "../admin/controllers/list_products.php",
     method: "POST",
     datatype: "JSON",
     contentType: 'application/x-www-form-urlencoded;charset=UTF-8',
     data: {searchList : searchVal},
-  }).done( function (res) {
+  }).done((r) => {
 
-    var response = JSON.parse(res);
+    var res = JSON.parse(r);
     var template = "";
 
-    if(response.length == 0){
+    if(res.length == 0){
       template = `
         <tr>
           <td colspan="11">
             <div class="msg-non-results-res">
-              <img src="admin/assets/img/icons/icon-sad-face.svg" alt="" class="msg-non-results-res__icon">
+              <img src="../admin/assets/img/icons/icon-sad-face.svg" alt="" class="msg-non-results-res__icon">
               <h3 class="msg-non-results-res__title">No se encontraron resultados...</h3>
             </div>
           </td>
         </tr>
       `;
-
       $("#tbl_products").html(template);
     }else{
-      response.forEach(e => {
-      
-      var img_route = "admin/assets/img/products/"+e.photo;
-
+      res.forEach(e => {
+      var img_route = "../admin/views/assets/img/products/"+e.photo;
       template += `
         <tr id="item-${e.id}">
           <td>${e.id}</td>
@@ -138,15 +140,13 @@ function listProducts(searchVal){
           </td>
         </tr>
         `;
-      });
-      
+      }); 
       $("#tbl_products").html(template);
     }
-
   });
 }
 
-/************************** BUSCADOR DE PRODUCTOS **************************/
+// ------------ BUSCADOR DE PRODUCTOS
 $(document).on('keyup', '#searchproduct', function() {
   var searchVal = $(this).val();
 
@@ -157,7 +157,7 @@ $(document).on('keyup', '#searchproduct', function() {
   }
 });
 
-// /************************** LISTAR DATOS DEL RESTAURANTE EN EL MODAL**************************/
+// // ------------ LISTAR DATOS DEL RESTAURANTE EN EL
 // $(document).on('click', '.btn-update-category', function(e){
 //   e.preventDefault();
 
@@ -176,7 +176,7 @@ $(document).on('keyup', '#searchproduct', function() {
 //   });
 // });
 
-// /************************** LISTAR ID DEL RESTAURANTE EN EL MODAL **************************/
+// // ------------ LISTAR ID DEL RESTAURANTE EN EL MODAL
 // $(document).on('click', '.btn-delete-category', function(e){
 //   e.preventDefault();
 
@@ -184,14 +184,14 @@ $(document).on('keyup', '#searchproduct', function() {
 //   $('#iddelete-category').val(id);
 // });
 
-// /************************** ELIMINAR RESTAURANTE **************************/
+// // ------------ ELIMINAR RESTAURANTE
 // $(document).on('click', '#btndelete-category', function(e){
 //   e.preventDefault();
 
 // 	var id = $('#iddelete-category').val();
 
 //   $.ajax({
-//     url: "admin/controllers/delete_categories.php",
+//     url: "../admin/controllers/delete_categories.php",
 //     method: "POST",
 //     data: {id : id},
 //   }).done((e) => {
@@ -201,7 +201,7 @@ $(document).on('keyup', '#searchproduct', function() {
 //   });
 // });
 
-// /************************** ACTUALIZAR RESTAURANTE POR ID **************************/
+// // ------------ ACTUALIZAR RESTAURANTE POR ID
 // $(document).on('click', '#btnupdate-category', function(e){
 //   e.preventDefault();
   
@@ -216,7 +216,7 @@ $(document).on('keyup', '#searchproduct', function() {
 //   formdata.append("id", $('#idupdate-category').val());
 
 //   $.ajax({
-//     url: "admin/controllers/update_categories.php",
+//     url: "../admin/controllers/update_categories.php",
 //     method: "POST",
 //     data: formdata,
 //     contentType: false,

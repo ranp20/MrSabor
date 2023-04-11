@@ -1,52 +1,55 @@
-/************************** LISTAR RESTAURANTES **************************/
-$(function(){
+// ------------ LISTAR RESTAURANTES
+$(() => {
   listCategories();
 });
-
-/************************** AGREGAR RESTAURANTE **************************/
+// ------------ AGREGAR RESTAURANTE
 $(document).on('click', '#btnadd-category', function(e){
   e.preventDefault();
-
-
   var formdata = new FormData();
   var filelength = $('.images')[0].files.length;
   for (var i = 0;i < filelength; i ++) {
     formdata.append("imagen", $('.images')[0].files[i]);
   }
-
   formdata.append("name", $('#name').val());
   formdata.append("selrestaurant", $('#selrestaurant').val());
-
   $.ajax({
-    url: "admin/controllers/add_categories.php",
+    url: "../admin/controllers/add_categories.php",
     method: "POST",
     data: formdata,
     contentType: false,
     cache: false,
     processData: false,
-  }).done((res) => {
-
-    console.log(res);
-    $('#form-add-category')[0].reset();
-    listCategories();
-    $('#addcategoryModal').modal("hide");
-
+  }).done((e) => {
+    if(e != "" && e != "[]"){
+      if(e == "true"){
+        $('#form-add-category')[0].reset();
+        listCategories();
+        $('#addcategoryModal').modal("hide");
+        Swal.fire({
+          title: 'Èxito!',
+          html: `<span class='font-w-300'>Se ha creado una categoría.</span>`,
+          icon: 'success',
+          confirmButtonText: 'Aceptar'
+        });
+      }else{
+        console.log('Lo sentimos, ocurriò un ror al procesar la solicitud');
+      }
+    }else{
+      console.log('Lo sentimos, ocurriò un ror al procesar la solicitud');
+    }
   });
 });
-
-/************************** AGREGAR RESTAURANTES **************************/
+// ------------ AGREGAR RESTAURANTES
 function listCategories(searchVal){ 
   $.ajax({
-    url: "admin/controllers/list_categories.php",
+    url: "../admin/controllers/list_categories.php",
     method: "POST",
     datatype: "JSON",
     contentType: 'application/x-www-form-urlencoded;charset=UTF-8',
     data: {searchList : searchVal},
-  }).done( function (res) {
-
-    var response = JSON.parse(res);
+  }).done((r) => {
+    var response = JSON.parse(r);
     var template = "";
-
     if(response.length == 0){
       template = `
         <tr>
@@ -58,13 +61,10 @@ function listCategories(searchVal){
           </td>
         </tr>
       `;
-
       $("#tbl_categories").html(template);
     }else{
       response.forEach(e => {
-      
-      var img_route = "admin/assets/img/categories/"+e.photo;
-
+      var img_route = "../admin/views/assets/img/categories/"+e.photo;
       template += `
         <tr id="item-${e.id}">
           <td>${e.id}</td>
@@ -90,29 +90,23 @@ function listCategories(searchVal){
           </td>
         </tr>
         `;
-      });
-      
+      }); 
       $("#tbl_categories").html(template);
     }
-
   });
 }
-
-/************************** BUSCADOR DE RESTAURANTES **************************/
+// ------------ BUSCADOR DE RESTAURANTES
 $(document).on('keyup', '#searchcategories', function() {
   var searchVal = $(this).val();
-
   if(searchVal != ""){
     listCategories(searchVal);
   }else{
     listCategories();
   }
 });
-
-/************************** LISTAR DATOS DEL RESTAURANTE EN EL MODAL**************************/
+// ------------ LISTAR DATOS DEL RESTAURANTE EN EL
 $(document).on('click', '.btn-update-category', function(e){
   e.preventDefault();
-
   $.each($(this), function(i, v){
     var item_data = {
       id: $(this).attr('data-id'),
@@ -120,55 +114,43 @@ $(document).on('click', '.btn-update-category', function(e){
       photo: $(this).attr('data-photo'),
       idrestaurant: $(this).attr('data-idrest'),
     };
-
     $('#idupdate-category').val(item_data['id']);
     $('#name-update').val(item_data['name']);
     $('#photo-update').attr('href', item_data['photo']);
-
   });
 });
-
-/************************** LISTAR ID DEL RESTAURANTE EN EL MODAL **************************/
+// ------------ LISTAR ID DEL RESTAURANTE EN EL MODAL
 $(document).on('click', '.btn-delete-category', function(e){
   e.preventDefault();
-
   var id = $(this).attr('data-id');
   $('#iddelete-category').val(id);
 });
-
-/************************** ELIMINAR RESTAURANTE **************************/
+// ------------ ELIMINAR RESTAURANTE
 $(document).on('click', '#btndelete-category', function(e){
   e.preventDefault();
-
 	var id = $('#iddelete-category').val();
-
   $.ajax({
-    url: "admin/controllers/delete_categories.php",
+    url: "../admin/controllers/delete_categories.php",
     method: "POST",
     data: {id : id},
-  }).done((e) => {
-    
+  }).done((e) => { 
     $("#item-" + id).remove();
     $('#deleteModal').modal("hide");
   });
 });
-
-/************************** ACTUALIZAR RESTAURANTE POR ID **************************/
+// ------------ ACTUALIZAR RESTAURANTE POR ID
 $(document).on('click', '#btnupdate-category', function(e){
   e.preventDefault();
-  
   var formdata = new FormData();
   var filelength = $('.images-update')[0].files.length;
   for (var i = 0;i < filelength; i ++) {
     formdata.append("imagen", $('.images-update')[0].files[i]);
   }
-
   formdata.append("name", $('#name-update').val());
   //formdata.append("id_restaurant", $('#selrestaurant-update').val());
   formdata.append("id", $('#idupdate-category').val());
-
   $.ajax({
-    url: "admin/controllers/update_categories.php",
+    url: "../admin/controllers/update_categories.php",
     method: "POST",
     data: formdata,
     contentType: false,

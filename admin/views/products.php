@@ -3,9 +3,9 @@
 	$actual_link = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://$_SERVER[HTTP_HOST]";
   $url =  $actual_link . "/" ."MrSabor/admin/";
 
-	require_once 'php/process_session-admin.php';
-	require_once '../php/class/categories.php';
-	require_once '../php/class/restaurants.php';
+	require_once '../controllers/process_session-admin.php';
+	require_once '../../php/class/categories.php';
+	require_once '../../php/class/restaurants.php';
 
 	$list = new Categories();
 	$allcategories = $list->get_categories();
@@ -23,6 +23,9 @@
 <head>
 	<?php require_once 'includes/header_links.php'; ?>
 	<title>Dashboard - Productos</title>
+	<!-- INCLUIR SWEETALERTS2 -->
+	<link rel="stylesheet" href="../node_modules/sweetalert2/dist/sweetalert2.min.css">
+	<script type="text/javascript" src="../node_modules/sweetalert2/dist/sweetalert2.all.min.js"></script>
 </head>
 <body>
 	<main id="main" class="main">

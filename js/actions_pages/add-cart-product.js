@@ -1,15 +1,11 @@
 $(function (){
 	list_intoCart();
 });
-
 var idClient = $("#validCliSession").val();
-
 $(document).on('click', '.related-products--content__menu--item--addthisprod--link', function(e){
 	e.preventDefault();
-
 	var precioreal = $(this).attr('attr_price');
 	var cantidad = $(this).attr('attr_quantity');
-
 	var arrproductinfo = {
 		user: parseInt(idClient),
 		id: parseInt($(this).attr('attr_id')),
@@ -18,18 +14,15 @@ $(document).on('click', '.related-products--content__menu--item--addthisprod--li
 		quantity: parseInt($(this).attr('attr_quantity')),
 		subtotal: parseFloat(precioreal) * parseFloat(cantidad)
 	};
-
 	$.ajax({
 		url: "controllers/add-ProdsIntoCart.php",
 		method: "POST",
     datatype: "JSON",
     contentType: 'application/x-www-form-urlencoded;charset=UTF-8',
     data: arrproductinfo,
-	}).done(function(res){
-
-		if(res == "insertado"){
+	}).done((r) => {
+		if(r == "insertado"){
 			list_intoCart();
-			
 			$("#messageAddIntoCart").append(`
 				<div class="messageAddIntoCart__cont">
 					<div class="messageAddIntoCart__cont--cIcon">
@@ -38,11 +31,7 @@ $(document).on('click', '.related-products--content__menu--item--addthisprod--li
 					<span class="messageAddIntoCart__cont--message">Producto agregado</span>
 				</div>
 			`);
-
-			setTimeout(function(){
-				$("#messageAddIntoCart .messageAddIntoCart__cont").addClass("active");
-			}, 2500);
-
+			setTimeout(function(){$("#messageAddIntoCart .messageAddIntoCart__cont").addClass("active");}, 2500);
 		}else{
 			$("#messageAddIntoCart").html("");
 			console.log("No se ha insertado el producto");
@@ -57,45 +46,45 @@ function list_intoCart(){
     datatype: "JSON",
     contentType: 'application/x-www-form-urlencoded;charset=UTF-8',
     data: {idcli : idClient},
-	}).done(function(res){
-			
+	}).done((r) => {
 		$("#listProds_ByClienteAdd").html("");
-
-		var resultlist = JSON.parse(res);
-		$.each(resultlist, function(i, v){
-
-			var total = (v.price_real * v.quantity).toFixed(2);
-			var pathimgProd = "admin/assets/img/products/"+v.photo;
-
-			$("#listProds_ByClienteAdd").append(`
-				<li class="homepage__infotop__header--contmenucart__cont--menu--item" id="prod-${i}">
-					<a href="detalle-producto?idprodm=${v.id}" class="homepage__infotop__header--contmenucart__cont--menu--item--l">
-						<div class="homepage__infotop__header--contmenucart__cont--menu--item--l__cProd">
-							<div class="homepage__infotop__header--contmenucart__cont--menu--item--l__cProd--photo">
-								<img src="${pathimgProd}" alt="">
+		if(r != ""){
+			var resultlist = JSON.parse(r);
+			$.each(resultlist, function(i, v){
+				var total = (v.price_real * v.quantity).toFixed(2);
+				var pathimgProd = "admin/assets/img/products/"+v.photo;
+				$("#listProds_ByClienteAdd").append(`
+					<li class="homepage__infotop__header--contmenucart__cont--menu--item" id="prod-${i}">
+						<a href="detalle-producto?idprodm=${v.id}" class="homepage__infotop__header--contmenucart__cont--menu--item--l">
+							<div class="homepage__infotop__header--contmenucart__cont--menu--item--l__cProd">
+								<div class="homepage__infotop__header--contmenucart__cont--menu--item--l__cProd--photo">
+									<img src="${pathimgProd}" alt="">
+								</div>
+								<div class="homepage__infotop__header--contmenucart__cont--menu--item--l__cProd--info">
+									<p class="homepage__infotop__header--contmenucart__cont--menu--item--l__cProd--info--name"><span><b>${v.quantity}x</b></span>&nbsp;${v.name}</p>
+									<p class="homepage__infotop__header--contmenucart__cont--menu--item--l__cProd--info--namecategory">${v.name_cat}</p>
+									<span class="homepage__infotop__header--contmenucart__cont--menu--item--l__cProd--info--price">s/. ${total}</span>
+								</div>
 							</div>
-							<div class="homepage__infotop__header--contmenucart__cont--menu--item--l__cProd--info">
-								<p class="homepage__infotop__header--contmenucart__cont--menu--item--l__cProd--info--name"><span><b>${v.quantity}x</b></span>&nbsp;${v.name}</p>
-								<p class="homepage__infotop__header--contmenucart__cont--menu--item--l__cProd--info--namecategory">${v.name_cat}</p>
-								<span class="homepage__infotop__header--contmenucart__cont--menu--item--l__cProd--info--price">s/. ${total}</span>
-							</div>
-						</div>
-					</a>
-					<!--<div class="homepage__infotop__header--contmenucart__cont--menu--item--cBtns">
-						<button class="homepage__infotop__header--contmenucart__cont--menu--item--cBtns--btn btn-listindec-${i}"
-							data-prodid='${v.id}'
-							data-prodstock='${v.stock}'
-							data-clientid='${idClient}'
-						>-</button>
-						<input type="number" value="${v.quantity}" data-prodcant='${v.quantity}' class="homepage__infotop__header--contmenucart__cont--menu--item--cBtns--countP" id="inputcartside-${i}">
-						<button class="homepage__infotop__header--contmenucart__cont--menu--item--cBtns--btn btn-listindec-${i}"
-							data-prodid='${v.id}'
-							data-prodstock='${v.stock}'
-							data-clientid='${idClient}'
-						>+</button>
-					</div>-->
-				</li>
-			`);
-		});
+						</a>
+						<!--<div class="homepage__infotop__header--contmenucart__cont--menu--item--cBtns">
+							<button class="homepage__infotop__header--contmenucart__cont--menu--item--cBtns--btn btn-listindec-${i}"
+								data-prodid='${v.id}'
+								data-prodstock='${v.stock}'
+								data-clientid='${idClient}'
+							>-</button>
+							<input type="number" value="${v.quantity}" data-prodcant='${v.quantity}' class="homepage__infotop__header--contmenucart__cont--menu--item--cBtns--countP" id="inputcartside-${i}">
+							<button class="homepage__infotop__header--contmenucart__cont--menu--item--cBtns--btn btn-listindec-${i}"
+								data-prodid='${v.id}'
+								data-prodstock='${v.stock}'
+								data-clientid='${idClient}'
+							>+</button>
+						</div>-->
+					</li>
+				`);
+			});
+		}else{
+			console.log('Imprimir un listado vacìo con un mensaje');
+		}
 	});
 }

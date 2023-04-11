@@ -1,45 +1,47 @@
-/************************** FUNCIÓN ANÓNIMA AUTOEJECUTABLE **************************/
+$(() => {
+  // ------------ 1. SLIDER ARTESANAL - SIDEBARLEFT
+  $(document).on('click', ".main__sidebar-left--link-close", function(){
+    $(this).toggleClass('active');
+    $('.main__sidebar-left').add($('.main__sidebar-left--content')).toggleClass('active');
+  });
+  // ------------ VERIFICAR SI SE HIZO CLICK FUERA DEL SIDEBAR
+  $(document).on("click", "body", (e) => {
+    if(!e.target.matches('.main__sidebar-left--content__cont-items--menu__item a')) return false;
+    $('.main__sidebar-left--link-close').removeClass('active');
+    $('.main__sidebar-left').add($('.main__sidebar-left--content')).removeClass('active');
+  });
+  // ------------ 2. OPCIONES DE SESIÓN
+  $(document).on("click", "#menu-user", function(){
+    $('.main__cont--top__content--item__menu').toggleClass('active');
+  });
+  // ------------ 3. VERIFICAR SI SE HIZO CLICK FUERA DE LAS OPCIONES DE SESIÓN
+  $(document).on("click", "body", (e) =>{
+    if(!e.target.matches('.main__cont--top__content--item__menu a ')) return false;
+    $('.main__cont--top__content--item__menu').removeClass('active');
+  });
+
+  // ------------ ITEM SELECCIONADO DEL MENÚ EN CADA PÁGINA - SIDEBARLEFT
+  var url = window.location.pathname;
+  var filename = url.substring(url.lastIndexOf('/')+1);
+  console.log(filename);
+  $(".main__sidebar-left--content__cont-items--menu__item a").removeClass("active");
+  $('.main__sidebar-left--content__cont-items--menu__item a[href="' + filename + '"]').addClass("active");
+  /*
+  if(filename == "ajustes" || filename == "banner-principal"){
+    $(".main__sidebar-left--content__cont-items--menu__item a").removeClass("active");
+    $(".nav-dashCamel--sidenav--c--cList--mOthers--item a").eq(0).addClass('active');
+  }else{
+  }
+  */
+});
+// ------------ FUNCIÓN ANÓNIMA AUTOEJECUTABLE
 ((d) => {
-	
-	/************************** 1. SLIDER ARTESANAL - SIDEBARLEFT **************************/
-	const menuburgeradmin = d.querySelector('.main__sidebar-left--link-close');
-	const sidebarleft = d.querySelector('.main__sidebar-left');
-	const contentsidebarleft = d.querySelector('.main__sidebar-left--content');
 
-	menuburgeradmin.addEventListener('click', function(){
-		sidebarleft.classList.toggle('active');
-		menuburgeradmin.classList.toggle('active');
-		contentsidebarleft.classList.toggle('active');
-	});
-	/************************** VERIFICAR SI SE HIZO CLICK FUERA DEL SIDEBAR **************************/
-	d.addEventListener('click', e => {
-		if(!e.target.matches('.main__sidebar-left--content__cont-items--menu__item a')) return false;
-
-		menuburgeradmin.classList.remove('active');
-		sidebarleft.classList.remove('active');
-		contentsidebarleft.classList.remove('active');
-	});
-
-	/************************** 2. OPCIONES DE SESIÓN **************************/
-	const menuoptssession = d.querySelector('#menu-user');
-	const contentoptsssession = d.querySelector('.main__cont--top__content--item__menu');
-
-	menuoptssession.addEventListener('click', e => {
-		contentoptsssession.classList.toggle('active');
-	});
-	/************************** 3. VERIFICAR SI SE HIZO CLICK FUERA DE LAS OPCIONES DE SESIÓN **************************/
-	d.addEventListener('click', e => {
-		if(!e.target.matches('.main__cont--top__content--item__menu a ')) return false;
-
-		contentoptsssession.classList.remove('active');
-	});
-
-
-  /************************** ANIMACIÓN DE LAS CAJAS DE TEXTO - AGREGAR RESTAURANTE **************************/
+  // ------------ ANIMACIÓN DE LAS CAJAS DE TEXTO - AGREGAR RESTAURANTE
   let inputs = d.querySelectorAll('.cont-modalbootstrap__form--control__input');
   let textareas = d.querySelectorAll('.cont-modalbootstrap__form--control__textarea');
 
-  /************************ INPUTS ******************************/
+  // ------------ INPUTS
   inputs.forEach( (input) => {
     input.onfocus = () => {
       input.previousElementSibling.classList.add('focus');
@@ -61,7 +63,7 @@
     }
   });
 
-  /************************ TEXTAREAS ******************************/
+  // ------------ TEXTAREAS
   textareas.forEach( (textarea) => {
     textarea.onfocus = () => {
       textarea.previousElementSibling.classList.add('focus');
@@ -84,7 +86,7 @@
   });
 
 
-  /************************** ANIMACIÓN DE LAS CAJAS DE TEXTO - ACTUALIZAR RESTAURANTE **************************/
+  // ------------ ANIMACIÓN DE LAS CAJAS DE TEXTO - ACTUALIZAR RESTAURANTE
   let inputs_update = d.querySelectorAll('.cont-modalbootstrapupdate__form--control__input');
   let textareas_update = d.querySelectorAll('.cont-modalbootstrapupdate__form--control__textarea');
 
@@ -110,7 +112,7 @@
     }
   });
 
-  /************************ TEXTAREAS ******************************/
+  // ------------ TEXTAREAS
   textareas_update.forEach( (textarea_update) => {
     textarea_update.onfocus = () => {
       textarea_update.previousElementSibling.classList.add('focus');
@@ -132,13 +134,3 @@
     }
   });
 })(document);
-
-
-
-
-
-
-
-
-
-

@@ -29,7 +29,7 @@
 									<a href="#categorias" class="homepage__infotop__header--contmenu__menu--link">Categorías</a>
 								</li>
 								<li class="homepage__infotop__header--contmenu__menu--item">
-									<a href="#" class="homepage__infotop__header--contmenu__menu--link btn-moreopts">Menú<svg class="homepage__infotop__header--contmenu__menu--link--icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M0 7.33l2.829-2.83 9.175 9.339 9.167-9.339 2.829 2.83-11.996 12.17z"/></svg></a>
+									<a href="javascript(0);" class="homepage__infotop__header--contmenu__menu--link btn-moreopts">Menú<svg class="homepage__infotop__header--contmenu__menu--link--icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M0 7.33l2.829-2.83 9.175 9.339 9.167-9.339 2.829 2.83-11.996 12.17z"/></svg></a>
 									<ul class="homepage__infotop__header--contmenu__menu--link--m">
 										<li class="homepage__infotop__header--contmenu__menu--link--m--i"><a href="#platos">Nuestros Menús</a></li>
 										<li class="homepage__infotop__header--contmenu__menu--link--m--i"><a href="search-restaurant">Nuestros Locales</a></li>
@@ -42,7 +42,7 @@
 						</div>
 						<div class="homepage__infotop__header--contlogo">
 							<a href="./" class="homepage__infotop__header--contlogo__link">
-								<img src="admin/assets/img/logo/Logo_RESTAURANT_proyect.png" alt="" class="homepage__infotop__header--contlogo__link--image" width="100" height="100" loading="lazy">
+								<img src="admin/views/assets/img/logo/Logo_RESTAURANT_proyect.png" alt="" class="homepage__infotop__header--contlogo__link--image" width="100" height="100" loading="lazy">
 							</a>
 						</div>
 						<div class="homepage__infotop__header--contlogin">
@@ -105,7 +105,7 @@
 		<section class="heroimage" id="inicio">
 			<ul class="heroimage--menu" id="sliderHeroimages">
 				<li class="heroimage--menu__item">
-					<img class="heroimage--menu__item--background img-fluid" src="admin/assets/img/banners/home-banner1.jpg" alt="" width="100" height="100" loading="lazy">
+					<img class="heroimage--menu__item--background img-fluid" src="admin/views/assets/img/banners/home-banner1.jpg" alt="" width="100" height="100" loading="lazy">
 					<div class="heroimage--menu__item--content left-align container">
 						<div class="heroimage--menu__item--content__info left-text">
 							<h2 class="heroimage--menu__item--content__info--title">Saludable por dentro, fresco <span>por fuera</span></h2>
@@ -115,7 +115,7 @@
 					</div>
 				</li>
 				<li class="heroimage--menu__item">
-					<img class="heroimage--menu__item--background img-fluid" src="admin/assets/img/banners/home-banner3.jpg" alt="" width="100" height="100" loading="lazy">
+					<img class="heroimage--menu__item--background img-fluid" src="admin/views/assets/img/banners/home-banner3.jpg" alt="" width="100" height="100" loading="lazy">
 					<div class="heroimage--menu__item--content center-align container">
 						<div class="heroimage--menu__item--content__info center-text">
 							<h2 class="heroimage--menu__item--content__info--title">La comida sana viene de <span class="block">Ingredientes sanos</span></h2>
@@ -125,7 +125,7 @@
 					</div>
 				</li>
 				<li class="heroimage--menu__item">
-					<img class="heroimage--menu__item--background img-fluid" src="admin/assets/img/banners/home-banner2.jpg" alt="" width="100" height="100" loading="lazy">
+					<img class="heroimage--menu__item--background img-fluid" src="admin/views/assets/img/banners/home-banner2.jpg" alt="" width="100" height="100" loading="lazy">
 					<div class="heroimage--menu__item--content right-align container">
 						<div class="heroimage--menu__item--content__info right-text">
 							<h2 class="heroimage--menu__item--content__info--title">Comida sana <span class="block">Para el desayuno</span></h2>
@@ -158,7 +158,7 @@
 					<ul class='categories-food__content--menu'>
 				<?php
 						foreach($listcat as $key => $value){
-							$path_categ = "admin/assets/img/categories/".$value['photo'];
+							$path_categ = "admin/views/assets/img/categories/".$value['photo'];
 							echo "
 								<li class='categories-food__content--menu__item'>
 									<a href='bcategoria' class='categories-food__content--menu__item__link'>
@@ -185,17 +185,17 @@
 					<h2 class="howitwork__content--conttitle__title">¿ Cómo funciona ?</h2>
 				</div>
 				<div class="howitwork__content--continfo">
-					<a href="#" class="howitwork__content--continfo__item">
+					<a href="javascript(0);" class="howitwork__content--continfo__item">
 						<img src="assets/img/icons/delivery-meal.svg" alt="" class="howitwork__content--continfo__item--icon img-fluid" width="100" height="100">
 						<h2 class="howitwork__content--continfo__item--title">Elige tu favorito</h2>
 						<p class="howitwork__content--continfo__item--description">Elija sus comidas favoritas y ordene en línea o por teléfono. Es fácil personalizar su pedido.</p>
 					</a>
-					<a href="#" class="howitwork__content--continfo__item">
+					<a href="javascript(0);" class="howitwork__content--continfo__item">
 						<img src="assets/img/icons/delivery-delivery-man.svg" alt="" class="howitwork__content--continfo__item--icon img-fluid" width="100" height="100">
 						<h2 class="howitwork__content--continfo__item--title">Entregamos tu comida</h2>
 						<p class="howitwork__content--continfo__item--description">Preparamos y entregamos las comidas que llegan a su puerta. Y los deberes o el dolor se sientan en vulputacion.</p>
 					</a>
-					<a href="#" class="howitwork__content--continfo__item">
+					<a href="javascript(0);" class="howitwork__content--continfo__item">
 						<img src="assets/img/icons/delivery-eat-enjoy.svg" alt="" class="howitwork__content--continfo__item--icon img-fluid" width="100" height="100">
 						<h2 class="howitwork__content--continfo__item--title">Come y disfruta</h2>
 						<p class="howitwork__content--continfo__item--description">Sin compras, sin cocinar, sin contar ni limpiar. Disfrute de sus comidas saludables con su familia.</p>
@@ -222,7 +222,7 @@
 							";
 							$allProdsCalification = array_slice($listProds, 0 , 9);
 							for($i = 0; $i < count($allProdsCalification); $i++){
-								$patheat = "admin/assets/img/products/".$listProds[$i]['photo'];
+								$patheat = "admin/views/assets/img/products/".$listProds[$i]['photo'];
 								$tmp_bestseller.= "
 									<li class='our-menu__content--cont-our-menus__categmenu--meals__menu__item'>
 					 					<a href='detalle-producto?idprodm={$listProds[$i]['id']}' class='our-menu__content--cont-our-menus__categmenu--meals__menu__item__link'>
@@ -255,11 +255,11 @@
 				</div>
 			</div>
 		</section>
-		<section class="contact-us" id="contacto" style="background-image: url(admin/assets/img/banners/select-program-background.jpg);background-attachment: fixed;">
+		<section class="contact-us" id="contacto" style="background-image: url(admin/views/assets/img/banners/select-program-background.jpg);background-attachment: fixed;">
 			<div class="contact-us__cont">
 				<div class="contact-us__cont--content container">
 					<div class="contact-us__cont--content--banner">
-						<img src="admin/assets/img/banners/select-program-image.png" alt="">
+						<img src="admin/views/assets/img/banners/select-program-image.png" alt="">
 					</div>
 					<div class="contact-us__cont--content--contact">
 						<div class="contact-us__cont--content--contact--title">
@@ -290,23 +290,23 @@
 						<p>Mr Sabor es más que un restaurante, es el lugar donde nuestros clientes pueden sentir la misma calidez y atención, como si estuviesen en casa.</p>
 					</div>
 					<div class="footer__content--cont__list">
-						<a href="#" class="footer__content--cont__list--social-media"><img src="assets/img/icons/icon-facebook.svg" alt=""></a>
-						<a href="#" class="footer__content--cont__list--social-media"><img src="assets/img/icons/icon-twitter.svg" alt=""></a>
-						<a href="#" class="footer__content--cont__list--social-media"><img src="assets/img/icons/icon-youtube.svg" alt=""></a>
-						<a href="#" class="footer__content--cont__list--social-media"><img src="assets/img/icons/icon-instagram.svg" alt=""></a>
+						<a href="javascript(0);" class="footer__content--cont__list--social-media"><img src="assets/img/icons/icon-facebook.svg" alt=""></a>
+						<a href="javascript(0);" class="footer__content--cont__list--social-media"><img src="assets/img/icons/icon-twitter.svg" alt=""></a>
+						<a href="javascript(0);" class="footer__content--cont__list--social-media"><img src="assets/img/icons/icon-youtube.svg" alt=""></a>
+						<a href="javascript(0);" class="footer__content--cont__list--social-media"><img src="assets/img/icons/icon-instagram.svg" alt=""></a>
 					</div>
 				</div>
 				<div class="footer__content--cont">
 					<h2 class="footer__content--cont__title">CATEGORÍAS</h2>
 					<ul class="footer__content--cont__menu">
 						<li class="footer__content--cont__menu--item">
-							<a href="#" class="footer__content--cont__menu--link">Vegetariana</a>
+							<a href="javascript(0);" class="footer__content--cont__menu--link">Vegetariana</a>
 						</li>
 						<li class="footer__content--cont__menu--item">
-							<a href="#" class="footer__content--cont__menu--link">Cárnica</a>
+							<a href="javascript(0);" class="footer__content--cont__menu--link">Cárnica</a>
 						</li>
 						<li class="footer__content--cont__menu--item">
-							<a href="#" class="footer__content--cont__menu--link">Rápida</a>
+							<a href="javascript(0);" class="footer__content--cont__menu--link">Rápida</a>
 						</li>
 					</ul>
 				</div>
@@ -314,19 +314,19 @@
 					<h2 class="footer__content--cont__title">CONTACTOS</h2>
 					<ul class="footer__content--cont__menu">
 						<li class="footer__content--cont__menu--icon-item">
-							<a href="#" class="footer__content--cont__menu--link">
+							<a href="javascript(0);" class="footer__content--cont__menu--link">
 								<img src="assets/img/icons/icon-home.svg" alt="">
 								<span>Av. Las manzanas 252 - Sucre - Lima, Perú</span>
 							</a>
 						</li>
 						<li class="footer__content--cont__menu--icon-item">
-							<a href="#" class="footer__content--cont__menu--link">
+							<a href="javascript(0);" class="footer__content--cont__menu--link">
 								<img src="assets/img/icons/icon-phone.svg" alt="">
 								<span>+51 918 283 634</span>
 							</a>
 						</li>
 						<li class="footer__content--cont__menu--icon-item">
-							<a href="#" class="footer__content--cont__menu--link">
+							<a href="javascript(0);" class="footer__content--cont__menu--link">
 								<img src="assets/img/icons/icon-mail.svg" alt="">
 								<span>info@gmail.com</span>
 							</a>

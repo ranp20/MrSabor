@@ -9,10 +9,10 @@ RewriteRule ^login?$ views/login.php
 RewriteRule ^account?$ views/account.php
 
 ############ ALL PAGES ADMIN
-RewriteRule ^dashboard?$ admin/views/dashboard.php
-RewriteRule ^productos?$ admin/views/products.php
-RewriteRule ^restaurantes?$ admin/views/restaurants.php
-RewriteRule ^categorias?$ admin/views/categories.php
+RewriteRule dashboard?$ admin/views/dashboard.php
+RewriteRule productos?$ admin/views/products.php
+RewriteRule restaurantes?$ admin/views/restaurants.php
+RewriteRule categorias?$ admin/views/categories.php
 #RewriteRule ^menus?$ admin/views/menus.php
 #RewriteRule ^seleccionar-usuario?$ admin/views/select-user-register.php
 

@@ -10,12 +10,10 @@ class Add extends Connection{
 		];
 
 		try{
-
 			$file_origin = $_FILES['imagen']['name'];
 			$file_lowercase = strtolower($file_origin);
 			$file_temp = $_FILES['imagen']['tmp_name'];
-			$file_folder = "../assets/img/categories/";
-
+			$file_folder = "../views/assets/img/categories/";
 			if(move_uploaded_file($file_temp, $file_folder . $file_lowercase)){
 				$sql = "CALL sp_add_categories(:name, :imagen, :id_restaurant)";
 				$stm = $this->con->prepare($sql);
@@ -23,11 +21,7 @@ class Add extends Connection{
 					$stm->bindValue($key, $value);
 				}
 				$stm->execute();
-
-				$data = $stm->fetchAll(PDO::FETCH_ASSOC);
-				$res = json_decode($data);
-
-				echo $res;
+				return $stm->rowCount() > 0 ? "true" : "false";
 			}else{
 				echo "error fatal";
 			}

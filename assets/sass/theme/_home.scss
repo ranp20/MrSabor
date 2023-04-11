@@ -274,6 +274,11 @@
 						}
 					}
 
+					&:hover .profile-opts{
+						display: block;
+						opacity: 1;
+					}
+
 					.profile-opts{
 						position: absolute;
 						right: 0;
