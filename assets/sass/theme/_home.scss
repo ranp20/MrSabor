@@ -1,4 +1,4 @@
-/************************** SHOW MESSAGE INSERT INTO CART **************************/
+// ------------ SHOW MESSAGE INSERT INTO CART
 .messageAddIntoCart{
 	transition: .3s ease-in-out;
 	&__cont{
@@ -21,7 +21,6 @@
 	  animation-duration: .3s;
 	  animation-timing-function: ease-in-out;
 	  animation-fill-mode: forwards;
-		
 		@keyframes movetoScreenUser {
 			0%{
 				right: -100%;
@@ -32,20 +31,17 @@
 				opacity: 1;
 			}
 		}
-
 		&.active{
 			display: none;
 			opacity: 0;
 			visibility: hidden;
 		}
-
 		&--cIcon{
 			display: block;
 	    overflow: hidden;
 	    text-align: center;
 	    width: 56px;
 	    height: 56px;
-
 			&--icon{
 				fill: #0BB82C;
 				fill-rule :nonzero;
@@ -56,7 +52,7 @@
 		}
 	}
 }
-/************************** SHOW MENU BURGER **************************/
+// ------------ SHOW MENU BURGER
 #menu-show-home{
   pointer-events: auto;
   width: 50px;
@@ -67,16 +63,13 @@
   cursor: pointer;
   margin-right: 1.6rem;
   @include burgernav-index($color-all-titles, 27px, 4px, 18px, 15px, 1px);
-
   @media (min-width: 691px){
 		display: none;
 		margin: 0;
 	}
-
   $close_sidebarleft: 0;
   $close_sidebarleft_active: 200px;
   $secondary-color: #fff;
-
   &.active{
   	box-shadow: unset;
   	opacity: 1;
@@ -98,7 +91,6 @@
     padding: 0.75rem;
     top: 1.2rem;
     cursor: pointer;
-
     &:before{
     	content: "";
 			position: absolute;
@@ -109,7 +101,6 @@
 			top: auto;
 			left: auto;
     }
-
     &:after{
    		content: "";
 			position: absolute;
@@ -118,8 +109,6 @@
 			left: auto;
 			width: auto; 	
     }
-
-
 		@keyframes mover{
 			0%{
 				right: $close_sidebarleft;
@@ -128,26 +117,22 @@
 				right: $close_sidebarleft_active;
 			}
 		}
-
-
 		@media (min-width: 360px){
 			$close_sidebarleft_active: 215px;
 			left: $close_sidebarleft_active;
 		}
-
 		@media (min-width: 480px){
 			$close_sidebarleft_active: 265px;
 			left: $close_sidebarleft_active;
 		}
   }
 }
-/************************** HOMEPAGE **************************/
+// ------------ HOMEPAGE
 .homepage{
 	&__background{
 		width: 100%;
 		min-height: auto;
 		height: 100%;
-
 		img{
 			width: 100%;
 			min-height: 100vh;
@@ -156,7 +141,6 @@
 			object-position: center;
 		}
 	}
-
 	&__infotop{
 		position: fixed;
 		top: 0;
@@ -166,11 +150,9 @@
 		transition: all .5s;
 		transform: translateY(0);
 		background-color: transparent;
-
 		&.infotop-background{
 			background-color: $primary-color;
 			box-shadow: 0 0 10px 3px rgba(0,0,0,.2);
-
 			&__header{
 				&--contmenu{
 					&__menu{
@@ -183,12 +165,10 @@
 				}
 			}
 		}
-
 		&.showBottom{
 			animation: showHeader .5s;
 			background-color: $primary-color;
 			box-shadow: 0 0 10px 3px rgba(0,0,0,.2);
-			
 			@keyframes showHeader{
 				0%{
 					transform: translateY(-60px);
@@ -198,13 +178,10 @@
 				}
 			}
 		}
-		
-
 		&__header{
 			display: flex;
 			align-items: center;
 			justify-content: space-between;
-
 			@media (min-width: 691px){
 				display: grid;
 				grid-template-columns: 60px auto 45px 45px;
@@ -212,167 +189,155 @@
 				justify-content: unset;
 				grid-column-gap: 1rem;
 			}
-
 			&--contlogo{
 				width: 60px;
 				height: 60px;
 				margin-left: auto;
-
 				@media (min-width: 691px){
 					grid-area: logo;
 					margin: 0;
 				}
-
 				&__link{
 					width: 60px;
 					height: 60px;					
 					display: table;
-
 					&:hover{
 						opacity: 0.5;
 					}
-
 					&--image{
 						width: 100%;
 						height: 100%;
 					}
 				}
 			}
-
 			&--contlogin{
 				width: 35px;
 				height: 35px;
 				margin-left: auto;
-
 				@media (min-width: 691px){
 					grid-area: account;
 					margin: 0;
 				}
-
-				&__profile-yessession{
-					background-color: unset;
-					border: none;
-					outline: none;
-					width: 35px;
-					height: 35px;
-					position: relative;
-					cursor: pointer;
-
-					&--icon{
-						width: 100%;
-						height: 100%;
-						fill: $color-all-titles;
-					}
-
-					@media (min-width: 1024px){
-						&:hover &--icon{
-							fill: $primary-color;
+				&__profile{
+					&.bnt-profYesSess{					
+						background-color: unset;
+						border: none;
+						outline: none;
+						width: 35px;
+						height: 35px;
+						position: relative;
+						cursor: pointer;
+						&--icon{
+							width: 100%;
+							height: 100%;
+							fill: $color-all-titles;
 						}
-
-						&.disablehover:hover &--icon{
-							fill: #fff;
-						}
-					}
-
-					&:hover .profile-opts{
-						display: block;
-						opacity: 1;
-					}
-
-					.profile-opts{
-						position: absolute;
-						right: 0;
-						top: 50px;
-						width: auto;
-						display: none;
-						animation-name: slide-up-down;
-						animation-duration: .4s;
-						animation-fill-mode: forwards;
-						opacity: 0;
-
-						@keyframes slide-up-down{
-							0%{
-								transform: translateY(-10px);								
-								opacity: 0;
-							}
-							100%{
-								transform: translateY(0);
-								opacity: 1;
-							}
-						}
-
 						@media (min-width: 1024px){
-							top: 45px;
-						}
-						
-						&.active{
-							display: block;
-						}
-
-						&__menu{
-							background-color: $primary-color;
-							min-width: 190px;
-							border-radius: .3rem;
-							&--item{
-								
+							&:hover &--icon{
+								fill: $primary-color;
 							}
-							&--link{
-								color: #fff;
+							&.disablehover:hover &--icon{
+								fill: #fff;
+							}
+						}
+						&:hover .profile-opts{
+							display: block;
+							opacity: 1;
+						}
+						.profile-opts{
+							position: absolute;
+							right: 0;
+							top: 50px;
+							width: auto;
+							display: none;
+							animation-name: slide-up-down;
+							animation-duration: .4s;
+							animation-fill-mode: forwards;
+							opacity: 0;
+							@keyframes slide-up-down{
+								0%{
+									transform: translateY(-10px);								
+									opacity: 0;
+								}
+								100%{
+									transform: translateY(0);
+									opacity: 1;
+								}
+							}
+							@media (min-width: 1024px){
+								top: 45px;
+							}
+							&.active{
 								display: block;
-								padding: 0.7rem 0.5rem;
-								font-size: 0.95rem;
-								font-weight: 400;
-
-								&:hover{
-									color: #000;
+							}
+							&__menu{
+								background-color: $primary-color;
+								min-width: 190px;
+								border-radius: .3rem;
+								&--link{
+									color: #fff;
+									display: block;
+									padding: 0.7rem 0.5rem;
+									font-size: 0.95rem;
+									font-weight: 400;
+									&:hover{
+										color: #000;
+									}
 								}
 							}
 						}
 					}
-				}
-
-				&__profile-notsession{
-					cursor: pointer;
-					width: 35px;
-					height: 35px;					
-					&--icon{
-						width: 100%;
-						height: 100%;
-						fill: $color-all-titles;
-					}
-
-
-					@media (min-width: 1024px){
-						&:hover &--icon{
-							fill: $primary-color;
+					&.bnt-profNotSess{
+						cursor: pointer;
+						width: 35px;
+						height: 35px;
+						display: table;
+						&--icon{
+							width: 100%;
+							height: 100%;
+							fill: $color-all-titles;
 						}
-
-						&.disablehover:hover &--icon{
-							fill: #fff;
+						@media (min-width: 1024px){
+							&:hover &--icon{
+								fill: $primary-color;
+							}
+							&.disablehover:hover &--icon{
+								fill: #fff;
+							}
 						}
 					}
+					&.scrollTop{
+			    	&:hover{
+			    		color: #fff;
+			    		svg{
+			    			fill: #fff;
+			    		}
+			    	}
+			    }
 				}
 			}
-
 			&--contcart{
 				width: 35px;
 				height: 35px;
 				margin-left: 0.5rem;
-
 				@media (min-width: 691px){
 					grid-area: cart;
 					margin: 0;
 				}
-
 				&__shoppingcart{
 					width: 35px;
 					height: 35px;
+					display: table;
 					&--icon{
 						fill: $color-all-titles;
 					}
+					&:hover{
+						svg{
+							fill: $primary-color;
+						}
+					}
 				}
 			}
-
 			&--contmenu{
 				position: fixed;
 				top: 0;
@@ -384,8 +349,6 @@
 				height: 100%;
 				transition: ease .3s;
 				padding: 3rem 0 2rem 0;
-				
-
 				@media (min-width: 691px){
 					grid-area: links;
 					position: relative;
@@ -398,44 +361,36 @@
 					height: auto;
 					padding: 0;
 				}
-				
 				&.active{
 					left: 0;
 					width: 244px;
 					box-shadow: 1px 0 80px 780px rgb(0 0 0 / 60%);
-	
-					/************************** MEDIA QUERIES **************************/
+					// ------------ MEDIA QUERIES
 					@media (min-width: 360px){
 						width: 260px;
 					}
-
 					@media (min-width: 480px){
 						width: 310px;
 					}
 				}
-
 				&__menu{
 					list-style: none;
 					padding-left: 0;
-
 					@media (min-width: 691px){
 						display: flex;
 						align-items: center;
 						justify-content: flex-end;
 					}
-
 					li {
 						position: relative;
 						ul{
 							display: none;
 							transition: .3s ease-in-out;
 							transform-origin: left top;
-
 							&.slideToggle{
 								display: block;
 								position: relative;
 							}
-
 							li{
 								line-height: 3.5;
 								a{
@@ -446,7 +401,6 @@
 								}
 							}
 						}
-
 						@media (min-width: 691px){
 							&:hover{
 								ul{
@@ -457,7 +411,6 @@
 							    width: auto;
 							    border-radius: 0.3rem;
 							    overflow: hidden;
-
 							    li{
 										a{
 											&:hover{
@@ -469,19 +422,15 @@
 							}
 						}
 					}
-
 					&--item{
 						line-height: 3;
-
 						@media (min-width: 691px){
 							margin: 0 0.5rem;
 						}
-
 						@media (min-width: 768px){
 							margin: 0 1rem;
 						}
 					}
-
 					&--link{
 						color: #fff;
 						font-weight: bold;
@@ -489,16 +438,22 @@
 				    align-items: center;
 				    justify-content: space-between;
 				    padding: 0 1.75rem;
-
 				    @media (min-width: 691px){
 				    	padding: 0;
 				    	&:hover{
 								&--icon{
 									fill: $primary-color;
-								}	    	
+								}
 					    }
 				    }
-
+				    &.scrollTop{
+				    	&:hover{
+				    		color: #fff;
+				    		svg{
+				    			fill: #fff;
+				    		}
+				    	}
+				    }
 						&--icon{
 							fill: #fff;
 					    width: 22px;
@@ -507,11 +462,9 @@
 					    align-items: center;
 					    justify-content: center;
 					    transition: .4s ease-in-out;
-
 					    &.slideToggle{
 					    	transform: rotate(180deg);
 					    }
-
 					    @media (min-width: 691px){
 					    	width: 20px;
 					    	height: 18px;
@@ -519,20 +472,16 @@
 					    	fill: #000;
 					    }
 						}
-
 						@media (min-width: 480px){
 							font-size: 1.2rem;
 						}
-
 						@media (min-width: 1024px){
 							font-weight: bold;
 							text-transform: uppercase;
 							color: $color-all-titles;
-							
 							&:hover{
 								color: $primary-color;
 							}
-
 							&.disablehover{
 								&:hover{
 									color: #fff;
@@ -541,9 +490,7 @@
 						}
 					}
 				}
-
 			}
-
 			&--contmenucart{
 				position: fixed;
 		    top: 0;
@@ -554,11 +501,9 @@
 		    min-height: 100vh;
 		    height: 100%;
 		    display: none;
-
 		   	&.show{
 		   		display: block;
 		   	}
-
 				&__cont{
 					position: relative;
 					background-color: #fff;
@@ -572,11 +517,9 @@
 					animation-duration: .5s;
 					animation-timing-function: ease-in-out;
 					animation-fill-mode: forwards;
-
 					&.show{
 						display: block;
 						width: 80%;
-						
 						@keyframes show-cart-list{
 							0%{width: 0;}
 							100%{width: 80%;}
@@ -596,7 +539,6 @@
 							}
 						}
 					}
-
 					&--cTitle{
 				    display: flex;
 				    align-items: center;
@@ -604,23 +546,16 @@
 				    background-color: #ccc;
 				    padding: 1rem;
 				    font-size: 0.7rem;
-
 						@media (min-width: 768px){
 							font-size: 1.2rem;
 						}
-						
-						h2{
-						}
 					}
-
 					&--menu{
 						display: flex;
 						flex-direction: column;
 						flex-wrap: wrap;
 						overflow-y: auto;
 						padding: 1rem;
-
-
 						&--item{
 							width: 100%;
 							display: flex;
@@ -629,7 +564,6 @@
 							flex-wrap: wrap;
 							border-bottom: thin solid #ccc;
 							padding: 0.5rem;
-
 							&--l{
 								display: flex;
 								align-items: center;
@@ -676,11 +610,9 @@
 									}
 								}
 							}
-
 							&--cBtns{
 								display: flex;
 								align-items: center;
-
 								&--btn{
 									cursor: pointer;
 									outline: none;
@@ -691,7 +623,6 @@
 							    font-size: 1.2rem;
 							    line-height: 1;
 								}
-
 								&--countP{
 									background-color: transparent;
 							    border: thin solid transparent;
@@ -708,13 +639,12 @@
 		}
 	}
 }
-/************************** HOMEPAGE **************************/
+// ------------ HOMEPAGE
 .homepageTwo{
 	&__background{
 		width: 100%;
 		min-height: auto;
 		height: 100%;
-
 		img{
 			width: 100%;
 			min-height: 100vh;
@@ -723,7 +653,6 @@
 			object-position: center;
 		}
 	}
-
 	&__infotop{
 		position: fixed;
 		top: 0;
@@ -733,11 +662,9 @@
 		transition: all .5s;
 		transform: translateY(0);
 		background-color: transparent;
-
 		&.infotop-background{
 			background-color: $primary-color;
 			box-shadow: 0 0 10px 3px rgba(0,0,0,.2);
-
 			&__header{
 				&--contmenu{
 					&__menu{
@@ -750,12 +677,10 @@
 				}
 			}
 		}
-
 		&.showBottom{
 			animation: showHeader .5s;
 			background-color: $primary-color;
 			box-shadow: 0 0 10px 3px rgba(0,0,0,.2);
-			
 			@keyframes showHeader{
 				0%{
 					transform: translateY(-60px);
@@ -765,13 +690,10 @@
 				}
 			}
 		}
-		
-
 		&__header{
 			display: flex;
 			align-items: center;
 			justify-content: space-between;
-
 			@media (min-width: 691px){
 				display: grid;
 				grid-template-columns: 60px auto 45px 45px;
@@ -779,17 +701,14 @@
 				justify-content: unset;
 				grid-column-gap: 1rem;
 			}
-
 			&--contlogo{
 				width: 60px;
 				height: 60px;
 				margin-left: auto;
-
 				@media (min-width: 691px){
 					grid-area: logo;
 					margin: 0;
 				}
-
 				&__link{
 					width: 60px;
 					height: 60px;					
@@ -799,138 +718,116 @@
 					}
 				}
 			}
-
 			&--contlogin{
 				width: 35px;
 				height: 35px;
 				margin-left: auto;
-
 				@media (min-width: 691px){
 					grid-area: account;
 					margin: 0;
 				}
-
 				&__profile{
 					display: table;
 					width: 100%;
 					height: 100%;
-
 					svg{
 						width: 100%;
 						height: 100%;
 					}
 				}
-
-				&__profile-yessession{
-					background-color: unset;
-					border: none;
-					outline: none;
-					width: 35px;
-					height: 35px;
-					position: relative;
-					cursor: pointer;
-
-					&--icon{
-						width: 100%;
-						height: 100%;
-						fill: $color-all-titles;
-					}
-
-					@media (min-width: 1024px){
-						&:hover &--icon{
-							fill: $primary-color;
+				&__profile{
+					&.bnt-profYesSess{					
+						background-color: unset;
+						border: none;
+						outline: none;
+						width: 35px;
+						height: 35px;
+						position: relative;
+						cursor: pointer;
+						&--icon{
+							width: 100%;
+							height: 100%;
+							fill: $color-all-titles;
 						}
-
-						&.disablehover:hover &--icon{
-							fill: #fff;
-						}
-					}
-
-					.profile-opts{
-						position: absolute;
-						right: 0;
-						top: 50px;
-						width: auto;
-						display: none;
-						animation-name: slide-up-down;
-						animation-duration: .4s;
-						animation-fill-mode: forwards;
-						opacity: 0;
-
-						@keyframes slide-up-down{
-							0%{
-								transform: translateY(-10px);								
-								opacity: 0;
-							}
-							100%{
-								transform: translateY(0);
-								opacity: 1;
-							}
-						}
-
 						@media (min-width: 1024px){
-							top: 45px;
-						}
-						
-						&.active{
-							display: block;
-						}
-
-						&__menu{
-							background-color: $primary-color;
-							min-width: 190px;
-							border-radius: .3rem;
-							&--item{
-								
+							&:hover &--icon{
+								fill: $primary-color;
 							}
-							&--link{
-								color: #fff;
+							&.disablehover:hover &--icon{
+								fill: #fff;
+							}
+						}
+						.profile-opts{
+							position: absolute;
+							right: 0;
+							top: 50px;
+							width: auto;
+							display: none;
+							animation-name: slide-up-down;
+							animation-duration: .4s;
+							animation-fill-mode: forwards;
+							opacity: 0;
+							@keyframes slide-up-down{
+								0%{
+									transform: translateY(-10px);								
+									opacity: 0;
+								}
+								100%{
+									transform: translateY(0);
+									opacity: 1;
+								}
+							}
+							@media (min-width: 1024px){
+								top: 45px;
+							}						
+							&.active{
 								display: block;
-								padding: 0.7rem 0.5rem;
-								font-size: 0.95rem;
-								font-weight: 400;
-
-								&:hover{
-									color: #000;
+							}
+							&__menu{
+								background-color: $primary-color;
+								min-width: 190px;
+								border-radius: .3rem;
+								&--link{
+									color: #fff;
+									display: block;
+									padding: 0.7rem 0.5rem;
+									font-size: 0.95rem;
+									font-weight: 400;
+									&:hover{
+										color: #000;
+									}
 								}
 							}
 						}
 					}
-				}
-
-				&__profile-notsession{
-					cursor: pointer;
-					width: 35px;
-					height: 35px;					
-					&--icon{
-						width: 100%;
-						height: 100%;
-						fill: $color-all-titles;
-					}
-
-
-					@media (min-width: 1024px){
-						&:hover &--icon{
-							fill: $primary-color;
+					&.bnt-profNotSess{					
+						cursor: pointer;
+						width: 35px;
+						height: 35px;					
+						&--icon{
+							width: 100%;
+							height: 100%;
+							fill: $color-all-titles;
 						}
-
-						&.disablehover:hover &--icon{
-							fill: #fff;
+						@media (min-width: 1024px){
+							&:hover &--icon{
+								fill: $primary-color;
+							}
+							&.disablehover:hover &--icon{
+								fill: #fff;
+							}
 						}
 					}
 				}
 			}
-
 			&--contcart{
 				width: 35px;
 				height: 35px;
 				margin-left: 0.5rem;
-
 				@media (min-width: 691px){
 					grid-area: cart;
 					margin: 0;
 				}
-
 				&__shoppingcart{
 					width: 35px;
 					height: 35px;
@@ -939,7 +836,6 @@
 					}
 				}
 			}
-
 			&--contmenu{
 				position: fixed;
 				top: 0;
@@ -951,7 +847,6 @@
 				height: 100%;
 				transition: ease .3s;
 				padding: 3rem 2rem 2rem 2rem;
-
 				@media (min-width: 691px){
 					grid-area: links;
 					position: relative;
@@ -963,68 +858,54 @@
 					width: auto;
 					height: auto;
 					padding: 0;
-				}
-				
+				}				
 				&.active{
 					left: 0;
 					width: 244px;
 					box-shadow: 1px 0 80px 780px rgb(0 0 0 / 60%);
-	
-					/************************** MEDIA QUERIES **************************/
+					// ------------ MEDIA QUERIES
 					@media (min-width: 360px){
 						width: 260px;
 					}
-
 					@media (min-width: 480px){
 						width: 310px;
 					}
 				}
-
 				&__menu{
 					list-style: none;
 					padding-left: 0;
-
 					@media (min-width: 691px){
 						display: flex;
 						align-items: center;
 						justify-content: flex-end;
 					}
-
 					&--item{
 						line-height: 3;
-
 						@media (min-width: 691px){
 							margin: 0 0.5rem;
 						}
-
 						@media (min-width: 768px){
 							margin: 0 1rem;
 						}
 					}
-
 					&--link{
 						display: block;
 						color: #fff;
 						font-weight: bold;
-
 						@media (min-width: 480px){
 							font-size: 1.2rem;
 						}
-
 						@media (min-width: 1024px){
 							font-weight: bold;
 							text-transform: uppercase;
 							color: $color-all-titles;
-							
 							&:hover{
 								color: #fff;
 							}
 						}
 					}
 				}
-
 			}
-
 			&--contmenucart{
 				position: fixed;
 		    top: 0;
@@ -1035,11 +916,9 @@
 		    min-height: 100vh;
 		    height: 100%;
 		    display: none;
-
 		   	&.show{
 		   		display: block;
 		   	}
-
 				&__cont{
 					background-color: #fff;
 					position: relative;
@@ -1053,11 +932,9 @@
 					animation-duration: .5s;
 					animation-timing-function: ease-in-out;
 					animation-fill-mode: forwards;
-
 					&.show{
 						display: block;
 						width: 80%;
-
 						@keyframes show-cart-list{
 							0%{width: 0;}
 							100%{width: 80%;}
@@ -1077,7 +954,6 @@
 							}
 						}
 					}
-
 					&--cTitle{
 				    display: flex;
 				    align-items: center;
@@ -1085,27 +961,19 @@
 				    background-color: #ccc;
 				    padding: 1rem;
 				    font-size: 0.75rem;
-
 				    @media (min-width: 768px){
 				    	font-size: 1rem;
 				    }
-
-						h2{
-
-						}
 					}
-
 					&--menu{
 						display: flex;
 						flex-direction: column;
 						flex-wrap: wrap;
 						overflow-y: auto;
 						padding: 0;
-
 						@media (min-width: 768px){
 							padding: 1rem;
 						}
-
 						&--item{
 							width: 100%;
 							display: flex;
@@ -1114,7 +982,6 @@
 							flex-wrap: wrap;
 							border-bottom: thin solid #ccc;
 							padding: 0.5rem;
-
 							&--l{
 								display: flex;
 								align-items: center;
@@ -1153,11 +1020,9 @@
 									}
 								}
 							}
-
 							&--cBtns{
 								display: flex;
 								align-items: center;
-
 								&--btn{
 									cursor: pointer;
 									outline: none;
@@ -1168,7 +1033,6 @@
 							    font-size: 1.2rem;
 							    line-height: 1;
 								}
-
 								&--countP{
 									background-color: transparent;
 							    border: thin solid transparent;
@@ -1180,7 +1044,6 @@
 							}
 						}
 					}
-
 					&--linkgoCart{
 						position: absolute;
 				    display: flex;
@@ -1192,11 +1055,9 @@
 				    background-color: $primary-color;
 				    color: #fff;
 				    font-weight: bold;
-
 				    &:hover{
 				    	opacity: .7;
 				    }
-
 						&--cImg{
 							width: 34px;
 							height: 34px;
@@ -1207,34 +1068,28 @@
 								fill: #fff;
 							}
 						}
-
-						span{
-
-						}
 					}
 				}
 			}
 		}
 	}
 }
-/************************** HEROIAMGE **************************/
+// ------------ HEROIAMGE
 .heroimage{
 	width: 100%;
-	height: auto;
 	position: relative;
-
+	height: 100vh;
 	&--content-btns{
-	width: 100%;
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
-	position: absolute;
-	z-index: 9;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%, -50%);
-	padding: 0 0.5rem;
-
+		width: 100%;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		position: absolute;
+		z-index: 9;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		padding: 0 0.5rem;
 		&__btn{
 			//border: thin solid rgba(255,255,255,.5);
 			//background-color: rgba(0,0,0,.6);
@@ -1252,51 +1107,43 @@
 			display: flex;
 			align-items: center;
 			justify-content: center;
-
 			&:hover{
 				color: #fff; 
 			}
-
 			&--left{
 				left: 12px;
 			}
-
 			&--right{
 				right: 12px;
 			}
 		}
 	}
-
-
 	&--menu{
 		display: flex;
 		align-items: center;
 		overflow: hidden;
-		width: 300%;
-		height: auto;
 		margin-left: -100%;
+		width: 300%;
+		height: 100vh;
 		&__item{
-			width: 100%;
-			height: auto;
 			position: relative;
 			display: flex;
 			align-items: center;
 			justify-content: center;
+			width: 100%;
+			height: 100vh;
 			&--background{
 				width: 100%;
 				height: 630px;
 				object-fit: cover;
 				object-position: center;
-
 				@media (min-width: 480px){
-					height: 615px;
+					height: 100%;
 				}
-
 				@media (min-width: 1220px){
-					height: 660px;
+					height: 100%;
 				}
 			}
-
 			&:after{
 				content: "";
 				position: absolute;
@@ -1307,7 +1154,6 @@
 				right: 0;
 				bottom: 0;
 			}
-
 			&--content{
 				position: absolute;
 				top: 0;
@@ -1320,39 +1166,31 @@
 				flex-direction: column;
 				z-index: 9;
 				padding: 0 1.5rem;
-
 				&__info{
 					font-size: 0.95rem;
 					text-align: center;
-
 					@media (min-width: 480px){
 						font-size: 1.1rem;
 					}
-
 					&--title{
 						font-size: 2em;
 						margin-bottom: 0.5rem;
 						text-shadow: 0px 2px #fff;
-
 						@media (min-width: 768px){
 							font-size: 2.5rem;
 						}
-
 						@media (min-width: 1400px){
 							font-size: 3.2rem;
 						}
-
 						span{
 							color: $primary-color;
 						}
 					}
-
 					&--subtitle{
 						margin-bottom: 0.5rem;
 						line-height: 1.6;
 						font-weight: lighter;
 					}
-
 					&--gotoproduct{
 						margin-top: 1rem;
 						display: inline-block;
@@ -1362,11 +1200,9 @@
 						padding: 0.8rem 2rem;
 						background-color: $primary-color;	
 						transition: .3s ease-out;
-
 						&:hover{
 							background-color: #F7CA18;							
 						}
-
 						span{
 							margin-left: 0.5rem;
 						}
@@ -1376,20 +1212,18 @@
 		}
 	}
 }
-/************************** CAEGORIES FOOD **************************/
+// ------------ CAEGORIES FOOD
 .categories-food{
 	scroll-margin-top: 4ex;
 	&__content{
 		padding: 3rem 0;
-		
 		@media (min-width: 480px){
 			padding: 4rem 0;
 		}
 		@media (min-width: 1024px){
 			padding: 4rem 0 6rem 0;
 		}
-
-		/************************** TITLE CATEGORIES **************************/
+		// ------------ TITLE CATEGORIES
 		&--conttitle{
 			text-align: center;
 			margin-bottom: 2rem;
@@ -1398,14 +1232,12 @@
 				font-weight: bold;
 				margin-bottom: 1.5rem;
 				font-size: 1.4rem;
-
 				@media (min-width: 480px){
 					font-size: 1.8rem;
 				}
 			}
 		}
-
-		/************************** CATEGORIES **************************/
+		// ------------ CATEGORIES
 		&--menu{
 			display: grid;
 			grid-template-columns: 1fr;
@@ -1414,12 +1246,10 @@
 			margin-left: auto;
 			margin-right: auto;
 			align-items: stretch;
-
 			/* TAMAÑO - CUSTOM MOBILE (300px) */
 			@media (min-width: 300px){
 				width: 90%;
 			}
-
 			/* TAMAÑO - CUSTOM MOBILE (600px) */
 			@media (min-width: 600px){
 				width: 100%;
@@ -1427,7 +1257,6 @@
 				justify-content: center;
 				flex-wrap: wrap;
 			}
-
 			/* TAMAÑO - TABLET (768px) */
 			@media (min-width: 768px){
 				display: grid;
@@ -1436,14 +1265,11 @@
 				align-items: stretch;
 				justify-content: center;
 			}
-
 			/* TAMAÑO - DESKTOP (1024px) */
 			@media (min-width: 1024px){
 				padding: 0 1rem;
 				grid-column-gap: 1rem;
 			}
-
-
 			&__item{
 				border-radius: 6px;
 		    box-shadow: 2px 3px 10px 1px rgba(0,0,0,.2);
@@ -1454,23 +1280,19 @@
 		    align-items: center;
 		    justify-content: center;
 		    overflow: hidden;
-
 		    /* TAMAÑO - CUSTOM MOBILE (600px) */
 				@media (min-width: 600px){
 					width: calc(100% * 1/2 - 25px);
 					margin: 0 0.7rem;
 				}
-
 				/* TAMAÑO - TABLET(768px) */
 				@media (min-width: 768px){
 					width: auto;
 				}
-
 				&__link{
 					width: 100%;
 					height: 100%;
-					position: relative;
-					
+					position: relative;					
 					&--categ-imagen{
 						position: relative;
 						width: 100%;
@@ -1478,7 +1300,6 @@
 						height: 100%;
 						overflow: hidden;
 						transition: all ease-out .3s;
-
 						img{
 							width: 100%;
 							height: 100%;
@@ -1486,17 +1307,14 @@
 							object-position: center;	
 							overflow: hidden;
 						}
-
 						/* TAMAÑO - DESKTOP */
 						@media (min-width: 1024px){
 							max-height: 250px;
 						}
 					}
-
 					&:hover &--categ-imagen{
 						transform: scale(1.2);
 					}
-
 					&--categ-description{
 						position: absolute;
 						top: 0;
@@ -1507,7 +1325,6 @@
 						display: flex;
 						align-items: center;
 						justify-content: center;
-
 						&--name{
 							font-weight: lighter;
 							margin-bottom: 0.5rem;
@@ -1520,38 +1337,32 @@
 		}
 	}
 }
-/************************** HOW IR WORK **************************/
+// ------------ HOW IR WORK
 .howitwork{
 	background-color: $color-section;
 	&__content{
 		padding: 3rem 0;
-
 		@media (min-width: 480px){
 			padding: 4rem 0;
 		}
 		@media (min-width: 1024px){
 			padding: 5rem 0 6rem 0;
 		}
-
 		&--conttitle{
 			text-align: center;
 			margin-bottom: 2rem;
-
 			@media (min-width: 768px){
 				margin-bottom: 3.5rem;
 			}
-
 			&__title{
 				text-transform: uppercase;
 				color: $primary-color;
 				font-size: 1.4rem;
-
 				@media (min-width: 768px){
 					font-size: 1.8rem;
 				}
 			}
 		}
-
 		&--continfo{
 			display: grid;
 			grid-template-columns: 1fr;
@@ -1559,46 +1370,37 @@
 			grid-row-gap: 2rem;
 			align-items: stretch;
 			justify-content: center;
-
 			@media (min-width: 480px){
 				display: flex;
 				flex-wrap: wrap;
 			}
-
 			@media (min-width: 768px){
 				justify-content: space-between;
 			}
-
 			&__item{
 				color: $color-paragraph-light;
 				text-align: center;
 				margin: 0 1.2rem;
-
 				@media (min-width: 480px){
 					margin: 0 1rem;
 					width: calc(100% * 1/2 - 32px);
 				}
-
 				@media (min-width: 768px){
 					width: calc(100% * 1/3 - 32px);
 				}
-
 				@media (min-width: 1024px){
 					margin: 0 1.8rem;
 					width: calc(100% * 1/3 - 62px);
 				}
-
 				&--icon{
 					width: 100px;
 					height: 100px;
 					margin-bottom: 1rem;
 				}
-
 				&--title{
 					font-weight: lighter;
 					margin-bottom: 1.2rem;
 				}
-
 				&--description{
 					line-height: 1.9;
 				}
@@ -1606,7 +1408,7 @@
 		}
 	}
 }
-/************************** OUR MENU **************************/
+// ------------ OUR MENU
 .our-menu{
 	scroll-margin-top: 4ex;
 	display: flex;
@@ -1614,14 +1416,12 @@
 	height: auto;
 	padding: 2.5rem 0;
 	align-content: center;
-
 	@media (min-width: 480px){
 		padding: 4rem 0;
 	}
 	@media (min-width: 1024px){
 		padding: 4rem 0 6rem 0;
 	}
-
 	&__content{
 		&--cont-title{
 			text-align: center;
@@ -1629,13 +1429,11 @@
 			&__title{
 				font-weight: bold;
 				color: $primary-color;
-
 				@media (min-width: 480px){
 					font-size: 1.8rem;
 				}
 			}
 		}
-
 		&--cont-our-menus{
 			&__categmenu{
 				display: flex;
@@ -1646,13 +1444,11 @@
 					&--title{
 						text-align: left;
 						padding-left: 0.5rem;
-
 						@media (min-width: 768px){
 							font-size: 1.5rem;
 						}
 					}
 				}
-
 				&--meals{
 					display: flex;
 			    flex-direction: column;
@@ -1660,7 +1456,6 @@
 			    min-height: 280px;
 			    height: auto;
 			    overflow: hidden;
-
 					&__btns{
 						display: flex;
 						align-items: center;
@@ -1688,16 +1483,13 @@
 					    text-align: center;
 					    font-family: monospace;
 						}
-
 						&--left{
 							left: 0;
 						}
-
 						&--right{
 							right: 0;
 						}
 					}
-
 					&__menu{
 						display: flex;
 						align-items: stretch;
@@ -1707,48 +1499,37 @@
 						margin-bottom: 1rem;
 						margin-left: -100%;
 						width: 900%;
-
 						@media (min-width: 480px){
 							width: 450%;
 							margin-left: -50%;
 						}
-
 						@media (min-width: 768px){
 							width: 300%;
 							margin-left: -33.3%;
 						}
-
 						@media (min-width: 1024px){
 							width: 225%;
 							margin-left: -25%;
 						}
-
 						&__item{
 							width: 100%;
 							margin-left: .5rem;
 							margin-right: .5rem;
-
 							@media (min-width: 480px){
 								width: 50%;
 							}
-
 							@media (min-width: 768px){
 								width: 33.3%;
 							}
-
 							@media (min-width: 1024px){
 								width: 25%;
 							}
-
-
 							&__link{
 								width: 100%;
-								height: 100%;
-								
+								height: 100%;								
 								&:hover &--bgcimage img{
 									transform: scale(1.1);
 								}
-
 								&--bgcimage{
 									position: relative;
 							    width: 100%;
@@ -1759,11 +1540,9 @@
 							    border-radius: 6px;
 							    overflow: hidden;
 							    transition: all ease-out .3s;
-
 							    @media (min-width: 1024px){
 							    	height: 240px;
 							    }
-
 									img{
 										width: 100%;
 										height: 100%;
@@ -1771,7 +1550,6 @@
 										object-position: center;
 										transition: all ease-out .3s;
 									}
-
 									span{
 										display: inline-block;
 										position: absolute;
@@ -1785,11 +1563,9 @@
 										border-radius: 20px;
 									}
 								}
-
 								&--continfo{
 									padding: .5rem 1rem;
 									color: #000;
-
 									&__title{
 										font-size: 1.1rem;
 										font-weight: bold;
@@ -1805,27 +1581,22 @@
 		}
 	}
 }
-/************************** CONTACT US **************************/
+// ------------ CONTACT US
 .contact-us{
 	scroll-margin-top: 2ex;
 	position: relative;
-
 	&__cont{
-
 		&--content{
 			position: relative;
 			display: flex;
 			align-items: center;
 			justify-content: center;
-
 			&--banner{
 				display: none;
 				height: auto;
-
 				@media(min-width: 691px){
 					display: block;
 				}
-
 				img{
 					object-fit: contain;
 					object-position: center;
@@ -1833,18 +1604,15 @@
 					max-width: initial;
 					margin-left: -390px;
 					vertical-align: middle;
-
 					@media (min-width: 768px){
 						margin-left: -420px;
 					}
-
 					@media (min-width: 992px){
 						margin-left: -500px;
 						height: 592px;
 					}
 				}
 			}
-
 			&--contact{
 				@media (min-width: 691px){
 					position: absolute;
@@ -1852,30 +1620,24 @@
 					width: 49.6%;
 					padding: 50px 15px 45px;
 				}
-
 				@media (min-width: 1400px){
 					padding: 50px 40px 45px;
 				}
-
 				&--title{
 					margin-bottom: 0;
 					h2{
 						color: $primary-color;
 						text-transform: uppercase;
 						font-size: 1.35rem;
-
 						@media (min-width: 691px){
 							font-size: 1.5rem;
 						}
 					}
 				}
-
 				&--register{
 					padding: 1.5rem 0;
 					border-radius: .5rem;
 					margin-bottom: 1rem;
-
-
 					&__form{
 						&--control{
 							display: flex;
@@ -1883,15 +1645,12 @@
 							margin-bottom: 1rem;
 							position: relative;
 							height: 40px;
-
 							@media (min-width: 691px){
 								height: 52px;
-							}
-	
+							}	
 							@media (min-width: 1024px){
 								margin-bottom: 1.8rem;						
 							}
-
 							&__label{
 								display: flex;
 								align-items: center;
@@ -1901,18 +1660,15 @@
 								height: 40px;
 								position: absolute;
 								padding: 0 0.5rem;
-
 								@media (min-width: 691px){
 									width: 45px;
 									height: 45px;
 								}
-
 								&--icon{
 									width: 100%;
 									height: 100%;
 								}
 							}
-
 							&__input{
 								outline: none;
 								width: 100%;
@@ -1921,14 +1677,12 @@
 								border: thin solid $primary-color;
 								background-color: #fff;
 								font-size: .9rem;
-
 								@media (min-width: 691px){
 									padding: 20px 20px 20px 50px;
 									font-size: 17px;
 								}
 							}
 						}
-
 						&--btnsend{
 							cursor: pointer;
 							width: 100%;
@@ -1940,7 +1694,6 @@
 							color: #fff;
 							font-weight: bold;
 							padding: 12px;
-
 							@media (min-width: 1024px){
 								font-size: 1.1rem;
 								padding: 17px;								
@@ -1952,7 +1705,7 @@
 		}
 	}
 }
-/************************** FOOTER **************************/
+// ------------ FOOTER
 .footer{
 	padding-top: 2.5rem;
 	padding-left: 0;
@@ -1967,24 +1720,18 @@
 		grid-template-areas: 'logo logo'
 												 'categories about-us';
 		padding-bottom: 2.5rem;
-
 		@media (min-width: 800px){
 			grid-template-areas: 'logo categories about-us';
 			grid-template-columns: 45% 1fr 1fr;
 		}
-
-
 		&--cont{
 			color: #fff;
-
 			&:first-child{
 				grid-area: logo;
-
 				@media (min-width: 768px){
 					display: flex;
 					align-items: center;
 				}
-
 				@media (min-width: 800px){
 					flex-direction: column;
 				}
@@ -1995,13 +1742,11 @@
 			&:nth-child(3){
 				grid-area: about-us;
 			}
-
 			&__logotype-text{
 				height: auto;
 				margin-bottom: 1rem;
 				text-align: center;
 				padding: 0 .8rem;
-
 				@media (min-width: 768px){
 					text-align: left;
 					display: grid;
@@ -2010,79 +1755,61 @@
 					grid-column-gap: 1rem;
 					margin: 0;
 				}
-
 				@media (min-width: 800px){
 					margin: 0 0 1.3rem 0;
 				}
-
 				img{
 					width: 190px;
 					height: 100%;
 					margin-bottom: 0.5rem;
-
 					@media (min-width: 768px){
 						margin: 0;
 					}
-
 					@media (min-width: 800px){
 						height: 100px;
 					}
 				}
-
 				p{
 					font-size: 0.9rem;
 					color: #fff;
 				}
 			}
-
 			&__title{
 				margin-bottom: 1.5rem;
 				font-size: 1rem;
-
-
 				@include border-bottom($border-bottom-color);
 			}
-
 			&__menu{
 				padding: 0;
-
 				&--item{
 					line-height: 2.5;
-
 					@media (min-width: 800px){
 						margin-bottom: 1rem;
 					}
 				}
-
 				&--icon-item{
 					line-height: 2.5;
-
 					@media (min-width: 800px){
 						margin-bottom: 1rem;
 					}
 				}
-
 				&--link{
 					color: #ccc;
 					display: flex;
 					align-items: center;
-					font-size: 0.8rem;
-					
+					font-size: 0.8rem;					
 					&:hover{
 						color: #fff;
 					}
-
 					img{
 						width: 20px;
 						height: 20px;
 					}
-
 					span{
 						margin-left: 1rem;
 					}
 				}
 			}
-
 			&__list{
 				padding-top: 0.5rem;
 				width: 100%;
@@ -2090,18 +1817,15 @@
 				flex-wrap: wrap;
 				align-items: center;
 				justify-content: space-evenly;
-
 				@media (min-width: 768px){
 					padding: 0;
 				}
-
 				&--social-media{
 					width: 30px;
 					height: 30px;
 					img{
 						@extend .footer__content--cont__list--social-media;
 					}
-
 					@media (min-width: 800px){
 						width: 26px;
 						height: 26px;
@@ -2110,7 +1834,6 @@
 			}
 		}
 	}
-
 	&__bottom{
 		padding: 1rem 0;
 		display: block;
@@ -2122,7 +1845,7 @@
 		}
 	}
 }
-/************************** API WHATSAPP **************************/
+// ------------ API WHATSAPP
 #chat_wstp-icon{
 	display: block;
 	&.hidden{
@@ -2139,9 +1862,9 @@
 	color:#FFF;
 	border-radius:50px;
 	text-align:center;
-  	font-size:30px;
+  font-size:30px;
 	box-shadow: 2px 2px 12px 3px rgba(0,0,0,.3);
-  	z-index:100;
+  z-index:100;
 }
 .my-float{
 	margin-top:16px;

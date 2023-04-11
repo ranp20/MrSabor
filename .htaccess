@@ -5,8 +5,8 @@ RewriteBase /MrSabor/
 
 ############ RENOMBRANDO ARCHIVOS...
 RewriteRule ^/?$ index.php
-RewriteRule ^login?$ views/login.php
-RewriteRule ^account?$ views/account.php
+RewriteRule login?$ views/login.php
+RewriteRule account?$ views/account.php
 
 ############ ALL PAGES ADMIN
 RewriteRule dashboard?$ admin/views/dashboard.php

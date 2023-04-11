@@ -17,18 +17,19 @@ $(() => {
 		let scrollTop = $("html,body").scrollTop();
 		let heightHeroImage = heroImageClass.offset().top;
 		let itemLinks = $('.homepage__infotop__header--contmenu__menu--link');
-		// let itemprofilenotsession = $('.homepage__infotop__header--contlogin__profile-notsession');
 
 		if(heightHeroImage - 160 < scrollTop ){
 			headerTop.addClass("showBottom");
 			$.each(itemLinks, function(i,v){
 				$(this).addClass("disablehover");
 			});
+			$(".homepage__infotop__header--contlogin__profile").addClass("scrollTop");
 		}else{
 			headerTop.removeClass("showBottom");
 			$.each(itemLinks, function(i,v){
 				$(this).removeClass("disablehover");
 			});
+			$(".homepage__infotop__header--contlogin__profile").removeClass("scrollTop");
 		}
 	}
 });
@@ -70,9 +71,11 @@ $(() => {
 	btnRightHeroimages.addEventListener('click', function(){nextHeroimages();});
 	btnLeftHeroimages.addEventListener('click', function(){beforeHeroimages();});
 	// ------------ SLIDER AUTOMÁTICO
+	
 	setInterval(function(){
 		nextHeroimages();
 	}, 6500);
+	
 	
 	// ------------ SLIDER MANUAL ARTESANAL - PLATOS EN MENU
 	const sliderMenus = d.querySelector('#sliderMenus');
@@ -206,17 +209,14 @@ function showHeadersession(){
 	let heroImageClasssession = document.querySelector('.categories-food');
 	let heightHeroImagesession = heroImageClasssession.offsetTop;
 	let itemLinkssession = document.querySelectorAll('.homepage__infotop__header--contmenu__menu--link');
-	let itemprofileyessession = document.querySelector('.homepage__infotop__header--contlogin__profile-yessession');
 
 	if(heightHeroImagesession - 160 < scrollTopsession ){
 		headerTopsession.classList.add("showBottom");
-		itemprofileyessession.classList.add("disablehover");
 		for(var i = 0; i < itemLinkssession.length; i ++){
 			itemLinkssession[i].classList.add("disablehover");
 		}
 	}else{
 		headerTopsession.classList.remove("showBottom");
-		itemprofileyessession.classList.remove("disablehover");
 		for(var i = 0; i < itemLinkssession.length; i ++){
 			itemLinkssession[i].classList.remove("disablehover");
 		}
