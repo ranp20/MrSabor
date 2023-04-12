@@ -1090,6 +1090,15 @@
 		left: 50%;
 		transform: translate(-50%, -50%);
 		padding: 0 0.5rem;
+		opacity: 0;
+		visibility: hidden;
+		user-select: none;
+		@media (min-width: 768px){
+			display: flex;
+			opacity: 1;
+			visibility: visible;
+			user-select: auto;
+		}
 		&__btn{
 			//border: thin solid rgba(255,255,255,.5);
 			//background-color: rgba(0,0,0,.6);
@@ -1133,10 +1142,10 @@
 			width: 100%;
 			height: 100vh;
 			&--background{
-				width: 100%;
-				height: 630px;
 				object-fit: cover;
 				object-position: center;
+				width: 100%;
+				height: 100%;
 				@media (min-width: 480px){
 					height: 100%;
 				}
@@ -1189,7 +1198,7 @@
 					&--subtitle{
 						margin-bottom: 0.5rem;
 						line-height: 1.6;
-						font-weight: lighter;
+						font-weight: 300;
 					}
 					&--gotoproduct{
 						margin-top: 1rem;
@@ -1198,10 +1207,13 @@
 						font-size: 1rem;
 						font-weight: bold;
 						padding: 0.8rem 2rem;
-						background-color: $primary-color;	
+						background-color: $primary-color;
+						border-radius: 4px;
+						box-shadow: 0px 2px 5px 1px rgba(0,0,0,.1);
 						transition: .3s ease-out;
 						&:hover{
-							background-color: #F7CA18;							
+							// background-color: #F7CA18;
+							background-color: darken($primary-color, 10%);
 						}
 						span{
 							margin-left: 0.5rem;
@@ -1398,7 +1410,7 @@
 					margin-bottom: 1rem;
 				}
 				&--title{
-					font-weight: lighter;
+					font-weight: 600;
 					margin-bottom: 1.2rem;
 				}
 				&--description{
@@ -1470,7 +1482,6 @@
 							border: none;
 					    padding: .5rem .5rem 1rem .5rem;
 					    font-size: 2.5rem;
-					    background-color: rgba(0, 60, 0, 0.6);
 					    font-weight: bold;
 					    width: 55px;
 					    height: 100%;
@@ -1482,6 +1493,10 @@
 					    justify-content: center;
 					    text-align: center;
 					    font-family: monospace;
+					    background-color: $primary-color;
+							&:hover{
+								background-color: darken($primary-color, 10%);
+							}
 						}
 						&--left{
 							left: 0;
@@ -1697,13 +1712,16 @@
 							display: block;
 							text-align: center;
 							font-size: 1rem;
-							background-color: $primary-color;
 							color: #fff;
 							font-weight: bold;
 							padding: 12px;
+							background-color: $primary-color;
+							&:hover{
+								background-color: darken($primary-color, 10%);
+							}
 							@media (min-width: 1024px){
 								font-size: 1.1rem;
-								padding: 17px;								
+								padding: 17px;
 							}
 						}
 					}
