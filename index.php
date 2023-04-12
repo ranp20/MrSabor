@@ -15,6 +15,8 @@
 	<!-- INCLUIR OWL CAROUSEL 2 -->
   <link rel="stylesheet" href="node_modules/owl.carousel/dist/assets/owl.carousel.min.css"/>
   <script type="text/javascript" src="node_modules/owl.carousel/dist/owl.carousel.min.js"></script>
+  <!-- INCLUIR JQUERY-MOUSEWHEEL -->
+  <script type="text/javascript" src="node_modules/jquery-mousewheel/jquery.mousewheel.js"></script>
 </head>
 <body>
 	<div class="home">
@@ -105,10 +107,10 @@
 				</div>
 			</div>
 		</div>
-		<section class="heroimage" id="inicio">
-			<ul class="heroimage--menu" id="sliderHeroimages">
-				<li class="heroimage--menu__item">
-					<img class="heroimage--menu__item--background img-fluid" src="admin/views/assets/img/banners/home-banner1.jpg" alt="" width="100" height="100" loading="lazy">
+		<section class="heroimage c-infTbs__c__item" id="inicio">
+			<ul class="owl-carousel owl-theme heroimage--menu" id="sliderHeroimages">
+				<li class="item heroimage--menu__item">
+					<img class="owl-lazy img-fluid heroimage--menu__item--background img-fluid" src="admin/views/assets/img/banners/home-banner1.jpg" alt="" width="100" height="100" loading="lazy">
 					<div class="heroimage--menu__item--content left-align container">
 						<div class="heroimage--menu__item--content__info left-text">
 							<h2 class="heroimage--menu__item--content__info--title">Saludable por dentro, fresco <span>por fuera</span></h2>
@@ -117,8 +119,8 @@
 						</div>
 					</div>
 				</li>
-				<li class="heroimage--menu__item">
-					<img class="heroimage--menu__item--background img-fluid" src="admin/views/assets/img/banners/home-banner3.jpg" alt="" width="100" height="100" loading="lazy">
+				<li class="item heroimage--menu__item">
+					<img class="owl-lazy img-fluid heroimage--menu__item--background img-fluid" src="admin/views/assets/img/banners/home-banner3.jpg" alt="" width="100" height="100" loading="lazy">
 					<div class="heroimage--menu__item--content center-align container">
 						<div class="heroimage--menu__item--content__info center-text">
 							<h2 class="heroimage--menu__item--content__info--title">La comida sana viene de <span class="block">Ingredientes sanos</span></h2>
@@ -127,8 +129,8 @@
 						</div>
 					</div>
 				</li>
-				<li class="heroimage--menu__item">
-					<img class="heroimage--menu__item--background img-fluid" src="admin/views/assets/img/banners/home-banner2.jpg" alt="" width="100" height="100" loading="lazy">
+				<li class="item heroimage--menu__item">
+					<img class="owl-lazy img-fluid heroimage--menu__item--background img-fluid" src="admin/views/assets/img/banners/home-banner2.jpg" alt="" width="100" height="100" loading="lazy">
 					<div class="heroimage--menu__item--content right-align container">
 						<div class="heroimage--menu__item--content__info right-text">
 							<h2 class="heroimage--menu__item--content__info--title">Comida sana <span class="block">Para el desayuno</span></h2>
@@ -143,7 +145,7 @@
 				<button class="heroimage--content-btns__btn heroimage--content-btns__btn--right" id="heroimageRight">&#8250;</button>
 			</div>
 		</section>
-		<section class="categories-food" id="categorias">
+		<section class="categories-food c-infTbs__c__item" id="categorias">
 			<div class="categories-food__content container">
 				<div class="categories-food__content--conttitle">
 					<h2 class="categories-food__content--conttitle__acotacion">NUESTRAS CATEGORÍAS</h2>
@@ -182,7 +184,7 @@
 				?>
 			</div>
 		</section>
-		<section class="howitwork" id="como-empezar">
+		<section class="howitwork c-infTbs__c__item" id="como-empezar">
 			<div class="howitwork__content container">
 				<div class="howitwork__content--conttitle">
 					<h2 class="howitwork__content--conttitle__title">¿ Cómo funciona ?</h2>
@@ -206,7 +208,7 @@
 				</div>
 			</div>
 		</section>
-		<section class="our-menu" id="platos">
+		<section class="our-menu c-infTbs__c__item" id="platos">
 			<div class="our-menu__content container">
 				<div class="our-menu__content--cont-title">
 					<h2 class="our-menu__content--cont-title__title">NUESTRO MENÚ</h2>
@@ -258,7 +260,7 @@
 				</div>
 			</div>
 		</section>
-		<section class="contact-us" id="contacto" style="background-image: url(admin/views/assets/img/banners/select-program-background.jpg);background-attachment: fixed;">
+		<section class="contact-us c-infTbs__c__item" id="contacto" style="background-image: url(admin/views/assets/img/banners/select-program-background.jpg);background-attachment: fixed;">
 			<div class="contact-us__cont">
 				<div class="contact-us__cont--content container">
 					<div class="contact-us__cont--content--banner">
