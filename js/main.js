@@ -32,6 +32,51 @@ $(() => {
 			$(".homepage__infotop__header--contlogin__profile").removeClass("scrollTop");
 		}
 	}
+	// ------------ CAROUSEL DE PLATOS
+	var owlSliderMenus = $('#sliderMenus');
+	$('#sliderMenus').owlCarousel({
+		autoplay:true,
+		autoplayTimeout: 6000,
+		center: false,
+		items: 5,
+		loop: true,
+		margin: 18,
+		dots:true,
+		nav: true,
+		lazyLoad: true,
+		navText: ["",""],
+		responsive: {
+			0: {
+				nav: false,
+				dots: true,
+				items: 1
+			},
+			360: {
+				nav: false,
+				dots: true,
+				items: 1
+			},
+			480: {
+				nav: false,
+				dots: false,
+				items: 2
+			},
+			768: {
+				nav: false,
+				dots: false,
+				items: 3
+			},
+			1024: {
+				items: 4
+			},
+		}
+	});
+	$('.slidermenus-left').click(function(){
+    owlSliderMenus.trigger('prev.owl.carousel', [300]);
+	});
+  $('.slidermenus-right').click(function(){
+	  owlSliderMenus.trigger('next.owl.carousel', [300]);
+	});
 });
 // ------------  FUNCIÓN ANÓNIMA AUTOEJECUTABLE
 ((d) => {
@@ -44,7 +89,6 @@ $(() => {
 	const	btnRightHeroimages = d.querySelector('#heroimageRight');
 	// ------------ COLOCAR ÚLTIMA IMAGEN AL INICIO DEL SLIDER
 	sliderHeroimages.insertAdjacentElement('afterbegin', sliderHeroimagesLast);
-
 	function nextHeroimages(){
 		sliderHeroimagesFirst = d.querySelectorAll('.heroimage--menu__item')[0];
 		sliderHeroimages.style.marginLeft = "-200%";
@@ -55,7 +99,6 @@ $(() => {
 			sliderHeroimages.style.marginLeft = "-100%";
 		}, 500);
 	};
-
 	function beforeHeroimages(){
 		let sliderHeroimagesItem = d.querySelectorAll('.heroimage--menu__item');
 		let sliderHeroimagesLast = sliderHeroimagesItem[sliderHeroimagesItem.length -1];
@@ -67,16 +110,12 @@ $(() => {
 			sliderHeroimages.style.marginLeft = "-100%";
 		}, 500);
 	};
-
 	btnRightHeroimages.addEventListener('click', function(){nextHeroimages();});
 	btnLeftHeroimages.addEventListener('click', function(){beforeHeroimages();});
 	// ------------ SLIDER AUTOMÁTICO
+	setInterval(function(){nextHeroimages();}, 6500);
 	
-	setInterval(function(){
-		nextHeroimages();
-	}, 6500);
-	
-	
+	/*
 	// ------------ SLIDER MANUAL ARTESANAL - PLATOS EN MENU
 	const sliderMenus = d.querySelector('#sliderMenus');
 	let sliderMenusItem = d.querySelectorAll('.our-menu__content--cont-our-menus__categmenu--meals__menu__item');
@@ -95,28 +134,23 @@ $(() => {
 			sliderMenus.insertAdjacentElement('beforeend', sliderMenusFirst);
 			sliderMenus.style.marginLeft = "-100%";
 		}, 500);
-
 		console.log(sliderMenusItem.length);
-
 		// ------------ AGREGAR MEDIA QUERIES
 		var movilMediaQuerie = window.matchMedia( "(min-width: 480px)" );
 		var tabletMediaQuerie = window.matchMedia( "(min-width: 768px)" );
 		var desktopMediaQuerie = window.matchMedia( "(min-width: 1024px)" );
-
 		if (movilMediaQuerie.matches) {
 	    sliderMenus.style.marginLeft = "-100%";
 	    setTimeout(function(){
 				sliderMenus.style.marginLeft = "-50%";
 			}, 500);
 		}
-
 		if(tabletMediaQuerie.matches){
 			sliderMenus.style.marginLeft = "-67%";
 			setTimeout(function(){
 				sliderMenus.style.marginLeft = "-33.3%";
 			}, 500);
 		}
-
 		if(desktopMediaQuerie.matches){
 			sliderMenus.style.marginLeft = "-50%";
 			setTimeout(function(){
@@ -124,7 +158,6 @@ $(() => {
 			}, 500);
 		}
 	};
-
 	function beforeMenus(){
 		let sliderMenusItem = d.querySelectorAll('.our-menu__content--cont-our-menus__categmenu--meals__menu__item');
 		let sliderMenusLast = sliderMenusItem[sliderMenusItem.length -1];
@@ -135,26 +168,22 @@ $(() => {
 			sliderMenus.insertAdjacentElement('afterbegin', sliderMenusLast);
 			sliderMenus.style.marginLeft = "-100%";
 		}, 500);
-
 		// ------------ AGREGAR MEDIA QUERIES
 		var movilMediaQuerie = window.matchMedia( "(min-width: 480px)" );
 		var tabletMediaQuerie = window.matchMedia( "(min-width: 768px)" );
 		var desktopMediaQuerie = window.matchMedia( "(min-width: 1024px)" );
-		
 		if (movilMediaQuerie.matches) {
 	    sliderMenus.style.marginLeft = "0";
 	    setTimeout(function(){
 				sliderMenus.style.marginLeft = "-50%";
 			}, 500);
 		}
-
 		if(tabletMediaQuerie.matches){
 			sliderMenus.style.marginLeft = "0";
 			setTimeout(function(){
 				sliderMenus.style.marginLeft = "-33.3%";
 			}, 500);
 		}
-
 		if(desktopMediaQuerie.matches){
 			sliderMenus.style.marginLeft = "0";
 			setTimeout(function(){
@@ -162,13 +191,8 @@ $(() => {
 			}, 500);
 		}
 	};
-
 	btnRightMenus.addEventListener('click', function(){nextMenus();});
 	btnLeftMenus.addEventListener('click', function(){beforeMenus();});
-	/*
-	setInterval(function(){
-		nextMenus();
-	}, 4000);
 	*/
 
 	d.querySelector("#shopping-cart-list").addEventListener('click', function(e){

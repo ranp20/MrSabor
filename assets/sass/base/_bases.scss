@@ -1,26 +1,20 @@
 /* IMPORTAR LAS VARIABLES Y MIXINS */
 	@import 'variables';
 	@import 'mixins';
-
 /* RESETEO Y CONFIGURACIÓN GENERAL DE ESTILOS */
-*{
+*,
+*:after,
+*:before{
 	padding: 0;
 	margin: 0;
 	font-family: $font-primary;
+	box-sizing: inherit;
 }
-
 html{
 	box-sizing: border-box;
 	font-size: 16px;
 	scroll-behavior: smooth;
 }
-
-*,
-*::before,
-*::after{
-	box-sizing: inherit;
-}
-
 body{
 	min-height: 100vh;
 	height: 100%;
@@ -30,64 +24,51 @@ body{
 	overflow-x: hidden;
 	background-color: #fff;
 }
-
 a{
 	text-decoration: none !important;
 	outline: none !important;
 }
-
 button{
 	outline: none !important;	
 }
-
 body, button, input, select, textarea{
 	color: $color-all-titles;
 }
-
 h1, h2, h3, h4, h5, h6{
 	color: $color-all-titles;
 }
-
 img{
 	max-width: 100%;
 	height: auto;
 }
-
 ul{
 	list-style: none;
 	padding-left: 0;
 }
-
-/*=======================================
-=            CLASS UTILITIES            =
-=======================================*/
+/* CLASS UTILITIES */
 .marg-57{
 	margin-top: 60px !important;	
 	@media (min-width: 1024px){
 		margin-top: 66.67px !important;
 	}
 }
-
 .container{
 	@include max_width($max-width);
 	margin-left: auto;
 	margin-right: auto;
 	width: 90%;
 }
-
 .any-results-home{
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	text-align: center;
 	padding: 5rem 1rem;
-
 	&--title{
 		font-size: 1.35rem;
 		color: #ddd;
 	}
 }
-
 @media (min-width: 768px){
 	.left-align{
 		align-items: flex-start !important;
@@ -135,17 +116,14 @@ ul{
 		width: 480px;
 	}
 }
-
 button[type="submit"].not-touch{
 	opacity: .4;
 	cursor: not-allowed;
 	pointer-events: none;
 }
-
 .block{
 	display: block;
 }
-
 .box{
 	@include max_width($max-width);
 	margin-left: auto;
@@ -153,11 +131,9 @@ button[type="submit"].not-touch{
 	width: 90%;
 	height: auto;
 }
-
 .one-hidden > option:first-child{
 	display: none;
 }
-
 /************************** STYLES UTILITIES **************************/
 @media (min-width: 1024px){
 	.lg-full-screen{
@@ -166,8 +142,6 @@ button[type="submit"].not-touch{
 		min-height: 100vh;
 	}
 }
-
-
 /*==============================================================================
 =            STYLES INTO MODAL MESSAGE FOR INFORMATION IN ALL PAGES            =
 ==============================================================================*/
@@ -209,13 +183,11 @@ button[type="submit"].not-touch{
 		bottom: 0;		
 		right: 0;		
 		background-color: rgba(0,0,0,.4);
-
 		&.disabled{
 			transition: ease .3s;			
 			opacity: 0;			
 			display: none;		
 		}
-
 		&__content{
 			text-align: left;			
 			//width: 100%;
@@ -231,44 +203,36 @@ button[type="submit"].not-touch{
 			animation-iteration-count: inherit;			
 			position:	relative;
 			text-align: center;
-
 			/* TAMAÑO - MÓVIL(480px) */
 			@media (min-width: 480px){
 				width: 80%;
 			}
-
 			/* TAMAÑO - TABLET(768px) */
 			@media (min-width: 768px){
 				width: 450px;
 			}
-
 			/* TAMAÑO - PORTÁTIL(1024px) */
 			@media (min-width: 1024px){
 				padding: 1rem 1.5rem;
-			}
-			
+			}			
 			&--title{
 				color: red;
 				font-size: 1rem;
 				margin-bottom: 0.5rem;
 				text-transform: uppercase;
-
 				/* TAMAÑO - MÓVIL(480px) */
 				@media (min-width: 480px){
 					font-size: 1.25rem;
 				}
 			}
-
 			&--text{
 				color: #444;
 				font-size: 0.9rem;
-
 				/* TAMAÑO - PORTÁTIL(1024px) */
 				@media (min-width: 1024px){
 					font-size: 1rem;
 				}
 			}
-
 			@keyframes alert{
 				0%{
 					transform: translateY(-100%);
@@ -279,7 +243,6 @@ button[type="submit"].not-touch{
 					margin-top: 1rem;
 				}
 			}
-
 			&--btnclosed{
 				width: 18px;
 				height: 18px;
@@ -312,13 +275,11 @@ button[type="submit"].not-touch{
 		bottom: 0;		
 		right: 0;		
 		background-color: rgba(0,0,0,.4);
-		
 		&.disabled{
 			transition: ease .3s;			
 			opacity: 0;			
 			display: none;		
 		}
-
 		&__content{
 			text-align: left;			
 			//padding: 1.2rem;			
@@ -340,12 +301,10 @@ button[type="submit"].not-touch{
 				margin-bottom: 0.5rem;
 				text-transform: uppercase;
 			}
-
 			&--text{
 				color: #444;
 				font-size: 0.9rem;
 			}
-
 			@keyframes alert{
 				0%{
 					transform: translateY(-100%);
@@ -356,7 +315,6 @@ button[type="submit"].not-touch{
 					margin-top: 1rem;
 				}
 			}
-
 			&--btnclosed{
 				width: 18px;
 				height: 18px;
@@ -370,12 +328,10 @@ button[type="submit"].not-touch{
     		right: -5px;
     		cursor: pointer;
 			}
-
 			/* TAMAÑO - MÓVIL(480px) */
 			@media (min-width: 480px){
 				width: 80%;
 			}
-
 			/* TAMAÑO - TABLET(768px) */
 			@media (min-width: 768px){
 				width: 450px;
@@ -406,15 +362,12 @@ button[type="submit"].not-touch{
 		align-items: flex-start;
 		justify-content: space-between;
 		margin-bottom: 2rem;
-
 		@media (min-width: 692px){
 			flex-direction: row;
 		}
-
 		/* MENSAJE DE RESPUESTA DEL SERVIDOR */
 		.contCli-message__cont{
 			width: 100%;
-
 			&--cloader{
 				display: flex;
 				flex-direction: column;
@@ -424,7 +377,6 @@ button[type="submit"].not-touch{
 				width: 100%;
 		    height: 200px;
 		    background-color: transparent;
-				
 		    &--loader{
 					@include loaderServerMessage($primary-color, 52px);
 		    }
@@ -434,4 +386,8 @@ button[type="submit"].not-touch{
 			}
 		}
 	}
+}
+/* CONFIGURACIÓN OWLCAROUSEL */
+.owl-carousel .owl-item .owl-lazy{
+	opacity: 1 !important;
 }

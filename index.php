@@ -12,6 +12,9 @@
 <head>
 	<?php require_once 'views/includes/header_links.php';?>
 	<title>Mr Sabor | Deliveries y reservaciones</title>
+	<!-- INCLUIR OWL CAROUSEL 2 -->
+  <link rel="stylesheet" href="node_modules/owl.carousel/dist/assets/owl.carousel.min.css"/>
+  <script type="text/javascript" src="node_modules/owl.carousel/dist/owl.carousel.min.js"></script>
 </head>
 <body>
 	<div class="home">
@@ -217,17 +220,17 @@
 										<h3 class='our-menu__content--cont-our-menus__categmenu--title--title'>DESTACADO</h3>
 									</div>
 									<div class='our-menu__content--cont-our-menus__categmenu--meals'>
-										<ul class='our-menu__content--cont-our-menus__categmenu--meals__menu' id='sliderMenus'>
+										<ul class='owl-carousel owl-theme our-menu__content--cont-our-menus__categmenu--meals__menu' id='sliderMenus'>
 
 							";
 							$allProdsCalification = array_slice($listProds, 0 , 9);
 							for($i = 0; $i < count($allProdsCalification); $i++){
 								$patheat = "admin/views/assets/img/products/".$listProds[$i]['photo'];
 								$tmp_bestseller.= "
-									<li class='our-menu__content--cont-our-menus__categmenu--meals__menu__item'>
+									<li class='item our-menu__content--cont-our-menus__categmenu--meals__menu__item'>
 					 					<a href='detalle-producto?idprodm={$listProds[$i]['id']}' class='our-menu__content--cont-our-menus__categmenu--meals__menu__item__link'>
 					 						<div class='our-menu__content--cont-our-menus__categmenu--meals__menu__item__link--bgcimage'>
-					 							<img src='{$patheat}' alt=''>
+					 							<img class='owl-lazy img-fluid' src='{$patheat}' alt='{$listProds[$i]['name']}'>
 					 						</div>
 					 						<div class='our-menu__content--cont-our-menus__categmenu--meals__menu__item__link--continfo'>
 					 							<h4 class='our-menu__content--cont-our-menus__categmenu--meals__menu__item__link--continfo__title'>{$listProds[$i]['name']}</h4>
