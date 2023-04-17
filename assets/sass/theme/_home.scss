@@ -1112,14 +1112,14 @@
 			font-family: monospace;
 			width: 48px;
 			height: 48px;
-			color: rgba(0,0,0,.4);
+			color: $bgc-gray-button_1;
 			text-align: center;
 			cursor: pointer;
 			display: flex;
 			align-items: center;
 			justify-content: center;
 			&:hover{
-				color: #fff; 
+				color: darken($bgc-gray-button_1, 20%);
 			}
 			&--left{
 				left: 12px;
@@ -1804,18 +1804,17 @@
 			&__title{
 				margin-bottom: 1.5rem;
 				font-size: 1rem;
+				color: #fff;
 				@include border-bottom($border-bottom-color);
 			}
 			&__menu{
 				padding: 0;
 				&--item{
-					line-height: 2.5;
 					@media (min-width: 800px){
 						margin-bottom: 1rem;
 					}
 				}
 				&--icon-item{
-					line-height: 2.5;
 					@media (min-width: 800px){
 						margin-bottom: 1rem;
 					}
@@ -1867,6 +1866,7 @@
 		text-align: center;
 		align-items: center;
 		color: #fff;
+		background-color: darken($bgc-footer, 10%);
 		span{
 			font-size: 0.8rem;
 		}

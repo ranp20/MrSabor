@@ -339,9 +339,9 @@
 					</ul>
 				</div>
 			</div>
-			<div class="footer__bottom container">
-				<span>&copy;MR SABOR</span>
-				<span>&nbsp;|&nbsp;Desarrollado por R@np21&copy;</span>
+			<div class="footer__bottom">
+				<span>&copy;MrSabor</span>
+				<span>&nbsp;|&nbsp;Desarrollado por R@np21</span>
 			</div>
 		</footer>
 	</div>
