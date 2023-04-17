@@ -30,34 +30,34 @@
 					<form action="" method="POST" class="account--content--info--form" id="form-account">
 						<div class="account--content--info--form--controls">
 							<label for="email" class="account--content--info--form--controls--label">Email</label>
-							<input type="email" id="email" name="email" class="account--content--info--form--controls--input" required>
+							<input type="email" id="email" name="email" class="account--content--info--form--controls--input"  autocomplete="off" spellcheck="false" required>
 						</div>
 						<div class="account--content--info--form--controls">
 							<label for="password" class="account--content--info--form--controls--label">Password</label>
-							<input type="password" id="password" name="pass" class="account--content--info--form--controls--input" required>
+							<input type="password" id="password" name="pass" class="account--content--info--form--controls--input"  autocomplete="off" spellcheck="false" required>
 						</div>
 						<div class="form--group-controls-two">
 							<div class="account--content--info--form--controls">
 								<label for="name" class="account--content--info--form--controls--label">Nombres</label>
-								<input type="text" id="name" name="name" class="account--content--info--form--controls--input" required>
+								<input type="text" id="name" name="name" class="account--content--info--form--controls--input"  autocomplete="off" spellcheck="false" required>
 							</div>
 							<div class="account--content--info--form--controls">
 								<label for="last-name" class="account--content--info--form--controls--label">Apellidos</label>
-								<input type="text" id="last-name" name="lastname" class="account--content--info--form--controls--input" required>
+								<input type="text" id="last-name" name="lastname" class="account--content--info--form--controls--input"  autocomplete="off" spellcheck="false" required>
 							</div>
 						</div>
 						<div class="account--content--info--form--controls">
 							<label for="address" class="account--content--info--form--controls--label">Dirección</label>
-							<input type="text" id="address" name="address" class="account--content--info--form--controls--input" required>
+							<input type="text" id="address" name="address" class="account--content--info--form--controls--input"  autocomplete="off" spellcheck="false" required>
 						</div>
 						<div class="form--group-controls-two">
 							<div class="account--content--info--form--controls">
 								<label for="telephone" class="account--content--info--form--controls--label">Teléfono</label>
-								<input type="text" id="telephone" name="telephone" class="account--content--info--form--controls--input" minlength="9" maxlength="9" required>
+								<input type="text" id="telephone" name="telephone" class="account--content--info--form--controls--input" minlength="9" maxlength="9"  autocomplete="off" spellcheck="false" required>
 							</div>
 							<div class="account--content--info--form--controls">
 								<label for="postal-code" class="account--content--info--form--controls--label">Código postal</label>
-								<input type="text" id="postal-code" name="postal_code" class="account--content--info--form--controls--input" minlength="5" maxlength="5" required>
+								<input type="text" id="postal-code" name="postal_code" class="account--content--info--form--controls--input" minlength="5" maxlength="5"  autocomplete="off" spellcheck="false" required>
 							</div>
 						</div>
 						<div class="account--content--info--form--btnregister">

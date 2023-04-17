@@ -2,7 +2,7 @@ $(() => {
 	$(document).on("scroll", showHeader);
 	$(document).on("click", "#menu-show-home", function(){$(this).add($(this).next()).toggleClass('active');});
 	// ------------  CERRAR EL SIDEBAR CUANDO SE SELECCIONA UN ELEMENTO
-	$(document).on("click", "body", function(e){
+	$(document).on("click", ".homepage__infotop__header--contmenu__menu", function(e){
 		if(!e.target.matches('.homepage__infotop__header--contmenu__menu .homepage__infotop__header--contmenu__menu--item a')) return false;
 		$('#menu-show-home').add($('#menu-show-home').next()).removeClass('active');
 	});
@@ -150,14 +150,6 @@ $(() => {
   $('.slidermenus-right').click(function(){
 	  owlSliderMenus.trigger('next.owl.carousel', [300]);
 	});
-	// Lanzará una "violación" using on
-	$('document').on('mousewheel', function(e){
-	    e.preventDefault();
-	});
-	// No arrojará una "violación" using the event helper
-	$('document').mousewheel(function(e) {
-		e.preventDefault();
-	});
 	// ------------ BUTTON LOGIN
 	$(document).on('click', "#shopping-cart-list", function(e){
 		e.preventDefault();
@@ -167,15 +159,15 @@ $(() => {
 		}
 	});
 	// ------------ BUTTON SHOW LIST SHOPPING CART
-	$(document).on("click", ".homepage__infotop__header--contmenucart", function(){
-		$(this).addClass('show');
+	$(document).on("click", ".homepage__infotop__header--contcart__shoppingcart", function(){
+		$(".homepage__infotop__header--contmenucart").addClass('show');
 		$(".homepage__infotop__header--contmenucart__cont").addClass('show');
-		// ------------ HIDDEN CONTAINER LIST CART
-		$(document).on('click', ".homepage__infotop__header--contmenucart", e => {
-			if(e.target === $('.homepage__infotop__header--contmenucart')){
-				$('.homepage__infotop__header--contmenucart').removeClass('show');
-			};
-		});
+	});
+	// ------------ HIDDEN CONTAINER LIST CART
+	$(document).on('click', ".homepage__infotop__header--contmenucart", e => {
+		if(e.target === $('.homepage__infotop__header--contmenucart')){
+			$('.homepage__infotop__header--contmenucart').removeClass('show');
+		};
 	});
 	// ------------  TOGGLE SHOW INTO PROFILE ICON IF ISSET SESSION CLIENT INITIALIZED
 	$(document).on("click", "homepage__infotop__header--contlogin__profile.bnt-profYesSess", function(){

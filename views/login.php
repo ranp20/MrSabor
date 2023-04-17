@@ -28,11 +28,11 @@
 					<form action="../php/process_login.php" class="login--content--info--form" id="form-login-user">
 						<div class="login--content--info--form--controls">
 							<label for="mail" class="login--content--info--form--controls--label">Email</label>
-							<input type="email" name="mail" id="mail" class="login--content--info--form--controls--input" autocomplete="off" spellcheck="false" required>
+							<input type="email" name="mail" id="mail" class="login--content--info--form--controls--input" autocomplete="on" spellcheck="true" required>
 						</div>
 						<div class="login--content--info--form--controls">
 							<label for="pass" class="login--content--info--form--controls--label">Password</label>
-							<input type="password" name="pass" id="pass" class="login--content--info--form--controls--input" autocomplete="off" spellcheck="false" required>
+							<input type="password" name="pass" id="pass" class="login--content--info--form--controls--input" autocomplete="on" spellcheck="true" required>
 						</div>
 						<div class="login--content--info--form--btnactions">
 							<button type="submit" class="login--content--info--form--btnactions--btnlogin">INGRESAR</button>

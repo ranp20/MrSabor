@@ -265,15 +265,16 @@
 								}
 							}
 							@media (min-width: 1024px){
-								top: 45px;
+								top: 38px;
 							}
 							&.active{
 								display: block;
 							}
 							&__menu{
-								background-color: $primary-color;
+								background-color: $primary-colot-dark;
 								min-width: 190px;
 								border-radius: .3rem;
+								overflow: hidden;
 								&--link{
 									color: #fff;
 									display: block;
@@ -281,7 +282,8 @@
 									font-size: 0.95rem;
 									font-weight: 400;
 									&:hover{
-										color: #000;
+										// color: #000;
+										background-color: $primary-color;
 									}
 								}
 							}

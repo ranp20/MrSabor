@@ -51,7 +51,7 @@
 								<div class='homepageTwo__infotop__header--contmenucart__cont'>
 									<input type='hidden' value='{$userSESS}' id='validCliSession'>
 									<div class='homepageTwo__infotop__header--contmenucart__cont--cTitle'>
-										<h2>Lista en tus pedidos</h2>
+										<h3>Lista en tus pedidos</h3>
 									</div>
 									<ul class='homepageTwo__infotop__header--contmenucart__cont--menu' id='listProds_ByClienteAdd'></ul>
 									<a href='cart' class='homepageTwo__infotop__header--contmenucart__cont--linkgoCart'>
@@ -69,30 +69,3 @@
 		</div>
 	</div>
 </div>
-<script type="text/javascript">
-	((d) => {
-
-		d.querySelector("#shopping-cart-list").addEventListener('click', function(e){
-			e.preventDefault();
-			let sessUser = d.querySelector("#idUSESScurrentPgs").value;
-			if(sessUser == "" || sessUser == 0){
-				window.location.replace("login");
-			}
-		});
-
-		let containerlistcart = d.querySelector('.homepageTwo__infotop__header--contmenucart');
-
-		d.querySelector("#shopping-cart-list").addEventListener("click", function(){
-			containerlistcart.classList.add('show');
-			d.querySelector(".homepageTwo__infotop__header--contmenucart__cont").classList.add('show');
-			d.querySelector("#chat_wstp-icon").classList.add('hidden');
-			/*************************** HIDDEN CONTAINER LIST CART **********************************/
-			containerlistcart.addEventListener('click', e => {
-				if(e.target === containerlistcart){
-					containerlistcart.classList.remove('show');
-					d.querySelector("#chat_wstp-icon").classList.remove('hidden');
-				};
-			});
-		});
-	})(document);
-</script>
