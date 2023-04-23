@@ -24,9 +24,9 @@
 			</section>
 		</div>
 	</div>
-	<?php require_once 'includes/homepage-footer.php'; ?>
-	<script src="js/main.js"></script>
-	<script src="js/actions_pages/add-cart-product.js"></script>
-	<script src="js/actions_pages/list_ProdsByID.js"></script>
+	<?php require_once 'includes/homepage-footer.php';?>
+	<script type="text/javascript" src="<?= $url;?>js/main.js"></script>
+	<script type="text/javascript" src="<?= $url;?>js/actions_pages/add-cart-product.js"></script>
+	<script type="text/javascript" src="<?= $url;?>js/actions_pages/list_ProdsByID.js"></script>
 </body>
 </html>

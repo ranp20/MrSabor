@@ -230,7 +230,7 @@
 								$patheat = "admin/views/assets/img/products/".$listProds[$i]['photo'];
 								$tmp_bestseller.= "
 									<li class='item our-menu__content--cont-our-menus__categmenu--meals__menu__item'>
-					 					<a href='detalle-producto?idprodm={$listProds[$i]['id']}' class='our-menu__content--cont-our-menus__categmenu--meals__menu__item__link'>
+					 					<a href='detalle-producto/{$listProds[$i]['id']}' class='our-menu__content--cont-our-menus__categmenu--meals__menu__item__link'>
 					 						<div class='our-menu__content--cont-our-menus__categmenu--meals__menu__item__link--bgcimage'>
 					 							<img class='owl-lazy img-fluid' src='{$patheat}' alt='{$listProds[$i]['name']}'>
 					 						</div>
@@ -345,7 +345,7 @@
 			</div>
 		</footer>
 	</div>
-	<script src="<?= $url  ?>js/main.js"></script>
+	<script src="<?= $url  ?>js/home.js"></script>
 	<script src="<?= $url  ?>js/actions_pages/add-cart-product.js"></script>
 </body>
 </html>

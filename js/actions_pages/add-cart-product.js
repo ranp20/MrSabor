@@ -1,4 +1,4 @@
-$(function (){
+$(() => {
 	list_intoCart();
 });
 var idClient = $("#validCliSession").val();
@@ -15,7 +15,7 @@ $(document).on('click', '.related-products--content__menu--item--addthisprod--li
 		subtotal: parseFloat(precioreal) * parseFloat(cantidad)
 	};
 	$.ajax({
-		url: "controllers/add-ProdsIntoCart.php",
+		url: "../controllers/add-ProdsIntoCart.php",
 		method: "POST",
     datatype: "JSON",
     contentType: 'application/x-www-form-urlencoded;charset=UTF-8',
@@ -41,7 +41,7 @@ $(document).on('click', '.related-products--content__menu--item--addthisprod--li
 
 function list_intoCart(){
 	$.ajax({
-		url: "controllers/list-ProdsIntoCart.php",
+		url: "../controllers/list-ProdsIntoCart.php",
 		method: "POST",
     datatype: "JSON",
     contentType: 'application/x-www-form-urlencoded;charset=UTF-8',

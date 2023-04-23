@@ -2,11 +2,11 @@ $(() => {
 	list_intoCart();
 });
 var idClient = $("#validCliSession").val();
-// ==================== LISTAR EL DETALLE DEL PROOUCTO ==================== //
+// ------------ LISTAR EL DETALLE DEL PROOUCTO 
 $(document).ready(function(){	
 	var idprod = $("#id_filterCategory").val();
 	$.ajax({
-		url: "controllers/list-ProdsByID.php",
+		url: "../controllers/list-ProdsByID.php",
 		method: "POST",
     datatype: "JSON",
     contentType: 'application/x-www-form-urlencoded;charset=UTF-8',
@@ -21,16 +21,14 @@ $(document).ready(function(){
 				</div>
      	`);
     },
-	}).done(function(res){
+	}).done((r) => {
 		$("#d-product__content").html("");
-		var result = JSON.parse(res); 
+		var result = JSON.parse(r);
 		$.each(result, function(i, v){
-
-			var pathProdPhoto = "admin/assets/img/products/"+v.photo;
-
+			var pathProdPhoto = "../admin/assets/img/products/"+v.photo;
 			$("#d-product__content").append(`
 				<div class="d-product__content--product-photo">
-					<!--<img src="admin/assets/img/menus/Ensalada_de_pollo.jpeg" alt="" class="d-product__content--product-photo__img">-->
+					<!--<img src="../admin/assets/img/menus/Ensalada_de_pollo.jpeg" alt="" class="d-product__content--product-photo__img">-->
 					<figure class="d-product__content--product-photo__figure">
 						<img src="${pathProdPhoto}" alt="" class="d-product__content--product-photo__figure__img">
 					</figure>
@@ -61,7 +59,7 @@ $(document).ready(function(){
 
 		var namecategory = result[0].name_cat;
 		$.ajax({
-			url: "controllers/list-ProdsByNameCategory.php",
+			url: "../controllers/list-ProdsByNameCategory.php",
 			method: "POST",
 	    datatype: "JSON",
 	    contentType: 'application/x-www-form-urlencoded;charset=UTF-8',
@@ -83,7 +81,7 @@ $(document).ready(function(){
 
 			$.each(cutearray, function(i, v){
 
-				var pathProdPhotoByCateg = "admin/assets/img/products/"+v.photo;
+				var pathProdPhotoByCateg = "../admin/assets/img/products/"+v.photo;
 
 				$("#related-products--content__menu").append(`
 					<li class='related-products--content__menu--item'>
@@ -113,7 +111,7 @@ $(document).ready(function(){
 		});
 	});
 });
-// ==================== AGREGAR PRODUCTOS AL CARRITO ==================== //
+// ------------ AGREGAR PRODUCTOS AL CARRITO 
 $(document).on('click', '.d-product__content--product-info--form--btnaddcart', function(e){
 	e.preventDefault();
 	var precioreal = $(this).attr('attr_price');
@@ -127,7 +125,7 @@ $(document).on('click', '.d-product__content--product-info--form--btnaddcart', f
 		subtotal: parseFloat(precioreal) * parseFloat(cantidad)
 	};
 	$.ajax({
-		url: "controllers/add-ProdsIntoCart.php",
+		url: "../controllers/add-ProdsIntoCart.php",
 		method: "POST",
     datatype: "JSON",
     contentType: 'application/x-www-form-urlencoded;charset=UTF-8',
@@ -152,10 +150,10 @@ $(document).on('click', '.d-product__content--product-info--form--btnaddcart', f
 		}
 	});
 });
-// ==================== LISTAR PRODUCTOS EN EL CARRITO ==================== //
+// ------------ LISTAR PRODUCTOS EN EL CARRITO 
 function list_intoCart(){
 	$.ajax({
-		url: "controllers/list-ProdsIntoCart.php",
+		url: "../controllers/list-ProdsIntoCart.php",
 		method: "POST",
     datatype: "JSON",
     contentType: 'application/x-www-form-urlencoded;charset=UTF-8',
@@ -165,7 +163,7 @@ function list_intoCart(){
 		var resultlist = JSON.parse(res);
 		$.each(resultlist, function(i, v){
 			var total = (v.price_real * v.quantity).toFixed(2);
-			var pathimgProd = "admin/assets/img/products/"+v.photo;
+			var pathimgProd = "../admin/assets/img/products/"+v.photo;
 			$("#listProds_ByClienteAdd").append(`
 				<li class="homepage__infotop__header--contmenucart__cont--menu--item" id="prod-${i}">
 					<a href="detalle-producto?idprodm=${v.id}" class="homepage__infotop__header--contmenucart__cont--menu--item--l">

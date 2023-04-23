@@ -17,7 +17,7 @@ RewriteRule categorias?$ admin/views/categories.php
 #RewriteRule ^seleccionar-usuario?$ admin/views/select-user-register.php
 
 ############ ALL PAGES CLIENTS
-RewriteRule ^detalle-producto?$ views/detail-products.php
+RewriteRule detalle-producto/([0-9]+)$ views/detail-products.php?idprodm=$1 [L,NC]
 RewriteRule ^bcategoria?$ views/list-by-categories.php
 RewriteRule ^cart?$ views/shopping-cart.php
 RewriteRule ^search-restaurant?$ views/search-restaurant.php

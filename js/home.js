@@ -60,6 +60,96 @@ $(() => {
 			$(".homepage__infotop__header--contlogin__profile").removeClass("scrollTop");
 		}
 	}
+	// ------------ CAROUSEL DEL HEROIMAGE
+	var owlSliderHeroImages = $('#sliderHeroimages');
+	$('#sliderHeroimages').owlCarousel({
+		autoplay:true,
+		autoplayTimeout: 6000,
+		center: false,
+		items: 5,
+		loop: true,
+		margin: 18,
+		dots:true,
+		nav: true,
+		lazyLoad: true,
+		navText: ["",""],
+		responsive: {
+			0: {
+				nav: false,
+				dots: true,
+				items: 1
+			},
+			360: {
+				nav: false,
+				dots: true,
+				items: 1
+			},
+			480: {
+				nav: false,
+				dots: false,
+				items: 1
+			},
+			768: {
+				nav: false,
+				dots: false,
+				items: 1
+			},
+			1024: {
+				items: 1
+			},
+		}
+	});
+	$('#heroimageLeft').click(function(){
+    owlSliderHeroImages.trigger('prev.owl.carousel', [300]);
+	});
+  $('#heroimageRight').click(function(){
+	  owlSliderHeroImages.trigger('next.owl.carousel', [300]);
+	});
+	// ------------ CAROUSEL DE PLATOS
+	var owlSliderMenus = $('#sliderMenus');
+	$('#sliderMenus').owlCarousel({
+		autoplay:true,
+		autoplayTimeout: 6000,
+		center: false,
+		items: 5,
+		loop: true,
+		margin: 18,
+		dots:true,
+		nav: true,
+		lazyLoad: true,
+		navText: ["",""],
+		responsive: {
+			0: {
+				nav: false,
+				dots: true,
+				items: 1
+			},
+			360: {
+				nav: false,
+				dots: true,
+				items: 1
+			},
+			480: {
+				nav: false,
+				dots: false,
+				items: 2
+			},
+			768: {
+				nav: false,
+				dots: false,
+				items: 3
+			},
+			1024: {
+				items: 4
+			},
+		}
+	});
+	$('.slidermenus-left').click(function(){
+    owlSliderMenus.trigger('prev.owl.carousel', [300]);
+	});
+  $('.slidermenus-right').click(function(){
+	  owlSliderMenus.trigger('next.owl.carousel', [300]);
+	});
 	// ------------ BUTTON LOGIN
 	$(document).on('click', "#shopping-cart-list", function(e){
 		e.preventDefault();

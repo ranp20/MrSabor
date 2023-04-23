@@ -1,8 +1,5 @@
 <?php 
-
 	session_start();
-	error_reporting(0);
-
 	$userSESS = $_SESSION['client'][0]['id'];
 ?>
 <input type="hidden" id="idUSESScurrentPgs" value="<?= $userSESS; ?>">
@@ -30,7 +27,7 @@
 				</div>
 				<div class="homepageTwo__infotop__header--contlogo">
 					<a href="./" class="homepageTwo__infotop__header--contlogo__link">
-						<img src="admin/assets/img/logo/Logo_RESTAURANT_proyect.png" alt="" class="homepageTwo__infotop__header--contlogo__link--image">
+						<img src="<?= $url;?>admin/assets/img/logo/Logo_RESTAURANT_proyect.png" alt="" class="homepageTwo__infotop__header--contlogo__link--image">
 					</a>
 				</div>
 				<div class='homepageTwo__infotop__header--contlogin'>
